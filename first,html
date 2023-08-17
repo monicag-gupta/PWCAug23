@@ -1,24 +1,38 @@
 <html>
 	<head>
 		<title>
-			Hello Page
+			My Site
 		</title>
 	</head>
 	<body>
-        <table border="1" cellpadding="5" cellspacing="5">
-            <tr>
-                <th>Name</th><th>Age</th><th>Subjects</th>
-            </tr>
-            <tr>
-                <td>John</td><td>20</td><td rowspan="2">IT</td>
-            </tr>
-            <tr>
-                <td>Doe</td><td>21</td>
-            </tr>
-            <tr>
-                <td colspan="2">Nick</td><td>CompSc</td>
-            </tr>
-        </table>
-            
+       <h1>Ordered list/Numbered List:</h1>
+       <ol>Series of languages of the Web:
+        <li>HTML</li>
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>CSS3</li>
+        <li>JS</li>
+       </ol>
+       <hr>
+       <h1>Unordered list/Bulletted List:</h1>
+       <ul>Series of languages of the training:
+        <li>HTML, CSS</li>
+        <li>JS</li>
+        <li>Java</li>
+        <li>CS</li>
+        <li>PHP</li>
+       </ul>
+       <hr>
+       <h1>Definition list:</h1>
+       <dl>
+        <dt>JS</dt>
+        <dd>Client Scripting</dd>
+        <dt>Java</dt>
+        <dd>OOPS</dd>
+        <dt>CS</dt>
+        <dd>OOPS</dd>
+        <dt>PHP</dt>
+        <dd>Server Scripting Language</dd>
+       </dl>
 	</body>
 </html>
