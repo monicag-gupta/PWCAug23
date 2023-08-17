@@ -245,3 +245,26 @@ second.html:
 </html>
 
 
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			My Site
+		</title>
+	</head>
+	<body>
+        <audio controls>
+            <source src="https://file-examples.com/storage/fe7bb0e37864d66f29c40ee/2017/11/file_example_OOG_1MG.ogg" type="audio/ogg">
+        </audio>
+        <hr>
+        <video width="320" height="240" controls>
+            <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+          
+	</body>
+</html>
+
+
