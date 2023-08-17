@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -5,43 +6,8 @@
 		</title>
 	</head>
 	<body>
-        <form action="second.html">
-            UserName: <input type="text" name="nam"><br>
-            Password: <input type="password" name="passwd"><br>
-            Skill Applied for: 
-            <input type="radio" name="skill" value="CPP">C++
-            <input type="radio" name="skill" value="Java">Java
-            <input type="radio" name="skill" value="C#">C#
-            <br>
-            Qualification:
-            <input type="checkbox" name="qual" value="Btech">Btech
-            <input type="checkbox" name="qual" value="BE">BE
-            <input type="checkbox" name="qual" value="Mtech">Mtech
-            <input type="checkbox" name="qual" value="MCA">MCA
-            <br>
-            Address: <textarea rows="10" cols="20"></textarea>
-            <br>
-            College State: <input list="state" name="collegeState">
-            <datalist id="state">
-                <option>AP</option>
-                <option>Maharastra</option>
-                <option>Assam</option>
-                <option>Kerala</option>
-                <option>UP</option>
-            </datalist>
-            <br>
-            Company Department:
-            <select name="Dept">
-                <option value="Developement">Developement</option>
-                <option>Data Analysts</option>
-                <option>DevOps</option>
-                <option>Testing</option>
-                <option>Deginer</option>
-            </select>
-            <br><input type="submit" value="login"><br>
-            <input type="reset" value="Reset Form">
-
-        </form>
-
+        <a href="second.html" target="_blank">Click here</a>
+        <hr>
+        <img src="tile1.jpg" width="100" height="100" alt="Image not found">
 	</body>
 </html>
