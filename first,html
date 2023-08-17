@@ -6,8 +6,14 @@
 		</title>
 	</head>
 	<body>
-        <a href="second.html" target="_blank">Click here</a>
+        <audio controls>
+            <source src="https://file-examples.com/storage/fe7bb0e37864d66f29c40ee/2017/11/file_example_OOG_1MG.ogg" type="audio/ogg">
+        </audio>
         <hr>
-        <img src="tile1.jpg" width="100" height="100" alt="Image not found">
+        <video width="320" height="240" controls>
+            <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+          
 	</body>
 </html>
