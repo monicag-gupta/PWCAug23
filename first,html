@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>
+			Hello Page
+		</title>
+	</head>
+	<body>
+		<h1>Hello World : H1 !</h1>
+		<h2>Hello World : H2 !</h2>
+		<h6>Hello World : H6 !</h6>
+		<p>This is a new Para</p>
+		<div>This is a new Division</div>
+		This is <b>normal</b> text <u>without</u> any tag. <span>This is <strong>span</strong> tag.</span> The <I>normal text</I> follows. 
+	</body>
+</html>
