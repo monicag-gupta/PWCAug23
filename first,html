@@ -5,34 +5,79 @@
 		</title>
 	</head>
 	<body>
-       <h1>Ordered list/Numbered List:</h1>
-       <ol>Series of languages of the Web:
-        <li>HTML</li>
-        <li>HTML5</li>
-        <li>CSS</li>
-        <li>CSS3</li>
-        <li>JS</li>
-       </ol>
-       <hr>
-       <h1>Unordered list/Bulletted List:</h1>
-       <ul>Series of languages of the training:
-        <li>HTML, CSS</li>
-        <li>JS</li>
-        <li>Java</li>
-        <li>CS</li>
-        <li>PHP</li>
-       </ul>
-       <hr>
-       <h1>Definition list:</h1>
-       <dl>
-        <dt>JS</dt>
-        <dd>Client Scripting</dd>
-        <dt>Java</dt>
-        <dd>OOPS</dd>
-        <dt>CS</dt>
-        <dd>OOPS</dd>
-        <dt>PHP</dt>
-        <dd>Server Scripting Language</dd>
-       </dl>
+        <a href="second.html">Click herefor second.html</a>
+        <a name="top"></a>
+        <ul>
+            <li><a href="#div1">Division 1</a> </li>
+                <li><a href="#div2">Division 2</a></li>
+               <li> <a href="#div3">Division 3</a></li>
+                <li><a href="#div4">Division 4</a></li>
+        </ul>
+        <hr>
+        <a name="div1">Division 1</a>
+
+        <pre>
+        HTML tutorial or HTML 5 tutorial provides 
+        basic and advanced concepts of HTML. 
+        Our HTML tutorial is developed for beginners 
+        and professionals. In our tutorial, every topic 
+        is given step-by-step so that you can learn it 
+        in a very easy way. If you are new in learning HTML, 
+        then you can learn HTML from basic to a professional 
+        level and after learning HTML with CSS and JavaScript
+         you will be able to create your own interactive and
+          dynamic website. But Now We will focus on HTML 
+          only in this tutorial.
+          </pre>
+          <h3><a href="#top">Top of the Page</a></h3>
+        <hr>
+        <a name="div2">Division 2</a>
+        <pre>
+        HTML is an acronym which stands for 
+        Hyper Text Markup Language which is 
+        used for creating web pages and web applications.
+         Let's see what is meant by Hypertext Markup 
+         Language, and Web page.
+
+        Hyper Text: HyperText simply means 
+        "Text within Text." A text has a link within 
+        it, is a hypertext. Whenever you click on a 
+        link which brings you to a new webpage, you 
+        have clicked on a hypertext. HyperText is a
+         way to link two or more web pages 
+         (HTML documents) with each other.
+        </pre>
+        <h3><a href="#top">Top of the Page</a></h3>
+        <hr>
+        <a name="div3">Division 3</a>
+        <pre>
+        Markup language: A markup language is a 
+        computer language that is used to apply 
+        layout and formatting conventions to a 
+        text document. Markup language makes 
+        text more interactive and dynamic. It can 
+        turn text into images, tables, links, etc.
+        </pre>
+        <h3><a href="#top">Top of the Page</a></h3>
+        <hr>
+        <a name="div4">Division 4</a>
+        <pre>
+        Web Page: A web page is a document which is 
+        commonly written in HTML and translated by a 
+        web browser. A web page can be identified by 
+        entering an URL. A Web page can be of the 
+        static or dynamic type. With the help of HTML
+         only, we can create static web pages.
+
+        Hence, HTML is a markup language which 
+        is used for creating attractive web pages 
+        with the help of styling, and which looks 
+        in a nice format on a web browser. 
+        An HTML document is made of many HTML 
+        tags and each HTML tag contains different 
+        content.
+        </pre>
+        <h3><a href="#top">Top of the Page</a></h3>
+
 	</body>
 </html>
