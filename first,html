@@ -5,13 +5,12 @@
 			My Site
 		</title>
         <script>
-            alert("This is a messageBox");
-            c = confirm("This is confirm box with ok and Cancel");
-            alert("The return value of confirm box is : " + c);
-            n = prompt("Enter your name: ");
-            alert("Hello  " + n + " !!") ;
+            n = prompt("Enter your name before entering my Site");
         </script>
 	</head>
 	<body>
+
+        <button onclick="alert('Clicked at the button');">Click here</button>
+        <button onclick="alert('Welcome '+ n + ' to mySite !!');">Welcome Message</button>
 	</body>
 </html>
