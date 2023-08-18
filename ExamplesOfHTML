@@ -615,3 +615,19 @@ document.write("<h1>This is from an external file</h1>"); -->
 	<body>
 	</body>
 </html>
+
+
+
+
+
+<html>    
+  <body>  
+	
+	Enter Name: <input type="text" id="p1">
+	<div id="div1"></div>
+
+	<input type="button" value="Submit" onclick="document.getElementById('div1').innerHTML = (document.getElementById('p1').value);"/>
+
+  </body>
+</html>
+
