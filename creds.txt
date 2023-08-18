@@ -1,0 +1,61 @@
+Candidate Name     :       Username        :       Password
+Aakangsha Chowdhury     :       DTL-2-DotNet-Training-941-1        :       Wevl$615$
+Abir Basumatary     :       DTL-2-DotNet-Training-941-2        :       Ivky!783@
+Abu Sayed Sk     :       DTL-2-DotNet-Training-941-3        :       Egni@887@
+Amisha Raghav     :       DTL-2-DotNet-Training-941-4        :       Tkdx@328@
+Aniket Biswas     :       DTL-2-DotNet-Training-941-5        :       Dmel!761@
+Arkabrata Das     :       DTL-2-DotNet-Training-941-6        :       Vfce@377@
+Arkapravo Ganguly     :       DTL-2-DotNet-Training-941-7        :       Rran@646@
+Arya Maji     :       DTL-2-DotNet-Training-941-8        :       Bzzx!526$
+Avishkar Sharma     :       DTL-2-DotNet-Training-941-9        :       Aund@816$
+Biswajit Sahoo     :       DTL-2-DotNet-Training-941-10        :       Rwgp!805@
+Bojja Sudharshan Reddy     :       DTL-2-DotNet-Training-941-11        :       Tlrq!439@
+Brajendra Manjhi     :       DTL-2-DotNet-Training-941-12        :       Vvgp@863$
+Cheedaragadda Pranay     :       DTL-2-DotNet-Training-941-13        :       Unne@458$
+Chinmayee Sadanand Kulkarni     :       DTL-2-DotNet-Training-941-14        :       Mctl!467@
+Debajani Das     :       DTL-2-DotNet-Training-941-15        :       Disj$237@
+Debanjan Sarkar     :       DTL-2-DotNet-Training-941-16        :       Ydil$775@
+Dipankar Adhikary     :       DTL-2-DotNet-Training-941-17        :       Hzvg!882@
+Divyani Diliprao Mozare     :       DTL-2-DotNet-Training-941-18        :       Hkqc@929!
+Gangarapu Sai Krishna Charan     :       DTL-2-DotNet-Training-941-19        :       Nqxy$436$
+Gourab Nag     :       DTL-2-DotNet-Training-941-20        :       Judx!227$
+Jay Shivendrasingh Suhas Kadam     :       DTL-2-DotNet-Training-941-21        :       Epbr$196!
+Jitendra Gupta     :       DTL-2-DotNet-Training-941-22        :       Smff@350!
+Kaushik Kumar     :       DTL-2-DotNet-Training-941-23        :       Mcrx@208!
+Krishna Gopal Samanta     :       DTL-2-DotNet-Training-941-24        :       Mqzm!823$
+Kshitij Gupta     :       DTL-2-DotNet-Training-941-25        :       Qnix$425!
+Kushal Chakraborty     :       DTL-2-DotNet-Training-941-26        :       Awyc@039@
+Liza Susan Chandy     :       DTL-2-DotNet-Training-941-27        :       Stey@119$
+Nandimalla Chetan Reddy     :       DTL-2-DotNet-Training-941-28        :       Bysx@545@
+Nishi Sharma     :       DTL-2-DotNet-Training-941-29        :       Romi!979@
+Payel Bose     :       DTL-2-DotNet-Training-941-30        :       Hhpu@906$
+Poulami Deb     :       DTL-2-DotNet-Training-941-31        :       Luxx!515@
+Pranab Sarkar     :       DTL-2-DotNet-Training-941-32        :       Mhpd$374$
+Pratyush Pattanaik     :       DTL-2-DotNet-Training-941-33        :       Lrfc@178!
+Ritabrata Ganguly     :       DTL-2-DotNet-Training-941-34        :       Opgk!114!
+Rohan Jana     :       DTL-2-DotNet-Training-941-35        :       Btqs$156$
+Sadhana Satishchandra Verma     :       DTL-2-DotNet-Training-941-36        :       Jwmx@316$
+Sagar Singha Roy     :       DTL-2-DotNet-Training-941-37        :       Eoxa!212$
+Sai Shirisha Padi     :       DTL-2-DotNet-Training-941-38        :       Bnpc!978$
+Sakshi Sandip More     :       DTL-2-DotNet-Training-941-39        :       Bxzh!900!
+Sanskar Pravin Patel     :       DTL-2-DotNet-Training-941-40        :       Fugz$067@
+Sarth Nikhil Shah     :       DTL-2-DotNet-Training-941-41        :       Pdbt$723@
+Shailendra Kumar Deota     :       DTL-2-DotNet-Training-941-42        :       Ctbi!004@
+Shaswat Pathak     :       DTL-2-DotNet-Training-941-43        :       Bejq!345@
+Shobha Kumari     :       DTL-2-DotNet-Training-941-44        :       Qjir@428$
+Shriya Yogesh Mudras     :       DTL-2-DotNet-Training-941-45        :       Jakn$592$
+Snehal Manwatkar     :       DTL-2-DotNet-Training-941-46        :       Oyfa!808@
+Soham Datta     :       DTL-2-DotNet-Training-941-47        :       Eyxk!786!
+Somenath Ghosh     :       DTL-2-DotNet-Training-941-48        :       Rgtt$469!
+Soumi Patra     :       DTL-2-DotNet-Training-941-49        :       Ortp$863$
+Soumyadeep Mukhopadhyay     :       DTL-2-DotNet-Training-941-50        :       Ggoh!999@
+Sounak Bhol     :       DTL-2-DotNet-Training-941-51        :       Aggu$233$
+Sujan Bhowal     :       DTL-2-DotNet-Training-941-52        :       Uqgz$011!
+Tejas Mangesh Shinde     :       DTL-2-DotNet-Training-941-53        :       Axml@507$
+Trapti Rajput     :       DTL-2-DotNet-Training-941-54        :       Zgye@747@
+Rishita Das     :       DTL-2-DotNet-Training-941-55        :       Fkhq$454$
+Nisha Banerjee     :               :       
+Siuli Mondal     :               :       
+Ajay Saraf     :               :       
+
+Participants Login URL: https://trainee.cloudadda.com
