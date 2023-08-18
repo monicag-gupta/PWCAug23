@@ -556,3 +556,39 @@ p{
 
 	</body>
 </html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			My Site
+		</title>
+        <script>
+            document.write("<h1>1. Hello 1</h1>");
+            document.write("<h1>1.5. Hello 1.5</h1>");
+        </script>
+
+	</head>
+	<body>
+       <h1>2. Hello 2</h1>
+       <script>
+        document.write("<h1>3. Hello 3</h1>");
+       </script>
+       <script src="myCode.js"></script>
+        <h1>3.5 Hello 3.5</h1>
+        <script>
+            document.write("<h1>4. Hello 4</h1>");
+        </script>
+        
+	</body>
+</html>
+
+
+<!-- myCode.js :
+document.write("<h1>This is from an external file</h1>"); -->
