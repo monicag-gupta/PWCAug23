@@ -5,13 +5,28 @@
 			My Site
 		</title>
         <style>
-            h1 {
+            h1,p {
                 font-size:12pt; 
                 color:red;
             }
         </style>
+        <link href="myStyle.css" rel="stylesheet">
 	</head>
 	<body>
         <h1>This is h1 with 12 pt font and color red</h1>
+        <p>This is a paragraph</p>
+        <h1>This the second h1 tag</h1>
+        <p>This is another para</p>
+        <h2>This is h2 tag</h2>
 	</body>
 </html>
+
+
+
+<!-- myStyle.css:
+h2{
+    color:cyan;
+}
+p{
+    color:green;
+} -->
