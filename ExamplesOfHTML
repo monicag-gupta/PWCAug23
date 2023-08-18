@@ -592,3 +592,26 @@ p{
 
 <!-- myCode.js :
 document.write("<h1>This is from an external file</h1>"); -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			My Site
+		</title>
+        <script>
+            alert("This is a messageBox");
+            c = confirm("This is confirm box with ok and Cancel");
+            alert("The return value of confirm box is : " + c);
+            n = prompt("Enter your name: ");
+            alert("Hello  " + n + " !!") ;
+        </script>
+	</head>
+	<body>
+	</body>
+</html>
