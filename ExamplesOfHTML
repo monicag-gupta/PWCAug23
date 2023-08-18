@@ -674,3 +674,56 @@ document.write("<h1>This is from an external file</h1>"); -->
   </body>
 </html>
 
+
+
+
+
+
+<html>    
+  <body>  
+	
+	<script>
+		document.write("<h1>Arithmetic Operators</h1>") ;
+        document.write("<br>10+5 : "+ (10+5));	
+        document.write("<br>10-5 : "+ (10-5));	
+        document.write("<br>10*5 : "+ (10*5));
+        document.write("<br>10/5 : "+ (10/5));
+        document.write("<br>10 % 6 : "+ (10%6));
+        document.write("<h1>Increment Operator ++ Adds 1 to the variable </h1>") ;
+        
+        document.write("<h2>Pre Increment Operator ++ Adds 1 to the variable; return the var post that </h2>") ;
+        var a = 10;
+        document.write("<br>Before Incrementing a : "+ a);	
+        var b = ++a; //a = a+1; b=a;
+        document.write("<br>after pre Increment, a : "+ a + "; b = ++a : " + b);
+	
+        document.write("<h2>Post Increment Operator ++ Adds 1 to the variable; return the var before incrementing </h2>") ;
+        a = 10;
+        document.write("<br>Before Incrementing a : "+ a);	
+        b = a++; //b=a; a = a+1; 
+        document.write("<br>after post Increment, a : "+ a + "; b = a++ : " + b);
+
+        document.write("<h1>Decrement Operator -- Subtracts 1 from the variable </h1>") ;
+        
+        document.write("<h2>Pre Deccrement Operator -- </h2>") ;
+        a = 10;
+        document.write("<br>Before Decrementing a : "+ a);	
+        var b = --a; //a = a-1; b=a;
+        document.write("<br>after pre Decrement, a : "+ a + "; b = --a : " + b);
+	
+        document.write("<h2>Post Decrement Operator -- </h2>") ;
+        a = 10;
+        document.write("<br>Before Decrementing a : "+ a);	
+        b = a--; //b=a; a = a-1; 
+        document.write("<br>after post Decrement, a : "+ a + "; b = a-- : " + b);
+
+
+	</script>
+        <hr>
+        <br>
+        <br>
+  </body>
+</html>
+
+
+
