@@ -438,3 +438,60 @@ h2{
 p{
     color:green;
 } -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			My Site
+		</title>
+        <style>
+            p{
+                color:red;
+            }
+            #logo{
+                color:violet;
+            }
+            .veg{
+                color:green;
+            }
+            .nonveg{
+                color:red;
+            }
+            .fruit{
+                color:blue;
+            }
+        </style>
+	</head>
+	<body>
+        <pre>
+        Tag: All Paragraphs have red color
+        ID: One of the header which has ID : logo have color as violet
+        Class: In the menu of eatables, all veg items have green color
+        and all fruits have blue color 
+        and all non veg have red color
+        </pre>
+        <hr>
+        <p>This is para 1</p>
+        <p>This is para 2</p>
+        <h1>This is h1</h1>
+        <h1 id="logo">This is the logo of my comp in h1</h1>
+        <h3 id="logo">This is logo in h3 tag</h3>
+        <ul>Menu
+            <li class="fruit">Apple</li>
+            <li class="fruit">Orange</li>
+            <li class="veg">Potato</li>
+            <li class="nonveg">Egg</li>
+            <li class="fruit">Plum</li>
+            <li class="veg">Onion</li>
+            <li class="nonveg">Meat</li>
+        </ul>
+
+	</body>
+</html>
