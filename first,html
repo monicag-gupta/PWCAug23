@@ -5,10 +5,12 @@
 			My Site
 		</title>
         <style>
-            h1,p {
+            /*Internal Style*/
+            h1,p, h3 {
                 font-size:12pt; 
                 color:red;
             }
+           
         </style>
         <link href="myStyle.css" rel="stylesheet">
 	</head>
@@ -18,6 +20,8 @@
         <h1>This the second h1 tag</h1>
         <p>This is another para</p>
         <h2>This is h2 tag</h2>
+        <h3 style="font-size:25pt;color:blueviolet">
+        This is in H3 inline styled</h3>
 	</body>
 </html>
 
