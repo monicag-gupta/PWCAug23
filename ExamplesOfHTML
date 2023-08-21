@@ -762,6 +762,36 @@ document.write("<h1>This is from an external file</h1>"); -->
 
 
 
+<html>    
+  <body>  
+    <script>
+		document.write("<h1>Logical (Shortcircuit) Operators : returns true or false</h1>") ;
+        document.write("<h2>AND && Operators (Compulsory) : returns true only if both operands are true</h2>") ;
+        document.write("<br>10>5 && 5>6 : T && F = F : "+ (10>5 && 5>6));	
+        document.write("<br>10>5 && 5<6 : T && T = T : "+ (10>5 && 5<6));	
+        document.write("<br>10<5 && 5<6 : F && T = F : "+ (10<5 && 5<6));	
+        document.write("<br>10<5 && 5>6 : F && F = F : "+ (10<5 && 5>6));	
+        document.write("<h2>OR || Operators (Optional): returns false only if both operands are false</h2>") ;
+        document.write("<br>10>5 || 5>6 : T || F = T : "+ (10>5 || 5>6));	
+        document.write("<br>10>5 || 5<6 : T || T = T : "+ (10>5 || 5<6));	
+        document.write("<br>10<5 || 5<6 : F || T = T : "+ (10<5 || 5<6));	
+        document.write("<br>10<5 || 5>6 : F || F = F : "+ (10<5 || 5>6));
+        document.write("<h2>NOT ! Operators (Negation): returns true for not false</h2>") ;
+        document.write("<br>! 10<5 : ! F = T : "+ !(10<5));	
+        document.write("<br>! 10>5 : ! T = F : "+ !(10>5));	
+	</script>
+        <hr>
+        <br>
+        <br>
+  </body>
+</html>
+
+
+
+
+
+
+
 
 
 
