@@ -1,35 +1,106 @@
 <html>    
   <body>  
-    <h1>Function Example</h1>
+    <h1>var, let, const</h1>
+    <pre>
+    There are 3 ways of declaring variables in JS: 
+    1. var : 
+      1.1 : a var is useful as even before declaring the var, we can hoist it(when hoisted, it used undefined value). 
+      1.2: : a var can be reassigned with updated value
+      1.3 : a var can be used without assignment also.
+      1.4 : a var has only 2 scopes: global scope , local scope
+      1.5 : a var can be re-declared
+    2. let : 
+      2.1 : a let cannot be hoisted. 
+      2.2: : a let can be reassigned with updated value
+      2.3 : a let can be used without assignment.
+      2.4 : a let has 3 scopes: global scope , local scope, block scope
+      2.5 :  a let cannot be re-declared
+    3. const : 
+      3.1 : a const cannot be hoisted. 
+      3.2: : a const can not  be reassigned
+      3.3 : a const can not be used without assignment.
+      3.4 : a const has 3 scopes: global scope , local scope, block scope
+      3.5 :  a const cannot be re-declared
+    </pre>
+    <hr>
     <script>
-      function mul(a, b){
-        s = "<h2>mul(" + a + ", " + b + ") : " + (a * b) + "</h2>";
-        return s;
-      }
-      
-      function add(i, j){
-        a=parseInt(i);
-        b=parseInt(j);
-        var x = (isNaN(a)) ?  i: a;
-        var y = (isNaN(a)) ? j : b;
-        s = "add(" + i + ", " + j + ") : ";
-        document.write("<h2>" + s + (x+y) + "</h2>");
-      }
-      add(8,9);
-      add('8','9');
-      add("Hello World", "!!");
-      add("Hello World", 6);
-      todayDate();
-      document.write(mul(3,4));
-      document.write("<h3> The Function add()'s body: <br>" + add + "<br></h3>");
+      document.write("<br>x hoisted : possible in case of var : " + x);
+      var x = 10;
+      document.write("<br>x now post declaration : " + x);
+      x=20;
+      document.write("<br>x now post reassignment : " + x);
+      var y;
+      document.write("<br>y now post declaration without any assignment: " + y);
+      document.write("<br><br>")
+      var x=30;
+      fnVar();
+      function fnVar(){
+        document.write("<br>x global var : " + x);
+        var z=20;
+        document.write("<br>z local var : " + z);
+        if(5>4){
+          var p=10;
+        }
+        document.write("<br>p block var : " + p);
 
-      function todayDate(){
-        d = new Date();
-        document.write("<h2>Today's date is : " + d + "</h2>");
       }
 
+      document.write("<br>p is a local var in fnVar : " + p);
 
-	</script>
+
+
+	  </script>
+    <hr>
+    <script>
+      //document.write("<br>a cannot be hoisted for let : " + alet);
+      let alet = 10;
+      document.write("<br>a now post declaration : " + alet);
+      alet=20;
+      document.write("<br>a now post reassignment : " + alet);
+      let bLet;
+      document.write("<br>b now post declaration without any assignment: " + bLet);
+      document.write("<br><br>")
+      // let alet=30;
+      fnLet();
+      function fnLet(){
+        document.write("<br>x global let : " + alet);
+        let z=20;
+        document.write("<br>z local let : " + z);
+        if(5>4){
+          let p=10;
+          document.write("<br>p block let : " + p);
+        }
+        //document.write("<br>p block let : " + p);
+
+      }
+
+     
+
+	  </script>
+    <hr>
+    <script>
+      //document.write("<br>a cannot be hoisted for const : " + aconst);
+      const aconst = 10;
+      document.write("<br>a now post declaration : " + aconst);
+      // aconst=20;
+      // document.write("<br>a now post reassignment : " + aconst);
+      // const bconst;
+      // document.write("<br>b now post declaration without any assignment: " + bconst);
+      document.write("<br><br>")
+      // let alet=30;
+      fnConst();
+      function fnConst(){
+        document.write("<br>x global const : " + aconst);
+        const z=20;
+        document.write("<br>z local const : " + z);
+        if(5>4){
+          const p=10;
+          document.write("<br>p block const : " + p);
+        }
+        //document.write("<br>p block const : " + p);
+
+      }
+      </script>
         <hr>
         <br>
         <br>
