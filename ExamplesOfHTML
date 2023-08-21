@@ -1071,3 +1071,43 @@ document.write("<h1>This is from an external file</h1>"); -->
 </html>
 
 
+
+
+
+
+<html>    
+  <body>  
+    <h1> Switch Case <br>
+     Enter weekday in numbers (1-7): <input type="text" id="x"></h1>
+     <h2 id="res"> For the result click on button </h2>
+   <button onclick="fn();">Week Name</button>
+
+
+      <script>
+      function fn(){
+        var i = document.getElementById("x").value;
+        x = parseInt(i);
+        var s = "Week Name Entered is: "
+       switch(x){
+        case 1:
+          s += "Sunday";
+          //break;
+        case 2:
+          s += "Monday";
+          break;
+        default:
+          s = "Incorrect value entered";
+       }
+          document.getElementById("res").innerHTML = s;
+
+      }
+     
+      </script>
+      </h3>
+        <hr>
+        <br>
+        <br>
+  </body>
+</html>
+
+
