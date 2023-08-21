@@ -1,20 +1,28 @@
 <html>    
   <body>  
+    <h1>Function Example</h1>
     <script>
-		document.write("<h1>Logical (Shortcircuit) Operators : returns true or false</h1>") ;
-        document.write("<h2>AND && Operators (Compulsory) : returns true only if both operands are true</h2>") ;
-        document.write("<br>10>5 && 5>6 : T && F = F : "+ (10>5 && 5>6));	
-        document.write("<br>10>5 && 5<6 : T && T = T : "+ (10>5 && 5<6));	
-        document.write("<br>10<5 && 5<6 : F && T = F : "+ (10<5 && 5<6));	
-        document.write("<br>10<5 && 5>6 : F && F = F : "+ (10<5 && 5>6));	
-        document.write("<h2>OR || Operators (Optional): returns false only if both operands are false</h2>") ;
-        document.write("<br>10>5 || 5>6 : T || F = T : "+ (10>5 || 5>6));	
-        document.write("<br>10>5 || 5<6 : T || T = T : "+ (10>5 || 5<6));	
-        document.write("<br>10<5 || 5<6 : F || T = T : "+ (10<5 || 5<6));	
-        document.write("<br>10<5 || 5>6 : F || F = F : "+ (10<5 || 5>6));
-        document.write("<h2>NOT ! Operators (Negation): returns true for not false</h2>") ;
-        document.write("<br>! 10<5 : ! F = T : "+ !(10<5));	
-        document.write("<br>! 10>5 : ! T = F : "+ !(10>5));	
+      function mul(a, b){
+        s = "<h2>mul(" + a + ", " + b + ") : " + (a * b) + "</h2>";
+        return s;
+      }
+      
+      function add(i, j){
+        s = "add(" + i + ", " + j + ") : ";
+        document.write("<h2>" + s + (i+j) + "</h2>");
+      }
+      add(8,9);
+      add("Hello World", "!!");
+      todayDate();
+      document.write(mul(3,4));
+      document.write("<h3> The Function add()'s body: <br>" + add + "<br></h3>");
+
+      function todayDate(){
+        d = new Date();
+        document.write("<h2>Today's date is : " + d + "</h2>");
+      }
+
+
 	</script>
         <hr>
         <br>
