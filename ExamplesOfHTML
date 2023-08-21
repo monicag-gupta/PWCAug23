@@ -791,6 +791,42 @@ document.write("<h1>This is from an external file</h1>"); -->
 
 
 
+<html>    
+  <body>  
+    <h1>Function Example</h1>
+    <script>
+      function mul(a, b){
+        s = "<h2>mul(" + a + ", " + b + ") : " + (a * b) + "</h2>";
+        return s;
+      }
+      
+      function add(i, j){
+        s = "add(" + i + ", " + j + ") : ";
+        document.write("<h2>" + s + (i+j) + "</h2>");
+      }
+      add(8,9);
+      add("Hello World", "!!");
+      todayDate();
+      document.write(mul(3,4));
+      document.write("<h3> The Function add()'s body: <br>" + add + "<br></h3>");
+
+      function todayDate(){
+        d = new Date();
+        document.write("<h2>Today's date is : " + d + "</h2>");
+      }
+
+
+	</script>
+        <hr>
+        <br>
+        <br>
+  </body>
+</html>
+
+
+
+
+
 
 
 
