@@ -1028,3 +1028,46 @@ document.write("<h1>This is from an external file</h1>"); -->
   </body>
 </html>
 
+
+
+
+
+<html>    
+  <body>  
+    <h1> Events 
+   Enter x: <input type="text" id="x"></h1>
+   <h2 id="res"> Result : </h2>
+   <button onclick="fn();">Check Even Odd</button>
+
+
+      <script>
+      function fn(){
+        var a = document.getElementById("x").value;
+        document.getElementById("res").innerHTML = "Result : ";
+        var x = parseInt(a);
+        if(isNaN(x)){
+          if(a == "Shutdown"){
+            document.getElementById("res").innerHTML = a + " is an imp value. ";
+            document.getElementById("x").value="";
+          }
+          else{
+            document.getElementById("res").innerHTML += a + " is not a number. ";
+          }
+        }
+        else if(x % 2 == 0){
+          document.getElementById("res").innerHTML += a + " is Even. ";
+        }
+        else{
+          document.getElementById("res").innerHTML += a + " is Odd. ";
+        }
+      }
+     
+      </script>
+      </h3>
+        <hr>
+        <br>
+        <br>
+  </body>
+</html>
+
+
