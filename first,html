@@ -1,39 +1,35 @@
 <html>    
-  <body onload="fnLoad();">  
-    <h1> Events </h1>
-    <h2><div id="div1"></div></h2>
-    <pre>
-    <p onmouseover="fn1();" onmouseout="fn2();" onclick="fn3();" ondblclick="fn4();">
-      
-        Twinkle, twinkle, little star,
-        How I wonder what you are!
-        Up above the world so high,
-        Like a diamond in the sky.
-        Twinkle, twinkle, little star,
-        How I wonder what you are!
-      
-    </p>
-  </pre>
-    <h2><div id="div2"></div></h2>
-  <script>
-    function fnLoad(){
-      document.getElementById("div1").innerHTML = "Our site is loaded!!";
-    }
-    function fn1(){
-      document.getElementById("div2").innerHTML = "MouseOver the Poem!!";
-    }
-    function fn2(){
-      document.getElementById("div2").innerHTML = "MouseOut the Poem!!";
-    }
-    function fn3(){
-      document.getElementById("div2").innerHTML = "Clicked the Poem!!";
-    }
-    function fn4(){
-      document.getElementById("div2").innerHTML = "Dbl Clicked the Poem!!";
-    }
-    
-    
-    </script>
+  <body>  
+    <h1> Events 
+   Enter x: <input type="text" id="x"></h1>
+   <h2 id="res"> Result : </h2>
+   <button onclick="fn();">Check Even Odd</button>
+
+
+      <script>
+      function fn(){
+        var a = document.getElementById("x").value;
+        document.getElementById("res").innerHTML = "Result : ";
+        var x = parseInt(a);
+        if(isNaN(x)){
+          if(a == "Shutdown"){
+            document.getElementById("res").innerHTML = a + " is an imp value. ";
+            document.getElementById("x").value="";
+          }
+          else{
+            document.getElementById("res").innerHTML += a + " is not a number. ";
+          }
+        }
+        else if(x % 2 == 0){
+          document.getElementById("res").innerHTML += a + " is Even. ";
+        }
+        else{
+          document.getElementById("res").innerHTML += a + " is Odd. ";
+        }
+      }
+     
+      </script>
+      </h3>
         <hr>
         <br>
         <br>
