@@ -8,11 +8,17 @@
       }
       
       function add(i, j){
+        a=parseInt(i);
+        b=parseInt(j);
+        var x = (isNaN(a)) ?  i: a;
+        var y = (isNaN(a)) ? j : b;
         s = "add(" + i + ", " + j + ") : ";
-        document.write("<h2>" + s + (i+j) + "</h2>");
+        document.write("<h2>" + s + (x+y) + "</h2>");
       }
       add(8,9);
+      add('8','9');
       add("Hello World", "!!");
+      add("Hello World", 6);
       todayDate();
       document.write(mul(3,4));
       document.write("<h3> The Function add()'s body: <br>" + add + "<br></h3>");
