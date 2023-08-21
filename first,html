@@ -1,13 +1,38 @@
 <html>    
-  <body onload="fnLoad();" onunload="fnUnload();">  
-    <h1> load, unload</h1>
+  <body onload="fnLoad();">  
+    <h1> Events </h1>
+    <h2><div id="div1"></div></h2>
+    <pre>
+    <p onmouseover="fn1();" onmouseout="fn2();" onclick="fn3();" ondblclick="fn4();">
+      
+        Twinkle, twinkle, little star,
+        How I wonder what you are!
+        Up above the world so high,
+        Like a diamond in the sky.
+        Twinkle, twinkle, little star,
+        How I wonder what you are!
+      
+    </p>
+  </pre>
+    <h2><div id="div2"></div></h2>
   <script>
     function fnLoad(){
-      alert("site loaded!");
+      document.getElementById("div1").innerHTML = "Our site is loaded!!";
     }
-    function fnUnload(){
-      alert("Are you sure you wanna leave my site?");
+    function fn1(){
+      document.getElementById("div2").innerHTML = "MouseOver the Poem!!";
     }
+    function fn2(){
+      document.getElementById("div2").innerHTML = "MouseOut the Poem!!";
+    }
+    function fn3(){
+      document.getElementById("div2").innerHTML = "Clicked the Poem!!";
+    }
+    function fn4(){
+      document.getElementById("div2").innerHTML = "Dbl Clicked the Poem!!";
+    }
+    
+    
     </script>
         <hr>
         <br>
