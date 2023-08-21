@@ -1,31 +1,28 @@
 <html>    
   <body>  
-    <h1> Events 
-   Enter x: <input type="text" id="x"></h1>
-   <h2 id="res"> Result : </h2>
-   <button onclick="fn();">Check Even Odd</button>
+    <h1> Switch Case <br>
+     Enter weekday in numbers (1-7): <input type="text" id="x"></h1>
+     <h2 id="res"> For the result click on button </h2>
+   <button onclick="fn();">Week Name</button>
 
 
       <script>
       function fn(){
-        var a = document.getElementById("x").value;
-        document.getElementById("res").innerHTML = "Result : ";
-        var x = parseInt(a);
-        if(isNaN(x)){
-          if(a == "Shutdown"){
-            document.getElementById("res").innerHTML = a + " is an imp value. ";
-            document.getElementById("x").value="";
-          }
-          else{
-            document.getElementById("res").innerHTML += a + " is not a number. ";
-          }
-        }
-        else if(x % 2 == 0){
-          document.getElementById("res").innerHTML += a + " is Even. ";
-        }
-        else{
-          document.getElementById("res").innerHTML += a + " is Odd. ";
-        }
+        var i = document.getElementById("x").value;
+        x = parseInt(i);
+        var s = "Week Name Entered is: "
+       switch(x){
+        case 1:
+          s += "Sunday";
+          //break;
+        case 2:
+          s += "Monday";
+          break;
+        default:
+          s = "Incorrect value entered";
+       }
+          document.getElementById("res").innerHTML = s;
+
       }
      
       </script>
