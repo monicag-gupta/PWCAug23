@@ -1,0 +1,27 @@
+
+
+
+
+package pkg1;
+
+public class Hello {
+
+	 public static  void main(String[] args) {
+		var marks = 90;
+		if(marks < 50 ) {
+			System.out.println("Fail");
+		}
+		else if(marks < 75){
+			System.out.println("Pass");
+		}
+		else if(marks <100){
+			System.out.println("Excellent");
+		}
+		else {
+			System.out.println("Invalid marks");
+		}
+
+	}
+
+	
+}
