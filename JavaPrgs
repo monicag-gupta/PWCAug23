@@ -6,6 +6,56 @@
 
 
 
+
+package pkg1;
+
+public class MainEmployee {
+
+	public static void main(String[] args) {
+		Employee e1 = new Employee();
+		e1.input(101, "John", 10);
+		e1.print();
+		Employee e2 = new Employee();
+		e2.input(102, "Doe", 11);
+		e2.print();
+
+	}
+
+}
+
+
+
+
+
+
+
+
+package pkg1;
+
+public class Employee {
+    private int id;
+    private String name;
+    private int sal;
+    public void appraisal(int newSal){
+    	this.sal = newSal;
+    }
+    public void input(int id, String name, int sal) {
+    	this.id = id;
+    	this.name = name;
+    	this.sal = sal;
+    }
+    public void print() {
+    	System.out.println("The Employee details : id : " + id + " name : "  + name + " sal : " + sal);
+    }
+
+}
+
+
+
+
+
+
+
 package pkg1;
 
 public class Hello {
