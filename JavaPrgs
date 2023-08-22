@@ -10,6 +10,36 @@
 
 
 
+package pkg1;
+import java.util.Scanner; //already present in JDK
+
+public class Menu1 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		int x = sc.nextInt();
+		sc.nextLine();
+		System.out.println("The value enterd is : " + x);
+		System.out.println("Enter your name: ");
+		String n = sc.nextLine();
+		System.out.println("Welcome " + n + " to the world of Java!!");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 package pkg1;
 
