@@ -1,3 +1,58 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+package pkg1;
+
+public class Hello {
+
+	 public static  void main(String[] args) {
+		System.out.println("For Loop");
+		for(int i=0;i<10;i++) {
+			System.out.println("i = " + i );
+		}
+		int j=0;
+		System.out.println("While Loop: ");
+		while(j<10) {
+			System.out.println("j = " + j );
+			j++;
+		}
+		int i=0;
+		System.out.println("do .. While Loop: ");
+		 do {
+			System.out.println("i = " + i );
+			i++;
+		}while(i<10);
+		 
+		 
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package pkg1;
 
 public class Hello {
