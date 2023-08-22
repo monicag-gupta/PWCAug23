@@ -3,6 +3,43 @@
 
 
 
+package pkg1;
+import java.util.Scanner; //already present in JDK
+
+public class Menu1 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int ch;
+		String name= "";
+		while(true) {
+			System.out.println("Menu:\n1.Enter name.\n2.Display Name\n3.Exit\nEnter Choice:");
+			ch = sc.nextInt();
+			sc.nextLine();
+			if(ch==1) {
+				System.out.println("What is your name ? ");
+				name = sc.nextLine();
+			}
+			else if(ch==2) {
+				System.out.println("The name is : " + name);
+			}
+			else if(ch ==3) {
+				break;
+			}
+			else {
+				System.out.println("Incorrect choice entered!!(ch can be 1-3 only)");
+			}
+			
+		}
+	}
+
+}
+
+
+
+
+
 
 
 
