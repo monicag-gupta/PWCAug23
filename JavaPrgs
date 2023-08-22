@@ -1,3 +1,31 @@
+package pkg1;
+
+public class Hello {
+
+	 public static  void main(String[] args) {
+		var grade = 'A';
+		switch(grade) {
+		case 'A':
+			System.out.println("Excellent");
+			break;
+		case 'B':
+			System.out.println("Pass");
+			break;
+		case 'C':
+			System.out.println("Fail");
+			break;
+		default:
+			System.out.println("Invalid grade");
+			break;
+				
+		}
+	}
+
+	
+}
+
+
+
 
 
 
