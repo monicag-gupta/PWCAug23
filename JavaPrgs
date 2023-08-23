@@ -1,6 +1,180 @@
 
 
 
+Specialization and Generalization:
+
+
+package pkg2;
+
+public class MainInheritance1 {
+	public static void Trainer(Dinosur d) {
+		d.breathe();
+		d.eat();
+		if(d instanceof DinosurFly) {
+			DinosurFly df = (DinosurFly)d;
+			df.fly();
+		}
+		if(d instanceof DinosurCrawl) {
+			DinosurCrawl dc = (DinosurCrawl)d;
+			dc.crawl();
+		}
+		if(d instanceof DinosurSwim) {
+			DinosurSwim ds = (DinosurSwim)d;
+			ds.swim();
+		}
+		if(d instanceof DinosurWalk) {
+			DinosurWalk ds = (DinosurWalk)d;
+			ds.walk();
+		}
+	}
+
+	public static void main(String[] args) {
+		System.out.println("A flying dinosur Training: ");
+		Trainer(new DinosurFly());
+		System.out.println("A swimmer dinosur Training: ");
+		Trainer(new DinosurSwim());
+		System.out.println("A normal dinosur Training: ");
+		Trainer(new Dinosur());	
+		System.out.println("A Walking dinosur Training: ");
+		Trainer(new DinosurWalk());
+		
+		
+//		Dinosur d1 = new DinosurFly(); //DinosurFly is generalized into Dinosur. Upcasting
+//		d1.breathe();
+//		d1.eat();
+////		System.out.println(d1 instanceof Dinosur); //d1 is a Dinosur //true
+////		System.out.println(d1 instanceof DinosurFly); //d1 is a DinosurFly //true
+////		System.out.println(d1 instanceof DinosurCrawl); //d1 is not a DinosurCrawl //false
+////		System.out.println(d1 instanceof DinosurSwim); //d1 is not a DinosurSwim //false
+//		if(d1 instanceof DinosurFly) {
+//			DinosurFly df1 = (DinosurFly) d1; //downcasting // specialized casting
+//			df1.fly(); //specialization
+//		}
+//		if(d1 instanceof DinosurCrawl) {
+//			DinosurCrawl dc1 = (DinosurCrawl) d1; //downcasting // specialized casting
+//			dc1.crawl(); //specialization
+//		}
+//		
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+
+package pkg2;
+
+public class DinosurWalk extends Dinosur{
+	
+	public DinosurWalk() {
+		System.out.println("Walking DinosurChild is created");
+	}
+	public void walk() {
+		System.out.println("A Child4 Dinosur can walk");
+	}
+}
+
+
+
+
+
+
+
+package pkg2;
+
+public class DinosurSwim extends Dinosur{
+	
+	public DinosurSwim() {
+		System.out.println("Flying DinosurChild is created");
+	}
+	public void swim() {
+		System.out.println("A Child3 Dinosur can swim");
+	}
+}
+
+
+
+
+
+
+package pkg2;
+
+public class DinosurCrawl extends Dinosur{
+	
+	public DinosurCrawl() {
+		System.out.println("Crawling DinosurChild is created");
+	}
+	public void crawl() {
+		System.out.println("A Child2 Dinosur can crawl");
+	}
+	public void eat() {
+		System.out.println("A Dinosur eats any thing (veg, non-veg)");
+	}
+}
+
+
+
+
+
+
+
+
+package pkg2;
+
+public class DinosurFly extends Dinosur{
+	
+	public DinosurFly() {
+		System.out.println("Flying DinosurChild is created");
+	}
+	public void fly() {
+		System.out.println("A Child1 Dinosur can fly");
+	}
+}
+
+
+
+
+
+
+
+
+package pkg2;
+
+public class Dinosur {
+	public Dinosur() {
+		System.out.println("DinosurPa is created");
+	}
+	public void breathe() {
+		System.out.println("A Dinosur can breathe in Oxygen");
+	}
+	public void eat() {
+		System.out.println("A Dinosur eats vegetables");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 package pkg2;
 
