@@ -2,6 +2,88 @@
 
 
 
+
+
+
+
+package pkg2;
+class Printer{
+	//Polymorphism : Overloading : Compile time polymorphism as the function is loaded at compile time
+	//3 cases of Overloading:
+	//a. Overload case with no of param is diff
+	//b. overload case as datatype of param is diff
+	//c. overload as series of parameter is diff
+	
+	void print() { //1
+		System.out.println("No Parameter Printing is done!");
+	}
+	void print(String s) { //2: Overload case with 1 as no of param is diff
+		System.out.println("String Parameter " + s + " Printing is done!");
+	}
+	void print(int s) { 
+		//3: Overload case with 1 as no of param is diff, and
+		// overload case with 2 as datatype of param is diff
+		System.out.println("Int Parameter " + s + " Printing is done!");
+	}
+	void print(int i, String s) { 
+		//4: Overload case with 1,2,3  as no of param is diff
+		System.out.println("Int Parameter " + i + " and " + "String Parameter " + s +" Printing is done!");
+	}
+	void print(String s, int i) { 
+		//5: Overload case with 1,2,3  as no of param is diff
+		//  overload with case 4 as series of parameter is diff
+		System.out.println("String Parameter " + s + " and " + "Int Parameter " + i +" Printing is done!");
+	}
+}
+
+//Polymorphism with Override:
+//It is a runtime polymorphism, as we know about which fn is called only at run time
+//The function signature should be the same in both cases
+//The classes are different and have parent  to child relationship 
+class PaClass{
+	public void fn() {
+		System.out.println("This is a fn in parent class");
+	}
+}
+
+class ChildClass extends PaClass{
+	@Override 
+	public void fn() {
+		System.out.println("This is a fn in Child class");
+	}
+}
+
+public class PolymorphismMain {
+
+	public static void main(String[] args) {
+		Printer p1=new Printer();
+		p1.print();
+		p1.print("Hello");
+		p1.print(100);
+		p1.print(102, "Hello102");
+		p1.print("Hello103", 103);
+		
+		PaClass p=new PaClass();
+		p.fn(); // parent fn
+		PaClass p2=new ChildClass();
+		p2.fn(); //Child fn
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 Interface:
 100% abstraction : Methods won’t have any body
 Implementation of an interface makes the class compulsorily implement all methods of interface
