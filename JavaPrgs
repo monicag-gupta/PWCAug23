@@ -1,3 +1,56 @@
+package pkg2;
+class Std{
+	String name;
+	int age;
+	public Std(String name, int age) {
+		this.name = name;
+		setAge(age);
+	}
+	
+	
+	
+	public int getAge() {
+		if(age == 0) {
+			System.out.print("\n Age is 0 as not set through setter\n");
+		}
+		return age;
+	}
+
+
+
+	public void setAge(int age) {
+		if(age > 0 && age <150)
+			this.age = age;
+		else
+			System.out.println("Invalid age entered!(A valid age is 0 -150)");
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Std [name=" + name + ", age=" + getAge() + " years ]";
+	}
+	
+}
+public class PropMain {
+
+	public static void main(String[] args) {
+		
+		Std s1=new Std("Abc", 10);
+		System.out.println(s1);
+	}
+
+	
+
+}
+
+
+
+
+
+
+
 
 
 
