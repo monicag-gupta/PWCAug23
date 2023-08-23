@@ -2,6 +2,70 @@
 
 
 
+package pkg2;
+abstract class GUIOS{
+	public void common() {
+		System.out.print("\nMouse, files, Desktop, ");
+	}
+	public abstract void dir() ;
+	
+}
+class WinOS extends GUIOS{
+	public void dir() {
+		System.out.print("Folder, ");
+	}
+	public void cmd() {
+		System.out.println("Cmd line \n");
+	}
+}
+class LinuxOS extends GUIOS{
+	public void dir() {
+		System.out.print("Dirs, ");
+	}
+	public void terminal() {
+		System.out.println("Terminal \n");
+	}
+}
+class MacOS extends GUIOS{
+	public void dir() {
+		System.out.print("Dirs, ");
+	}
+	public void terminal() {
+		System.out.println("Terminal \n");
+	}
+}
+
+public class OSMain {
+
+	public static void main(String[] args) {
+		GUIOS os1 = new WinOS();
+		os1.common();
+		os1.dir();
+		if(os1 instanceof WinOS) {
+			WinOS os= (WinOS)os1;
+			os.cmd();
+		}
+		if(os1 instanceof LinuxOS) {
+			LinuxOS os= (LinuxOS)os1;
+			os.terminal();
+		}
+		if(os1 instanceof MacOS) {
+			MacOS os= (MacOS)os1;
+			os.terminal();
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
