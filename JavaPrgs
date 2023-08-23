@@ -2,6 +2,52 @@
 
 
 
+package pkg2;
+
+class Student{
+	int id;
+	String name;
+	int fee;
+	public Student() {
+		id = 100;
+		name = "Guest";
+		fee = 0;
+	}
+	public Student(int id, String name, int fee) {
+		this.id = id;
+		this.name = name;
+		this.fee = fee;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", fee=" + fee + "]";
+	}
+	
+	
+	
+}
+
+public class ConstMain {
+
+	public static void main(String[] args) {
+		Student[] stds = new Student[5];
+		stds[0] = new Student(101,"Aishwariya",10000);
+		stds[1] = new Student(102,"Sharukh Khan",100000);
+		stds[2] = new Student();
+		stds[3] = new Student(104,"Charlie Chaplin",90000);
+		stds[4] = new Student(105,"All of You",0);
+		for(Student s : stds) {
+			System.out.println(s);
+		}
+
+	}
+
+}
+
+
+
+
+
 
 
 
