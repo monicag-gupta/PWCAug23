@@ -1,6 +1,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 Specialization and Generalization:
 
 
@@ -31,8 +43,8 @@ public class MainInheritance1 {
 	public static void main(String[] args) {
 		System.out.println("A flying dinosur Training: ");
 		Trainer(new DinosurFly());
-		System.out.println("A swimmer dinosur Training: ");
-		Trainer(new DinosurSwim());
+		System.out.println("A crawling dinosur Training: ");
+		Trainer(new DinosurCrawl());
 		System.out.println("A normal dinosur Training: ");
 		Trainer(new Dinosur());	
 		System.out.println("A Walking dinosur Training: ");
@@ -61,6 +73,7 @@ public class MainInheritance1 {
 	}
 
 }
+
 
 
 
