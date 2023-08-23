@@ -2,6 +2,34 @@
 
 
 
+
+
+
+
+
+Abstract Class:
+
+An abstract class requires abstract keyword before class keyword
+An abstract class cannot be initialized with new keyword
+An abstract class can have references created which initialize according to child classes
+An abstract class can have abstract functions
+An abstract function cannot have a body
+An abstract function have to be compulsorily implemented by child classes
+The implementation is not compulsory if the child class is also abstract
+An Abstract class have 0 – 100 % abstraction (it can have no method to be abstract or all methods abstract)
+An Abstract class is used purely for Inheritance.
+
+
+
+
+
+
+
+
+
+
+
+
 package pkg2;
 abstract class GUIOS{
 	public void common() {
