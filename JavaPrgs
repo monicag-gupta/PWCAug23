@@ -2,6 +2,62 @@
 
 
 
+package pkg2;
+
+public class MainInheritance1 {
+
+	public static void main(String[] args) {
+		Child c1=new Child();
+		c1=null;
+		System.gc();
+	}
+
+}
+
+
+
+
+
+
+
+package pkg2;
+
+public class Child extends Pa{
+	public Child() {
+		System.out.println("Child is created");
+	}
+	public void finalize() {
+		System.out.println("Child is GC");
+	}
+}
+
+
+
+
+
+
+
+
+
+package pkg2;
+
+public class Pa {
+	public Pa() {
+		System.out.println("Pa is created");
+	}
+	public void finalize() {
+		System.out.println("Pa is GC");
+	}
+
+}
+
+
+
+
+
+
+
+
 
 
 package pkg2;
