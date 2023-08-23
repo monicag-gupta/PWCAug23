@@ -4,6 +4,92 @@
 
 
 
+package pkg2;
+
+public class MainEmployee {
+	public static void sum(int a, int b) {
+		int c = a+b;
+		System.out.println(c);
+	}
+	public static int mul (int a, int b) {
+		return a * b;
+	}
+
+	public static void main(String[] args) {
+		int x=10; //local variable : needs initialization before usage
+		System.out.println(x);
+		Employee.compName="Google";
+		//Employee.id =100;
+		Employee e1 = new Employee();
+		e1.id = 101;
+		e1.compName = "Gmail";
+		e1.input(101, "John", 10);
+		e1.print();
+		Employee e2 = new Employee();
+		e2.input(102, "Doe", 11);
+		e2.print();
+		Employee e3 = new Employee();
+		e3.print();
+		System.out.println("\n\nE3 printed out:");
+		System.out.println(e3);
+		
+		sum(5,6);
+		int res = mul(7,8);
+		System.out.println(res);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package pkg2;
+
+public class Employee {
+    public int id; //instance Variable defaults to 0 as int
+    private String name;//instance Variable defaults to null as an Object
+    private int sal;
+    public static String compName; //Class variable
+    public Employee() {
+    	id=100;
+    	name="Guest";
+    	sal=0;
+    }
+    
+    public void appraisal(int newSal){
+    	this.sal = newSal;
+    }
+    public void input(int id, String name, int sal) { //parameter variables, get the values from function call
+    	this.id = id;
+    	this.name = name;
+    	this.sal = sal;
+    }
+    public void print() {
+    	System.out.println("The Employee details : id : " + id + " name : "  + name + " sal : " + sal +
+    			"    Works in : " + compName);
+    }
+    public String toString() {
+    	return "Emp : id : " + id + " name : "  + name + " sal : " + sal + " Works in : " + compName;
+    }
+
+}
+
+
+
+
+
+
+
 
 
 
