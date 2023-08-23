@@ -2,6 +2,131 @@
 
 
 
+Interface:
+100% abstraction : Methods won’t have any body
+Implementation of an interface makes the class compulsorily implement all methods of interface
+Multiple interface can be implemented by a single class (Multiple inheritance)
+Only Interfaces are responsible for frameworks, libraries, project model, blueprints of classes, abstraction model, SOLID design principles, Dependency Injection
+
+
+
+
+package pkg2;
+
+public interface Emp {
+	int reembursement(); //by default all methods of interfaces are public and abstract
+	void input(int id, String name, int sal);
+}
+
+
+
+package pkg2;
+
+public abstract class Empl implements Emp{
+
+	int id;
+	String name;
+	int sal;
+	
+	
+	@Override
+	public int reembursement() {
+		// TODO Auto-generated method stub
+		return sal;
+	}
+
+	@Override
+	public String toString() {
+		return "Emp [id=" + id + ", name=" + name + ", sal=" + sal + "]";
+	}
+
+	@Override
+	public void input(int id, String name, int sal) {
+		this.id=id;
+		this.name=name;
+		this.sal=sal;
+		
+	}
+}
+
+
+
+
+package pkg2;
+
+public class SalEmp extends Empl {
+	public int getSal() {
+		return sal/12;
+	}
+
+	@Override
+	public String toString() {
+		return "SalEmp: " + super.toString();
+	}
+	
+
+}
+
+
+
+
+
+package pkg2;
+
+public class WagesEmp extends Empl {
+	public int getWages() {
+		return sal/30;
+	}
+
+	@Override
+	public String toString() {
+		return "WagesEmp: " + super.toString();
+	}
+	
+
+}
+
+
+
+
+
+package pkg2;
+
+public class EmpMain {
+	static void hire(Emp e) {
+		e.input(100, "Visitor", 12000);
+		int sal = e.reembursement();
+		System.out.println("sal is:" + sal);
+		if(e instanceof SalEmp)
+		{
+			SalEmp ee=(SalEmp)e;
+			int s = ee.getSal();
+			System.out.println("sal for a month is:" + s);
+		}
+		if(e instanceof WagesEmp)
+		{
+			WagesEmp ee=(WagesEmp)e;
+			int s = ee.getWages();
+			System.out.println("wages for 1 day is:" + s);
+		}
+		System.out.println(e);
+		
+	}
+
+	public static void main(String[] args) {
+		hire(new SalEmp());
+		hire(new SalEmp());
+		hire(new WagesEmp());
+	}
+}
+
+
+
+
+
+
+
+
 
 
 
