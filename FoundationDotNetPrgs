@@ -4,6 +4,39 @@
 
 
 
+using System;
+
+
+class Program
+{
+    public void fn(in int x, out int sq,out int cu, out int sa)
+    {
+        //x = x + 10;
+        sq = x * x;
+        cu = x * x * x;
+        sa = x + x;
+        
+    } 
+    static void Main()
+    {
+        int x = 12;
+        int sq, cu, sa;
+        new Program().fn(in x, out sq, out cu, out sa);
+        Console.WriteLine("x = " + x + " \nsquare = " + sq + "\nCube = " + cu + "\nSelf addition = " + sa);
+
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
