@@ -2,6 +2,41 @@
 
 
 
+using System;
+class Pa
+{
+    public virtual void fn()
+    {
+        Console.WriteLine("fn in Pa");
+    }
+}
+class Child : Pa
+{
+    public override void fn()
+    {
+        Console.WriteLine("fn in Child");
+    }
+}
+class Program
+{
+    
+    static void Main()
+    {
+        Pa p2=new Pa();
+        p2.fn();
+        Pa p = new Child();
+        p.fn();
+        Child ch = new Child();
+        ch.fn();
+        
+    }
+}
+
+
+
+
+
+
 
 
 
