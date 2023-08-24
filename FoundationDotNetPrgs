@@ -1,6 +1,37 @@
 
 
 
+
+
+
+
+
+using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 1, 4, 7, 2, 8 };
+        for(int i=0; i<arr.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.Xml.Linq;
 
