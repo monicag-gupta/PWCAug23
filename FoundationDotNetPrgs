@@ -2,6 +2,53 @@
 
 
 
+using System;
+
+abstract class HR
+{
+    public abstract void leave();
+}
+interface IEmp
+{
+    void appraisal();
+}
+class Emp : HR, IEmp
+{
+    public void appraisal()
+    {
+        Console.WriteLine("The Interface Method is Implemented");
+    }
+
+    public override void leave()
+    {
+        Console.WriteLine("The Abstract class Method is Implemented/Extended");
+    }
+}
+
+class Program
+{
+    
+    static void Main()
+    {
+        IEmp e1 = new Emp();
+        e1.appraisal();
+        HR e2 = new Emp();
+        e2.leave();
+        Emp e3= new Emp();
+        e3.appraisal();
+        e3.leave();
+        
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
