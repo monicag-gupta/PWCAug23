@@ -2,6 +2,71 @@
 
 
 
+
+
+
+
+using System;
+
+class Printer
+{
+    public void print()
+    {
+        Console.WriteLine("Print()");
+
+    }
+    public void print(int i)
+    {
+        Console.WriteLine("Print(int" +i+ " )");
+
+    }
+    public void print(string i)
+    {
+        Console.WriteLine("Print(string " + i+ " )");
+
+    }
+    public void print(int i, string s)
+    {
+        Console.WriteLine("Print(int " + i + ", string " + s + " )");
+
+    }
+    public void print(string i, int s)
+    {
+        Console.WriteLine("Print(string " + i + ", int " + s + " )");
+
+    }
+}
+
+class Program
+{
+    
+    static void Main()
+    {
+        Printer p = new Printer();
+        p.print();
+        p.print(5);
+        p.print("Hello");
+        p.print(3, "str");
+        p.print("another_str", 5);
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 abstract class HR
