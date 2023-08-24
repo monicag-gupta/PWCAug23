@@ -3,6 +3,58 @@
 
 
 
+
+
+
+
+using System;
+
+
+class Program
+{
+    static int[] filterEvn(int[] arr)
+    {
+        int[] arr2 = new int[arr.Length];
+        int j = 0;
+        for(int i  = 0; i < arr.Length; i++)
+        {
+            if (arr[i] %2 == 0)
+            {
+                arr2[j++] = arr[i];
+            }
+        }
+        int[] arr3 = new int[j];
+        for (int i = 0; i < j; i++)
+            arr3[i] = arr2[i];
+
+        return arr3;
+    }
+    static void Main()
+    {
+        int[] eles = new int[6];
+
+        int[] arr = { 1, 4, 7, 2, 8 };
+        foreach(int i in arr)
+        {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("Even numbers: ");
+        foreach(int i in filterEvn(arr))
+        {
+            Console.Write(i + ",  ");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 using System;
 
 
