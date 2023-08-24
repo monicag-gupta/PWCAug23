@@ -2,6 +2,14 @@
 
 
 
+
+
+
+
+
+
+
+
 using System;
 
 
@@ -13,8 +21,13 @@ class Program
         byte x = 10;
         byte z = 20;
         byte y = (byte)(x + z); //(byte) ((int)x + 20);
+        x += z;
+        x++;
     }
 }
+
+
+
 
 
 
