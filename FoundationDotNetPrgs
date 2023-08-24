@@ -1,0 +1,14 @@
+using System;
+class Abc { 
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter your name");
+        string name=Console.ReadLine();
+        Console.WriteLine("Enter a number: ");
+        int i = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Entered name is: " + name);
+        Console.WriteLine("Entered number's square is : " + (i * i));
+            
+    }
+}
+
