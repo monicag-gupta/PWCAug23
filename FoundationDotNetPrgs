@@ -1,5 +1,80 @@
 
 
+
+using System;
+using System.Xml.Linq;
+
+namespace EmpSpace
+{
+    public class Emp
+    {
+        private int id = 101;
+        public string name = "guest";
+        protected int age = 100;
+        internal string company = "Abc";
+        protected internal string email = "a@abc.com";
+
+        public void print()
+        {
+            Console.WriteLine("Id  is private: " + id);
+            Console.WriteLine("public name : " + name);
+            Console.WriteLine("protected age : " + age);
+            Console.WriteLine("internal company: " + company);
+            Console.WriteLine("Protected internal email : " + email);
+        }
+    }
+    class SalEmp : Emp
+    {
+        public void print()
+        {
+            Console.WriteLine("Id not accessible: It is private: ");
+            Console.WriteLine("public name : " + name);
+            Console.WriteLine("protected age : " + age);
+            Console.WriteLine("internal company: " + company);
+            Console.WriteLine("Protected internal email : " + email);
+        }
+    }
+    class Auditor
+    {
+        public void print()
+        {
+            Emp e = new Emp();
+            Console.WriteLine("Id not accessible: It is private: ");
+            Console.WriteLine("public name : " + e.name);
+            Console.WriteLine("protected age ; Not accessible here, as Auditor is not child of Emp ");
+            Console.WriteLine("internal company: " + e.company);
+            Console.WriteLine("Protected internal email : " + e.email);
+        }
+    }
+    class Abc
+    {
+        static void Main(string[] args)
+        {
+            Emp e = new Emp();
+            e.print();
+            SalEmp e2 = new SalEmp();
+            e2.print();
+            Auditor e3 = new Auditor();
+            e3.print();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 class Emp
