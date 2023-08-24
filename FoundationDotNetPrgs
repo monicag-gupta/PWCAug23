@@ -7,6 +7,51 @@
 
 
 
+using System;
+
+class Emp
+{
+    internal int id;
+    internal string name;
+    internal int sal;
+    public Emp() { }
+    public Emp(int id, string name, int sal)
+    {
+        this.id = id;
+        this.name = name;
+        this.sal = sal;
+    }
+
+    public override string ToString()
+    {
+        return "Emp: id: " +id + " name : " + name + " sal : "+ sal;
+    }
+}
+class SalEmp : Emp { 
+    public SalEmp():base() { }
+    public SalEmp(int id, string name, int sal) : base(id,name,sal)   { }
+}
+class Program
+{
+ 
+    static void Main()
+    {
+        Emp e = new SalEmp(101, "abc", 10000);
+        Console.WriteLine("e is an Emp?  " + (e is Emp)); // checks if e is an instance of Emp: returns T or F
+        Console.WriteLine("e is an SalEmp?  " + (e is SalEmp));
+
+        SalEmp s = e as SalEmp; // returns e if e is Emp elese returns null
+        if(s != null)
+            Console.WriteLine(s);
+    }
+}
+
+
+
+
+
+
+
 
 
 
