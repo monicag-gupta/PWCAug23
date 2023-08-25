@@ -1,0 +1,79 @@
+package pkg3;
+class Address{
+	String state;
+	String city;
+	public Address(String state, String city) {
+		this.state = state;
+		this.city = city;
+	}
+	public Address() {}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	@Override
+	public String toString() {
+		return "Address [state=" + state + ", city=" + city + "]";
+	}
+	
+}
+
+class Person{
+	String name;
+	Address address;
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", address=" + address + "]";
+	}
+	public Person(String name, Address address) {
+		this.name = name;
+		this.address = address;
+	}
+	public Person() {}
+	public Person(Person p) {
+		this.name = p.name;
+		this.address = new Address(p.address.state,p.address.city);
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+}
+
+public class Hello {
+
+	public static void main(String[] args) {
+		
+		Address a1=new Address("Assam", "Ghy");
+		Address a2=new Address("WB", "Kolkatta");
+		Person p1=new Person("Abc",a1);
+		Person p2 = new Person(p1);
+		System.out.println("Before address change in p1");
+		System.out.println("P1: " + p1);
+		System.out.println("P2 : "+ p2);
+		a1.setCity("WB");
+		a1.setState("Kolkatta");
+		//p1.setAddress(a2);
+		System.out.println("After address change in p1");
+		System.out.println("P1: " + p1);
+		System.out.println("P2 : "+ p2);
+	}
+
+}
