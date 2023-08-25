@@ -1,0 +1,65 @@
+Employees.cs
+
+
+using System;
+
+namespace Prj2Day2Win
+{
+    public class Employee
+    {
+        private int id;
+        private string name;
+        public Employee() { }
+        public Employee(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
+
+        public override string? ToString()
+        {
+            return "The details of the Employee: ID : " + id + " Name : " + name;
+        }
+        public int getId()
+        {
+            return id;
+
+        }
+        public string getName()
+        {
+            return name;
+
+        }
+
+    }
+    public  class Employees
+    {
+        Employee[] emps = new Employee[10000];
+        int tos = 0;
+        public Employees()
+        {
+            emps[tos++] = new Employee(101,"James");
+            emps[tos++] = new Employee(102, "Doe");
+            emps[tos++] = new Employee(103, "Robert Martin");
+            emps[tos++] = new Employee(104, "Tim Berner Lee");
+            emps[tos++] = new Employee(105, "James Gosling");
+        }
+        public string getEmp(int id)
+        {
+            for(int i=0; i<tos; i++)
+            {
+                if (emps[i].getId() == id)
+                {
+                    return emps[i].ToString();
+                }
+            }
+            return "Emp Not Found";
+        }
+
+        public void addEmp(int id, string name)
+        {
+            emps[tos++] = new Employee(id, name);
+        }
+
+    }
+}
