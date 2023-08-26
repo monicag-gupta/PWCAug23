@@ -2,6 +2,47 @@
 
 
 
+
+
+
+
+<html> <body> 
+    <h1>In JS: </h1>
+    <p id="a"></p>
+    <script>
+        const arr = new Array("BMW", "Volvo", "Saab", "Ford");
+        var s="<h2>For in loop: </h2>";
+        for(let i in arr){
+            s += "arr[i]: " + arr[i] + "<Br>";
+        }
+        s+="<h2>For as loop: </h2>";
+        for(let j of arr){
+            s += "j: " + j + "<Br>";
+        }
+        document.getElementById("a").innerHTML = s;
+    </script>
+    <hr>
+    <h1>In PHP: </h1>
+    <?php 
+    $arr=array("one", "two", "three"); 
+    foreach ($arr as $value) { 
+        echo "Value: " . $value . "<br />"; 
+    } 
+    ?> 
+</body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>  
 	<head>  
 		<title>Let us count !!!</title>
