@@ -5,6 +5,29 @@
 
 
 
+Data type	Description
+int, integer	: Whole numbers (i.e., numbers without a decimal point).
+float, double :	Real numbers (i.e., numbers containing a decimal point).
+String : Text enclosed in either single ('') or double ("") quotes.
+bool, Boolean :	True or false.
+array	: Group of elements of the same type.
+object :	Group of associated data and methods.
+Resource :	An external data source.
+NULL :	No value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
