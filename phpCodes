@@ -15,6 +15,17 @@ and click on "go" button at the bottom of the page
 
 
 
+click on sql button at the top and type in the code window:
+
+INSERT INTO `product` (`ProductName`, `ProductPrice`, `ProductDiscount`) VALUES('Book PHP', 1500, 10);
+INSERT INTO `product` (`ProductName`, `ProductPrice`, `ProductDiscount`) VALUES('Book PHPMyAdmin', 1000, 5);
+
+and click on "go" button at the bottom of the page
+
+
+
+
+
 
 
 
