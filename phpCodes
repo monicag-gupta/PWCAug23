@@ -2,6 +2,81 @@
 
 
 
+<html>  
+	<head>  
+		<title>Let us count !!!</title>
+	</head>
+ 	<body>
+        <h1>While loop</h1>
+		<?php
+			$limit = 5;
+			echo "<h2> Let us count from 1 to $limit </h2><br />";
+			$count = 1;
+			while ($count <= $limit)
+			{
+				echo "counting $count of $limit <br>";
+				$count++;
+			}
+		?>
+        <hr>
+        <h1>do..While loop</h1>
+
+        <?php 
+			$i=0; 
+			do { 
+				$i++; 
+				echo "The number is " . $i . "<br />"; 
+			} 
+			while ($i<5); 
+		?> 
+        <hr>
+        <h1>for loop</h1>
+
+
+        <?php 
+          for ($i=1; $i<=5; $i++) 
+          { 
+	        echo "Hello World!: $i times!<br />"; 
+          } 
+      ?> 
+
+
+    </body>
+<html>
+
+
+
+
+
+
+
+
+Example
+<html>  
+	<head>  
+		<title>Let us count !!!</title>
+	</head>
+ 	<body>
+		<?php
+			$limit = 10;
+			echo "<h2> Let us count from 1 to $limit </h2><br />";
+			$count = 1;
+			while ($count <= $limit)
+			{
+				echo "counting $count of $limit <br>";
+				$count++;
+			}
+		?>
+    </body>
+<html>
+
+
+
+
+
+
+
+
 
 
 
