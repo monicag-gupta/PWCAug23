@@ -1,4 +1,31 @@
 
+
+delete.php
+
+
+<html> <body> 
+    <?php
+        $servername = "localhost";$username = "root";
+        $password = "";$dbname = "IndMart";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $sql = "DELETE from product where ProductDiscount = 20";
+        if ($conn->query($sql) === TRUE) {
+            echo "New record deleted successfully";
+        } 
+        $conn->close();
+    ?>
+</body> </html>
+
+
+
+
+
+
+
+
+
+
+
 update.php
 
 
@@ -10,7 +37,7 @@ update.php
         $sql = "UPDATE product set ProductName = 'MySQL eBook'
             where ProductDiscount = 20";
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+            echo "New record updated successfully";
         } 
         $conn->close();
     ?>
