@@ -1,3 +1,27 @@
+
+
+
+PHP super global variables:
+
+$GLOBALS : Contains any global variables that are accessible for the local script. The variable names are used to select which part of the array to access.
+$_SERVER : Contains information about the web server environment. Example $_SERVER["PHP_SELF"] contains the name of the running script.
+$_GET : Contains information from GET requests (a form submission). 
+$_POST : Contains information from POST requests (another type of form submission). 
+$_COOKIE : Contains information from HTTP cookies.
+$_FILES : Contains information from POST file uploads.
+$_ENV : Contains information about the scripts environment.
+$_REQUEST : Contains information from user inputs. $_GET or $_POST should be used instead of $_REQUEST as they are more specific.
+$_SESSION : Contains information from any variables registered in a session.
+
+
+
+
+
+
+
+
+
+
 <html>
     <body>
     <?PHP 
