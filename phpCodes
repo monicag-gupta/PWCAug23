@@ -2,6 +2,32 @@
 
 
 
+<html>
+	<body>
+    <h1>
+        This is a page
+        <p id="a"></p>
+        <script>
+            var d = new date();
+            document.getElementById("a").innerHTML = ("This is the date at client browser : " + d);
+
+        </script>
+    </h1>
+	<?php
+        $d1 = date('d/m/y');
+        echo "<h1>Current date in full at server : $d1 </h1>";
+		$d=date("D"); 
+		if ($d=="Sat") 
+			echo "Have a nice weekend!"; 
+		else 
+			echo "Have a nice day!";			
+	?> 
+	</body>
+</html>
+
+
+
+
 
 
 
