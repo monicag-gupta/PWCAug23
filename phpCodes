@@ -6,6 +6,41 @@
 
 
 
+
+<html> <body> 
+    <?php
+        $counter=-9;
+        for (;$counter<10;$counter++){
+            //check for division by zero
+            if ($counter==-3){
+                echo "Skipping to avoid division by -3.<br>";
+                continue;
+            }
+            if ($counter == 0){
+                echo "Stopping to avoid division by zero.";
+                break;
+            }
+            // if($counter == -6)
+            // {
+            //     echo "Exiting at -6";
+            //     exit;
+            // }
+            echo "100/$counter :",100/$counter,"<br />";
+        }
+        echo "<br><br>Php ends";
+    ?> 
+</body> </html>
+
+
+
+
+
+
+
+
+
+
+
 <html> <body> 
     <h1>In JS: </h1>
     <p id="a"></p>
