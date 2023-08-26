@@ -2,6 +2,64 @@
 
 
 
+
+
+
+
+
+
+<html>
+    <body>
+    <?PHP 
+        echo 'I know how <br> to run a PHP Program in XAMPP! <br />'; 
+    ?> 
+    This is test.php File.<br>
+    <hr>
+    <?php 
+        echo $_SERVER["PHP_SELF"]; 
+        define("nl","<br>");
+        print(nl."Hello".nl."World");
+        echo nl."FIle is: ".__FILE__;
+        echo nl."This is line Number: : ".__LINE__;
+    ?>
+    <hr>
+    <?php
+        $foo = 25;		// Numerical variable
+        $bar = "Hello<br>";	// String variable
+
+        echo $bar;		// Outputs Hello
+        echo $foo,$bar;	// Outputs 25Hello
+        echo "<br>5x5=",$foo;	// Outputs 5x5=25
+        echo "<br>5x5=$foo";	// Outputs 5x5=25
+        echo "<br>5x5=\$foo";	// Outputs 5x5=$foo
+        echo '<br>5x5=$foo';	// Outputs 5x5=$foo
+    ?> 
+    <hr>
+    <?php
+		$a=15;
+		$b=30;
+		$total=$a+$b;
+		//Print $total;
+		Print "<p><h1>total is: $total</h1></p>";
+		// total is 45
+	?> 
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
     <body>
     <?PHP 
