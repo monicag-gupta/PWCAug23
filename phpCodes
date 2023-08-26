@@ -2,13 +2,18 @@
 
 
 
+
+
+
+
+
 <html>
 	<body>
     <h1>
         This is a page
         <p id="a"></p>
         <script>
-            var d = new date();
+            var d = new Date();
             document.getElementById("a").innerHTML = ("This is the date at client browser : " + d);
 
         </script>
