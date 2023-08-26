@@ -1,5 +1,53 @@
 
 
+
+
+
+ConnectionCheck.php:
+
+
+
+<html> <body> 
+<?php
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+
+	// Check connection
+	if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+	}
+	echo "Connected successfully";
+	mysqli_close($conn);
+?> 
+</body> </html>
+
+
+
+
+
+
+
+
+Basic Steps to Process DB through PHP:
+Connect to host server  which has Mysql installed
+Select a database 
+Form an SQL statement
+Execute the SQL statement and (optionally) return a record set
+Extract data from recordset using php
+Close connection
+
+
+
+
+
+
+
+
+
 Create Database IndMart:
 In the database:
 
