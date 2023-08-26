@@ -4,6 +4,41 @@
 
 
 
+
+
+
+
+
+<html> <body> 
+    <?php   
+        $textcolor="black";
+        switch ($textcolor)    {      
+        case "black":        
+            echo "I'm black";        
+            break;      
+        case "blue":       
+            echo "I'm blue";        
+            break;      
+        case "red":        
+            echo "I'm red";        
+            break;                
+        default:    // It must be something else        
+            echo "Too bad!!, I'm something else";
+        }
+    ?>
+ </body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
 	<head> 
 		<title>good ......</title>    
