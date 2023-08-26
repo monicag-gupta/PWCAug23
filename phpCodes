@@ -6,6 +6,22 @@
 
 
 
+
+
+The PHP command ‘echo’ or ‘print’ is used to output the parameters passed to it
+The typical usage for this is to send data to the client’s web-browser
+Syntax
+void echo (string arg1 [, string argn...]) 
+void print (string arg1 [, string argn...]) 
+In practice, arguments are not passed in parentheses since echo is a language construct rather than an actual function
+
+
+
+
+
+
+
+
 <html>
     <body>
     <?PHP 
