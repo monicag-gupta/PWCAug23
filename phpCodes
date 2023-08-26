@@ -4,6 +4,32 @@
 
 
 
+<html>
+	<head> 
+		<title>good ......</title>    
+	</head>   
+<body>
+	<?php  
+		$hour = date("H"); 
+ 		if ($hour <= 12) {   
+ 			echo "good morning my friend";  }  
+		elseif ($hour > 12 && $hour < 18)  {    
+			echo "good afternoon my friend";  }  
+		else  {    
+			echo "good evening my friend";  }    
+?>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
 
 
 
