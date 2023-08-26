@@ -1,6 +1,40 @@
 
 
 
+Select.php:
+
+
+<html> <body> 
+<?php
+$servername = "localhost";$username = "root";
+$password = "";$dbname = "IndMart";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) 
+  die("Connection failed: " . $conn->connect_error);
+$sql = "SELECT * FROM product";
+$result = $conn->query($sql);
+$recCount=0;
+if ($result->num_rows > 0) {
+	while($row = $result->fetch_assoc()) {
+		print "Record: ".++$recCount.":::   <BR/>";
+		foreach ($row as $index => $field) 
+			print "<B>".$index."</B> = ".$field."&nbsp&nbsp&nbsp";
+		print "<BR/><BR/>";
+	}	
+} else {   echo "0 results"; }
+$conn->close();
+?>
+</body> </html>
+
+
+
+
+
+
+
+
+
+
 http://localhost/myPhpSite/ConnectionCheck.php
 
 
