@@ -1,3 +1,16 @@
+<html>
+    <body>
+    <?PHP 
+echo 'I know how <hr> to run a PHP Program in XAMPP! <br />'; 
+?> 
+This is test.php File.
+</body>
+</html>
+
+
+
+
+
 
 
 
