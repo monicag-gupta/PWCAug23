@@ -8,8 +8,8 @@ click on sql button at the top and type in the code window:
 
 CREATE TABLE IF NOT EXISTS `product` ( 
  `ProductName` varchar(20) NOT NULL DEFAULT 'Anonymous',  
-`ProductPrice` int(11) NOT NULL DEFAULT '0',  
-`ProductDiscount` int(11) NOT NULL DEFAULT '0');
+`ProductPrice` int NOT NULL DEFAULT '0',  
+`ProductDiscount` int NOT NULL DEFAULT '0');
 
 and click on "go" button at the bottom of the page
 
