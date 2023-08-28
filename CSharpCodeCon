@@ -6,6 +6,57 @@ namespace Prj1Day1Con
     {
         static void Main()
         {
+
+            char c1 = '\n';
+            char c2 = '\t';
+            char c3 = '\a';
+            char c4 = '\u0144';
+            char c5 = '\'';
+            char c6 = '\"';
+            char c7 = '\\';
+            Console.WriteLine("There is a new line " + c1 + "between us! ");
+            Console.WriteLine("There is a tab space " + c2 + "between us! ");
+            Console.WriteLine("This is a beep sound " + c3);
+            Console.WriteLine("There is a unicode char  " + c4 + "between us! ");
+            Console.WriteLine("This text is under single quotes " + c5 + "Text!" + c5 + ". That's it!");
+            Console.WriteLine("This text is under double quotes " + c6 + "Text!" + c6 + ". That's it!");
+            Console.WriteLine("This text is has a slash printed out " + c7 + ". That's it!");
+
+
+
+        }
+    }
+}
+
+
+
+/*
+There is a new line
+between us!
+There is a tab space    between us!
+This is a beep sound
+There is a unicode char  nbetween us!
+This text is under single quotes 'Text!'. That's it!
+This text is under double quotes "Text!". That's it!
+This text is has a slash printed out \. That's it!
+*/
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
             byte b = 127;
             Console.WriteLine("Wrapper of byte: " + b.GetType());
 
