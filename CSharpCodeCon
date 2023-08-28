@@ -1,0 +1,17 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int x = 10;
+            int y = 20;
+            int z = x + y;
+            
+            Console.WriteLine("The sum of " + x + " + " + y + " = " + z);
+            
+        }
+    }
+}
