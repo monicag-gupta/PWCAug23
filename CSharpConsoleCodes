@@ -16,6 +16,8 @@ CCharpCompiler: CSC
 For compiling :
 > csc first.cs 
 
+> first
+
 
 
 
