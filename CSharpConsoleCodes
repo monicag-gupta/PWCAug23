@@ -1,8 +1,23 @@
+first.cs:
+
+
 class A{
 	static void Main(){
 		System.Console.WriteLine("HelloWorld!");
 	}	
 }
+
+
+
+In Developer Command prompt of VS2022:
+CCharpCompiler: CSC
+For compiling :
+> csc C:\Users\ISHU\Desktop\first.cs 
+
+
+
+
+
 
 
 
