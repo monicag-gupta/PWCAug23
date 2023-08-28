@@ -1,3 +1,67 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            byte b = 127;
+            Console.WriteLine("Wrapper of byte: " + b.GetType());
+
+            short i = 127;
+            Console.WriteLine("Wrapper of short: " + i.GetType());
+
+            bool t = true;
+            Console.WriteLine("Wrapper of bool: " + t.GetType());
+
+            int x = 10;
+            Console.WriteLine("Wrapper of int: " + x.GetType());
+
+            long y = 100l;
+            Console.WriteLine("Wrapper of long: " + y.GetType());
+
+            uint ux = 100;
+            Console.WriteLine("Wrapper of uint: " + ux.GetType());
+
+            char c = 'A';
+            Console.WriteLine("Wrapper of char: " + c.GetType());
+
+            decimal d = (decimal)3.4;
+            Console.WriteLine("Wrapper of decimal: " + d.GetType());
+
+
+            float f = (float)3.4;
+            Console.WriteLine("Wrapper of float: " + f.GetType());
+
+            double dd = 3.4;
+            Console.WriteLine("Wrapper of double: " + dd.GetType());
+
+
+
+
+        }
+    }
+}
+
+/*
+Wrapper of byte: System.Byte
+Wrapper of short: System.Int16
+Wrapper of bool: System.Boolean
+Wrapper of int: System.Int32
+Wrapper of long: System.Int64
+Wrapper of uint: System.UInt32
+Wrapper of char: System.Char
+Wrapper of decimal: System.Decimal
+Wrapper of float: System.Single
+Wrapper of double: System.Double
+*/
+
+
+
+
+
+
 
 
 
