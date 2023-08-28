@@ -20,8 +20,13 @@ CCharpCompiler: CSC
 For compiling :
 > csc first.cs 
 
+We get the first.exe file generated
+To run any .exe file, type the name of the file in cmd prompt:
+
 > first
 
+Output: 
+HelloWorld!
 
 
 
