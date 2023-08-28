@@ -61,6 +61,20 @@ class A{
 }
 
 
+To compile first.cs which is using second.cs:
+
+>csc /reference:second.dll first.cs
+
+
+After compilation run the file with :
+>first
+
+
+Output:
+HelloWorld!
+Using sum function from the namespace Abc:
+Sum of 3 + 4 = 7
+
 
 
 
