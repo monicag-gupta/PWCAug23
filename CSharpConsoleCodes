@@ -29,6 +29,20 @@ Output:
 HelloWorld!
 
 
+For .dll ( dynamic link library):
+second.cs:
+
+namespace Abc{
+	public class B{
+		public static void sum(int a, int b){
+			System.Console.WriteLine("Sum of " + a + " + " + b + " = " + (a+b));
+		}	
+	}
+}
+
+
+
+
 
 
 
