@@ -10,9 +10,11 @@ class A{
 
 
 In Developer Command prompt of VS2022:
+>cd C:\Users\ISHU\Desktop
+
 CCharpCompiler: CSC
 For compiling :
-> csc C:\Users\ISHU\Desktop\first.cs 
+> csc first.cs 
 
 
 
