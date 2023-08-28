@@ -44,6 +44,22 @@ namespace Abc{
 
 
 
+For generating a .dll , we need to have target .dll name to be given:
+> csc /t:library /out:second.dll second.cs
+
+
+This generates a .dll file
+
+To use the file, edit first.cs:
+
+class A{
+	static void Main(){
+		System.Console.WriteLine("HelloWorld!");
+		System.Console.WriteLine("Using sum function from the namespace Abc:");
+		Abc.B.sum(3,4);
+	}	
+}
+
 
 
 
