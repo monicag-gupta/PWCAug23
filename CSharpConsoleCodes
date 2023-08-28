@@ -12,6 +12,10 @@ class A{
 In Developer Command prompt of VS2022:
 >cd C:\Users\ISHU\Desktop
 
+If the file gets saved with .txt extension, we can rename the file in developer prompt itself by:
+
+> move first.cs.txt first.cs
+
 CCharpCompiler: CSC
 For compiling :
 > csc first.cs 
