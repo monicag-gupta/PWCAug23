@@ -18,7 +18,8 @@ namespace PointerUnsafePrj
             unsafe
             {
                 int* p = &x;
-                Console.WriteLine(*p);
+                int a = (int)p;
+                Console.WriteLine((*p) + " has address as : " + a);
             }
 
         }
