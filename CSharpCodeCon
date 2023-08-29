@@ -1,4 +1,43 @@
 
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+       
+        static void Main()
+        {
+            int[] arr = { 12, 2, 39, 43, 51, 6 };
+            foreach(int ele in arr)
+            {
+                Console.WriteLine("Processing Element : " + ele);
+            }
+        }
+    }
+}
+
+/*
+ 
+Processing Element : 12
+Processing Element : 2
+Processing Element : 39
+Processing Element : 43
+Processing Element : 51
+Processing Element : 6
+
+*/
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
