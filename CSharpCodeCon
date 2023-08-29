@@ -1,4 +1,76 @@
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+       
+        static void Main()
+        {
+            Console.Write("Iteration:");
+            for(int i=0; i < 10; i++)
+            {
+                if(i == 4)
+                {
+                    continue;
+                }
+                if (i == 7)
+                    break;
+                Console.Write("\t" + i);
+            }
+            Console.WriteLine();
+            string name;
+            do
+            {
+                Console.WriteLine("Enter your name: (More than 2 char)");
+                name = Console.ReadLine();
+            } while (name.Length <= 2);
+
+            int age = -1;
+            while(age <0 || age >= 65)
+            {
+                Console.WriteLine("Enter Age: (0-64)");
+                age = Convert.ToInt32(Console.ReadLine());
+                if (age < 0 || age > 150)
+                {
+                    Console.WriteLine("Ghosts are NOT allowed to use my S/W");
+                }
+                if (age >= 65 && age <= 150)
+                {
+                    Console.WriteLine("You Can Enjoy your Retirement Age..");
+                }
+            }
+            Console.WriteLine("Welcome {1}! You have {0} years for retirement!" , (65-age), name);
+        }
+    }
+}
+
+/*
+ 
+Iteration:      0       1       2       3       5       6
+Enter your name: (More than 2 char)
+MG
+Enter your name: (More than 2 char)
+Abc
+Enter Age: (0-64)
+-9
+Ghosts are NOT allowed to use my S/W
+Enter Age: (0-64)
+1090
+Ghosts are NOT allowed to use my S/W
+Enter Age: (0-64)
+18
+Welcome Abc! You have 47 years for retirement!
+
+
+*/
+
+
+
+
+
+
 
 
 
