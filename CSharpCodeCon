@@ -1,5 +1,34 @@
 
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        enum Month { Jan=1, Feb, Mar, Apr, May, Jun, Jly, Aug, Sep, Oct, Nov, Dec };
+
+        static void Main()
+        {
+            Month first = Month.Jan;
+            Month second = (Month)2;
+            Month last = first + 11;
+            int march = (int)Month.Mar;
+            Console.WriteLine("First Month : " + first + " has Month number : " + (int)first);
+            Console.WriteLine("Last Month : " + last + " has Month number : " + (int)last);
+
+
+
+
+
+        }
+    }
+}
+
+
+
+
+
 
 
 
