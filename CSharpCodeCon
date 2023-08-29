@@ -1,6 +1,60 @@
 
 
 
+
+
+
+//Arithmetic Operators:
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int x = 10, y = 20, z = 0, d=3;
+            int res = x + y;
+            Console.WriteLine("Addition Operator  : {0} + {1} = {2}", x, y, res);
+            res = x - y;
+            Console.WriteLine("Subtraction Operator  : {0} - {1} = {2}", x, y, res);
+            res = x * y;
+            Console.WriteLine("Multiplication Operator  : {0} * {1} = {2}", x, y, res);
+            res = y / x;
+            Console.WriteLine("Division Operator  : {0} / {1} = {2}", y, x, res);
+            res = z == 0 ? 0 :  y / z;
+            Console.WriteLine("Division Operator (divide by zero breaks the program abruptly) : {0} / {1} = {2}", y, z, res);
+            res = x % d;
+            Console.WriteLine("Remainder Operator  : {0} % {1} = {2}", x, d, res);
+            res = x++; //post increment : res = x , x = x + 1
+            Console.WriteLine("Post Increment Operator  : (For x = 10) : x++ : x = {0} and res = {1}",x, res);
+            x = 10;
+            res = ++x; //pre increment : x = x + 1, res =x
+            Console.WriteLine("Pre Increment Operator  : (For x = 10) : ++x : x = {0} and res = {1}", x, res);
+            x = 10;
+            res = x--; //post decrement : res = x , x = x - 1
+            Console.WriteLine("Post Decrement Operator  : (For x = 10) : x-- : x = {0} and res = {1}", x, res);
+            x = 10;
+            res = --x; //pre decrement : x = x - 1, res =x
+            Console.WriteLine("Pre Decrement Operator  : (For x = 10) : --x : x = {0} and res = {1}", x, res);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
