@@ -1,5 +1,57 @@
 
 
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    enum Color : byte
+    {
+        Red = 1,
+        Green = 2,
+        Blue = 4,
+        Violet = 5,
+        BlueViolet = Blue | Violet,
+        Black = Red | Green | Blue,
+        White = 0
+    }
+
+    class Program
+    {
+        enum Month { Jan=1, Feb, Mar, Apr, May, Jun, Jly, Aug, Sep, Oct, Nov, Dec };
+
+        static void Main()
+        {
+            Month first = Month.Jan;
+            Month second = (Month)2;
+            Month last = first + 11;
+            int march = (int)Month.Mar;
+            Console.WriteLine("First Month : " + first + " has Month number : " + (int)first);
+            Console.WriteLine("Last Month : " + last + " has Month number : " + (int)last);
+            Color c = Color.Black;
+            System.Console.WriteLine(c);   // Black
+            System.Console.WriteLine((int)c);// 7
+            Color c2 = Color.BlueViolet;
+            System.Console.WriteLine(c2);   // BlueViolet
+            System.Console.WriteLine((int)c2);// 5
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
