@@ -3,6 +3,70 @@
 
 
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int a = 16;
+            Console.WriteLine("Original a :  {0} ", a);
+            a += 16;  //a=a+16
+            Console.WriteLine("a +=16 :  {0} ", a); //32
+            a = 16;
+            a -= 8;
+            Console.WriteLine("a -=8 :  {0} ", a); //8
+            a = 16;
+            a /= 8;
+            Console.WriteLine("a /=8 :  {0} ", a); //2
+            a = 16;
+            a *= 4;
+            Console.WriteLine("a *=4 :  {0} ", a); //64
+            a = 16;
+            a %= 3;
+            Console.WriteLine("a %=3 :  {0} ", a); //1
+            a = 16;
+            a <<= 2; //a =a<<2
+            Console.WriteLine("a <<=2 :  {0} ", a); //64
+            a = 16;
+            a >>= 2; //a =a>>2
+            Console.WriteLine("a >>=2 :  {0} ", a); //4
+            a = 16;
+            a |= 2; //a =a|2
+            Console.WriteLine("a |=2 :  {0} ", a); //18
+            a = 16;
+            a &= 19; //a =a & 19
+            Console.WriteLine("a &=19 :  {0} ", a); //16
+            a = 16;
+            a ^= 2; //a =a^2
+            Console.WriteLine("a ^=2 :  {0} ", a); //18
+        }
+    }
+}
+
+/*
+Original a :  16
+a +=16 :  32
+a -=8 :  8
+a /=8 :  2
+a *=4 :  64
+a %=3 :  1
+a <<=2 :  64
+a >>=2 :  4
+a |=2 :  18
+a &=19 :  16
+a ^=2 :  18
+*/
+
+
+
+
+
+
+
+
 
 
 
