@@ -1,4 +1,47 @@
 
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter your name:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Entered name: " + name);
+            Console.WriteLine("Enter your Grade:");
+            char grade = Convert.ToChar(Console.Read());
+            Console.WriteLine("Entered grade: " + grade);
+
+            // ReadLine : reads till we pree Enter key
+            //ReadKey : reads one key press do not wait for delimiter like space, enterkey etc.
+            //Read : reads the ASCII value of the key press, it waits for the delimiter.
+            Console.WriteLine("Press any Key to continue..");
+            Console.ReadKey();
+            Console.WriteLine("Press Enter key to continue..");
+            Console.ReadLine();
+            Console.WriteLine("Enter a value, then press Enter key to continue..");
+            Console.Read();
+
+            Console.WriteLine("Program ends!!");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
