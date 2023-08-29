@@ -1,6 +1,124 @@
 
 
 
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        enum Weekday { Sun=1, Mon, Tue, Wed, Thurs, Fri, Sat}
+        static void Main()
+        {
+            Console.WriteLine("Enter current Weekday(1 -7):");
+            int wd = Convert.ToInt32(Console.ReadLine());
+            switch (wd)
+            {
+                case 1:
+                    Console.WriteLine("First Day of the Week: " + (Weekday)wd);
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    Console.WriteLine("{0}th Day of the Week: {1}",wd, (Weekday)wd);
+                    break;
+                case 7:
+                    Console.WriteLine("Last Day of the Week: " + (Weekday)wd);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Day number entered!");
+                    break;
+
+            }
+
+        }
+    }
+}
+
+/*
+
+Enter current Weekday(1 -7):
+5
+5th Day of the Week: Thurs
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int marks = 90;
+            if (marks > 100)
+            {
+                Console.WriteLine("Invalid marks (more than 100)");
+
+            }
+            else if (marks < 0 )
+            {
+                Console.WriteLine("Invalid marks(less than 0)");
+
+            }
+            else if (marks >= 0 && marks <50)
+            {
+                Console.WriteLine("Failed!!!!!!");
+
+            }
+            else if (marks >= 50 && marks < 75)
+            {
+                Console.WriteLine("Passed the Exam!!");
+
+            }
+            else if (marks >= 75 && marks <= 100)
+            {
+                Console.WriteLine("Excellent!!!!");
+
+            }
+            else
+            {
+                Console.WriteLine("Imposible reach!");
+            }
+        }
+    }
+}
+
+/*
+
+*/
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
