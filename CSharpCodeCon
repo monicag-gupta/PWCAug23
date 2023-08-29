@@ -5,6 +5,45 @@
 
 
 
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int a = 10;
+            int b = 5;
+            bool res = a > b;
+            Console.WriteLine("Here a={4},b={5}\na>b : {0} \n a<b : {1}\n a<=b : {2}\n a>=b : {3}", res,
+                (a < b), (a <= b), (a >= b), a, b);
+            Console.WriteLine("a==b: {0} \n a!=b : {1} ", (a == b), (a != b));
+        }
+    }
+}
+/*
+  Here a=10,b=5
+a>b : True
+ a<b : False
+ a<=b : False
+ a>=b : True
+a==b: False
+ a!=b : True
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
