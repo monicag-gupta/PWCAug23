@@ -1,5 +1,34 @@
 
 
+Pointers: Pointers are considered unsafe for high level languages.
+So pointers are coded inside unsafe block in C#.
+Any unsafe block cannot exist in a safe project. 
+So declare the project to be unsafe.
+
+
+using System;
+
+namespace PointerUnsafePrj
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 10;
+            unsafe
+            {
+                int* p = &x;
+                Console.WriteLine(*p);
+            }
+
+        }
+    }
+}
+
+
+
+
+
 
 
 
