@@ -14,8 +14,8 @@ namespace Prj1Day1Con
         Blue = 4,
         Violet = 5,
         BlueViolet = Blue | Violet,
-        Black = Red | Green | Blue,
-        White = 0
+        Black = 0,
+        White = Red | Green | Blue
     }
 
     class Program
@@ -30,8 +30,8 @@ namespace Prj1Day1Con
             int march = (int)Month.Mar;
             Console.WriteLine("First Month : " + first + " has Month number : " + (int)first);
             Console.WriteLine("Last Month : " + last + " has Month number : " + (int)last);
-            Color c = Color.Black;
-            System.Console.WriteLine(c);   // Black
+            Color c = Color.White;
+            System.Console.WriteLine(c);   // White
             System.Console.WriteLine((int)c);// 7
             Color c2 = Color.BlueViolet;
             System.Console.WriteLine(c2);   // BlueViolet
