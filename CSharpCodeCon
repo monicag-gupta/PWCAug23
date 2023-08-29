@@ -1,6 +1,33 @@
 
 
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int x = 16;
+            int y = 12;
+            int max = x >= y ? x : y;
+            Console.WriteLine("Max of {0}, {1} is : {2}",x,y,max);
+        }
+    }
+}
+
+/*
+
+*/
+
+
+
+
+
+
+
+
 
 
 using System;
