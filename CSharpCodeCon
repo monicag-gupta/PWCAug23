@@ -5,6 +5,39 @@
 
 
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int a = 10;
+            int b = 5;
+            Console.WriteLine("T && T : 10>5 && 10>=5 :  " + (10 > 5 && 10 >= 5));
+            Console.WriteLine("T && F : 10>5 && 10<5 :  " + (10 > 5 && 10 < 5));
+            Console.WriteLine("F && T : 10<=5 && 10>=5 :  " + (10 <= 5 && 10 >= 5));
+            Console.WriteLine("F && F : 10<5 && 10<=5 :  " + (10 < 5 && 10 <= 5));
+            Console.WriteLine("T || T : 10>5 || 10>=5 :  " + (10 > 5 || 10 >= 5));
+            Console.WriteLine("T || F : 10>5 || 10<5 :  " + (10 > 5 || 10 < 5));
+            Console.WriteLine("F || T : 10<=5 || 10>=5 :  " + (10 <= 5 || 10 >= 5));
+            Console.WriteLine("F || F : 10<5 || 10<=5 :  " + (10 < 5 || 10 <= 5));
+            Console.WriteLine("!T : !(10>5) :  {0}\n!F : !(10<5) : {1} ", !(10 > 5) , !(10 < 5));
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 using System;
 
