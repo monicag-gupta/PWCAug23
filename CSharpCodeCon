@@ -4,6 +4,37 @@
 
 
 
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Bitwise Operations: ");
+            Console.WriteLine("4 | 5 = " + (4 | 5) + " \n4 & 5 = " + (4 & 5)); //5 .. 4
+            Console.WriteLine("Not 4 = " + (~4) );  //-5
+            Console.WriteLine("4 ^ 5 = " + (4 ^ 5) ); //1
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Arithmetic Operators:
 using System;
 
