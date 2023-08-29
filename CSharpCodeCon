@@ -1,6 +1,35 @@
 
 
 
+using System;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void Main()
+        {
+            int x,y;
+            Console.WriteLine("Enter x: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter y: ");
+            y = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Read values: x :" + x + ", y : " + y); 
+            Console.WriteLine("Program ends!!");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 using System;
