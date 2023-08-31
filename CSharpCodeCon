@@ -11,6 +11,79 @@ namespace Prj1Day1Con
 
         static string find (int a, int[] arr, int l)
         {
+            Console.WriteLine("Data search : #" + c++);
+            if (a == arr[l-1])
+            {
+                return a + " is Found";
+            }
+            else if(c == arr.Length)
+            {
+                return a + " is not found";
+            }
+            else
+            {
+                return find(a, arr, l - 1);
+            }
+                
+
+        }
+
+
+        static void fn(int i)
+        {
+            Console.WriteLine("Iteration: {0}", i);
+            if(i>0)
+                fn(i - 1);
+        }
+        //sum of natural num series : sum(n) : 1+2+..n  = n + sum(n-1) till sum(1)
+        static int sum(int n)
+        {
+            if (n <= 0) return 0;
+            return n + sum(n - 1);
+        }
+
+        static void Main(string[] args)
+        {
+            int[] arr = { 1, 9, 3, 8, 5, 6, 7, 8, 2, 6 };
+            string s = find(10, arr, arr.Length);
+            Console.WriteLine(s);
+            Console.WriteLine("Recusive Call:");
+            fn(5);
+            Console.WriteLine("Recusive sum Call:\nSum(5) : " + sum(5));
+
+        }
+    }
+}
+
+/*
+ 
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static int c = 0;
+
+        static string find (int a, int[] arr, int l)
+        {
             Console.WriteLine("\nData search : #" + c++);
             if (a == arr[l-1])
             {
