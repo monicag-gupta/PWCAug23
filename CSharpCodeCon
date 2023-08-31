@@ -1,6 +1,47 @@
 using System;
 namespace Prj1Day1Con
 {
+    class Emp
+    {
+        int id;
+        string name;
+        public Emp() { }
+        public Emp(int id, string name) { this.id = id; this.name = name; }
+
+        public override string ToString()
+        {
+            return "Emp : Id :" + id + " Name : " + name;
+        }
+    }
+    class SalEmp : Emp
+    {
+
+    }
+    class WagesEmp : Emp
+    {
+
+    }
+    class Program
+    {
+        static void Main()
+        {
+            SalEmp e1=new SalEmp();
+            Console.WriteLine("e1 is Emp ??" + (e1 is Emp));
+            Console.WriteLine("e1 is Object ??" + (e1 is Object));
+            Console.WriteLine("e1 is SalEmp ??" + (e1 is SalEmp));
+            Console.WriteLine("e1 is WagesEmp ??" + (e1 is WagesEmp));
+
+        }
+    }
+}
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
+{
     class Emp //blue print of any object of type Emp. It is the encapsulated form of the class Emp
     {
         private int id; //data hiding
