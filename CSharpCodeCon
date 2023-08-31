@@ -5,6 +5,107 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Prj1Day1Con
 {
+    class A
+    {
+        public int a;
+    }
+    class Program
+    {
+        //four modifiers for functions:
+        //1. value for primitives/Reference for objects: default way of using parameters
+        //2. in : this clause makes the parameter readonly; not modified in the function
+        //3. out : the result expected from a function. no input value required
+        //4. ref : even the values for primitives are called by reference
+       static void fn1(int a)
+        {
+            Console.WriteLine("fn1 : " + a);
+            a = a + 10;
+            Console.WriteLine("fn1 modified : " + a);
+        }
+        static void fn1(A a)
+        {
+            Console.WriteLine("fn1 : " + a.a);
+            a.a = a.a + 10;
+            Console.WriteLine("fn1 modified : " + a.a);
+        }
+        static void fn2(in int a)
+        {
+            Console.WriteLine("fn2 : " + a);
+            int b = a;
+            //a =a+10; //assignment not possible
+        }
+        static void fn3(out int a)
+        {
+            a = 10;
+            int b = a;
+            Console.WriteLine("fn3 : " + a);
+            
+        }
+        static void fn4(ref int a)
+        {
+            Console.WriteLine("fn4 : " + a);
+            a = a + 10;
+            Console.WriteLine("fn4 modified : " + a);
+
+        }
+
+        static void Main(string[] args)
+        {
+            int a = 10;
+            Console.WriteLine("Before Fn1: int a = " + a);
+            fn1(a);
+            Console.WriteLine("After Fn1: int a = " + a);
+            A oa = new A();
+            oa.a = 10;
+            Console.WriteLine("\nBefore Fn1: A oa'a = " + oa.a);
+            fn1(oa);
+            Console.WriteLine("After Fn1: A oa'a = " + oa.a);
+            Console.WriteLine("*********************");
+
+            int b = 10;
+            fn2(in b); //b should be assigned a value before fn call
+
+            int c;
+            fn3(out c); //ouput is expected from fn3.
+
+            int p = 10;
+            fn4(ref p); //p must have a value;  plus p can change the value also in the fn call.
+
+
+
+
+
+
+
+
+        }
+    }
+}
+
+/*
+ 
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Prj1Day1Con
+{
     class Program
     {
         static int c = 0;
