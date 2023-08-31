@@ -8,6 +8,57 @@ namespace Prj1Day1Con
     
     class Program
     {
+        static int sum2(int[] arr)
+        {
+            int sum = 0;
+            for (int k = 0; k < arr.Length; k++) sum += arr[k];
+            return sum;
+        }
+        static int sum(params int[] i)
+        {
+            int sum = 0;
+            for (int k = 0; k < i.Length; k++) sum += i[k];
+            return sum;
+        }
+        public static void Main()
+        {
+            int[] a = new int[] { 1, 4, 2, 8, 9 };
+            int s = sum(1, 2, 3, 4); //10  //possible in params, not possible in array
+            Console.WriteLine(s);
+            s = sum2(new int[] { 1, 2, 3, 4 }); //10
+            Console.WriteLine(s);  
+            s = sum(a); //24  //possible in params
+            Console.WriteLine(s);
+            s = sum2(a); //24
+            Console.WriteLine(s);
+            s = sum(11, 22); //33
+            Console.WriteLine(s);
+        }
+    }
+}
+
+/*
+ 
+
+
+ */
+
+
+
+
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Prj1Day1Con
+{
+    
+    class Program
+    {
         static public void scholar(string fname, string lname, int age = 20,
           string branch = "Computer science")
         {
