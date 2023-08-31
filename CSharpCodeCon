@@ -1,6 +1,57 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static int c = 0;
+
+        static string find (int a, int[] arr, int l)
+        {
+            Console.WriteLine("\nData search : #" + c++);
+            if (a == arr[l-1])
+            {
+                return a + " is Found";
+            }
+            else if(c == arr.Length)
+            {
+                return a + " is not found";
+            }
+            else
+            {
+                return find(a, arr, l - 1);
+            }
+                
+
+        }
+        static void Main(string[] args)
+        {
+            int[] arr = { 1, 9, 3, 8, 5, 6, 7, 8, 2, 6 };
+            string s = find(10, arr, arr.Length);
+            Console.WriteLine(s);
+        }
+    }
+}
+
+/*
+ 
+
+
+
+ */
+
+
+
+
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
 
 namespace Prj1Day1Con
 {
