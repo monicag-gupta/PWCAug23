@@ -1,4 +1,56 @@
 using System;
+namespace Prj1Day1Con
+{
+    class Emp //blue print of any object of type Emp. It is the encapsulated form of the class Emp
+    {
+        private int id; //data hiding
+        private string name;
+        public void input(int id, string name) //data abstraction
+        {
+            this.id = id;
+            this.name = name;
+        }
+        public Emp() //Constructor
+        {
+            id = 100;
+            name = "Guest";
+        }
+        public Emp(int id, string name) //data abstraction //parameterized Constructor
+        {
+            this.id = id;
+            this.name = name;
+        }
+        public override string ToString()   //Overriden ToString()
+        {
+            return "Current Emp details: Id : " + id + " Name : " + name;
+        }
+
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Emp e1 = new Emp(); //new assigns space for an object in memory
+            Emp e2 = new Emp(102, "Abc");
+            Console.WriteLine(e1);
+            Console.WriteLine(e2);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
