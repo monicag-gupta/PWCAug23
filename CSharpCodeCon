@@ -27,6 +27,13 @@ Arg at #2 : world
 Arg at #3 : !
 
 
+right click on project name in solution explorer -> 
+properties -> debug -> general -> 
+open debug launch profiles UI -> command line arguments -> 
+type three arguments: Hello world ! -> 
+close properties window that you have opened and run the program.cs file
+right click on project name in solution explorer -> properties -> debug -> general -> open debug launch profiles UI -> command line arguments -> type three arguments: Hello world ! -> close properties window that you have opened and run the program.cs file
+done cmd
  */
 
 
