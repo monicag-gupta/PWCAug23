@@ -1,6 +1,75 @@
 using System;
 namespace Prj1Day1Con
 {
+   class Animal
+    {
+        public void eat()
+        {
+            Console.WriteLine("An animal is eating!");
+        }
+        public virtual void sleep()
+        {
+            Console.WriteLine("An animal is sleeping!");
+        }
+    }
+    class Dog : Animal
+    {
+        public void bark()
+        {
+            Console.WriteLine("A Dog is barking Bow Bow!");
+        }
+        public override void sleep()
+        {
+            Console.WriteLine("A dog sleeps very lightly!");
+        }
+
+    }
+    class Cat : Animal
+    {
+        public void meow()
+        {
+            Console.WriteLine("A Cat is meowing meow meow!");
+        }
+    }
+    class AnimalTrainer
+    {
+        public void train(Animal a)
+        {
+            a.eat();
+            a.sleep();
+            if(a is Dog)
+            {
+                Dog d = (Dog)a;  //parent is casted into child object : Downcasting
+                d.bark();
+
+            }
+            if (a is Cat)
+            {
+                Cat c = (Cat)a;
+                c.meow();
+
+            }
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Animal tiger = new Dog(); //Dog object referred by Animal object; Upcasting
+            AnimalTrainer trainer = new AnimalTrainer();
+            trainer.train(tiger);
+
+        }
+    }
+}
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
+{
     class Emp
     {
         int id;
