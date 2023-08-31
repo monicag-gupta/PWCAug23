@@ -1,4 +1,94 @@
 using System;
+
+
+namespace Prj1Day1Con
+{
+    class Address
+    {
+        private string add;
+        public Address()
+        {
+            add = "IDK";
+        }
+        public Address(string add)
+        {
+            this.add = add;
+        }
+        public void setAdd(string add) { this.add = add; }
+        public string getAdd() { return add; }
+
+    }
+    class Employee
+    {
+        private readonly int id;
+        private readonly string name;
+        private readonly Address address;
+        public Employee()
+        {
+            id = 101;
+            name = "IDK";
+            address = new Address();
+        }
+        public Employee(int id, string name, Address address)
+        {
+            this.id = id;
+            this.name = name;
+            this.address = new Address(address.getAdd());
+        }
+        public String getValues()
+        {
+            return "Id : " + getId() + " name : " + getName() + " address : " + getAddress().getAdd(); 
+        }
+        public int getId() { return id; }
+        public string getName() { return name; }
+        public Address getAddress() { return new Address(address.getAdd()); }
+
+    }
+    class Program
+    {
+       static void Main()
+        {
+            Address add = new Address("Delhi");
+            Employee e = new Employee(102, "Abc", add);
+            Console.WriteLine("Before add.setter: \n" + e.getValues());
+            add.setAdd("Kolkatta");
+            Console.WriteLine("After add.setter: \n" + e.getValues());
+            e.getAddress().setAdd("Mumbai");
+            Console.WriteLine("After using getAddress.setAdd(): \n" + e.getValues());
+        }
+    }
+}
+
+/*
+ 
+
+
+
+ */
+
+
+
+
+1. Classes are sealed (cannot be further inheritance)
+2. All fields are private and readonly
+3. Getters for the fields (No Setter is allowed : since it’s readonly the setters are not applicable)
+4. If the reference of mutable object is used in immutable class, the do not refer to it in the constructor. Copy the value rather than the reference in the constructor.
+5. If getters are used for Mutable objects, then do not return the direct reference to the object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
 using System.Text;
 
 namespace Prj1Day1Con
