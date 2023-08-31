@@ -1,4 +1,54 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+
+        int sum(int a, int b)
+        {
+            int c = a + b;
+            return c;
+
+        }
+        static int add(int a, int b)
+        {
+            return a + b;
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program(); 
+            int res = add(3, 4);
+            int r = p.sum(6, 7);
+            int re = Program.add(1, 4);
+            Console.WriteLine(res + "   " + re + " " + r);
+
+        }
+    }
+}
+
+/*
+ 
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
 using System.Net;
 
 namespace Prj1Day1Con
