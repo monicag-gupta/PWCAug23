@@ -1,0 +1,39 @@
+using System;
+using System.Text;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+        static void concat1(string s)
+        {
+            s += " C#";
+        }
+        static void concat2(StringBuilder s)
+        {
+            s.Append(" C#");
+        }
+
+        static void Main()
+        {
+            string s = "Coder in :";
+            StringBuilder sb = new StringBuilder(s);
+            Console.WriteLine("Before Concat fns: \ns = {0}\nsb = {1}", s, sb);
+            concat1(s);
+            concat2(sb);
+            Console.WriteLine("After Concat fns: \ns = {0}\nsb = {1}", s, sb);
+        }
+    }
+}
+
+/*
+ 
+Before Concat fns:
+s = Coder in :
+sb = Coder in :
+After Concat fns:
+s = Coder in :
+sb = Coder in : C#
+
+
+ */
