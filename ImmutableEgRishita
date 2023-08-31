@@ -1,3 +1,17 @@
+Rules:
+declare the class as sealed so it cannot be extended
+all class members should be private and readonly so they cannot be accessed outside of class
+shouldn't contain any setter methods to change the value of class members
+the getter method should return the copy of class members
+class members are only initialized using constructor
+
+
+
+
+
+
+
+
 using System;
 
 
