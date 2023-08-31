@@ -1,3 +1,39 @@
+using System;
+using System.Net;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+       static void Main(string[] args)
+        {
+            Console.WriteLine("This example is for cmd args");
+            int c = 1;
+            foreach(string arg in args)
+            {
+                Console.WriteLine("Arg at #{0} : {1}",(c++), arg);
+
+            }
+        }
+    }
+}
+
+/*
+ 
+considering Hello World ! to be the cmd line arg,
+This example is for cmd args
+Arg at #1 : Hello
+Arg at #2 : world
+Arg at #3 : !
+
+
+ */
+
+
+
+
+
+
 
 
 using System;
