@@ -74,11 +74,103 @@ namespace Prj1Day1Con
 }
 
 /*
- 
+
+Before add.setter:
+Id : 102 name : Abc address : Delhi
+After add.setter:
+Id : 102 name : Abc address : Delhi
+After using getAddress.setAdd():
+Id : 102 name : Abc address : Delhi
+
+
+ */
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Address
+    {
+        private string add;
+        public Address()
+        {
+            add = "IDK";
+        }
+        public Address(string add)
+        {
+            this.add = add;
+        }
+        public void setAdd(string add) { this.add = add; }
+        public string getAdd() { return add; }
+
+    }
+    class Employee
+    {
+        private readonly int id;
+        private readonly string name;
+        private readonly Address address;
+        public Employee()
+        {
+            id = 101;
+            name = "IDK";
+            address = new Address();
+        }
+        public Employee(int id, string name, Address address)
+        {
+            this.id = id;
+            this.name = name;
+            this.address = address;  //Case 1
+            //the direct reference to address will make it changeable as the parameter is a reference type object 
+            //and has it's own heap reference, which means the if we change the parameter's heap, the immutable class 
+            //field also changes
+        }
+        public String getValues()
+        {
+            return "Id : " + getId() + " name : " + getName() + " address : " + getAddress().getAdd(); 
+        }
+        public int getId() { return id; }
+        public string getName() { return name; }
+        public Address getAddress() { return address; //case 2
+            //if direct reference to the field is returned, the heap it is refering to is also sent.
+            //the heap it is referring to is Mutable, so our field is also changed when we change the heap.
+        }
+
+    }
+    class Program
+    {
+       static void Main()
+        {
+            Address add = new Address("Delhi");
+            Employee e = new Employee(102, "Abc", add);
+            Console.WriteLine("Before add.setter: \n" + e.getValues());
+            add.setAdd("Kolkatta"); //Case 1 Problem, we are changing the heap of reffered object
+            Console.WriteLine("After add.setter: \n" + e.getValues());
+            e.getAddress().setAdd("Mumbai"); //case 2, we are getting the direct reference to the field, making it changeable
+            Console.WriteLine("After using getAddress.setAdd(): \n" + e.getValues());
+        }
+    }
+}
+
+/*
+ Before add.setter:
+Id : 102 name : Abc address : Delhi
+After add.setter:
+Id : 102 name : Abc address : Kolkatta
+After using getAddress.setAdd():
+Id : 102 name : Abc address : Mumbai
 
 
 
  */
+
+
 
 
 
