@@ -5,6 +5,55 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Prj1Day1Con
 {
+    
+    class Program
+    {
+        static public void scholar(string fname, string lname, int age = 20,
+          string branch = "Computer science")
+        {
+            Console.WriteLine("Name: {0} {1}", fname, lname);
+            Console.WriteLine("Age: {0} \n Branch: {1}", age, branch);
+        }
+        static void Main()
+        {
+            scholar("FN1", "LN1"); //using both age and branch default values
+            scholar("FN2", "LN2", 22); //using only branch default value
+            scholar("FN3", "LN3", 30, "IT"); //Providing all values
+          //scholar("FN3", "LN3", "IT"); //Error: third parameter is an int; while string is passed
+        }
+
+    }
+}
+
+/*
+ 
+Name: FN1 LN1
+Age: 20
+ Branch: Computer science
+Name: FN2 LN2
+Age: 22
+ Branch: Computer science
+Name: FN3 LN3
+Age: 30
+ Branch: IT
+
+
+ */
+
+
+
+
+
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Prj1Day1Con
+{
     class A
     {
         public int a;
