@@ -1,6 +1,96 @@
 using System;
 namespace Prj1Day1Con
 {
+    interface IHotDrink
+    {
+        void prepare();
+        int price();
+    }
+
+    class Restaurant
+    {
+        IHotDrink h;
+        public Restaurant()
+        {
+            h = new Tea();
+        }
+        public Restaurant(IHotDrink h)
+        {
+            this.h = h;
+        }
+        public void serve()
+        {
+            h.prepare();
+            Console.WriteLine("Serving the drink!");
+        }
+        public void bill()
+        {
+            Console.WriteLine("Your bill amount is : " + h.price());
+        }
+
+    }
+    class Tea : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Preparing hot Tea!");
+        }
+        public int price()
+        {
+            return 65;
+        }
+    }
+    class Coffee : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Preparing hot Coffee!");
+        }
+        public int price()
+        {
+            return 199;
+        }
+    }
+    class Soup : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Preparing hot Soup!");
+        }
+        public int price()
+        {
+            return 299;
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Restaurant cust1 = new Restaurant(new Tea());
+            cust1.serve();
+            cust1.bill();
+            Restaurant cust2 = new Restaurant(new Coffee());
+            cust2.serve();
+            cust2.bill();
+            Restaurant cust3 = new Restaurant(new Soup());
+            cust3.serve();
+            cust3.bill();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
+{
     interface Alive //100% abstract
     {
         void eat(); //public abstract method
