@@ -1,6 +1,49 @@
 using System;
 namespace Prj1Day1Con
 {
+    class myCollection
+    {
+        private int[] arr = new int[10000];
+        private int tos = -1;
+        public void add(int i)
+        {
+            tos = tos + 1;
+            arr[tos] = i;
+        }
+        public void print()
+        {
+            for (int i = 0; i <= tos; i++)
+                Console.WriteLine(arr[i]);
+        }
+
+    }
+    class Program
+    {
+
+        static void Main()
+        {
+            myCollection c1 = new myCollection();
+            c1.add(10);
+            c1.add(78);
+            c1.add(76);
+            c1.add(55);
+            c1.print();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
+{
     interface IHotDrink
     {
         void prepare();
