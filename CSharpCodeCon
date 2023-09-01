@@ -1,6 +1,111 @@
 using System;
 namespace Prj1Day1Con
 {
+    interface Alive //100% abstract
+    {
+        void eat(); //public abstract method
+        void sleep();
+        void grow();
+    }
+    abstract class Animal : Alive //50% abstract class
+    {
+        public void eat()
+        {
+            Console.WriteLine("An animal is eating!");
+        }
+
+        public abstract void grow();
+
+        public virtual void sleep()
+        {
+            Console.WriteLine("An animal is sleeping!");
+        }
+        public abstract void walk();
+    }
+    class Dog : Animal
+    {
+        public void bark()
+        {
+            Console.WriteLine("A Dog is barking Bow Bow!");
+        }
+        public override void grow() { }
+        public override void sleep()
+        {
+            Console.WriteLine("A dog sleeps very lightly!");
+        }
+        public override void walk()
+        {
+            Console.WriteLine("A dog walks cautiously!");
+        }
+
+
+    }
+    class Cat : Animal
+    {
+        public override void grow() { }
+        public void meow()
+        {
+            Console.WriteLine("A Cat is meowing meow meow!");
+        }
+        public override void walk()
+        {
+            Console.WriteLine("A Cat walks with cat walk!");
+        }
+    }
+    class AnimalTrainer
+    {
+        public void train(Animal a)
+        {
+            a.eat();
+            a.sleep();
+            if (a is Dog)
+            {
+                Dog d = (Dog)a;  //parent is casted into child object : Downcasting
+                d.bark();
+
+            }
+            if (a is Cat)
+            {
+                Cat c = (Cat)a;
+                c.meow();
+
+            }
+        }
+    }
+    class Program
+    {
+        static void Main()
+        {
+            Animal tom = new Dog(); // Animal -> eat and sleep ; Cat -> eat, sleep, meow
+            tom.eat();
+            tom.sleep();
+            if (tom is Cat)
+            {
+                Cat c = (Cat)tom;
+                c.meow();
+            }
+            Animal tiger = new Dog(); //Dog object referred by Animal object; Upcasting
+            AnimalTrainer trainer = new AnimalTrainer();
+            trainer.train(tiger);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
+{
    class Animal
     {
         public void eat()
