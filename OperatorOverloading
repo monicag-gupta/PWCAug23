@@ -1,0 +1,39 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    class Distance
+    {
+        int km;
+        int m;
+        public Distance() { }
+        public Distance(int km, int m)
+        {
+            this.m = m;
+            this.km = km;
+        }
+        public static Distance operator -(Distance d)
+        {
+            d.m = -d.m;
+            d.km = -d.km;
+            return d;
+        }
+
+        public override string ToString()
+        { 
+            return "\nCurrent distance is:  " + km + " km and " + m + " meters.\n"; 
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Distance d1 = new Distance(300,20);
+            Distance d2 = new Distance(80, 30);
+            Console.WriteLine("D2 without Negation: " + d2);
+            d2 = -d2;
+            Console.WriteLine("D2 post Negation: " + d2);
+        }
+    }
+}
