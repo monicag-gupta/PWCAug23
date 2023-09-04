@@ -59,6 +59,88 @@ namespace Prj1Day1Con
         static void Main()
         {
             Employee e1 = new Employee();
+            e1.Age = -20;
+            string name = e1.CompName;
+            //e1.CompName = " blah";
+
+            Console.WriteLine("The Emp details " + e1.FirstName + e1.LastName + e1.Age + e1.CompName);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
+    class Employee
+    {
+        //In the background this property is going to create a private string firstName, provide proper getter and setter code.
+        public string FirstName { get; set; }
+        
+        private string lastName;
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        private int age;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                if (value > 18 && value < 70)
+                    age = value;
+                else
+                    age = 0;
+            }
+        }
+        private string compName;
+        public Employee()
+        {
+            FirstName = "Abc";
+            LastName = "Xyz";
+            compName = "PWC";
+        }
+        public Employee(string cn)
+        {
+            compName = cn;
+        }
+        public string CompName { get { return compName; } }
+
+
+
+    }
+    
+    class Program
+    {
+
+        static void Main()
+        {
+            Employee e1 = new Employee();
             e1.Age = 40;
             string name = e1.CompName;
             //e1.CompName = " blah";
