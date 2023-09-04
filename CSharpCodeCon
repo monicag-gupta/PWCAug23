@@ -1,4 +1,54 @@
 using System;
+
+
+namespace Prj1Day1Con
+{
+    class Matrix
+    {
+        public const int SIZE = 3;
+        private int[,] matrix = new int[SIZE, SIZE];
+        
+        public static void Initialize(Matrix mat)
+        {
+            for (int x = 0; x < Matrix.SIZE; x++)
+                for (int y = 0; y < Matrix.SIZE; y++)
+                    mat.matrix[x, y] = x + y;
+        }
+        public static void Print(Matrix mat)
+        {
+            for (int x = 0; x < Matrix.SIZE; x++)
+            {
+                for (int y = 0; y < Matrix.SIZE; y++)
+                    Console.Write("a[{0},{1}] = {2} \t", x, y, mat.matrix[x, y]);
+                Console.WriteLine();
+            }
+        }
+    }
+
+    class Program
+        {
+        static void Main()
+        {
+            //int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 6, 7, 8 }, { 8, 9, 10 } };
+            Matrix mat1 = new Matrix();
+            Matrix.Initialize(mat1);
+            Console.WriteLine("Matrix: ");
+            Matrix.Print(mat1);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
