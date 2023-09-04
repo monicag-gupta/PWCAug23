@@ -1,5 +1,61 @@
 using System;
 namespace Prj1Day1Con
+{    
+    class Addition
+    {
+        //Compile time polymorphism:
+        //1. Case 1 and 2 are diff functions as their number of params are different
+        //Case 2 with case 3 are diff functions as their data type and number of params are different
+        //2. Case 1,3,4 and 5 are diff functions as their data type of params are different
+        //3. Case 4 and 5 are diff as the series of data type of param is diff
+        public void sum(int x, int y) //case 1
+        {
+            Console.WriteLine("sum(int {0}, int {1}) : {2}", x, y, (x + y));
+        }
+        public void sum(int x, int y, int z) //case 2
+        {
+            Console.WriteLine("sum(int {0}, int {1}, int {2}) : {3}", x, y, z, (x + y + z));
+        }
+        public void sum(string  x, string  y) //case 3
+        {
+            Console.WriteLine("sum(string  {0}, string {1}) :  {2}", x, y, (x + y));
+        }
+        public void sum(string x, int y) //case 4
+        {
+            Console.WriteLine("sum(string  {0}, int {1}) :  {2}", x, y, (x + y));
+        }
+        public void sum(int x, string y) //case 5
+        {
+            Console.WriteLine("sum(int  {0}, string {1}) :  {2}", x, y, (x + y));
+        }
+
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Addition a = new Addition();
+            a.sum("dd", "gg");
+            a.sum(2, 5);
+            a.sum(1, "gh");
+            a.sum("jj", 8);
+            a.sum(2, 5, 8);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+namespace Prj1Day1Con
 {
     class myCollection
     {
