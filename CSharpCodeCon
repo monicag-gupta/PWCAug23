@@ -3,6 +3,79 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Imag
+    {
+        public int Im { get; set; }
+        public string Ima { get { return "i " + Im; } }
+        public override string ToString()
+        {
+            return Ima;
+        }
+    }
+    class Complex
+    {
+        public int Real { get; set; }
+        public Imag Imag { get; set; }
+
+        public override string ToString()
+        {
+            return Real + " " + Imag;
+        }
+        public Complex() { }
+        //public Complex(Complex C) //shallow copy
+        //{
+        //    Real = C.Real;
+        //    Imag = C.Imag; //Object reference is copied
+        //}
+        public Complex(Complex C) //deep copy
+        {
+            Real = C.Real;
+            Imag = new Imag { Im = C.Imag.Im }; 
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Imag i1 = new Imag { Im = 16 };
+           Complex c1= new Complex { Real = 12, Imag = i1 };
+            Console.WriteLine("C1: " + c1);
+            Complex c2 = new Complex(c1);
+            Console.WriteLine("C2: "+ c2);
+            c1.Real = 100;
+            i1.Im = 1111;
+            Console.WriteLine("Post change:\nC1: " + c1);
+            Console.WriteLine("C2: " + c2);
+
+            //int i = 10;
+            //int j = i;
+            //i = 30;
+            //Console.WriteLine(j);//j=10
+
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Complex
     {
         public int Real { get; set; }
