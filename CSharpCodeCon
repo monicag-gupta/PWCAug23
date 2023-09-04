@@ -3,6 +3,64 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Animal
+    {
+        public void eat()
+        {
+            Console.WriteLine("Animals Eat");
+        }
+    }
+    class Dog: Animal
+    {
+        public void bark()
+        {
+            Console.WriteLine("Dogs Bark");
+        }
+    }
+    class Cat : Animal
+    {
+        public void meow()
+        {
+            Console.WriteLine("Cat Meows");
+        }
+    }
+    class Program
+    {
+
+        static void Main()
+        {
+            Animal a1 = new Dog();
+            a1.eat();
+            if(a1 is Dog) //is returns T or false by checking instance of class
+            {
+                Dog d = (Dog)a1;
+                d.bark();
+            }
+            Animal a2 = new Cat();
+            Cat c = a2 as Cat; // it is another form of is operator:
+                               // returns the casted object or null
+            //as operator is same as:
+            //Cat c = a2 is Cat? (Cat)a2 : null
+            if (c != null)
+            {
+                c.meow();
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Employee
     {
         //In the background this property is going to create a private string firstName, provide proper getter and setter code.
