@@ -1,4 +1,65 @@
 using System;
+using System.Xml.Linq;
+
+
+namespace Prj1Day1Con
+{
+    class Ppl
+    {
+        public virtual void print()
+        {
+            Console.WriteLine("Emp: ID : and name : ");
+        }
+    }
+    class Emp : Ppl
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public sealed override void print()
+        {
+            Console.WriteLine("Emp: ID : {0} and name : {1} ", Id, Name);
+        }
+    }
+    sealed class Mngr : Emp
+    {
+        //public override void print()
+        //{
+        //    Console.WriteLine("EmpMngr: ID : {0} and name : {1} ", Id, Name);
+        //}
+
+    }
+    //class HighMngmnt : Mngr
+    //{
+
+    //}
+
+    class Program
+        {
+        static void Main()
+        {
+            Emp emp = new Mngr();
+            emp.print();
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
 
 
 namespace Prj1Day1Con
