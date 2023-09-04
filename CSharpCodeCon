@@ -2,6 +2,82 @@ using System;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
+{
+    abstract class Animal
+    {
+        public abstract void handBone();
+    }
+
+   class Mammal : Animal
+    {
+        public override void handBone()
+        {
+            Console.WriteLine("Hand bones of Mammals");
+        }
+    }
+    class Human: Mammal
+    {
+        public override void handBone()
+        {
+            Console.WriteLine("Hand bones of Human : Working");
+        }
+    }
+    class HumanChild : Human
+    {
+        public override void handBone()
+        {
+            Console.WriteLine("Hand bones of Child : Coding");
+        }
+    }
+    class Bat : Mammal
+    {
+        public override void handBone()
+        {
+            Console.WriteLine("Hand bones of Bat : Flying");
+        }
+    }
+    class Lion : Mammal
+    {
+        public override void handBone()
+        {
+            Console.WriteLine("Hand bones of Lion : Walking");
+        }
+    }
+    class FossilStudy
+    {
+        public void findFossil(Mammal m)
+        {
+            m.handBone();
+        }
+    }
+    class Program
+    {
+
+        static void Main()
+        {
+            FossilStudy fossilStudy=new FossilStudy();
+            fossilStudy.findFossil(new Human());
+            fossilStudy.findFossil(new HumanChild());
+            fossilStudy.findFossil(new Lion());
+            fossilStudy.findFossil(new Bat());
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
 {    
    class Mammal
     {
