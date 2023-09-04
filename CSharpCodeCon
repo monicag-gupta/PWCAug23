@@ -3,6 +3,49 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Employee
+    {
+        public static string CompName;
+        public static void staticFn()
+        {
+            Console.WriteLine("Static function");
+        }
+        static Employee()
+        {
+            Console.WriteLine("Static Constructor called only once. Used to initialize static fields");
+            CompName = "PWC";
+        }
+        public Employee()
+        {
+            Console.WriteLine("Constructor called every time a new object is made.");
+        }
+    }
+        class Program
+         {
+        static void Main()
+        {
+            Employee.staticFn();
+            Employee e1 = new Employee();
+            Employee e2 = new Employee();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Imag
     {
         public int Im { get; set; }
