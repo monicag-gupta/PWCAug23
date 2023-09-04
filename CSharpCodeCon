@@ -3,6 +3,40 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Complex
+    {
+        public int Real { get; set; }
+        public int Imag { get; set; }
+
+        public override string ToString()
+        {
+            return Real + " i" + Imag;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+           Complex c1= new Complex { Real = 12, Imag = 16 };
+            Console.WriteLine(c1);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Program
     {
 
