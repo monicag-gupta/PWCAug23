@@ -3,6 +3,58 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Printer
+    {
+        static string driver;
+        public string doc;
+        public static void resetPrinter()
+        {
+            Console.WriteLine("The printer is reset");
+        }
+        static Printer()
+        {
+            driver = "HP Printer";
+            Console.WriteLine("The driver is loaded as :" + driver);
+        }
+        public Printer()
+        {
+            doc = "Default document";
+            Console.WriteLine("The driver {0} is prints the document: {1}", driver, doc);
+        }
+        public Printer(string doc)
+        {
+            this.doc = doc;
+            Console.WriteLine("The driver {0} is prints the document: {1}", driver, doc);
+        }
+    }
+    class Program
+        {
+        static void Main()
+        {
+            Printer.resetPrinter();
+            Printer p1 = new Printer();
+            Printer p2 = new Printer("This is a new Doc");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Employee
     {
         public static string CompName;
