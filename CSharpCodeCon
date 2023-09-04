@@ -3,6 +3,37 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Prj1Day1Con
 {
+    class Program
+    {
+
+        static void Main()
+        {
+            int? a = null;
+            int b = a ?? -1;
+            Console.WriteLine(b);  // output: -1
+            a = 20;
+            b = a ?? -1;
+            Console.WriteLine(b); //output: 20
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
     class Animal
     {
         public void eat()
