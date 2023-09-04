@@ -1,3 +1,12 @@
+//We can override any function if the parent most class function is either abstract or virtual.
+//So the first function in the hierarchy should be either virtual (for a non-abstract or concrete class)
+// or abstract (for an abstract class or an interface)
+// All other function overriding the parent functions should have the keyword override.
+//Thus a function can use override keyword only if : 
+    // 1. If it's parent is override (ing) the grand parent function
+    //2. If the parent function is the first function in the hierarchy with vitual / abstract keyword.
+
+
 using System;
 using System.Reflection.Metadata.Ecma335;
 
