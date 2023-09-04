@@ -10,6 +10,54 @@ namespace Prj1Day1Con
         {
             // int.MaxValue is 2,147,483,647.
             const int ConstantMax = int.MaxValue;
+            const int ConstantMin = int.MinValue;
+            int int1;
+
+            // The following statements are checked by default at compile time. They do not compile.
+            //int1 = 2147483647 + 10;    
+            //int1 = ConstantMax + 10;
+
+            // To enable the assignments to int1 to compile and run, place them inside
+            // an unchecked block or expression. The following statements compile and run.
+            unchecked
+            {
+                int1 = 2147483647 + 10;
+                Console.WriteLine(int1);
+                Console.WriteLine("ConstMax: " + ConstantMax + " + 10 : " + int1);
+            }
+            int1 = unchecked(ConstantMax - 10);
+
+            // The sum of 2,147,483,647 and 10 is displayed as -2,147,483,639.
+            Console.WriteLine("ConstMin: " + ConstantMin + " - 10 : " +  int1);
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
+    class Program
+    {
+
+        static void Main()
+        {
+            // int.MaxValue is 2,147,483,647.
+            const int ConstantMax = int.MaxValue;
             int int1;
 
             // The following statements are checked by default at compile time. They do not compile.
