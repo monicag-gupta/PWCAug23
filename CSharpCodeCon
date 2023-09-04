@@ -1,3 +1,22 @@
+
+
+
+
+
+Pa : public Google(), private CCard(), internal inHouseAlmirahGold(), protected FamilyBankAc, protected internal VehInsurance()
+Child : Pa  in the same domain:  no permission (object) required: public Google(), internal inHouseAlmirahGold(), protected FamilyBankAc, protected internal VehInsurance()
+Ma : in the same domain: permission (object) required: public Google(), internal inHouseAlmirahGold(), protected internal VehInsurance()
+FarAwayChild : Pa : no permission (object) required: public Google(), protected FamilyBankAc, protected internal VehInsurance()
+Friend : permission (object) required: public Google()
+
+
+
+
+
+
+
+
+
 //We can override any function if the parent most class function is either abstract or virtual.
 //So the first function in the hierarchy should be either virtual (for a non-abstract or concrete class)
 // or abstract (for an abstract class or an interface)
