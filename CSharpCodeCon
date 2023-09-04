@@ -3,6 +3,138 @@
 
 
 
+
+
+
+PrjWithLib: Program.cs:
+
+using System;
+using PrjLib;
+
+namespace PrjWithLib
+{
+    class FarAwayChild : Pa
+    {
+        public FarAwayChild() {
+            Console.WriteLine("\nInside FarAwayChild : PrjLib.Pa : in a different client project/domain");
+            Google();
+            FamilyAC();
+            VehIns();
+            Console.WriteLine("Exit Constructor of FarAwayChild : PrjLib.Pa : in a different client project/domain");
+        }
+    }
+    class Friend
+    {
+        public Friend()
+        {
+            Console.WriteLine("\nInside Friend : in a different client project/domain");
+            Pa p = new Pa();
+            p.Google();
+            Console.WriteLine("Exit Constructor of Friend : in a different client project/domain");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Pa pa = new Pa(10); //all access rights including private
+            Child child = new Child(); //all rights except private
+            Ma ma = new Ma(); //all rights : public and internal
+            FarAwayChild farAwayChild = new FarAwayChild(); // all rights : public, protected
+            Friend  friend = new Friend(); //all public rights
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+PrjLib -> Class1.cs:
+
+using System;
+
+namespace PrjLib
+{
+    public class Pa
+    {
+        public Pa() { }
+        public Pa(int i) {
+            Console.WriteLine("\nInside Pa itself : in same project/domain");
+            Google();
+            CreditCard();
+            AlmirahGold();
+            FamilyAC();
+            VehIns();
+            Console.WriteLine("Exit Constructor of Pa : in same project/domain");
+        }
+        public void Google()
+        {
+            Console.WriteLine("public Google in Pa");
+        }
+        private void CreditCard()
+        {
+            Console.WriteLine("private CreditCard in Pa");
+        }
+        internal void AlmirahGold()
+        {
+            Console.WriteLine("internal AlmirahGold in Pa");
+        }
+        protected void FamilyAC()
+        {
+            Console.WriteLine("protected FamilyAC in Pa");
+        }
+        protected internal void VehIns()
+        {
+            Console.WriteLine("protected internal Vehicle Insurance in Pa");
+        }
+    }
+    public class Child : Pa
+    {
+        public Child()
+        {
+            Console.WriteLine("\nInside Child : Pa : in same project/domain");
+            Google();
+            AlmirahGold();
+            FamilyAC();
+            VehIns();
+            Console.WriteLine("Exit Constructor of Child : Pa : in same project/domain");
+        }
+    }
+    public class Ma
+    {
+        public Ma()
+        {
+            Console.WriteLine("\nInside Ma : in same project/domain");
+            Pa p = new Pa();
+            p.Google();
+            p.AlmirahGold();
+            p.VehIns();
+            Console.WriteLine("Exit Constructor of Ma : in same project/domain");
+        }
+    }
+    public class Class1
+    {
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 Pa : public Google(), private CCard(), internal inHouseAlmirahGold(), protected FamilyBankAc, protected internal VehInsurance()
 Child : Pa  in the same domain:  no permission (object) required: public Google(), internal inHouseAlmirahGold(), protected FamilyBankAc, protected internal VehInsurance()
 Ma : in the same domain: permission (object) required: public Google(), internal inHouseAlmirahGold(), protected internal VehInsurance()
