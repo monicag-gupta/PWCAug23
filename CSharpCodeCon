@@ -1,3 +1,122 @@
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Prj1Day1Con
+{
+    class Employee
+    {
+        //In the background this property is going to create a private string firstName, provide proper getter and setter code.
+        public string FirstName { get; set; }
+        private static int flag=0;
+        
+        private string lastName;
+        private string msg;
+        public string Msg { 
+            get { 
+                string m = msg;
+                if (flag==0)
+                {
+                    Console.WriteLine("The msg is read only once?Y to continue:");
+                    string m2 = Console.ReadLine();
+                    if (m2 == "Y" || m2 == "y")
+                    {
+                        flag = 1;
+                        msg = "go went gone !!";
+                        return m;
+                    }
+                    else
+                        return "Try again to read";
+                }
+                else
+                {
+                    m = "go went gone!";
+                }
+                Console.Write("The message is: ");
+                return m;
+            }
+            set
+            {
+                msg = value;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        private int age;
+        public int Age
+        {
+            get
+            {
+                Console.WriteLine("\n\n\nThis age is read!!!\n\n");
+                return age;
+            }
+            set
+            {
+                if (value > 18 && value < 70)
+                    age = value;
+                else
+                    age = 0;
+            }
+        }
+        private string compName;
+        public Employee()
+        {
+            FirstName = "Abc";
+            LastName = "Xyz";
+            compName = "PWC";
+        }
+        public Employee(string cn)
+        {
+            compName = cn;
+        }
+        public string CompName { get { return compName; } }
+
+
+
+    }
+    
+    class Program
+    {
+
+        static void Main()
+        {
+            Employee e1 = new Employee();
+            Employee e21 = new Employee();
+            e1.Age = -20;
+            int x;
+           
+            string name = e1.CompName;
+            //e1.CompName = " blah";
+            e1.Msg = "Secret Message";
+
+            Console.WriteLine("The Emp details " + e1.FirstName + e1.LastName + e1.Age + e1.CompName);
+            while(true){
+                Console.WriteLine("Read message: Y/N");
+                string a = Console.ReadLine();
+                if(a =="N" || a == "n")
+                {
+                    break;
+                }
+                Console.WriteLine("\n\n\nMsg: \n\n\n" + e1.Msg);
+            }
+            Console.WriteLine("\n\n\nMsg from e2: \n\n\n" + e21.Msg);
+
+        }
+    }
+}
+
+
+
+
 
 
 
