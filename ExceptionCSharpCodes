@@ -1,3 +1,26 @@
+Exercise:
+
+Create a class called Employee that asks the user to input the name and the age of an employee. Raise a custom defined exception when the user enters an employee name that has already been entered and raise another exception if the age is negative or less than 18 or greater than 60. If there is any occurrence of any other exception, throw those also as user defined exceptions and use InnerException to print the original exception.
+Use array of Employee to take multiple Inputs.
+Menu driven program to Enter new Employee, List the Employees, Exit
+2 user defined exceptions at least
+-Ve age : Ghosts not allowed as an Employee
+<18 : Children not allowed as an Employee
+>60 : Seniors not allowed as an Employee
+>100 : Purvaj not allowed as an Employee
+Duplicate Name : Not allowed to enter twice (Need double Salary??)
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day1Con
