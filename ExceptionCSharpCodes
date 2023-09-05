@@ -9,6 +9,45 @@ namespace Prj1Day1Con
                   
         static void Main()
         {
+            int age;
+            Console.WriteLine("Enter Age:");
+            age = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                if (age < 0)
+                    throw new ArithmeticException("Invalid age - being negative");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    
+
+   class Program
+    {
+                  
+        static void Main()
+        {
             int[] x = new int[5];  //x[0] to x[4]
             int d=2;
             try
