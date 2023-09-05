@@ -2,6 +2,72 @@ using System;
 
 namespace Prj1Day1Con
 {
+    class Resource
+    {
+        public static void work()
+        {
+            Console.WriteLine("Some task done by the resource");
+        }
+        public static void closure()
+        {
+            Console.WriteLine("Resource Shut down...");
+        }
+
+    }
+   class Program
+    {
+        static void Main()
+        {
+            int x = 10;
+            int d = 2;
+
+            try
+            {
+                Resource.work();
+                Console.WriteLine("Enter a number: numerator : ");
+                x = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter another number: denominator : ");
+                d = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("The square of the number enetered is : " + (x * x));
+                int y = x / d;
+                Console.WriteLine("Div Result: " + y);
+                
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("This is a " + e.Message + " exception!");
+               
+            }
+            catch(DivideByZeroException e)
+            {
+                Console.WriteLine("This is a " + e.Message + " exception!");
+            }
+            finally
+            {
+                Resource.closure();
+            }
+            Console.WriteLine("The Program continues..");
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
    class Program
     {
         static void Main()
