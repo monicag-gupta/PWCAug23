@@ -5,6 +5,96 @@ namespace Prj1Day1Con
     class AgeException : ApplicationException
     {
         string msg;
+        public Exception InnerException { get; set; };
+        public AgeException() {
+            msg = "Invalid Age : Age should be between 0-150";
+            InnerException = null;
+        }
+        public AgeException(string msg)
+        {
+            this.msg = msg + " : Age Exception";
+            InnerException = null;
+        }
+        public AgeException(string msg,Exception ex)
+        {
+            this.msg = msg + " : Age Exception";
+            InnerException = ex;
+        }
+        public override string ToString()
+        {
+            return msg;
+        }
+
+    }
+    class Person
+    {
+        string name;
+        int age;
+        public Person() { name = "Guest"; age = 0; }
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+            if(age < 0 || age > 150)
+            {
+                // throw new AgeException();
+                throw new AgeException("Age not between 0-150", new DivideByZeroException("This is bad age"));
+            }
+        }
+        public override string ToString()
+        {
+            return "Person Name: " + name + "  and age : " + age;
+        }
+
+    }
+
+   class Program
+    {
+                  
+        static void Main()
+        {
+            try
+            {
+                try
+                {
+                    Person p = new Person("Abc", 180);
+                    Console.WriteLine(p);
+                }
+                catch (AgeException ex)
+                {
+                    Console.WriteLine("From Inner block : Inner exception: \n" + ex); //ex is the inner exception which is thrown along with the AE
+                    Console.WriteLine(ex.InnerException.Message);
+                    throw new ArithmeticException("Thrown from inner catch block",ex);
+                }
+            }
+            catch(Exception ex2) // ex2 is an outer exception, ex2 is the Arithmetic exception
+            {
+                Console.WriteLine("From Outer block : Outer exception: \n" + ex2.Message);
+                Console.WriteLine("From Outer block : Inner exception: \n" + ex2.InnerException);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class AgeException : ApplicationException
+    {
+        string msg;
         public AgeException() {
             msg = "Invalid Age : Age should be between 0-150";
         }
