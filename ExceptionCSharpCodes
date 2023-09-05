@@ -1,3 +1,57 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    class B
+    {
+        public static void fn23(string[] args)
+        {
+            if (args.Length % 2 == 0)
+            {
+                int a = 10;
+                a = a / 0;
+            }
+        }
+
+    }
+    class A
+    {
+        public static void fn(string[] args)
+        {
+            B.fn23(args);
+        }
+    }
+ 
+   class Program
+    {
+                  
+        static void Main(string[] args)
+        {
+            try
+            {
+                A.fn(args);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
+
+        }
+
+    }
+}
+
+
+
+output:
+
+ at Prj1Day1Con.B.fn23(String[] args) in C:\Users\ISHU\source\repos\Prj1Day1Con\Prj1Day1Con\Program.cs:line 12
+   at Prj1Day1Con.A.fn(String[] args) in C:\Users\ISHU\source\repos\Prj1Day1Con\Prj1Day1Con\Program.cs:line 21
+   at Prj1Day1Con.Program.Main(String[] args) in C:\Users\ISHU\source\repos\Prj1Day1Con\Prj1Day1Con\Program.cs:line 32
+
+
+
+
 Exercise:
 
 Create a class called Employee that asks the user to input the name and the age of an employee. Raise a custom defined exception when the user enters an employee name that has already been entered and raise another exception if the age is negative or less than 18 or greater than 60. If there is any occurrence of any other exception, throw those also as user defined exceptions and use InnerException to print the original exception.
