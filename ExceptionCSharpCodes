@@ -23,7 +23,7 @@ namespace Prj1Day1Con
             r.work();
             try
             {
-                Console.WriteLine("try: Division of : {0} / {1] : ", a, b);
+                Console.WriteLine("try: Division of : {0} / {1} : ", a, b);
                 return a / b;
             }
             catch (DivideByZeroException e)
