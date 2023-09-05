@@ -2,6 +2,79 @@ using System;
 
 namespace Prj1Day1Con
 {
+    class AgeException : ApplicationException
+    {
+        string msg;
+        public AgeException() {
+            msg = "Invalid Age : Age should be between 0-150";
+        }
+        public AgeException(string msg)
+        {
+            this.msg = msg + " : Age Exception";
+        }
+        public override string ToString()
+        {
+            return msg;
+        }
+
+    }
+    class Person
+    {
+        string name;
+        int age;
+        public Person() { name = "Guest"; age = 0; }
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+            if(age < 0 || age > 150)
+            {
+                throw new AgeException();
+            }
+        }
+        public override string ToString()
+        {
+            return "Person Name: " + name + "  and age : " + age;
+        }
+
+    }
+
+   class Program
+    {
+                  
+        static void Main()
+        {
+            try
+            {
+                Person p = new Person("Abc", 180);
+                Console.WriteLine(p);
+            }
+            catch(AgeException ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
     
 
    class Program
