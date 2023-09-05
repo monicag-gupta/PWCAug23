@@ -4,6 +4,68 @@ namespace Prj1Day1Con
 {
     class Resource
     {
+        public  void work()
+        {
+            Console.WriteLine("Some task done by the resource");
+        }
+        public  void closure()
+        {
+            Console.WriteLine("Resource Shut down...");
+        }
+
+    }
+
+
+   class Program
+    {
+        static int div(int a, int b, Resource r)
+        {
+            r.work();
+            try
+            {
+                Console.WriteLine("try: Division of : {0} / {1] : ", a, b);
+                return a / b;
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("catch: Divison by zero not possible, so res is 0");
+                return 0;
+            }
+            finally
+            {
+                Console.WriteLine("finally: the resource will be closed");
+                r.closure();
+            }
+        }
+        static void Main()
+        {
+            Resource r=new Resource();
+            int res = div(10, 2, r);
+            Console.WriteLine(res);
+            res = div(10, 0, r);
+            Console.WriteLine(res);
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
+    class Resource
+    {
         public static void work()
         {
             Console.WriteLine("Some task done by the resource");
