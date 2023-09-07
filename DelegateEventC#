@@ -178,9 +178,23 @@ namespace CalcPrj
         {
             mem = textBox1.Text;
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (mem == null)
+            {
+                textBox1.Text = "";
+            }
+            else
+                textBox1.Text = mem;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            mem = null;
+        }
     }
 }
-
 
 
 
