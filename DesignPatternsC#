@@ -1,3 +1,100 @@
+Builder Pattern:
+
+using System;
+
+namespace Prj1Day17
+{
+    interface myIterator
+    {
+        int next();
+        bool hasNext();
+        void begin();
+
+    }
+    class intIterator : myIterator
+    {
+        myIntCollection myintCollection;
+        public intIterator(myIntCollection myintCollection)
+        {
+            this.myintCollection = myintCollection;
+        }
+        public void begin()
+        {
+            myintCollection.SOI = 0;
+        }
+
+        public int next()
+        {
+            return myintCollection.arr[myintCollection.SOI++];
+
+        }
+
+        public bool hasNext() {
+            return  myintCollection.SOI< myintCollection.tos;
+        }
+    }
+    class myIntCollection {
+        public int[] arr = new int[1000];
+        public int tos = -1;
+        public int SOI=0;
+        public void add(int i)
+        {
+            if(tos >= 1000)
+            {
+                Console.WriteLine("Stack Overflow");
+            }
+            else
+            {
+                arr[++tos] = i;
+            }
+        }
+        public void remove(int i)
+        {
+            for (int j = 0; j <= tos; j++)
+            {
+                if (arr[j] == i)
+                {
+                    for (int k = j; k < tos; k++)
+                    {
+                        arr[k] = arr[k + 1];
+
+                    }
+                    tos--;
+                }
+            }
+        }
+        
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            myIntCollection myInts = new myIntCollection();
+            for(int i = 10; i < 20; i++){
+                myInts.add(i * i);
+            }
+            myIterator it = new intIterator(myInts);
+            for (it.begin(); it.hasNext();)
+            {
+                Console.WriteLine(it.next());
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 Abstract Factory:
 
 using System;
