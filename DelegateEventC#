@@ -1,0 +1,61 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    public delegate int cal(int a, int b);
+    
+ 
+   class Program
+    {
+        public int add(int a, int b) { return a + b; }
+        public static int mul(int a, int b) { return a * b; }
+        public int sub(int a, int b) { return a>b ? a - b: b-a; }
+        public static int div(int a, int b) { return b == 0? 0 : a / b; }
+
+        public void calculator(cal fn)
+        {
+            Console.WriteLine("Enter the first num:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second num:");
+            int y = Convert.ToInt32(Console.ReadLine());
+            int res = fn(x, y);
+            Console.WriteLine("Result is: " + res);
+        }
+        static void Main(string[] args)
+        {
+            int ch = 0;
+            Program p = new Program();
+            cal cfn = new cal(p.add);
+            //cfn(8, 9);
+            while (true)
+            {
+                Console.WriteLine("Menu: \n1. Add\n2. Sub\n3. Mul\n4. Div\n5. Exit\nEnter Choice:");
+                ch = Convert.ToInt32(Console.ReadLine());
+                if (ch == 1)
+                {
+                    cfn = new cal(p.add);
+                }
+                else if (ch == 2)
+                {
+                    cfn = new cal(p.sub);
+                }
+                else if (ch == 3)
+                {
+                    cfn = new cal(mul);
+                }
+                else if (ch == 4)
+                {
+                    cfn = new cal(div);
+                }
+                else if (ch == 5)
+                    break;
+                else
+                    Console.WriteLine("Invalid Choice made");
+                p.calculator(cfn);
+
+            }      
+        }
+
+    }
+}
+
