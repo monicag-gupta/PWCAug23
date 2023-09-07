@@ -1,0 +1,36 @@
+using System;
+
+namespace Prj1Day1Con
+{
+    struct Emp
+    {
+        public int id;
+        public string name;
+        public Emp(int id, string name) { this.id = id;this.name = name; }
+        public override string ToString() { return "Emp with ID: " + id + "has name : " + name; }  
+
+    }
+ 
+   class Program
+    {
+                  
+        static void Main(string[] args)
+        {
+            Emp e1;
+            e1.id = 101;
+            e1.name = " Guest1";
+            Console.WriteLine(e1);
+            
+            Emp e2 = new Emp();
+            e2.id = 102;
+            e2.name = " Guest2";
+            Console.WriteLine(e2);
+
+            Emp e3 = new Emp(103,"Guest3");
+            Console.WriteLine(e3);
+
+        }
+
+    }
+}
+
