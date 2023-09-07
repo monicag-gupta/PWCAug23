@@ -1,5 +1,90 @@
 Builder Pattern:
 
+
+using System;
+
+namespace Prj1Day17
+{
+    interface IHouse
+    {
+        void buildFloor();
+        void buildCeiling();
+
+    }
+    class IglooHouse : IHouse
+    {
+        public void buildCeiling()
+        {
+            Console.WriteLine("Ceiling with IceDome");
+        }
+
+        public void buildFloor()
+        {
+            Console.WriteLine("Floor with IceBlocks");
+        }
+    }
+    class TipiHouse : IHouse
+    {
+        public void buildCeiling()
+        {
+            Console.WriteLine("Ceiling with Wooden Carvings");
+        }
+
+        public void buildFloor()
+        {
+            Console.WriteLine("Floor with Wooden blocks");
+        }
+    }
+    class BambooHouse : IHouse
+    {
+        public void buildCeiling()
+        {
+            Console.WriteLine("Ceiling with Bamboo strips");
+        }
+
+        public void buildFloor()
+        {
+            Console.WriteLine("Floor with bamboo blocks");
+        }
+    }
+  
+    class BuilderHouse
+    {
+        public IHouse GetHouse()
+        {
+            Console.WriteLine("Which house do you prefer: \n1. Bamboo");
+            Console.WriteLine("2. Igloo\n3. Wooden\n Enter choice:");
+            int ch=Convert.ToInt32(Console.ReadLine());
+            if (ch == 1)
+                return new BambooHouse();
+            else if (ch == 2)
+                return new IglooHouse();
+            else
+                return new TipiHouse();
+        }
+        public void buildHouse()
+        {
+            IHouse house = GetHouse();
+            house.buildCeiling();
+            house.buildFloor();
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            BuilderHouse builder = new BuilderHouse();
+            builder.buildHouse();
+
+        }
+    }
+}
+
+
+
+
+
 using System;
 
 namespace Prj1Day17
