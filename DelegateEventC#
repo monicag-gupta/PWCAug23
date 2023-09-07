@@ -2,6 +2,52 @@ using System;
 
 namespace Prj1Day1Con
 {
+    public delegate string delMsg(string m);
+    class Messenger
+    {
+        public string username;
+        public event delMsg evntMsg;
+        public string grpMsg(string m)
+        {
+            return username + " : " + m;
+        }
+        public string one2oneMsg(string m)
+        {
+            return m;
+        }
+        public string consumer(string m)
+        {
+            return evntMsg(m);
+        }
+
+    }
+    class Program { 
+        static void Main(string[] args)
+        {
+            Messenger m = new Messenger();
+            m.username = "Guest";
+            m.evntMsg += new delMsg(m.grpMsg);
+            string s = m.consumer("This is a group message");
+            Console.WriteLine(s);
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
     public delegate int cal(int a, int b);
 
 
