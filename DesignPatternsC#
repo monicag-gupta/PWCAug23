@@ -1,3 +1,138 @@
+Abstract Factory:
+
+using System;
+
+namespace Prj1Day17
+{
+    interface IShape
+    {
+        string getShape();
+    }
+    class Triangle: IShape
+    {
+        public string getShape()
+        {
+            return "Triangle";
+        }
+    }
+    class Square : IShape
+    {
+        public string getShape()
+        {
+            return "Square";
+        }
+    }
+    class Circle : IShape
+    {
+        public string getShape()
+        {
+            return "Circle";
+        }
+    }
+    class ShapeFactory
+    {
+        public IShape getShaperObj(string S)
+        {
+            if (S.ToLower() == "triangle")
+            {
+                return new Triangle();
+            }
+            else if (S.ToLower() == "circle")
+            {
+                return new Circle();
+            }
+            else
+                return new Square();
+        }
+    }
+    interface IColor
+    {
+        string getColor();
+    }
+    class Red : IColor
+    {
+        public string getColor()
+        {
+            return "Red";
+        }
+    }
+    class Green : IColor
+    {
+        public string getColor()
+        {
+            return "Green";
+        }
+    }
+    class Blue : IColor
+    {
+        public string getColor()
+        {
+            return "Blue";
+        }
+    }
+    class ColorFactory
+    {
+        public IColor getColorObj(string C)
+        {
+            if (C.ToLower() == "red")
+            {
+                return new Red();
+            }
+            else if (C.ToLower() == "green")
+            {
+                return new Green();
+            }
+            else
+                return new Blue();
+        }
+    }
+    class AbstractFactoryShapeColor
+    {
+        IColor color;
+        IShape shape;
+        public AbstractFactoryShapeColor(string C, string S)
+        {
+            this.color = new ColorFactory().getColorObj(C);
+            this.shape = new ShapeFactory().getShaperObj(S);
+        }
+        public void draw()
+        {
+            Console.WriteLine("Draw the " + shape.getShape() + " in Color: " + color.getColor());
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Choose the Color : Red / Green / Blue");
+            string c = Console.ReadLine();
+            Console.WriteLine("Choose the Shape : Triangle / Circle / Square");
+            string s = Console.ReadLine();
+            AbstractFactoryShapeColor absFactory = new AbstractFactoryShapeColor(c, s);
+            absFactory.draw();
+            //ColorFactory factory = new ColorFactory();
+            //IColor color = factory.getColorObj(c);
+            //string clor = color.getColor();
+            //Console.WriteLine(clor + " is choosen");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Factory Pattern:
 
 
