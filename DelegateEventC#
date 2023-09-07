@@ -2,6 +2,44 @@ using System;
 
 namespace Prj1Day1Con
 {
+    public delegate void cal(int a, int b);
+    
+ 
+   class Program
+    {
+        public void add(int a, int b) { Console.WriteLine("In sum function: Result:  " + (a + b)); }
+        public static int mul(int a, int b) { Console.WriteLine("In mul function"); return a * b; }
+        public void sub(int a, int b) { Console.WriteLine("In sub function: Result:  " + (a > b ? a - b : b - a)); }
+        public static int div(int a, int b) { Console.WriteLine("In div function"); return b == 0? 0 : a / b; }
+
+        
+        static void Main(string[] args)
+        {
+            int ch = 0;
+            Program p = new Program();
+            cal cfn = new cal(p.add);
+            cfn += new cal(p.sub); //multi delegate
+            cfn(5, 8);
+            
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day1Con
+{
     public delegate int cal(int a, int b);
     
  
