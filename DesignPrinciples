@@ -1,4 +1,97 @@
 using System;
+
+namespace Prj1Day17
+{
+    //Not in ISP
+    interface Convertor
+    {
+        int foot2metre();
+        int Km2metre();
+        int kelvin2Celcius();
+        int Celcius2Kelvin();
+    }
+    //In ISP
+    interface TempConvertor
+    {
+        int kelvin2Celcius();
+        int Celcius2Kelvin();
+    }
+    interface DistanceConvertor
+    {
+        int foot2metre();
+        int Km2metre();
+    }
+    class tempCalculator : TempConvertor
+    {
+        public int Celcius2Kelvin()
+        {
+            return 100;
+        }
+
+        //public int foot2metre()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public int kelvin2Celcius()
+        {
+            return 102;
+        }
+
+        //public int Km2metre()
+        //{
+        //    throw new NotImplementedException();
+        //}
+    }
+    class CivilEngg : DistanceConvertor
+    {
+        //public int Celcius2Kelvin()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public int foot2metre()
+        {
+            return 300;
+        }
+
+        //public int kelvin2Celcius()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public int Km2metre()
+        {
+            return 1000;
+        }
+    }
+    internal class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            CivilEngg c = new CivilEngg();
+            Console.WriteLine("CivilEngg: Foot2Metre" + c.foot2metre());
+            Console.WriteLine("CivilEngg: Km2Metre" + c.Km2metre());
+            tempCalculator t = new tempCalculator();
+            Console.WriteLine("tempCalculator: kelvin2Celcius" + t.kelvin2Celcius());
+            Console.WriteLine("tempCalculator: Celcius2Kelvin" + t.Celcius2Kelvin());
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
 //LSP
 namespace Prj1Day17
 {
