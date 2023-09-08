@@ -2,6 +2,53 @@ using System;
 
 namespace Prj1Day17
 {
+   class Medals
+    {
+        public string medalName;
+    }
+    class Std
+    {
+        public Medals medal=new Medals();
+        public Std()
+        {
+            medal.medalName = "None";
+        }
+        public void printMedal()
+        {
+            Console.WriteLine("Till now the Medals are: " + medal.medalName);
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Std s1 = new Std();
+            Medals m = new Medals();
+            s1.printMedal();
+            m.medalName = "Highest Securer";
+            s1.medal = m;
+            s1.printMedal();
+
+           
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class Ben
     {
         public void readmsg(string m)
