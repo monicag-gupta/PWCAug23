@@ -1,3 +1,81 @@
+using System;
+
+namespace Prj1Day17
+{
+    class Message
+    {
+        string msg;
+        public Message() { msg = " Hello World"; }
+        public Message(string m) { msg = m; }
+        public void setMsg(string m) { msg = m; }
+        public void printMsg() { Console.WriteLine(msg); }
+    }
+    class Input
+    {
+        string input;
+        public Input(string input)
+        {
+            this.input = input;
+        }
+        public Input() { }
+        public void setInput()
+        {
+            Console.WriteLine("Enter a string");
+            input = Console.ReadLine();
+        }
+        public string getInput()
+        {
+            return input;
+        }
+    }
+    class Adaptor
+    {
+        Input input;
+        Message message;
+        public Adaptor()
+        {
+            input = new Input();
+            message = new Message();
+        }
+        public Adaptor(Input i, Message m)
+        {
+            input = i;
+            message = m;
+        }
+        public void adaptorWork()
+        {
+            input.setInput();
+            string m = input.getInput();
+            m = "After Adaptor changes done: " + m;
+            message.setMsg(m);
+            message.printMsg();
+
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Input input = new Input();
+            Message message= new Message();
+            Adaptor adaptor = new Adaptor(input,message);
+            adaptor.adaptorWork();
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 Behavioral design patterns are concerned with algorithms and assigning responsibilities to objects.
 
 Chain of Responsibility : A way of passing a request between a chain of objects
