@@ -1,3 +1,51 @@
+Singleton Pattern:
+
+using System;
+
+namespace Prj1Day17
+{
+    class Singleton
+    {
+        private static Singleton singleObj;
+        public string msg;
+        private Singleton()
+        { 
+        }
+        public static Singleton GetSingletonObj()
+        {
+            if (singleObj == null)
+            {
+                singleObj = new Singleton();
+            }
+            return singleObj;
+        }
+
+
+    }
+    
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Singleton obj1 = Singleton.GetSingletonObj();
+            obj1.msg = "From Obj1 of Singleton class";
+            Singleton obj2 = Singleton.GetSingletonObj();
+            obj2.msg = "From Obj2 of Singleton class";
+            Console.WriteLine("Obj1's msg : " + obj1.msg);
+            Console.WriteLine("Obj2's msg : " + obj2.msg);
+            Console.WriteLine("The above are the same proving that its the same object");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
 Prototype Pattern:
 
 using System;
