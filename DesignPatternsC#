@@ -1,3 +1,86 @@
+Behavioral design patterns are concerned with algorithms and assigning responsibilities to objects.
+
+Chain of Responsibility : A way of passing a request between a chain of objects
+Command : Encapsulate a command request as an object
+Interpreter : A way to include language elements in a program
+Iterator : Sequentially access the elements of a collection
+Mediator : Defines simplified communication between classes
+Memento : Capture and restore an object's internal state
+Observer : A way of notifying change to a number of classes
+State : Alter an object's behavior when its state changes
+Strategy : Encapsulates an algorithm inside a class
+Template Method : Defer the exact steps of an algorithm to a subclass
+Visitor : Defines a new operation to a class without change
+
+
+
+
+
+
+
+Chain of Responsibility
+The Chain of Responsibility pattern enables you to pass requests along a chain of handlers. When a handler receives a request, it decides whether to process the request or pass it to the next handler in the chain.
+Use cases : Here are some use cases of the Chain of Responsibility design pattern:
+Your set of handlers and their order are supposed to change at runtime
+You need to execute multiple handlers in a certain order
+Your program needs to process different types of requests in different ways, but you don’t know exact requests before
+Pros:
+You determine the order of request handling
+You can bring new handlers into the application without changing the existing code
+You can decouple classes that invoke operations from other classes that perform operations
+Cons:
+It’s possible that some of your requests may not get handled
+
+
+Command
+The Command pattern turns requests into stand-alone objects containing all the information about the requests. This process allows you to:
+pass requests as method arguments
+delay or queue requests to be executed
+reverse previous operations
+Note: You can use the Prototype design patterns if you need to save copies of your Commands.
+Use cases : Here are some use cases of the Command design pattern:
+You want to queue or schedule the execution of your operations, or you want to execute your operations remotely
+You want to reverse previous operations
+You want to configure objects with operations
+Pros:
+You can bring new commands into the application without changing the existing code
+You can defer the execution of operations
+You can undo and redo operations
+Cons:
+It’s possible you could overcomplicate your code because of the layer between senders and receivers
+
+
+
+Iterator
+The Iterator pattern allows you to iterate through elements in a collection without exposing the underlying representation.
+Use cases: Here are some use cases of the Iterator design pattern:
+Your collection consists of complex data structures underneath, but you don’t want clients to see its complexity
+You want to reduce duplication of traversal code within your application
+You want to iterate through different data structures or the types of these structures are unknown to you before
+Pros:
+You can separate big algorithms into different classes
+You can pass new collections and iterators into the application without changing the existing code
+You can simultaneously iterate over the same collection
+You can delay iterations and continue them when necessary
+Cons:
+If you’re working with an application with simple collections, applying the iterator pattern may be too complex for it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day17
