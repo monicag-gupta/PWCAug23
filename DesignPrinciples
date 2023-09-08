@@ -1,0 +1,81 @@
+using System;
+
+namespace Prj1Day17
+{
+    class DeveloperNOtInSRP
+    {
+        public void codeWriting()
+        {
+            Console.WriteLine("Code..code..code..");
+        }
+        public void unitTesting()
+        {
+            Console.WriteLine("Unit test the codes..");
+        }
+        public void Designing()
+        {
+            Console.WriteLine("UML Designing..");
+        }
+        public void teamManagement()
+        {
+            Console.WriteLine("Manage a big team of 20 members..");
+        }
+        public void sales()
+        {
+            Console.WriteLine("PreSales talk with the client..");
+        }
+        public void training()
+        {
+            Console.WriteLine("Train the team..");
+        }
+    }
+    class DeveloperInSRP
+    {
+        public void codeWriting()
+        {
+            Console.WriteLine("Code..code..code..");
+        }
+        public void unitTesting()
+        {
+            Console.WriteLine("Unit test the codes..");
+        }
+        public void Designing()
+        {
+            Console.WriteLine("UML Designing..");
+        }
+    }
+    class TeamManagerInSRP { 
+        public void teamManagement()
+        {
+            Console.WriteLine("Manage a big team of 20 members..");
+        }
+        public void sales()
+        {
+            Console.WriteLine("PreSales talk with the client..");
+        }
+        public void training()
+        {
+            Console.WriteLine("Train the team..");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DeveloperNOtInSRP dev1 = new DeveloperNOtInSRP();
+            dev1.codeWriting();
+            dev1.unitTesting();
+            dev1.Designing();
+            dev1.sales();
+            dev1.teamManagement();
+            dev1.training();
+            DeveloperInSRP dev2 = new DeveloperInSRP();
+            dev2.codeWriting();
+            dev2.unitTesting();
+            dev2.Designing();
+
+        }
+    }
+}
+
+
