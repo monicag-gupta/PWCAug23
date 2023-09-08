@@ -1,3 +1,70 @@
+//DIP
+using System;
+
+namespace Prj1Day17
+{
+    interface IHotDrink
+    {
+        void prepare();
+    }
+    class Tea : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Tea is prepared");
+        }
+    }
+    class Coffee : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Coffee is prepared");
+        }
+    }
+    class Soup : IHotDrink
+    {
+        public void prepare()
+        {
+            Console.WriteLine("Soup is prepared");
+        }
+    }
+    class Restaurant
+    {
+        IHotDrink hotDrink;
+        public Restaurant(IHotDrink hotDrink)
+        {
+            this.hotDrink = hotDrink;
+        }
+        public Restaurant()
+        {
+            hotDrink = new Tea();
+        }
+        public void serve()
+        {
+            hotDrink.prepare();
+            Console.WriteLine("Serving the preparations!!");
+        }
+    }
+    internal class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Restaurant r1 = new Restaurant(new Tea());
+            r1.serve();
+            Restaurant r2 = new Restaurant(new Coffee());
+            r2.serve();
+            Restaurant r3 = new Restaurant(new Soup());
+            r3.serve();
+        }
+    }
+}
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day17
