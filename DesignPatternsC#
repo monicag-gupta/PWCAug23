@@ -2,6 +2,79 @@ using System;
 
 namespace Prj1Day17
 {
+    class Players
+    {
+        string money = "Direct Charges :";
+        string incntive = "";
+        public Players(int money)
+        {
+            this.money += money;
+        }
+        public Players(int  money, int incentives)
+        {
+            this.money += money + " Incentives : " + incentives;
+        }
+        public Players()
+        {
+            money += "2000";
+        }
+        public void setIncentives(int m)
+        {
+            this.incntive += " Incentives : " + m;
+        }
+        public void getMoney()
+        {
+            Console.WriteLine(money + incntive);
+        }
+        
+    }
+    class Observer
+    {
+        public void buyTkts(Players p)
+        {
+            p.setIncentives(100);
+           
+        }
+    }
+    class Visitor
+    {
+        public void talk2Players(Players p)
+        {
+            p.getMoney();
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Players p = new Players(10000);
+            Observer o1= new Observer();
+            Observer o2 = new Observer();
+            o1.buyTkts(p);
+            o2.buyTkts(p);
+            Visitor visitor = new Visitor();
+            visitor.talk2Players(p);
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
    class Medals
     {
         public string medalName;
