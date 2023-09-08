@@ -1,0 +1,96 @@
+using System;
+class Complex
+{
+    private int real,img;
+    public Complex(int r,int i)
+    {
+        this.real = r;
+        this.img = i;
+    }
+    public void operator =(Complex C1, Complex C2)
+    {
+        C1.real = C2.real;
+        C1.img = C2.img;
+    }
+    public void print()
+    {
+        Console.WriteLine(real + " +i" + img);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Complex C1 = new Complex(2,3);
+        Complex C2 = new Complex(4,5);
+        
+        C
+class Program
+{
+    static void Main(string[] args)
+    {
+        Complex C1 = new Complex(2,3);
+        Complex C2 = new Complex(4,5);
+        
+        Console.WriteLine("Before overloading: ");
+        Console.Write("C1 Complex number: ");
+        
+        C1.print();
+        Console.Write("C2 Complex number: ");
+        C2.print();
+        C1=C2;
+        Console.WriteLine("After overloading: ");
+        Console.Write("C1 Complex number: ");
+        C1.print();
+        Console.Write("C2 Complex number: ");
+        C2.print();
+        C1=C2;
+        Console.WriteLine("After overloading: ");
+        Console.Write("C1 Complex number: ");
+        C1.print();
+        Console.Write("C2 Complex number: ");
+        C2.print();
+    
+    }
+}
+
+
+using System;
+
+class Car
+{
+    private string name;
+    private int cost;
+
+    public Car(string n, int c)
+    {
+        name = n;
+        cost = c;
+    }
+s
+    public static bool operator ==(Car c1, Car c2)
+    {
+        if (c1.name == c2.name && c1.cost == c2.cost)
+            return true;
+        return false;
+    }
+
+    public static bool operator !=(Car c1, Car c2)
+    {
+        return !(c1 == c2);
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car("Santro", 500000);
+        Car car2 = new Car("Safari", 1000000);
+        if (car1 == car2)
+            Console.WriteLine("Equivalent");
+        else
+            Console.WriteLine("Not Equivalent");
+    }
+}
+
