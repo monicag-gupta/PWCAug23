@@ -2,6 +2,60 @@ using System;
 
 namespace Prj1Day17
 {
+    class TemplatePrint
+    {
+        public void print(object obj)
+        {
+            Console.WriteLine(obj);
+        }
+    }
+    class IntPrint
+    {
+        TemplatePrint tint = new TemplatePrint();
+        public void print(int obj)
+        {
+            tint.print(obj);
+        }
+    }
+    class StringPrint
+    {
+        TemplatePrint tstr = new TemplatePrint();
+        public void print(string  obj)
+        {
+            tstr.print(obj);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          
+            IntPrint intPrint = new IntPrint();
+            intPrint.print(100);
+            StringPrint stringPrint = new StringPrint();
+            stringPrint.print("Hello");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class Light
     {
         public bool state=false;
