@@ -2,6 +2,52 @@ using System;
 
 namespace Prj1Day17
 {
+   class Actual
+    {
+        int i;
+        public int getI()
+        {
+            return i;
+        }
+        public void setI(int i) { this.i = i; }
+    }
+    class ProxyActual
+    {
+        Actual actual=new Actual();
+        public int getI()
+        {
+            return actual.getI();
+        }
+        public void setI(int i) { actual.setI(i); }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ProxyActual proxyActual = new ProxyActual();
+            proxyActual.setI(100);
+            Console.WriteLine("The Value : " + proxyActual.getI());
+            
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     interface IA
     {
          void fna1();
