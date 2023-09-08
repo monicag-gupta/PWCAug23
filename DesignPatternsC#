@@ -2,6 +2,58 @@ using System;
 
 namespace Prj1Day17
 {
+    class Light
+    {
+        public bool state=false;
+        public void getState()
+        {
+            Console.WriteLine("The light is now : " + (state ? "on" : "off"));
+        }
+    }
+    class Remote
+    {
+        Light l;
+        public Remote() { l = new Light(); }
+        public Remote(Light ll) { l =ll; }
+        public void stateChange()
+        {
+            l.state = !l.state;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Light l = new Light();
+            Remote r = new Remote(l);
+            Console.WriteLine("Before Using remote: ");
+            l.getState();
+            Console.WriteLine("After Using remote: ");
+            r.stateChange();
+            l.getState();
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class Players
     {
         string money = "Direct Charges :";
