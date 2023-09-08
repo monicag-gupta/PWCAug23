@@ -1,3 +1,84 @@
+Prototype Pattern:
+
+using System;
+
+namespace Prj1Day17
+{
+    interface Messenger
+    {
+        void setMsg(string s);
+        string send();
+        void receive(string s);
+    }
+    class WhatAp : Messenger //Model
+    {
+        private string msg;
+        public void setMsg(string s)
+        {
+            msg = s;
+        }
+        public string send()
+        {
+            return msg;
+        }
+        public void receive(string s)
+        {
+            Console.WriteLine("Read: " + s);
+        }
+    }
+    class PrototypeWhatsApWeb //From the Model : the Original
+    {
+        private string name;
+        public PrototypeWhatsApWeb()
+        {
+
+        }
+        public PrototypeWhatsApWeb(string n)
+        {
+            name = n;
+        }
+        private string msg;
+        Messenger app = new WhatAp();
+        public void setMsg(string s)
+        {
+            app.setMsg(s);
+        }
+        public string send()
+        {
+            return app.send();
+        }
+        public void receive(string s)
+        {
+            s = " By " + name + " : " + s;
+            app.receive(s);
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            PrototypeWhatsApWeb msngr1 = new PrototypeWhatsApWeb("Messenger1");
+            PrototypeWhatsApWeb msngr2 = new PrototypeWhatsApWeb("Messenger2");
+            Console.WriteLine("Enter your msg as Msngr1:");
+            string msg = Console.ReadLine();
+            msg = "Message from Messenger1 : " + msg;
+            msngr1.setMsg(msg);
+            msngr2.receive(msngr1.send());
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 Builder Pattern:
 
 
