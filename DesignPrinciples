@@ -1,3 +1,101 @@
+SOLID:
+Principle Name : What it says?
+SRP: Single Responsibility Principle
+One class should have one and only one reasonability
+OCP: Open Closed Principle
+Software components should be open for extension, but closed for modification
+LSP: Liskov Substitution Principle
+Derived types must be completely substitutable for their base types
+ISP: Interface Segregation Principle
+Clients should not be forced to implement unnecessary methods which they will not use
+DIP: Dependency Inversion Principle
+Depend on abstractions, not on concretions
+
+
+Advantages of SOLID principles:
+It reduces the dependencies so that a block of code can be changed without affecting the other code blocks.
+The principles intended to make design easier, understandable.
+By using the principles, the system is maintainable, scalable, and reusable.
+It avoids the bad design of the software.
+By applying these principles, the code will be much more clear, testable, and expendable.
+
+
+
+Single Responsibility Principle (SRP)
+The single responsibility principle states that every Java class must perform a single functionality. 
+Implementation of multiple functionalities in a single class mashup the code and if any modification is required may affect the whole class. 
+It precise the code and the code can be easily maintained.
+The Single Responsibility Principle states that   every object should have a single responsibility,   and that responsibility should be entirely  encapsulated by the class. 
+There should never be more than one reason for a class to change. (Robert C. “Uncle Bob” Martin )
+
+
+
+
+Open-Closed Principle
+The application or module entities the methods, functions, variables, etc. 
+The open-closed principle states that according to new requirements the module should be open for extension but closed for modification. 
+The extension allows us to implement new functionality to the module.
+Open to Extension 
+New behavior can be added in the future 
+Closed to Modification 
+Changes to source or binary code are not required 
+The Open / Closed Principle states that software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification 
+
+
+
+Liskov Substitution Principle
+The Liskov Substitution Principle (LSP) was introduced by Barbara Liskov. 
+It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes. 
+In other words, if class A is a subtype of class B, then we should be able to replace B with A without interrupting the behavior of the program.
+It extends the open-close principle and also focuses on the behavior of a superclass and its subtypes. 
+We should design the classes to preserve the property unless we have a strong reason to do otherwise. 
+The Liskov Substitution Principle states that Subtypes must be substitutable for their base types.
+
+Child classes must not:
+Remove base class behavior 
+Violate base class invariants 
+And in general must not require calling code to know they are different from their base type.
+Naïve OOP teaches use of IS-A to describe child classes’ relationship to base classes
+LSP suggests that IS-A should be replaced with IS-SUBSTITUTABLE-FOR
+
+
+
+
+Interface Segregation Principle
+The Interface Segregation Principle (ISP) principle states that the larger interfaces split into smaller ones. 
+Because the implementation classes use only the methods that are required. 
+We should not force the client to use the methods that they do not want to use.
+The goal of the interface segregation principle is similar to the single responsibility principle.
+The Interface Segregation Principle states that Clients should not be forced to depend on methods they do not use.
+
+Prefer small, cohesive interfaces to “fat” interfaces 
+Keep interfaces small, cohesive, and focused 
+Whenever possible, let the client define the interface 
+Whenever possible, package the interface with the client 
+Alternately, package in a third assembly client and implementation both depend upon 
+Last resort: Package interfaces with their implementation 
+
+
+
+
+Dependency Inversion Principle
+The Dependency Inversion Principle (DIP) principle states that we must use abstraction (abstract classes and interfaces) instead of concrete implementations. 
+High-level modules should not depend on the low-level module but both should depend on the abstraction. 
+Because the abstraction does not depend on detail but the detail depends on abstraction. 
+It decouples the software.
+High-level modules should not depend on low-level modules. Both should depend on abstractions. 
+Abstractions should not depend on details. Details should depend on abstractions. 
+
+
+
+
+
+
+
+
+
+
+
 //DIP
 using System;
 
