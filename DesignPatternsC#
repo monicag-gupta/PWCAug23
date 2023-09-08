@@ -1,3 +1,89 @@
+Anti-Patterns
+
+Anti-Patterns are, contrary to Design Patterns, recurring programming practices that create problems instead of solving them.
+An anti-pattern (or antipattern) is a common response to a recurring problem that is usually ineffective and risks being highly counterproductive.
+The term was popularized by the book AntiPatterns, which extended its use beyond the field of software design and into general social interaction and may be used informally to refer to any commonly reinvented but bad solution to a problem. 
+Examples include analysis paralysis, cargo cult programming, death march, groupthink and vendor lock-in.
+According to the authors of Design Patterns, there must be at least two key elements present to formally distinguish an actual anti-pattern from a simple bad habit, bad practice, or bad idea:
+A commonly used process, structure or pattern of action that despite initially appearing to be an appropriate and effective response to a problem, typically has more bad consequences than beneficial results, and
+A good alternative solution exists that is documented, repeatable and proven to be effective.
+
+
+
+https://code.msdn.microsoft.com/windowsapps/Windows-8-Modern-Style-App-Samples
+
+
+
+
+
+
+
+
+
+
+
+
+
+Structural Design Patterns
+Adapter :	  Match interfaces of different classes
+Bridge :	Separates an object’s interface from its implementation
+Composite :	A tree structure of simple and composite objects
+Decorator :	Add responsibilities to objects dynamically
+Facade :	A single class that represents an entire subsystem
+Flyweight :	A fine-grained instance used for efficient sharing
+Proxy :	An object representing another object
+
+
+Adapter
+The Adapter pattern enables collaboration between objects with different interfaces.
+Use cases : Here are some use cases of the Adapter design pattern:
+You want to use an existing class but its interface isn’t compatible with your existing code
+You want to reuse existing subclasses that lack common functionality and can’t be added to the superclass
+You want your legacy code to work with modern classes
+Pros:
+You can separate the interface from the business logic of your program
+You can bring new adapters into the application without changing the existing code
+Cons:
+Your code may become complex because of the interfaces and classes associated with the pattern
+
+
+Bridge
+The Bridge pattern allows you to split large classes or sets of related classes into separate hierarchies that can be developed independently of one another.
+Use cases : Here are some use cases of the Bridge design pattern:
+You want to divide and organize a class with multiple versions of a specific functionality
+You want to extend a class in multiple independent ways
+You’re working with a cross-platform application or with multiple API providers
+Pros:
+You can make platform-independent applications and classes
+You can work with high-level abstractions
+You can bring new implementations and abstractions into the application and work with them independently
+Cons:
+If you apply the pattern to a cohesive class, it can complicate the code
+
+
+
+Composite
+The Composite pattern allows you to make objects into tree structures and work with those tree structures as individual objects.
+Use cases : Here are some use cases of the Composite design pattern:
+You need to work with tree-like structures
+You want the client code to treat simple and complex elements in the same way
+Pros:
+You can easily work with complex tree structures
+You can bring new kinds of products into the application without changing the existing code
+Cons:
+If you’re working with classes with different functionalities, it may be hard to find a common interface to work with
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 namespace Prj1Day17
