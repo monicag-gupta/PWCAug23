@@ -2,6 +2,83 @@ using System;
 
 namespace Prj1Day17
 {
+    class Ben
+    {
+        public void readmsg(string m)
+        {
+            Console.WriteLine(m);
+        }
+        public string sendMsg()
+        {
+            return "Nomaskaro";
+        }
+    }
+    class Hin
+    {
+        public void readmsg(string m)
+        {
+            Console.WriteLine(m);
+        }
+        public string sendMsg()
+        {
+            return "Namaskaram";
+        }
+    }
+
+    class EngMediator
+    {
+        public void Hin2Ben()
+        {
+            string s = new Hin().sendMsg();
+            s = "Converted to Eng then to Ben: " + s;
+            new Ben().readmsg(s);
+        }
+        public void Ben2Hin()
+        {
+            new Hin().readmsg(new Ben().sendMsg());
+        }
+
+    }
+
+    class C
+    {
+        string msg;
+        public C() { msg = "";  }
+        public C(string s)
+        {
+            msg = s;
+        }
+        public void fnC(string m)
+        {
+            Console.WriteLine("In C : " + msg + " " + m);
+        }
+    }
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+  
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     //chain of Responsibility
     class A
     {
