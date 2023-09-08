@@ -2,6 +2,82 @@ using System;
 
 namespace Prj1Day17
 {
+    interface IA
+    {
+         void fna1();
+         void fna2();
+    }
+    interface IB
+    {
+        void fnb1();
+        void fnb2();
+    }
+
+    class AB : IA, IB
+    {
+        public void fna1()
+        {
+            Console.WriteLine("fnA1");
+        }
+
+        public void fna2()
+        {
+            Console.WriteLine("fnA2");
+        }
+
+        public void fnb1()
+        {
+            Console.WriteLine("fnB1");
+        }
+
+        public void fnb2()
+        {
+            Console.WriteLine("fnB2");
+        }
+    }
+    class FlyWeightAB
+    {
+        AB ab = new AB();
+        public IA getIA()
+        {
+            return ab;
+        }
+        public IB getIB()
+        {
+            return ab;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            FlyWeightAB aB = new FlyWeightAB();
+            IA ia = aB.getIA();
+            ia.fna1 ();
+            ia.fna2();
+            
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     interface IIterator
     {
         bool hasnext();
