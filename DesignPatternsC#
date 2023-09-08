@@ -2,6 +2,94 @@ using System;
 
 namespace Prj1Day17
 {
+    interface IIterator
+    {
+        bool hasnext();
+        object next();
+        void begin();
+
+    }
+    class IntIterator : IIterator
+    {
+        public void begin()
+        {
+            Console.WriteLine("begin Iteration");
+        }
+
+        public bool hasnext()
+        {
+            Console.WriteLine("has next : " + false);
+            return false;
+        }
+
+        public object next()
+        {
+            Console.WriteLine("next value  : " + 100);
+            return 100;   
+        }
+    }
+    class StringIterator : IIterator
+    {
+        public void begin()
+        {
+            Console.WriteLine("begin Iteration");
+        }
+
+        public bool hasnext()
+        {
+            Console.WriteLine("has next : " + false);
+            return false;
+        }
+
+        public object next()
+        {
+            Console.WriteLine("next value  : " + "Hello");
+            return "Hello";
+        }
+    }
+    class Bridge
+    {
+        IIterator obj;
+        public Bridge(int x)
+        {
+            obj = new IntIterator();
+        }
+        public Bridge(string x)
+        {
+            obj = new StringIterator();
+        }
+        public void runBridge()
+        {
+            obj.begin();
+            obj.next();
+            obj.hasnext();
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Bridge b1 = new Bridge(199);
+            Bridge b2 = new Bridge("Hello");
+            b1.runBridge();
+            b2.runBridge();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class Message
     {
         string msg;
