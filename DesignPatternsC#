@@ -1,3 +1,85 @@
+using System;
+
+namespace Prj1Day17
+{
+    class MessageRule1
+    {
+        string s;   
+        public void setMsg(string s)
+        {
+            this.s = s;
+        }
+        public void getMsg()
+        {
+            Console.WriteLine(s);
+
+        }
+
+    }
+    class MessageRule2
+    {
+        string protocols = " + security protocols";
+        public MessageRule2() { }
+        public MessageRule2(string p)
+        {
+            protocols = p;
+        }
+        public MessageRule1 getMsgSecurity(string s)
+        {
+            MessageRule1 m1 = new MessageRule1();
+            m1.setMsg(s + protocols);
+            return m1;
+        }
+    }
+    class MessageRule3
+    {
+        string uname = " Username : ";
+        public MessageRule3() { }
+        public MessageRule3(string n)
+        {
+            uname = n;
+        }
+        public MessageRule2 getMsgUsername(string s, string s2)
+        {
+            MessageRule2 m2 = new MessageRule2(uname + s2);
+            //m2.getMsgSecurity(uname + s);
+            return m2;
+        }
+        public MessageRule2 getMsgUsername(string s)
+        {
+            MessageRule2 m2 = new MessageRule2();
+            //m2.getMsgSecurity(uname + s);
+            return m2;
+        }
+    }
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your message");
+            string msg = Console.ReadLine();
+            MessageRule3 m3 = new MessageRule3("Guest");
+            MessageRule2 m2 = m3.getMsgUsername(msg, "High Security Protocols");
+            MessageRule1 m1 = m2.getMsgSecurity(msg);
+            m1.getMsg();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 Factory Method
 The Factory Method pattern allows you to create objects in a superclass and allows subclasses to change the type of objects that will be created. It’s a specialization of the Template Method, which defines the framework of an algorithm in a superclass and allows the subclasses to override steps of the algorithm without changing the framework.
 Use cases : Here are some use cases of the Factory Method design pattern:
