@@ -1,4 +1,97 @@
 using System;
+//LSP
+namespace Prj1Day17
+{
+    class Bird //cannot have fly() as Ostrich cannot substitute the flying functionality 
+    {
+        public virtual void eat()
+        {
+            Console.WriteLine("All birds Eat");
+        }
+    }
+    class FlightBird : Bird
+    { 
+        public virtual void fly()
+        {
+            Console.WriteLine("All birds Fly");
+        }
+    }
+    class FlightLessBird : Bird
+    {
+       
+    }
+    class Parrot : FlightBird
+    {
+        public override void fly()
+        {
+            Console.WriteLine("Parrots Fly Low");
+        }
+        public override void eat()
+        {
+            Console.WriteLine("Parrots eat green chillies");
+        }
+    }
+    class Eagle : FlightBird
+    {
+        public override void fly()
+        {
+            Console.WriteLine("Eagles Fly High");
+        }
+        public override void eat()
+        {
+            Console.WriteLine("Eagles eat other Birds");
+        }
+    }
+    class Ostrich : FlightLessBird
+    {
+        //public override void fly()
+        //{
+        //    throw new Exception("Ostrich cannot fly!");
+        //}
+        public override void eat()
+        {
+            Console.WriteLine("Ostrich eat land food");
+        }
+    }
+    internal class Program
+    {
+        public static void fnBird(Bird b)
+        {
+            if (b is FlightBird)
+            {
+                FlightBird b2 = (FlightBird)b;
+                b2.fly();
+            }
+            b.eat();
+        }
+        static void Main(string[] args)
+        {
+            Bird[] birds = new Bird[5];
+            birds[0] = new Parrot();
+            birds[1] = new Eagle();
+            birds[2] = new Parrot();
+            birds[3] = new Ostrich();
+            birds[4] = new Eagle();
+            foreach(Bird b in birds){
+                fnBird(b);
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
 
 namespace Prj1Day17
 {
