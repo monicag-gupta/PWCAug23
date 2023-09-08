@@ -59,10 +59,13 @@ namespace Prj1Day17
     {
         static void Main(string[] args)
         {
-  
+            EngMediator eng = new EngMediator();
+            eng.Ben2Hin();
+            eng.Hin2Ben();
         }
     }
 }
+
 
 
 
