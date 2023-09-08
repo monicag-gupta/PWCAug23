@@ -2,6 +2,57 @@ using System;
 
 namespace Prj1Day17
 {
+    class MobileApp1 //OCP
+    {
+        private const string author = "Abc";
+        public virtual void theme() //Open for Updation/Extension
+        {
+            Console.WriteLine("Theme in Mobile App Ver 1");
+        }
+        public void printAuthor() //closed for modification
+        {
+            Console.WriteLine("Author: " + author);
+        }
+        
+    }
+    class MobileApp2: MobileApp1
+    {
+        public override void theme()
+        {
+            Console.WriteLine("Theme in Mobile App Ver 2");
+        }
+        public void printAuthor()
+        {
+            Console.WriteLine("Author: " + "Monica");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            MobileApp1 app = new MobileApp2();
+            app.printAuthor();
+            app.theme();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class DeveloperNOtInSRP
     {
         public void codeWriting()
