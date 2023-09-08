@@ -1,0 +1,44 @@
+For .Net batch:
+1. Visual Studio 2022 Community Version with C#, Web, ASP.NET, NodeJS, Angular packages
+
+https://visualstudio.microsoft.com/downloads/
+
+
+2. SQL Server 2022 Developer Edition
+
+https://www.microsoft.com/en-in/sql-server/sql-server-downloads
+
+
+3. SQL Server Management Studio (SSMS) 19.1
+
+https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
+
+
+4. NodeJS
+
+https://nodejs.org/en/download
+
+
+5. Typescript
+
+Inside Node CLI : npm installation rights
+
+
+6. Angular CLI
+
+Inside Node CLI : npm installation rights
+
+
+7. Postman
+
+https://www.postman.com/downloads/
+
+
+8. Chrome Browser
+
+https://www.google.com/chrome/?brand=JJTC&gclid=CjwKCAjw8symBhAqEiwAaTA__CjkA7EJKyUOBHDoWnIvNLIWBegP3VCqmxF-0T1VBtkaILcjRu5IqxoCx4YQAvD_BwE&gclsrc=aw.ds
+
+
+9. Docker
+
+https://www.docker.com/products/docker-desktop/
