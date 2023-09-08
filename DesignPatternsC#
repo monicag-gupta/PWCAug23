@@ -2,6 +2,75 @@ using System;
 
 namespace Prj1Day17
 {
+    //chain of Responsibility
+    class A
+    {
+        string security;
+        public A() { security = "Normal security from A"; }
+        public A(string s)
+        {
+            security = s;
+        }
+        public B fnA(string uname) //command pattern to get Obj of B following certain rule
+        {
+            return new B(security, uname);
+        }
+    }
+    class B
+    {
+        string uname;
+
+        public B() { uname = "Visitor"; }
+        public B(string s, string na)
+        {
+            uname = na + s;
+        }
+        public C fnB()
+        {
+            return new C(uname);
+        }
+
+    }
+    class C
+    {
+        string msg;
+        public C() { msg = "";  }
+        public C(string s)
+        {
+            msg = s;
+        }
+        public void fnC(string m)
+        {
+            Console.WriteLine("In C : " + msg + " " + m);
+        }
+    }
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            C c = new A("High End Security").fnA("Guest").fnB();
+            c.fnC("Welcome Message to be printed");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace Prj1Day17
+{
     class MessageRule1
     {
         string s;   
