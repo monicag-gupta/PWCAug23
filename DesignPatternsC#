@@ -1,3 +1,128 @@
+Factory Method
+The Factory Method pattern allows you to create objects in a superclass and allows subclasses to change the type of objects that will be created. It’s a specialization of the Template Method, which defines the framework of an algorithm in a superclass and allows the subclasses to override steps of the algorithm without changing the framework.
+Use cases : Here are some use cases of the Factory Method design pattern:
+You don’t know the types and dependencies of objects your code works with
+You want to save your system’s resources and reuse existing objects instead of creating new ones
+You want to provide your library to users with the option to add to its components
+You need a lot of flexibility in your code
+Pros:
+You can move the product creation code into one place
+You can avoid tight coupling between the creator and the products
+Cons:
+Your code may become overly complicated because of all the subclasses within the pattern
+
+Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+The classes and objects participating in this pattern are: 
+Product  (Page) 
+defines the interface of objects the factory method creates
+ConcreteProduct  (SkillsPage, EducationPage, ExperiencePage) 
+implements the Product interface
+Creator  (Document) 
+declares the factory method, which returns an object of type Product. Creator may also define a default implementation of the factory method that returns a default ConcreteProduct object. 
+may call the factory method to create a Product object. 
+ConcreteCreator  (Report, Resume) 
+overrides the factory method to return an instance of a ConcreteProduct.
+
+
+
+
+
+
+
+
+
+Abstract Factory
+
+The Abstract Factory pattern allows you to create families of related objects without indicating their concrete classes.
+Use cases : Here are some use cases of the Abstract Factory design pattern:
+You need your code to work with families of related objects, but you don’t want your code to rely on concrete classes
+You want to extend or customize your standard components
+Pros:
+You can bring new variations of products into the application without changing the existing code
+You can pull the product creation code to one place
+You can avoid tight coupling between client code and products
+Cons:
+You could end up with overly complicated code because of the interfaces and classes that come with the pattern
+
+
+Provide an interface for creating families of related or dependent objects without specifying their concrete classes. 
+
+The classes,objects and interfaces used in the above UML diagram is described below: 
+Client: This class is used Abstract Factory and Abstract Product interfaces to create family of related objects. 
+Abstract Factory: This is an interface which is used to create abstract products. 
+Abstract Product: This is an interface which is used to declare type of products. 
+Concrete Factory: This is a class which implements the abstract factory interface to create concrete products. 
+Concrete Product: This is a class which implements the abstract product interface to create products. 
+
+
+
+
+
+
+
+Builder
+
+The Builder pattern allows you to build complex objects one step at a time and produce different representations of an object using the same construction code.
+Use cases: Here are some use cases of the Builder design pattern:
+You want to be able to create different representations of objects
+You want to build complex objects
+You don’t want to cram multiple parameters into your constructors
+Pros:
+You can reuse your construction code when building different versions of products
+You can build objects one step at a time
+Cons:
+Your code may become complex from the new classes that come with the pattern
+
+
+
+
+
+
+Singleton Pattern 
+
+Singleton design pattern is one of simplest design patterns. 
+This pattern ensures that class has only one instance and provides global point of accessing it. 
+The pattern ensures that only one object of a particular class is ever created.
+All further references to objects of the singleton class refer to the same underlying instance. 
+There are situations in a project where we want only one instance of the object to be created and shared between the clients. 
+No client can create an instance from outside. 
+
+1. Class should have private constructor: This will disallow us to create any instance outside the class.
+2. Private static single instance of the class : the static memory allocation will help the instance to be created only once.
+3. Public static getInstance() : this method is static as it will be called by class and wont require instance call. The method is public, as it will be used to create a reference to singleton class
+Inside the method: create new memory if single instance has null value(is getting created for the first time). Return the single instance
+
+The classes and objects participating in this pattern are: 
+Singleton   (LoadBalancer) 
+defines an Instance operation that lets clients access its unique instance. Instance is a class operation. 
+responsible for creating and maintaining its own unique instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Singleton Pattern:
 
 using System;
