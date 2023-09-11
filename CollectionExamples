@@ -8,6 +8,49 @@ namespace Prj1Day19Col
     {
         static void Main(string[] args)
         {
+            BitArray myBitArr = new BitArray(new byte[] { 0, 0, 1 , 0, 1});
+            //0 -> 8 bit -> 0 -> 0000 0000, 1 -> 1000 0000 ; result of 1 is true, and 0 is false
+            //length -> 5*8 = 40 : Index : 0 - 39
+            // Checking if the BitArray is read-only
+            //Console.WriteLine(myBitArr.IsReadOnly);
+            // To get the number of elements
+            // contained in the BitArray
+            Console.WriteLine("\nCount: " + myBitArr.Count);
+            Console.WriteLine("\nLength: " + myBitArr.Length);
+            // To get the value of index at index 2
+            //Console.WriteLine(myBitArr.Get(2));
+            PrintValues("\n\nThe BA Initially: ", myBitArr);
+            //myBitArr.SetAll(false);
+            //PrintValues("\n\nThe BA post setAll(false): ", myBitArr);
+            Console.WriteLine("\n\n");
+        }
+        public static void PrintValues(string s, IEnumerable myList)
+        {
+            Console.WriteLine(s);
+            foreach (Object obj in myList)
+            {
+                Console.Write(obj + "\t");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
             bool[] b = new bool[] { true, false, true, true };
             BitArray myBitArr = new BitArray(b);
             // Checking if the BitArray is read-only
