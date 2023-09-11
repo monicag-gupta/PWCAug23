@@ -7,6 +7,35 @@ namespace Prj1Day19Col
     class Program { 
         static void Main(string[] args)
         {
+            BitArray myBitArr = new BitArray(new byte[] { 0, 0, 0, 1 });
+            // Checking if the BitArray is read-only
+            Console.WriteLine(myBitArr.IsReadOnly);
+            // To get the number of elements
+            // contained in the BitArray
+            Console.WriteLine(myBitArr.Count);
+            // To get the value of index at index 2
+            Console.WriteLine(myBitArr.Get(2));
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+    
+    class Program { 
+        static void Main(string[] args)
+        {
             BitArray myBitArr = new BitArray(5);
             myBitArr[0] = true;
             myBitArr[1] = true;
