@@ -1,3 +1,51 @@
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList list = new ArrayList();
+            list.Add("Shriya"); list.Add("Soham"); list.Add("Sujan"); 
+            list.Add("Sagar"); list.Add("Shirisha"); list.Add("Arkabrata"); 
+            list.Add("Jitendra"); list.Add("Tejas"); list.Add("Trapti");
+            list.Add("Arkabrata"); list.Add("Rishita"); list.Add("Krishna");
+            list.Add("Abir"); list.Add("Debanjan"); list.Add("Debjani");
+            list.Add("Divyani"); list.Add("Amisha");
+            Console.WriteLine("Count:{0}", list.Count);
+            Console.WriteLine("Capacity:{0}", list.Capacity);
+            PrintValues("\nArray list Values:", list);
+            Console.WriteLine("Getting element's index position:" + list.IndexOf("Arkabrata"));
+            Console.WriteLine("Getting element's last index position:" + list.LastIndexOf("Arkabrata"));
+            list.Sort();
+            PrintValues("\n\nSorted Values:", list);
+            
+            Console.WriteLine();
+        }
+        public static void PrintValues(string s, IEnumerable myList)
+        {
+            Console.WriteLine(s);
+            foreach (Object obj in myList)
+            {
+                Console.Write(obj + "\t");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 Implement a railway ticket counter scenario where there are two queues- one general and one for senior citizen.
 Tickets are issued such that for every one person in senior citizen queue, two persons in general queue are processed.
 Write a program that takes input for 10 people who come at various points and print the list of people in the order of their processing sequence.
