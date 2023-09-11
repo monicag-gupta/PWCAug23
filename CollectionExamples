@@ -1,3 +1,70 @@
+
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+    class Message<T>
+    {
+        //int x;
+        public T usrMsg { get; set;}
+
+        public Message() { }
+        public Message(T msg) { usrMsg = msg; }
+        public override string ToString()
+        {
+            return usrMsg.ToString();
+        }
+    }
+    class Images
+    {
+        public int Size;
+        public Images() { }
+        public Images(int si) { Size = si; }
+        public override string ToString()
+        {
+            return "This is an Image of size : " + Size;
+        }
+    }
+    class Vdo
+    {
+        public Vdo() { }
+        public Vdo(string q) { quality = q; }
+        public string quality { get; set; }
+        public override string ToString()
+        {
+            return "This is a Video file sent with quality : "+ quality;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Message<Images> slidesnapshot = new Message<Images>();
+            slidesnapshot.usrMsg = new Images(1000);
+            Console.WriteLine(slidesnapshot);
+            Message<Vdo> CSharpTutorial = new Message<Vdo>();
+            CSharpTutorial.usrMsg = new Vdo("HDD");
+            Console.WriteLine(CSharpTutorial);
+            Message<string> msg = new Message<string>();
+            msg.usrMsg = "This is a msg in group";
+            Console.WriteLine(msg);
+
+
+        }
+   
+    }
+}
+
+
+
+
+
+
+
+
+
 using System;
 using System.Collections;
 
