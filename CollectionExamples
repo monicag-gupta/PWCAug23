@@ -1,3 +1,50 @@
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue myQueue = new Queue();
+            myQueue.Enqueue("one");
+            Console.WriteLine("Total number of elements in the Queue are : " + myQueue.Count);
+            myQueue.Enqueue("two");
+            myQueue.Enqueue("three");
+            myQueue.Enqueue("four");
+            myQueue.Enqueue("five");
+            myQueue.Enqueue("six");
+            PrintValues("The Queue now is: ", myQueue);
+            Console.WriteLine("Total number of elements in the Queue are : " + myQueue.Count);
+            Console.WriteLine("Element at first is : " + myQueue.Peek());
+            Console.WriteLine("Element entered first that is removed from the Queue is : " + myQueue.Dequeue());
+            Console.WriteLine("Total number of elements in the Queue are : " + myQueue.Count);
+            PrintValues("The Queue after dequeue is: ", myQueue);
+            Object[] arr = myQueue.ToArray();
+            foreach (Object obj in arr)
+                Console.WriteLine(obj);
+        }
+        public static void PrintValues(string s, IEnumerable myList)
+        {
+            Console.WriteLine(s);
+            foreach (Object obj in myList)
+            {
+                Console.Write(obj + "\t");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 Exercise:
 String s = “using System;
 using System.Collections;
