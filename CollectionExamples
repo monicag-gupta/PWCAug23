@@ -1,3 +1,9 @@
+
+
+
+
+
+
 using System;
 using System.Collections;
 
@@ -42,11 +48,13 @@ using System.Collections;
 
 namespace Prj1Day19Col
 {
-    
-    class Program { 
+
+    class Program
+    {
         static void Main(string[] args)
         {
-            BitArray myBitArr = new BitArray(new byte[] { 0, 0, 0, 1 });
+            bool[] b = new bool[] { false, false, false, true };
+            BitArray myBitArr = new BitArray(b);
             // Checking if the BitArray is read-only
             Console.WriteLine(myBitArr.IsReadOnly);
             // To get the number of elements
@@ -54,9 +62,16 @@ namespace Prj1Day19Col
             Console.WriteLine(myBitArr.Count);
             // To get the value of index at index 2
             Console.WriteLine(myBitArr.Get(2));
-
+            PrintValues("\n\nThe BA: ", myBitArr);
         }
-
+        public static void PrintValues(string s, IEnumerable myList)
+        {
+            Console.WriteLine(s);
+            foreach (Object obj in myList)
+            {
+                Console.Write(obj + "\t");
+            }
+        }
     }
 }
 
