@@ -4,6 +4,93 @@ using System.Collections.Generic;
 
 namespace Prj1Day19Col
 {
+    class Abc
+    {
+        public override int GetHashCode()
+        {
+            return 10;
+        }
+        public override bool Equals(object obj)
+        {
+            return true;
+        }
+
+    }
+    class Emp
+    {
+        string name;
+        int id;
+        public Emp() { }
+        public Emp(string name, int id)
+        {
+            this.name = name;
+            this.id = id;
+        }
+        public override string ToString()
+        {
+            return "Emp Name: " + name + " Id :  "+ id;
+        }
+        public override bool Equals(object obj)
+        {
+            Emp e = (Emp)obj;
+            return this.name == e.name && this.id == e.id;
+        }
+        public override int GetHashCode()
+        {
+            return this.id;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            HashSet<string> l1 = new HashSet<string>() { "A", "B", "A", "C" };
+            print("HashSet of string values: ", l1);
+            HashSet<Emp> l2 = new HashSet<Emp>() {
+                new Emp("A",101),
+                new Emp("B",102),
+                new Emp("A",101),
+                new Emp("C",103)
+            };
+            print("HashSet of Emp values: ", l2);
+            Console.WriteLine();
+
+            //Abc abc= new Abc();
+            //Abc abc2 = new Abc();
+            //Console.WriteLine(abc); // abc.ToString() return the Object class name: Prj1Day19Col.Emp
+            //Console.WriteLine(abc2);
+            //Console.WriteLine(abc.GetHashCode());
+            //Console.WriteLine(abc2.GetHashCode());
+            //Console.WriteLine(abc.Equals(abc2));
+
+        }
+
+        public static void print(string s,IEnumerable e)
+        {
+            Console.WriteLine(s);
+            foreach(object o in e)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Prj1Day19Col
+{
     class Emp
     {
         string name;
