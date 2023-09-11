@@ -1,3 +1,16 @@
+Natural Ordering : 
+Numerical : Int16, Int32, Double, Float, Byte, … : Ascending Order
+string : lexicographical ordering: dictionary type
+File paths: lexicographical ordering : according to path variation from the current location
+Location : lexicographical ordering of latitude and longitude
+Date and time: Chronological ordering : past comes before the future
+
+
+
+
+
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
