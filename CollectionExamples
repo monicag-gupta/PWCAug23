@@ -8,6 +8,59 @@ namespace Prj1Day19Col
     {
         static void Main(string[] args)
         {
+            Stack myStack = new Stack();
+            myStack.Push("1st Element");
+            myStack.Push("2nd Element");
+            myStack.Push("3rd Element");
+            myStack.Push("4th Element");
+            myStack.Push("5th Element");
+            myStack.Push("6th Element");
+            PrintValues("\nStack : ", myStack);
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            Console.WriteLine("Element at the top is : " + myStack.Peek());
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            Console.WriteLine("Element at the top that is removed from the Stack is : " + myStack.Pop());
+            Console.Write("Total number of elements in the Stack are : ");
+            Console.WriteLine(myStack.Count);
+            PrintValues("\nStack before clear all: ", myStack);
+            myStack.Clear();
+            PrintValues("\nStack post clear all: ", myStack);
+            Console.Write("Total number of elements in the Stack now are : ");
+            Console.WriteLine(myStack.Count);
+
+        }
+        public static void PrintValues(string s, IEnumerable myList)
+        {
+            Console.WriteLine(s);
+            foreach (Object obj in myList)
+            {
+                Console.Write(obj + "\t");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+
+namespace Prj1Day19Col
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
             BitArray myBitArr = new BitArray(new byte[] { 0, 0, 1 , 0, 1});
             //0 -> 8 bit -> 0 -> 0000 0000, 1 -> 1000 0000 ; result of 1 is true, and 0 is false
             //length -> 5*8 = 40 : Index : 0 - 39
