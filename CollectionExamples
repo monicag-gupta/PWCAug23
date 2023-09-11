@@ -1,6 +1,52 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
+
+namespace Prj1Day19Col
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //ArrayList l1=new ArrayList();
+            //l1.Add("John");
+            //l1.Add("Doe");
+            //l1.Add(45);
+            //foreach(string  o in l1)
+            //{
+            //    Console.WriteLine(o);
+            //}
+
+            List<string> l2 = new List<string>();
+            l2.Add("John");
+            l2.Add("Doe");
+            //l2.Add(45); 
+            //runtime problem for Arraylist is now a compile time 
+            //problem for generic List
+            foreach(string s in l2)
+            {
+                Console.WriteLine(s);
+            }
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections;
 
 namespace Prj1Day19Col
 {
