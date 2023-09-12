@@ -1,3 +1,40 @@
+using System;
+using System.IO;
+using System.Text;
+
+namespace Prj1Day19Col
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string writeText = "Hello World!";
+            // Create a file and write the contents of writeText to it
+            File.WriteAllText("C:\\Monica\\filename.txt", writeText);
+            // Read the contents of the file
+            string readText = File.ReadAllText("C:\\Monica\\filename.txt");
+            Console.WriteLine(readText); // Output the content
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 File Class:
 The File class from the System.IO namespace, allows us to work with files.
 Method
