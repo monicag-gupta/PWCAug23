@@ -1,3 +1,18 @@
+Employee details name and designation is entered by the user in random order. 
+It is desired to maintain a list  such that all the employees with the same designation 
+must be kept together. Also, the list must have Program Managers first, then 
+Project Manager, Team  Lead, Senior Programmer and Junior Programmer in that order. 
+Display the list after all entry is done.
+
+
+Employee{ }, 
+DesignationLists{ List<Employee>: PM, PrjM, TL, ..}
+Input(DesignationLists d)
+Input Emp value -> if designation is PM, put the Employee in the PM list
+Main()
+DesignationLists d, Employee e. 
+Menu : 1. Add Emp: e.Input(d)
+Display(d)
 
 
 
