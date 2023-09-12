@@ -6,6 +6,44 @@
 
 
 
+using System;
+using System.IO;
+using System.Text;
+
+namespace Prj1Day19Col
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream fWrite = new FileStream(@"C:\Monica\Textfile.txt", FileMode.Create, FileAccess.Write, FileShare.None);
+            var text = "This is some text written to the textfile " + "named Textfile using FileStream class.";
+            // Store the text in a byte array with  UTF8 encoding (8-bit Unicode  Transformation Format) 
+            byte[] writeArr = Encoding.UTF8.GetBytes(text);
+            fWrite.Write(writeArr, 0, text.Length);   //Write to file
+            fWrite.Close();
+            FileStream fRead = new FileStream(@"C:\Monica\Textfile.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+            byte[] readArr = new byte[text.Length];
+            int count;
+            while ((count = fRead.Read(readArr, 0, readArr.Length)) > 0)
+            {
+                Console.WriteLine(Encoding.UTF8.GetString(readArr, 0, count));   //Read from file
+            }
+            fRead.Close();
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -33,5 +71,19 @@ StreamReader : Used for reading characters from a byte stream.
 StreamWriter : Is used for writing characters to a stream.
 StringReader : Is used for reading from a string buffer.
 StringWriter : Is used for writing into a string buffer.
+
+
+FileStream:
+C# FileStream class provides a stream for file operation. 
+It can be used to perform synchronous and asynchronous read and write operations. 
+By the help of FileStream class, we can easily read and write data into file.
+Syntax:
+FileStream <object_name> = new FileStream( <file_name>, <FileMode Enumerator>, <FileAccess Enumerator>, <FileShare Enumerator>);
+FileMode : can be Append, Create, CreateNew, Open, OpenOrCreate, Truncate.
+FileAccess : can be Read, ReadWrite and Write.
+FileShare : can be Inheritable, None, Delete, Read, ReadWrite, Write.
+
+
+
 
 
