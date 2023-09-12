@@ -1,3 +1,71 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Prj1Day19Col
+{
+    class Name
+    {
+        public string name;
+        public Name(string nm) { this.name = nm; }
+        public override int GetHashCode()
+        {
+            return (name.ToCharArray())[0];
+        }
+        public override bool Equals(object obj)
+        {
+            Name s = (Name)obj;
+            return name.Equals(s.name);
+        }
+        public override string ToString()
+        {
+            return name;
+        }
+    }
+
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, string> My_dict1 = new Dictionary<int, string>();
+            My_dict1.Add(1123, "Welcome");
+            My_dict1.Add(1124, "to");
+            My_dict1.Add(1125, "C# programming");
+            foreach (KeyValuePair<int, string> ele1 in My_dict1)
+            {
+                Console.WriteLine("{0} and {1}", ele1.Key, ele1.Value);
+            }
+            Console.WriteLine();
+            Dictionary<string, string> My_dict2 = new Dictionary<string, string>(){
+                                {"a.1", "Dog"}, {"a.2", "Cat"}, {"a.3", "Rat"} };
+            foreach (KeyValuePair<string, string> ele2 in My_dict2)
+            {
+                Console.WriteLine("{0} and {1}", ele2.Key, ele2.Value);
+            }
+
+        }
+
+        public static void print(string s,IEnumerable e)
+        {
+            Console.WriteLine("\n"+s);
+            foreach(object o in e)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 Prepare a hashtable with the Emp class, making the id (int) 
