@@ -1,3 +1,21 @@
+Read a file name from cmd line args, check if the extension of the file is .cs or not.
+If the extension is .cs, proceed, else give an error message and exit the application
+If the extension is .cs,
+Read the file contents
+Check if it contains “Main(string[] arg)” or “Main()” 
+IF it contains Main function, create a new file with the same name as the original file with extension .myexe
+If it does not contain Main function, create a new file with the same name as the original file with extension .mydll
+Now we have two files loaded, the original file with .cs extension and the new file with .myexe or .mydll extension
+Copy the content of the original file with .cs extension into the new file with .myexe or .mydll extension
+Say in the Output:
+Compiled successfully.
+
+Eg : if file name is : abc.cs the output of the prg is either abc.myexe or abc.mydll with the content of abc.cs
+
+
+
+
+
 
 
 
