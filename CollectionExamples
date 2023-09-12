@@ -1,3 +1,7 @@
+Prepare a hashtable with the Emp class, making the id (int) of the emp as the key and the emp object its value.
+At least 5 records should be entered.
+Enter a key (user input) and search for the emp object according to the key in the hashtable.
+Emp(id, name, sal)
 
 
 
