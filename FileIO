@@ -3,6 +3,15 @@
 
 
 
+
+
+Use cmd args to copy source to destination
+C:\\Monica\\Textfile.txt C:\\Monica\\CopyFile.txt
+
+
+
+
+
 Design a menu driven program to: (Use FileStream)
 1.Write to a file
 2. Append to a file
