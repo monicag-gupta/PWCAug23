@@ -1,3 +1,50 @@
+
+
+StreamWriter Class:
+The StreamWriter class implements TextWriter for writing character to stream in a particular format.
+METHOD
+DESCRIPTION
+Close()
+Closes the current StreamWriter object and stream associate with it.
+Flush()
+Clears all the data from the buffer and write it in the stream associate with it.
+Write()
+Write data to the stream. It has different overloads for different data types to write in stream.
+WriteLine()
+It is same as Write() but it adds the newline character at the end of the data.
+
+StreamReader Class
+The StreamReader class implements TextReader for reading character from the stream in a particular format.
+METHOD
+DESCRIPTION
+Close()
+Closes the current StreamReader object and stream associate with it.
+Peek()
+Returns the next available character but does not consume it.
+Read()
+Reads the next character in input stream and increment characters position by one in the stream
+ReadLine()
+Reads a line from the input stream and return the data in form of string
+Seek()
+It is use to read/write at the specific location from a file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.IO;
 using System.Text;
