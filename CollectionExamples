@@ -1,3 +1,94 @@
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Prj1Day19Col
+{
+    class Name
+    {
+        public string name;
+        public Name(string nm) { this.name = nm; }
+        public override int GetHashCode()
+        {
+            return (name.ToCharArray())[0];
+        }
+        public override bool Equals(object obj)
+        {
+            Name s = (Name)obj;
+            return name.Equals(s.name);
+        }
+        public override string ToString()
+        {
+            return name;
+        }
+    }
+
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hashtable nlist = new Hashtable();
+            nlist.Add(new Name("Trisha"), "V");
+            nlist.Add(new Name("Nisha"), "VI");
+            nlist.Add(new Name("Nimisha"), "X");
+            nlist.Add(new Name("Varsha"), "IV");
+            nlist.Add(new Name("Treena"), "II");
+            //nlist.Add(new Name("Nimisha"), "XI");
+            Console.WriteLine(nlist[new Name("Nimisha")]);
+            Console.WriteLine("\nforeach via DictionaryEntry(Key,Value):");
+            foreach(DictionaryEntry d in nlist)
+            {
+                Console.WriteLine(d.Key + " has the value as : " + d.Value);
+            }
+            Console.WriteLine("\nforeach via Set of Keys:");
+
+            foreach (Name l in nlist.Keys)
+            {
+                Console.WriteLine(l + " has the value as : " + nlist[l]);
+            }
+
+
+        }
+
+        public static void print(string s,IEnumerable e)
+        {
+            Console.WriteLine("\n"+s);
+            foreach(object o in e)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
