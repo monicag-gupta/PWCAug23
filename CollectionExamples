@@ -1,3 +1,119 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Prj1Day19Col
+{
+    class Emp : IComparable<Emp>
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public int sal { get; set; }
+
+        public Emp() { }
+        public Emp(int id, string name, int sal)
+        {
+            this.id = id;
+            this.name = name;
+            this.sal = sal;
+        }
+
+        public int CompareTo(Emp other)
+        {
+            return this.sal == other.sal? this.id - other.id : this.sal - other.sal;
+        }
+
+        public override string ToString()
+        {
+            return "Emp: Id: " +id + " Name : " + name + " Salary : " + sal;
+        }
+
+    }
+
+    class NameComparer : IComparer<Emp>
+    {
+        public int Compare(Emp x, Emp y)
+        {
+            return x.name.CompareTo(y.name);
+        }
+    }
+    class IdComparer : IComparer<Emp>
+    {
+        public int Compare(Emp x, Emp y)
+        {
+            return x.id - y.id;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Emp> emps = new List<Emp>() { 
+                new Emp(101,"A1",100000),
+                new Emp(105,"C1",100000),
+                new Emp(103,"E1",200000),
+                new Emp(104,"B1",10000),
+                new Emp(102,"D1",177000),
+            };
+            print("The Original List: ", emps);
+            emps.Sort();
+            print("The Default Sorted List (Salary) : ", emps);
+            emps.Sort(new NameComparer());
+            print("The Sorted List (Name) : ", emps);
+            emps.Sort(new IdComparer());
+            print("The Sorted List (Id) : ", emps);
+        }
+
+        public static void print(string s,IEnumerable e)
+        {
+            Console.WriteLine("\n"+s);
+            foreach(object o in e)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
+    }
+}
+
+
+
+/*
+ 
+The Original List:
+Emp: Id: 101 Name : A1 Salary : 100000
+Emp: Id: 105 Name : C1 Salary : 100000
+Emp: Id: 103 Name : E1 Salary : 200000
+Emp: Id: 104 Name : B1 Salary : 10000
+Emp: Id: 102 Name : D1 Salary : 177000
+
+The Default Sorted List (Salary) :
+Emp: Id: 104 Name : B1 Salary : 10000
+Emp: Id: 101 Name : A1 Salary : 100000
+Emp: Id: 105 Name : C1 Salary : 100000
+Emp: Id: 102 Name : D1 Salary : 177000
+Emp: Id: 103 Name : E1 Salary : 200000
+
+The Sorted List (Name) :
+Emp: Id: 101 Name : A1 Salary : 100000
+Emp: Id: 104 Name : B1 Salary : 10000
+Emp: Id: 105 Name : C1 Salary : 100000
+Emp: Id: 102 Name : D1 Salary : 177000
+Emp: Id: 103 Name : E1 Salary : 200000
+
+The Sorted List (Id) :
+Emp: Id: 101 Name : A1 Salary : 100000
+Emp: Id: 102 Name : D1 Salary : 177000
+Emp: Id: 103 Name : E1 Salary : 200000
+Emp: Id: 104 Name : B1 Salary : 10000
+Emp: Id: 105 Name : C1 Salary : 100000
+*/
+
+
+
+
+
+
 
 
 
