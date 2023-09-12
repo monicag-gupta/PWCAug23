@@ -1,3 +1,15 @@
+
+
+
+Given two lists of employees. Merge the two lists into one without duplicates.
+Hint: Use Set
+
+
+
+
+
+
+
 Employee details name and designation is entered by the user in random order. 
 It is desired to maintain a list  such that all the employees with the same designation 
 must be kept together. Also, the list must have Program Managers first, then 
