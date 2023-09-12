@@ -1,3 +1,22 @@
+Use the following code snippet for datetime.now:
+  	    DateTime dt = DateTime.Now;
+            Console.WriteLine(dt.ToString());
+
+Class Emp(id, name)
+Prepare a list of 10 emps (coded)
+WAP in C# to as take input as the user id (empID) from the user.
+At the background append the id + name + currentdatetime in a formatted text into a file called LoginDetails.txt in Monica folder:
+Emp with ID : <id> having name : <name> has logged in at <currentDateTime>
+
+
+
+
+
+
+
+
+
+
 Read a file name from cmd line args, check if the extension of the file is .cs or not.
 If the extension is .cs, proceed, else give an error message and exit the application
 If the extension is .cs,
