@@ -1,5 +1,52 @@
 
 
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.IO;
+using System.Text;
+
+namespace Prj1Day19Col
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            StreamWriter sw = new StreamWriter("C://Monica//file1.txt");
+            Console.WriteLine("Enter the Text that you want to write on File");
+            string str = Console.ReadLine();
+            sw.WriteLine(str);
+            sw.Flush();
+            sw.Close();
+
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 StreamWriter Class:
 The StreamWriter class implements TextWriter for writing character to stream in a particular format.
 METHOD
