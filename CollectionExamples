@@ -58,6 +58,11 @@ namespace Prj1Day19Col
             {
                 Console.WriteLine(l + " has the value as : " + nlist[l]);
             }
+            Console.WriteLine("\nforeach via Collection of Values:");
+            foreach (string l in nlist.Values)
+            {
+                Console.WriteLine(l + " is the value");
+            }
 
 
         }
@@ -73,6 +78,11 @@ namespace Prj1Day19Col
 
     }
 }
+
+
+
+
+
 
 
 
