@@ -1,8 +1,48 @@
+
+
+
+
+
+
+
+
 Menu driven program:
 Write a program that accepts text from the user and writes it to a file until he/she enters “done”. 
 After “done” is entered, display the number of words (separated by space) along with the content of the file.
 
 Any of the Methods of classes: FileStream, File, StreamWriter and StreamReader 
+
+
+
+
+
+
+
+using System;
+using System.IO;
+using System.Text;
+
+namespace Prj1Day19Col
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            StreamWriter sw = new StreamWriter("C://Monica//file1.txt",true);
+            Console.WriteLine("Enter the Text that you want to append on File");
+            string str = Console.ReadLine();
+            sw.WriteLine(str);
+            sw.Flush();
+            sw.Close();
+
+        }
+
+    }
+}
+
+
+
 
 
 
