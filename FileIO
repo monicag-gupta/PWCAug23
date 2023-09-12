@@ -1,3 +1,21 @@
+Menu driven program:
+Write a program that accepts text from the user and writes it to a file until he/she enters “done”. 
+After “done” is entered, display the number of words (separated by space) along with the content of the file.
+
+Any of the Methods of classes: FileStream, File, StreamWriter and StreamReader 
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.IO;
 using System.Text;
