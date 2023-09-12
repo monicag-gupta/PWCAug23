@@ -12,6 +12,22 @@ After “done” is entered, display the number of words (separated by space) al
 
 Any of the Methods of classes: FileStream, File, StreamWriter and StreamReader 
 
+Main Menu:
+1. Using File
+2. Using FileStream
+3. Using StreamReader and StreamWriter
+4. Exit
+
+Sub Menu for each of the choice:
+Sub Menu:
+1. Write to File
+2. Read from the File
+3. Go to Main Menu
+
+If incorrect Menu number is pressed: Display a proper message 
+IF a user presses read first, there should be something to be read.
+
+
 
 
 
