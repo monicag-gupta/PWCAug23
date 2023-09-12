@@ -1,3 +1,26 @@
+Create a dictionary that can hold words and multiple meanings. Provide search facility and 
+display the words and their meanings (in sorted order, as in dictionary).
+
+Dictionary<string,List<string>>
+
+Input a word, get all the list elements as value for the word.
+
+
+Eg: bat -> (a toy), (A cricket bat is a specialised piece of equipment used by 
+batters in the sport of cricket to hit the ball), (An animal - A flying mammal)
+
+Eg book -> 
+Eg Software ->
+Eg Git -> 
+Eg watch ->
+
+
+
+
+
+
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
