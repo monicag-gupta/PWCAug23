@@ -1,3 +1,53 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Runtime.Serialization.Formatters.Binary;
+
+namespace Prj1Day19Col
+{
+    
+    [Serializable]
+    class Student
+    {
+        int rollno;
+        string name;
+        public Student(int rollno, string name)
+        {
+            this.rollno = rollno;
+            this.name = name;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream stream = new FileStream("C:\\Monica\\sss.txt", FileMode.OpenOrCreate);
+            BinaryFormatter formatter = new BinaryFormatter();
+            Student s = new Student(101, "Emp1");
+            formatter.Serialize(stream, s);
+            stream.Close();
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Use the following code snippet for datetime.now:
   	    DateTime dt = DateTime.Now;
             Console.WriteLine(dt.ToString());
