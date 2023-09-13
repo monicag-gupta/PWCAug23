@@ -9,6 +9,89 @@ namespace Prj1Day19Col
     {
         static void Main(string[] args)
         {
+            string poem = @"What is this life if, full of care,
+                We have, no time to stand and stare.
+                No time to stand, beneath the boughs
+                And stare as long as sheep or cows.
+                No time to see, when woods we pass,
+                Where, squirrels hide their nuts in grass.";
+            var matchQuery = from c in poem where c == ',' select c;
+            int i = 0;
+            //foreach (char c in matchQuery)
+            //{
+            //    i++;
+            //}
+            Console.WriteLine("The number of , is: "+matchQuery.ToArray().Length);
+            //Console.WriteLine(i);   //
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Linq;
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] flowers = { "dahlia", "rose", "lotus", "lily", "hibiscus", "daffodil" };
+        var fQuery =
+        from flower in flowers           //foreach(string flower in flowers) {
+        where (flower.StartsWith("d"))          //if(flower.StartsWith("d")){
+        select flower;                              //fQuery.add(flower) } }
+        foreach (string f in fQuery)
+        {
+            Console.WriteLine(f);
+        }
+        Console.ReadLine();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
             string[] flowers = 
                 { "dahlia", "rose", "lotus", "daisy", "lily", "hibiscus", "daffodil" , "dandelions"};
 
