@@ -1,0 +1,34 @@
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] flowers = 
+                { "dahlia", "rose", "lotus", "daisy", "lily", "hibiscus", "daffodil" , "dandelions"};
+
+            var fQuery =
+            from flower in flowers
+            where (flower.StartsWith("d"))
+            select flower;
+            foreach (string flr in fQuery)
+            {
+                Console.WriteLine(flr);
+            }
+
+
+
+
+        }
+
+    }
+}
+
+
+
+
