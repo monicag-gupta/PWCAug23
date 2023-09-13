@@ -1,3 +1,38 @@
+
+
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
+        delegate int cube(int i);
+        static void Main(string[] args)
+        {
+            cube myqb = x => x * x * x;
+            int j = myqb(5);
+            Console.Write(j);
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 using System.Linq;
 
