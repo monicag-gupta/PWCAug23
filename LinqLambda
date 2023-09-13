@@ -1,3 +1,40 @@
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
+        delegate int Operation(int i, int j);
+        static void Main(string[] args)
+        {
+            Operation add = (x, y) => x + y;
+            Console.WriteLine(add(3,4));
+            Operation sub = (x, y) => x>y? x - y : y - x;
+            Console.WriteLine(sub(3, 4));
+            Operation mul = (x, y) => x * y;
+            Console.WriteLine(mul(3, 4));
+            Operation div = (x, y) => y==0? 0 : x / y;
+            Console.WriteLine(div(100,10));
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 using System;
