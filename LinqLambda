@@ -7,6 +7,45 @@ namespace Prj1Day19Col
     
     class Program
     {
+        delegate int producer();
+        delegate void consumer(int x);
+        
+        static void Main(string[] args)
+        {
+            producer obj = () => 100;
+            Console.WriteLine(obj());
+            consumer obj1 = x => Console.WriteLine(x * x);
+            obj1(10);
+
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
         delegate int Operation(int i, int j);
         static void Main(string[] args)
         {
