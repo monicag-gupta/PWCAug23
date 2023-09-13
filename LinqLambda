@@ -7,6 +7,43 @@ namespace Prj1Day19Col
     
     class Program
     {
+       
+        static void Main(string[] args)
+        {
+            string[] flowers = { "dahlia", "rose", "lotus", "lily", "hibiscus", "daffodil" };
+            var flrs = flowers.Where(flower => flower.StartsWith("d"));
+            foreach (string g in flrs)
+            {
+                Console.WriteLine(g);
+            }
+
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Linq;
+
+namespace Prj1Day19Col
+{
+    
+    
+    class Program
+    {
         delegate int producer();
         delegate void consumer(int x);
         
