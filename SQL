@@ -1,3 +1,29 @@
+For example: Method 1: Column Constraint
+
+CREATE TABLE emp1
+( emp_id INT PRIMARY KEY,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY  
+); 
+
+
+Method 2: Table Constraint
+
+CREATE TABLE emp2  
+( emp_id INT,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp2_pk PRIMARY KEY (emp_id)  
+); 
+
+
+
+
+
+
+
 
 
 CREATE TABLE Emp(
