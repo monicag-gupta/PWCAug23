@@ -1,4 +1,27 @@
 
+CREATE TABLE emp4 ( 
+emp_id INT,    
+last_name VARCHAR(50) NOT NULL,    
+first_name VARCHAR(50) NOT NULL,    
+salary MONEY
+); 
+
+
+ALTER TABLE emp4 ADD CONSTRAINT emp4_pk PRIMARY KEY (emp_id); 
+
+drop table emp4;
+
+CREATE TABLE emp4 ( 
+emp_id INT not null,    
+last_name VARCHAR(50) NOT NULL,    
+first_name VARCHAR(50) NOT NULL,    
+salary MONEY
+); 
+
+ALTER TABLE emp4 ADD CONSTRAINT emp4_pk PRIMARY KEY (emp_id); 
+
+
+
 
 ALTER TABLE emp 
 ADD CONSTRAINT emp_pk PRIMARY KEY (EmpCode); 
