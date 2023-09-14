@@ -1,3 +1,15 @@
+ALTER TABLE EmployeeLeave
+ADD CONSTRAINT rfkcEmployeeID 
+FOREIGN KEY(EmployeeID) 
+REFERENCES Emp(EmpCode)
+ON DELETE NO ACTION 
+ON UPDATE NO ACTION
+;
+
+
+
+
+
 
 CREATE TABLE Project (
   ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
