@@ -1,3 +1,12 @@
+Create database testdb;
+
+
+
+
+
+
+
+
 RDBMS:
 Each table in a database has a unique table name.
 The row (or record) in the table is called a tuple.
