@@ -12,5 +12,13 @@ In RDBMS, missing or unknown information is represented as a NULL value in a tab
 NULL is not the same as space or zero.
 
 
+The various types of keys used in an RDBMS are:
+Primary : Unique + Not Null
+Foreign : Pkey in other Relation
+Candidate: Many keys who can become PKey
+Alternate : Can become PKey
+
+
+
 
 
