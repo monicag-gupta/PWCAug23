@@ -1,6 +1,22 @@
 
 
 
+
+
+CREATE TABLE EmployeeLeave2
+(
+EmployeeID int,
+LeaveStartDate datetime CONSTRAINT cpkLeaveStartDate PRIMARY KEY(EmployeeID, LeaveStartDate),
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2) CONSTRAINT chkLeave CHECK(LeaveType IN('CL','SL','PL'))
+);
+
+
+
+
+
+
 ALTER TABLE inventory
 DROP CONSTRAINT fk_inv_product_id;   
 
