@@ -16,6 +16,10 @@ use BikeStores;
 
 
 
+
+
+
+
 CREATE TABLE EmployeeLeave3
 		(
 		LeaveType char(2) CONSTRAINT chkLeave3 	CHECK(LeaveType IN('CL','SL','PL')) 	CONSTRAINT chkDefLeave DEFAULT 'PL'
