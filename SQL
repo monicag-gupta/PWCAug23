@@ -1,4 +1,17 @@
 
+CREATE TABLE Project (
+  ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
+  Description varchar(50) CONSTRAINT unDesc UNIQUE
+)
+
+
+
+
+
+
+
+
+
 ALTER TABLE emp2  
 DROP CONSTRAINT emp2_pk ; 
 
