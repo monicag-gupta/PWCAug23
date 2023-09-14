@@ -1,5 +1,12 @@
 Create database testdb;
 
+drop database testdb;
+
+Create database testdb;
+use testdb;
+
+
+
 
 
 
