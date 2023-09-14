@@ -1,3 +1,12 @@
+
+
+
+ALTER TABLE inventory
+DROP CONSTRAINT fk_inv_product_id;   
+
+
+
+
 CREATE TABLE products2  
 ( product_name VARCHAR(50) NOT NULL,  
   location VARCHAR(50) NOT NULL,  
