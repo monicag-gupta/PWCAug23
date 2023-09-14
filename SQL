@@ -1,4 +1,11 @@
 
+ALTER TABLE emp2  
+DROP CONSTRAINT emp2_pk ; 
+
+
+
+
+
 CREATE TABLE emp4 ( 
 emp_id INT,    
 last_name VARCHAR(50) NOT NULL,    
