@@ -1,5 +1,7 @@
 
 
+ALTER TABLE emp 
+ADD CONSTRAINT emp_pk PRIMARY KEY (EmpCode); 
 
 
 Create a primary key in SQL Server where the primary key is more than one field:
