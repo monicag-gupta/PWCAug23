@@ -1,3 +1,31 @@
+CREATE TABLE products2  
+( product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+  CONSTRAINT products_pk PRIMARY KEY (product_name, location)  
+);  
+
+CREATE TABLE inventory2  
+( inventory_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product  
+    FOREIGN KEY (product_name, location)  
+    REFERENCES products2 (product_name, location)  
+); 
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE products  
 ( product_id INT PRIMARY KEY,  
   product_name VARCHAR(50) NOT NULL,  
