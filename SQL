@@ -1,3 +1,36 @@
+
+CREATE TABLE EmployeeLeave
+(
+EmployeeID int NOT NULL, 
+LeaveStartDate datetime NOT NULL,
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2)NOT NULL
+);
+
+
+
+
+
+The CREATE TABLE statement is used to create a table.
+Syntax:
+CREATE TABLE 
+    [ database_name . [ schema_name ] .] table_name 
+        ( { <column_definition> | <computed_column_definition> }
+        [IDENTITY (SEED, INCREMENT)]
+[ <table_constraint> ] [ ,...n ] ) 
+    [ ON { partition_scheme_name ( partition_column_name ) | filegroup 
+        | "default" } ] 
+    [ { TEXTIMAGE_ON { filegroup | "default" } ] 
+[ ; ]
+
+
+
+
+
+
+
+
 Create database testdb;
 
 drop database testdb;
