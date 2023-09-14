@@ -20,5 +20,25 @@ Alternate : Can become PKey
 
 
 
+Normalization results in the formation of tables that satisfy certain normal forms.
+The normal forms are used to remove various types of abnormalities and inconsistencies from the database.
+The most important and widely used normal forms are:
+First Normal Form (1NF)
+when each cell of the table contains precisely one value
+RDBMS
+Second Normal Form (2NF)
+No partial dependency exists between non-key attributes and key attributes
+Pkey or AltKey
+Third Normal Form (3NF)
+No transitive (indirect) dependency exists between non-key attributes and key attributes
+CompositeKey : work for all records
+Boyce-Codd Normal Form (BCNF)
+if and only if every determinant is a candidate key
+CandidateKey
+
+
+
+
+
 
 
