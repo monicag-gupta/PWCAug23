@@ -1,4 +1,18 @@
 
+CREATE TABLE EmployeeLeave3
+		(
+		LeaveType char(2) CONSTRAINT chkLeave3 	CHECK(LeaveType IN('CL','SL','PL')) 	CONSTRAINT chkDefLeave DEFAULT 'PL'
+		);
+
+
+		
+CREATE TABLE EmployeeLeave4
+		(
+		LeaveType char(2) 	CONSTRAINT chkDefLeave2 DEFAULT 'PL'
+		);
+
+
+
 
 CREATE TABLE emp6
 (
