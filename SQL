@@ -1,4 +1,13 @@
 
+
+CREATE TABLE Emp(
+EmpCode int IDENTITY(100,1),
+EmpName char(25) NOT NULL,
+DeptNo char(4) NOT NULL);
+
+
+
+
 sp_help EmployeeLeave;
 
 
