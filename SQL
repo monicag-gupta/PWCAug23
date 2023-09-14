@@ -1,3 +1,20 @@
+
+
+
+
+Create a primary key in SQL Server where the primary key is more than one field:
+CREATE TABLE emp3  
+( last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp3_pk PRIMARY KEY (last_name, first_name)  
+); 
+
+
+
+
+
+
 For example: Method 1: Column Constraint
 
 CREATE TABLE emp1
