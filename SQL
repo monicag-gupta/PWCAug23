@@ -1,0 +1,16 @@
+RDBMS:
+Each table in a database has a unique table name.
+The row (or record) in the table is called a tuple.
+The column (or field) is called an attribute. 
+Every column in a table must have a unique name. 
+The number of tuples is called the cardinality of the table.
+The number of attributes is called the degree of the table.
+A column or combination of columns that uniquely identifies each row in the table is called the primary key 
+A table where every row is different from all other rows is called a relation.
+A domain is a collection of values from which one or more attributes (columns) draw their actual values. 
+In RDBMS, missing or unknown information is represented as a NULL value in a table. 
+NULL is not the same as space or zero.
+
+
+
+
