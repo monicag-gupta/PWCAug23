@@ -1,3 +1,26 @@
+CREATE TABLE products  
+( product_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+); 
+ 
+CREATE TABLE inventory  
+( inventory_id INT PRIMARY KEY,  
+  product_id INT NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product_id  
+    FOREIGN KEY (product_id)  
+    REFERENCES products (product_id)  
+); 
+
+
+
+
+
+
+
 ALTER TABLE EmployeeLeave
 ADD CONSTRAINT rfkcEmployeeID 
 FOREIGN KEY(EmployeeID) 
