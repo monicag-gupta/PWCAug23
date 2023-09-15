@@ -1,4 +1,4 @@
-Exercise:
+Exercise: from BikeStores: 
 
 Cust.fn, Cust.ln, orders.oID, orders.status, staff.fn, staff.ln 
 
