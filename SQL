@@ -1,3 +1,22 @@
+
+BikeStores:
+
+SELECT * FROM
+    production.products
+WHERE
+    category_id = 1
+AND list_price > 400;
+
+
+
+
+
+
+
+
+
+
+
 SELECT ID, NAME, SALARY  
 FROM CUSTOMERS 
 WHERE SALARY > 2000;
