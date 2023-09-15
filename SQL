@@ -15,6 +15,17 @@ DROP TABLE CUSTOMERS;
 
 
 
+exec sp_columns CUSTOMERS;
+
+exec sp_help CUSTOMERS;
+
+
+execute sp_columns CUSTOMERS;
+
+execute sp_help CUSTOMERS;
+
+
+
 
 
 
