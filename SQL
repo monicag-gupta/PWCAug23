@@ -11,6 +11,10 @@ CREATE TABLE CUSTOMERS(
 exec sp_columns CUSTOMERS;
 
 
+DROP TABLE CUSTOMERS; 
+
+
+
 
 
 
