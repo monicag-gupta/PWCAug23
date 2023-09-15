@@ -1,8 +1,17 @@
 
+
+
+
+
+
 CREATE TABLE EMPTBL (NAME VARCHAR(20), SAL VARCHAR(20), MANAGER VARCHAR(20));
 Insert into Emptbl values('A',2000,'B'),('B',5000,'C'),('C',1000,null),('D',4000,'C');
 select * from Emptbl;
 
+
+select e2.SAL     
+from Emptbl e1 join Emptbl e2
+on e1.MANAGER = e2.NAME and e1.name = 'B';
 
 
 
