@@ -1,4 +1,13 @@
 Testdb:
+
+select distinct address from customers;
+
+select count(Address) from Customers;
+select count(distinct Address) from Customers;
+
+
+
+
 select * from Customers;
 
 update Customers set address= 'Kolkata' where id between 3 and 5;
