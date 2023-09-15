@@ -1,3 +1,29 @@
+
+
+
+
+
+SELECT * FROM CUSTOMERS;
+
+UPDATE CUSTOMERS 
+SET ADDRESS = 'Pune' 
+WHERE ID = 6; 
+
+SELECT * FROM CUSTOMERS;
+
+UPDATE CUSTOMERS_bkp1 
+SET ADDRESS = 'Pune', SALARY = 1000.00;
+
+
+SELECT * FROM CUSTOMERS_bkp1;
+
+
+
+
+
+
+
+
 (1,'ASSASSINS CREED: EMBERS','Animations'),
 (2,'Real Steel(2012)','Animations'),
 (3,'Alvin and the Chipmunks','Animations'),
