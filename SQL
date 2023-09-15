@@ -1,5 +1,6 @@
 Testdb:
 select sum(salary) as 'Total Expense' from customers;
+select sum(salary) as 'Total Expense' from customers where id < 7;
 
 
 
