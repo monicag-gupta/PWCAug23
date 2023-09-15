@@ -1,6 +1,27 @@
 
 
 
+CREATE TABLE ORDERS (
+   ID          INT        NOT NULL,
+   DATE        DATETIME, 
+   CUSTOMER_ID INT references CUSTOMERS(ID),
+   AMOUNT    DECIMAL (18, 2),  
+   PRIMARY KEY (ID)
+);
+
+select * from Orders;
+
+INSERT INTO ORDERS VALUES (100, '2020-10-08',  3, 1500.00  );
+INSERT INTO ORDERS VALUES (104, '2020-10-08',  7, 1500.00  );
+
+INSERT INTO ORDERS VALUES 
+ 	(101, '2020-10-20',  3, 1560.00 ),
+ 	(102, '2020-10-08',  3, 3000.00  ),
+ 	(103, '2020-05-20', 4, 2060.00);
+
+	select * from Orders;
+
+
 
 
 
