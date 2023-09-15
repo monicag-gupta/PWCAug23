@@ -1,6 +1,19 @@
 
 BikeStores:
 
+
+
+SELECT
+    product_name,
+    list_price
+FROM
+    production.products
+WHERE
+    list_price < 100
+OR list_price > 10000;
+
+
+
 SELECT * FROM
     production.products
 WHERE
