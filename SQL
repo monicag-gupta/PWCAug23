@@ -1,3 +1,20 @@
+testdb:
+
+SELECT * FROM CUSTOMERS_bkp1;
+
+Insert into CUSTOMERS_BKP1 values(10,'Ab_xy',28,'Dli%wow',89.00);
+Insert into CUSTOMERS_BKP1 values(11,'A_xy',28,'Dl%wow',89.00);
+Insert into CUSTOMERS_BKP1 values(12,'12Ab_xy',28,'34Dli%wow',89.00);
+
+select name from CUSTOMERS_BKP1 where name like '%[_]%';
+select address from CUSTOMERS_BKP1 where address like '%[%]%';
+
+select name from CUSTOMERS_BKP1 where name like '[0-9]%';
+select name from CUSTOMERS_BKP1 where name like '[a-z]%';
+select name from CUSTOMERS_BKP1 where name like '[a-z0-9]%';
+
+
+
 
 BikeStores:
 
