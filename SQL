@@ -1,3 +1,10 @@
+SELECT *  FROM CUSTOMERS
+   WHERE ID IN (SELECT ID FROM CUSTOMERS WHERE SALARY > 4500);
+
+
+
+
+
 Exercise: from BikeStores: 
 
 Cust.fn, Cust.ln, orders.oID, orders.status, staff.fn, staff.ln 
