@@ -1,5 +1,7 @@
 Exercise:
 
+Cust.fn, Cust.ln, orders.oID, orders.status, staff.fn, staff.ln 
+
 Join the tables sales.orders  with SALES.CUSTOMERS and also with sales.staffs : 
 and from the Customer table show the customers first_name, last name, 
 from orders table show the customers corresponding order_id, and order_status 
