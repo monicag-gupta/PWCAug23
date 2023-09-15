@@ -1,5 +1,18 @@
 BikeStores:
 
+SELECT * FROM SALES.CUSTOMERS 
+   ORDER BY FIRST_NAME, last_name;
+
+
+SELECT * FROM SALES.CUSTOMERS 
+   ORDER BY FIRST_NAME asc, last_name desc;
+
+SELECT * FROM SALES.CUSTOMERS 
+   ORDER BY FIRST_NAME DESC;
+
+
+
+
 
 SELECT
     product_id,
