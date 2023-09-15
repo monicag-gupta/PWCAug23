@@ -1,3 +1,64 @@
+Joining:
+
+It is noticeable that the join is performed in the WHERE clause. 
+Several operators can be used to join tables, such as =, <, >, <>, <=, >=, !=, BETWEEN, LIKE, and NOT; they can all be used to join tables. 
+However, the most common operator is the equal symbol.
+MS SQL Server Join Types −
+There are different types of joins available in MS SQL Server −
+INNER JOIN − Returns rows when there is a match in both tables.
+LEFT JOIN − Returns all rows from the left table, even if there are no matches in the right table.
+RIGHT JOIN − Returns all rows from the right table, even if there are no matches in the left table.
+FULL JOIN − Returns rows when there is a match in one of the tables.
+SELF JOIN − This is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the MS SQL Server statement.
+CARTESIAN JOIN − Returns the Cartesian product of the sets of records from the two or more joined tables.
+
+
+
+
+
+
+
+
+
+select * from Orders;
+select * from customers;
+
+SELECT CUSTOMERS.ID, NAME, AGE, AMOUNT 
+   FROM CUSTOMERS, ORDERS 
+   WHERE  CUSTOMERS.ID = ORDERS.CUSTOMER_ID ;
+SELECT CUSTOMERS.ID, NAME, AGE, AMOUNT 
+   FROM CUSTOMERS Join ORDERS 
+   on  CUSTOMERS.ID = ORDERS.CUSTOMER_ID ;
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   LEFT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   RIGHT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   FULL JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+   SELECT  CUSTOMERS.ID, NAME, Age, Address, Salary, Orders.Id, Customer_id, AMOUNT, DATE
+   FROM CUSTOMERS, ORDERS;
+
+
+
+
+
+
+
+
+
+
 select * from Orders;
 select * from customers;
 
@@ -42,7 +103,8 @@ select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 left outer join tbl2 on tbl1.B =
 select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 right outer join tbl2 on tbl1.B = tbl2.B;
 --full outer join:
 select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 full outer join tbl2 on tbl1.B = tbl2.B;
-
+--cross join
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1, tbl2;
 
 
 
