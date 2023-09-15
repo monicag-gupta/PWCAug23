@@ -1,3 +1,21 @@
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+INSERT INTO CUSTOMERS VALUES (7, 'Muffy', 24, 'Indore', 10000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) 
+VALUES (8, 'Khilan', 22, 'Delhi', null );  
+INSERT INTO CUSTOMERS (ID,NAME,AGE, SALARY) 
+VALUES (9, ‘Mililan', 28, null );  
+
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) VALUES 
+(3, 'kaushik', 23, 'Kota', 2000.00 ),
+(4, 'Chaitali', 25, 'Mumbai', 6500.00 ),
+(5, 'Hard', 27, 'Bhopal', 8500.00 ),
+(6, 'Komal', 22, 'MP', 4500.00 );
+
+
+
 
 CREATE TABLE CUSTOMERS( 
    ID   INT              NOT NULL, 
