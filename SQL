@@ -2,6 +2,16 @@
 BikeStores:
 
 
+Select * from sales.customers where first_name like 'a%';
+Select * from sales.customers where first_name like '_a%';
+
+Select * from sales.customers where first_name like '____';
+
+Select * from sales.customers where first_name like '%a_';
+Select * from sales.customers where first_name like '%a';
+
+
+
 SELECT TOP 10
     product_name, list_price
 FROM   production.products;
