@@ -1,9 +1,18 @@
+
+
+
+
+
+
 Testdb:
 
 select distinct address from customers;
 
 select count(Address) from Customers;
 select count(distinct Address) from Customers;
+
+
+
 
 
 
