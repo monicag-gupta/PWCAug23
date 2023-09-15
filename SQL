@@ -1,4 +1,25 @@
 Testdb:
+select * from Customers;
+
+update Customers set address= 'Kolkata' where id between 3 and 5;
+
+update Customers set address= 'Gurgaon' where id >6;
+
+update Customers set address= 'Mumbai' where address not in ('Kolkata','Gurgaon');
+
+SELECT Address, SUM(SALARY) as [sum of salary] FROM CUSTOMERS  GROUP BY Address;
+
+
+
+
+
+BikeStores:
+select Category_id, sum(list_price) from  production.products group by Category_id;
+
+
+
+
+Testdb:
 select sum(salary) as 'Total Expense' from customers;
 select sum(salary) as 'Total Expense' from customers where id < 7;
 select min(salary) as 'Total Expense' from customers;
