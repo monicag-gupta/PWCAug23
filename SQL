@@ -1,3 +1,23 @@
+Exercise:
+
+Join the tables sales.orders  with SALES.CUSTOMERS and also with sales.staffs : 
+and from the Customer table show the customers first_name, last name, 
+from orders table show the customers corresponding order_id, and order_status 
+and from the staff table show the linked staff first_name and last_name.
+
+Linking conditions are equi join based on 
+orders.customer_id with customers.customer_id and 
+orders.staff_id with staff.staff_id
+
+select * from sales.orders;
+SELECT * FROM SALES.CUSTOMERS;
+select * from sales.staffs;
+
+
+
+
+
+
 Joining:
 
 It is noticeable that the join is performed in the WHERE clause. 
