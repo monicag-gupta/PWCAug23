@@ -19,7 +19,7 @@ FROM   production.products;
 
 SELECT TOP 5
 --WITH TIES
-    list_price
+    product_name,list_price
 FROM production.products 
 order by list_price;
 
@@ -27,7 +27,7 @@ order by list_price;
 
 SELECT TOP 5
 WITH TIES
-    list_price
+    product_name,list_price
 FROM production.products 
 order by list_price;
 
