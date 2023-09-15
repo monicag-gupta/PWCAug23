@@ -2,6 +2,47 @@
 BikeStores:
 
 
+SELECT TOP 10
+    product_name, list_price
+FROM   production.products;
+
+
+SELECT TOP 2 Percent
+    product_name, list_price
+FROM   production.products;
+
+SELECT 
+    product_name, list_price
+FROM   production.products;
+
+
+
+SELECT TOP 5
+--WITH TIES
+    list_price
+FROM production.products 
+order by list_price;
+
+
+
+SELECT TOP 5
+WITH TIES
+    list_price
+FROM production.products 
+order by list_price;
+
+SELECT TOP 3 WITH TIES
+    product_name, list_price
+FROM production.products 
+order by product_name, list_price;
+
+
+
+
+
+
+
+
 SELECT customer_id, first_name, last_name,  phone
 FROM  sales.customers
 WHERE  phone IS NULL;
