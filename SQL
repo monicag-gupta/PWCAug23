@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 create table tbl1(A varchar(3),B varchar(3));
 create table tbl2(B varchar(3),C varchar(3));
 
@@ -6,6 +14,17 @@ insert into tbl1 values('A1','B1'),('A2','B2'),('A3','B3');
 insert into tbl2 values('B1','C1'),('B3','C3'),('B5','C5');
 select * from tbl1;
 select * from tbl2;
+--Inner Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 join tbl2 on tbl1.B = tbl2.B;
+--Left Outer Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 left outer join tbl2 on tbl1.B = tbl2.B;
+--right Outer Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 right outer join tbl2 on tbl1.B = tbl2.B;
+--full outer join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 full outer join tbl2 on tbl1.B = tbl2.B;
+
+
+
 
 
 
