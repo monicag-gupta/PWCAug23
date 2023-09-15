@@ -1,3 +1,8 @@
+Testdb:
+select sum(salary) as 'Total Expense' from customers;
+
+
+
 BikeStores:
 
 SELECT * FROM SALES.CUSTOMERS 
