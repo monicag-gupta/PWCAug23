@@ -2,6 +2,18 @@
 BikeStores:
 
 
+SELECT customer_id, first_name, last_name,  phone
+FROM  sales.customers
+WHERE  phone IS NULL;
+
+SELECT customer_id, first_name, last_name,  phone
+FROM  sales.customers
+WHERE  phone IS NOT NULL;
+
+
+
+
+
 SELECT  product_name,  list_price
 FROM  production.products
 WHERE  
