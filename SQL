@@ -1,3 +1,28 @@
+(1,'ASSASSINS CREED: EMBERS','Animations'),
+(2,'Real Steel(2012)','Animations'),
+(3,'Alvin and the Chipmunks','Animations'),
+(4,'The Adventures of Tin Tin','Animations'),
+(5,'Safe (2012)','Action'),
+(6,'Safe House(2012)','Action'),
+(7,'3 Idiots','Drama'),
+(8,'Ghazni','Drama'),
+(9,'Nayak','Drama'),
+(10,'Marley and me','Family')
+
+
+
+(1,'Adam','Smith',1), 
+(2, 'Ravi', 'Kumar', 2), 
+(3, 'Susan', 'Davidson', 5),
+(4, 'Jenny', 'Adrianna', 8),
+(6,'Lee','Pong',10)
+
+
+
+
+
+
+
 SELECT * INTO CUSTOMERS_BKP FROM CUSTOMERS;
 SELECT * FROM CUSTOMERS_BKP;
 
