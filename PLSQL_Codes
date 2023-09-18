@@ -14,6 +14,13 @@ SELECT * FROM CUSTOMERS WHERE AGE > ALL (SELECT AGE FROM CUSTOMERS WHERE SALARY 
 SELECT * FROM CUSTOMERS WHERE AGE > ANY (SELECT AGE FROM CUSTOMERS WHERE SALARY > 6500);
 
 
+select name, age from customers where age > any(select age from CUSTOMERS_Bkp2);
+select name, age from customers where age > all(select age from CUSTOMERS_Bkp2);
+select name, age from customers where exists (select age from CUSTOMERS_Bkp2 where age > 2);
+select name, age from customers where exists (select age from CUSTOMERS_Bkp2 where age > 27);
+select name, age from customers where not exists (select age from CUSTOMERS_Bkp2 where age > 27);
+
+
 
 
 
