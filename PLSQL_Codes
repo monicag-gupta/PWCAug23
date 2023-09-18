@@ -6,3 +6,12 @@ CREATE TABLE productsNew (
 	category_id INT NOT NULL,
 	model_year SMALLINT NOT NULL,
 	list_price DECIMAL (10, 2) NOT NULL);
+
+
+
+INSERT INTO productsNew
+VALUES 
+ 	('Test product1', 1, 1, 2018, 599),
+ 	('Test product2', 2, 2, 2016, 699),
+ 	('Test product3', 3, 3, 2018, 799),
+ 	('Test product4', 4, 4, 2015, 899);
