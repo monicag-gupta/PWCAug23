@@ -1,3 +1,29 @@
+Points for Subqueries:
+If data is precise (less projection, columns) to be selected, use Subqueries
+If data is required for analysis (once per query) or if the query is an on time query, use Subqueries
+Points for Joins:
+If data selected is a lot (more projections are there) then use Joins
+If views are to be created against any query, or if query result is used very frequently, then use joins as it gives a de-normalized (1NF) table to run the query.
+If projection (select columns) are from multiple tables, we are bound to use joins
+Eg:
+select e1.name, e1.MANAGER, e2.name mngrName, e2.SAL MngrSal     
+from Emptbl e1 join Emptbl e2
+on e1.MANAGER = e2.NAME and e1.name = 'B';
+
+select name mngrName, sal MngrSal from Emptbl where name = (select manager from Emptbl where name='B');
+
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE EMPTBL (NAME VARCHAR(20), SAL VARCHAR(20), MANAGER VARCHAR(20));
 Insert into Emptbl values('A',2000,'B'),('B',5000,'C'),('C',1000,null),('D',4000,'C');
 select * from Emptbl;
