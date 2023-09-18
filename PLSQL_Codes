@@ -1,3 +1,75 @@
+SELECT COUNT(*) FROM customers;
+SELECT MIN(Salary) FROM customers;
+SELECT MAX(Salary) FROM customers;
+SELECT AVG(Salary) FROM customers;
+SELECT SUM(Salary) FROM customers;
+Select SQRT(16);  
+SELECT RAND()*(10-5)+5;  --Random between 5 and 10; includes decimal
+SELECT CAST(RAND()*(10-5)+5 as int); --only int output
+Select Rand(1); --will generate the same number as it will be generated only once for the seed value given. 
+SELECT CONCAT('FIRST ', 'SECOND');
+SELECT FLOOR(7.55);  --7.0
+select ceiling(5.3); --6
+SELECT FORMAT(423423234.65434453,2);  -- 423,423,234.65
+SELECT 29 % 3;  --2
+SELECT POWER(2,3);  --8
+SELECT PI(); -- 3.141593
+--SELECT TRUNCATE(7.536432,2);  --  7.53
+SELECT CURRENT_USER;  --Monica
+SELECT ISNUMERIC('4567');  --1
+SELECT CONVERT(int, 25.65); --25
+select soundex('bat'),soundex('What'); --4 char set telling the sound 
+--bat : B300, What : w300
+select difference('Bat','Ball'); 
+--the more similar to sound, the better numerical value between (0-4): 
+--The number of char same in soundex
+select difference('Wall','Ball');
+select difference('Bat','what');
+SELECT ASCII('A');  -- 65
+SELECT CHAR(65); -- A
+SELECT LOWER('STR'); --str
+SELECT UPPER('Str');  --STR
+SELECT LEN('text');  -- 4
+SELECT LEFT('SQL Session', 3); --SQL  
+SELECT RIGHT('SQL Session', 3); --ion
+SELECT REVERSE('SQL Tutorial');  --lairotuT LQS
+SELECT TRIM('     SQL Tutorial!     ')  --SQL Tutorial!
+SELECT RTRIM('     SQL Tutorial!     ')  -- '     SQL Tutorial!'
+SELECT LTRIM('     SQL Tutorial!     ')  -- 'SQL Tutorial!     '
+SELECT STR(185);  --’185’
+SELECT STUFF('SQL Tutorial', 1, 3, 'C#');  --C# Tutorial
+SELECT SUBSTRING('SQL Tutorial', 1, 3) --SQL
+SELECT TRANSLATE('3*[2+1]/{8-4}', '[]{}', '()()');  -- 3*(2+1)/(8-4)
+SELECT TRANSLATE('Hello World', 'ol', 'ab');  -- Hebba Warbd
+SELECT CURRENT_TIMESTAMP; --2023-09-01 10:40:50.923
+SELECT GETDATE(); --2020-11-01 10:41:40.830
+SELECT Concat(DAY(GETDATE()), '-', MONTH(GETDATE()), '-', YEAR(GETDATE())); --1-11-2020
+SELECT IIF(500<1000, 'YES', 'NO'); --YES
+SELECT NULLIF(25, 25);  --Returns NULL since equal
+SELECT NULLIF(25, 66);  --Returns 25  since not equal
+select COALESCE((null),(null),(2),(6),(null),(100)); --2
+select isnull(null,'Null value'); -- Null value
+select isnull(6,'Null value'); --6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SELECT * FROM CUSTOMERS WHERE SALARY > 5000;
 SELECT * FROM CUSTOMERS WHERE SALARY = 2000;
 SELECT * FROM CUSTOMERS WHERE SALARY != 2000;
