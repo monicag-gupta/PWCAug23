@@ -1,3 +1,32 @@
+select @@CONNECTIONS as 'Number of Login Attempts';
+SELECT * From  Employee_Details
+if(@@ERROR <> 0)
+   print 'Error Found'
+else
+   print 'Error not Found'
+Select @@IDENTITY as identityvalue;
+select @@IDLE as 'idle milliseconds Time'
+select @@CPU_BUSY  as 'Busy milliseconds Time'
+SELECT @@LANGUAGE as 'Language'
+SELECT * FROM Employee_Details
+SELECT @@rowcount as 'Count Number of Rows affected'
+Select @@SERVICENAME as 'ServiceName'
+SELECT  @@Total_ERRORS  as 'number of disk read-write errors'
+SELECT  @@VERSION  as 'SQL Server Version'
+SELECT  @@SERVERNAME  as 'Server Name'
+
+
+
+
+
+
+
+
+
+
+
+
+
 @@CONNECTIONS 
 This variable returns the number of login attempts since SQL Server was last started. It returns an integer value.
 @@IDLE
