@@ -1,4 +1,34 @@
 Begin
+	DECLARE @counter INT = 0;
+	WHILE @counter <= 5
+	BEGIN
+		SET @counter = @counter + 1;
+		IF @counter = 4
+			BREAK;
+		PRINT @counter;
+	END
+End
+--1 2 3 
+
+Begin
+	DECLARE @counter INT = 0;
+
+	WHILE @counter < 5
+	BEGIN
+		SET @counter = @counter + 1;
+		IF @counter = 3
+			CONTINUE;
+		PRINT @counter;
+	END
+End
+
+--1 2 4 5 
+
+
+
+
+
+Begin
 	DECLARE @counter INT = 1;
 	WHILE @counter <= 5
 	BEGIN
