@@ -13,6 +13,9 @@ on e1.MANAGER = e2.NAME and e1.name = 'B';
 
 select name mngrName, sal MngrSal from Emptbl where name = (select manager from Emptbl where name='B');
 
+Every Join can be converted to it’s subquery  partner, giving the same result, but every subquery can not be converted to joins. Eg : Insert, update, delete with subqueries..
+
+
 
 
 
