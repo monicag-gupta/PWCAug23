@@ -1,3 +1,13 @@
+Select * from CUSTOMERS_BKP2;
+UPDATE CUSTOMERS_BKP2 
+   SET SALARY = SALARY * 1.25 
+   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP WHERE AGE >= 25);
+Select * from CUSTOMERS_BKP2;
+
+
+
+
+
 Select * into BikeStoreEmp from BikeStores.sales.staffs;
 Select * into BikeStoreCust from BikeStores.sales.customers;
 
