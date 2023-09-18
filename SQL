@@ -1,3 +1,15 @@
+Exercise:
+From the Customer table show the customers first_name, last name, whose customer_id matches the customer_id of orders table and whose staff_id matches the staff_id of the staff table for the staff having lastnames as ’Jackson’ and ‘Copland’  .
+Use subqueries.
+: Tell the customers firstname and lastname for the staff: ’Jackson’ and ‘Copland’. 
+
+select * from sales.orders;
+SELECT * FROM SALES.CUSTOMERS;
+select * from sales.staffs;
+
+
+
+
 SELECT
     product_name, list_price, category_id
 FROM production.products p1
