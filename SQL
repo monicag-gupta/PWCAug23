@@ -1,4 +1,30 @@
 
+
+
+
+
+
+
+
+
+Bikestore:
+
+SELECT
+    MAX(list_price) max_list_price
+FROM
+    production.products;
+
+SELECT
+    MIN(list_price) min_list_price
+FROM
+    production.products;
+
+
+
+
+
+
+
 CREATE TABLE t(
     val dec(10,2)
 );
