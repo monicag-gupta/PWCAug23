@@ -1,3 +1,33 @@
+@@CONNECTIONS 
+This variable returns the number of login attempts since SQL Server was last started. It returns an integer value.
+@@ERROR 
+The error number for the last T-SQL statement executed. If this value is zero than there were no errors otherwise it returns the error.  
+@@IDENTITY
+@@IDENTITY will return the last identity value entered into a table. 
+@@IDLE
+This variable returns the number of milliseconds SQL Server has been idle since it was last started.
+@@CPU_BUSY
+This system function returns the number of milliseconds the CPU has spent working since SQL Server was last started. It returns an integer value.
+@@LANGUAGE
+This system function returns the name of the language that is currently used by the SQL Server.
+@@ROWCOUNT
+This variable returns the number of rows affected by the last Transact-SQL statement.  
+@@SERVERNAME 
+This variable returns the name of the service under which SQL Server is running.
+@@TOTAL_ERRORS
+The @@TOTAL_ERRORS function returns the number of disk read/write errors encountered by SQL Server since it was last started. It returns an integer value.
+@@VERSION  
+This variable returns the current version of the SQL Server Software.
+@@SERVERNAME
+This function retrieves the name of the database server the application is linked to.
+
+
+
+
+
+
+
+
 In testdb database, customers table: print what will be the salary of Kaushik if he gets a 15% hike in his current salary.
 Use batch programming and a numerical variable for calculations:
 Output:
