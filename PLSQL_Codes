@@ -10,7 +10,7 @@ Select Rand(1); --will generate the same number as it will be generated only onc
 SELECT CONCAT('FIRST ', 'SECOND');
 SELECT FLOOR(7.55);  --7.0
 select ceiling(5.3); --6
-SELECT FORMAT(423423234.65434453,2);  -- 423,423,234.65
+--SELECT FORMAT(423423234.65434453,2);  -- 423,423,234.65
 SELECT 29 % 3;  --2
 SELECT POWER(2,3);  --8
 SELECT PI(); -- 3.141593
