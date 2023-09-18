@@ -1,3 +1,17 @@
+if (5>3)
+  print '5 is greater'
+
+if (5>3)
+Begin
+   print '5 is greater'
+   print 'End of if'
+end
+
+
+
+
+
+
 SELECT COUNT(*) FROM customers;
 SELECT MIN(Salary) FROM customers;
 SELECT MAX(Salary) FROM customers;
