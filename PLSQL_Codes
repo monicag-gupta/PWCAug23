@@ -1,3 +1,21 @@
+
+Begin
+ 	SET NOCOUNT ON; 
+	DECLARE @product_count INT;
+	SET @product_count = (
+           SELECT COUNT(*) FROM productsNew);
+	--Print @product_count;
+ 	--PRINT 'The number of products is ' + CAST(@product_count AS VARCHAR(MAX));
+ 	SELECT @product_count;
+End
+
+
+
+
+
+
+
+
 Begin
 	DECLARE @model_year SMALLINT;
 	SET @model_year = 2018;
