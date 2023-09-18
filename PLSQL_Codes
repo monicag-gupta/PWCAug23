@@ -1,3 +1,23 @@
+
+if (5>6)
+	Begin
+		print '5 is greater'
+		print 'End of if'
+	end
+Else
+	Begin
+		print '5 is smaller'
+		print 'End of else'
+	end
+
+
+
+
+
+
+
+
+
 if (5>3)
   print '5 is greater'
 
