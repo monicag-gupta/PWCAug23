@@ -1,6 +1,6 @@
 
 CREATE INDEX idx_age ON CUSTOMERS ( AGE );
-
+DROP INDEX idx_age ON customers;
 
 
 
