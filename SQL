@@ -1,3 +1,60 @@
+
+CREATE TABLE t(
+    val dec(10,2)
+);
+
+SELECT
+    val
+FROM
+    t;
+
+
+--For Avg():
+INSERT INTO t(val) 
+VALUES(1),(2),(3),(4),(null),(4),(5),(5),(6),(null); 
+
+Select avg(val) from t; --3.75
+
+SELECT AVG(ALL val) FROM t; --3.75
+
+SELECT  AVG(DISTINCT val) FROM  t; --3.5
+
+
+delete from t;
+
+--For Count():
+INSERT INTO t(val) VALUES(1),(2),(2),(3),(null),(null),(4),(5);
+
+SELECT COUNT(*) rows_count, COUNT(val) cnt_val, 
+COUNT(all val) all_val , count(distinct val) distint_val FROM t;
+
+--rows_count : 8 	cnt_val : 6	 all_val : 6	distint_val : 5
+
+
+
+delete from t;
+
+
+--For sum():
+INSERT INTO t(val) VALUES(1),(2),(3),(3),(4),(NULL),(5);
+
+SELECT  SUM(val) total FROM t;
+--total: 18
+
+SELECT SUM(DISTINCT val) total FROM t;
+--total: 15
+
+
+
+
+
+
+
+
+
+
+
+
 Exercise:
 From the Customer table show the customers first_name, last name, whose customer_id matches the customer_id of orders table and whose staff_id matches the staff_id of the staff table for the staff having lastnames as ’Jackson’ and ‘Copland’  .
 Use subqueries.
