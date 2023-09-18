@@ -1,3 +1,12 @@
+Check if the products table have total even number of records or odd number of records.
+Print wise messages accordingly.
+
+
+
+
+
+
+
 BEGIN
     DECLARE @name VARCHAR(MAX);
 
