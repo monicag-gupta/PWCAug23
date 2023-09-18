@@ -1,6 +1,7 @@
 Points for Subqueries:
 If data is precise (less projection, columns) to be selected, use Subqueries
 If data is required for analysis (once per query) or if the query is an on time query, use Subqueries
+Subqueries are simpler and more organized than joins.
 Points for Joins:
 If data selected is a lot (more projections are there) then use Joins
 If views are to be created against any query, or if query result is used very frequently, then use joins as it gives a de-normalized (1NF) table to run the query.
