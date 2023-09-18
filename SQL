@@ -2,6 +2,11 @@ Select * into BikeStoreEmp from BikeStores.sales.staffs;
 Select * into BikeStoreCust from BikeStores.sales.customers;
 
 
+--BikeStoreEmp
+Select * into testdb.dbo.BikeStoreEmp from BikeStores.sales.staffs;
+Select * into BikeStoreCust from BikeStores.sales.customers;
+
+
 
 
 delete from CUSTOMERS_BKP2;
