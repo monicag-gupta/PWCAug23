@@ -1,3 +1,25 @@
+
+BEGIN
+    SELECT product_id, product_name
+    FROM bikestores.production.products  WHERE list_price > 1000000;
+
+    IF @@ROWCOUNT = 0
+            PRINT 'No product with price greater than 100000 found';
+    Else
+	  Print 'Product with the given price range found';
+END
+
+--Output : No product..
+
+
+
+
+
+
+
+
+
+
 Begin
 	DECLARE @counter INT = 0;
 	WHILE @counter <= 5
