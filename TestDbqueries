@@ -1,0 +1,473 @@
+create database BikeStores;
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE EmployeeLeave
+(
+EmployeeID int NOT NULL, 
+LeaveStartDate datetime NOT NULL,
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2)NOT NULL
+);
+
+
+sp_help EmployeeLeave;
+
+
+
+CREATE TABLE Emp(
+EmpCode int IDENTITY(100,1),
+EmpName char(25) NOT NULL,
+DeptNo char(4) NOT NULL);
+
+ALTER TABLE emp 
+ADD CONSTRAINT emp_pk PRIMARY KEY (EmpCode); 
+
+ALTER TABLE EmployeeLeave
+ADD CONSTRAINT rfkcEmployeeID 
+FOREIGN KEY(EmployeeID) 
+REFERENCES Emp(EmpCode)
+ON DELETE NO ACTION 
+ON UPDATE NO ACTION
+;
+
+
+
+
+
+
+CREATE TABLE emp1
+( emp_id INT PRIMARY KEY,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY  
+); 
+
+
+
+
+
+
+
+CREATE TABLE emp2  
+( emp_id INT,  
+  last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp2_pk PRIMARY KEY (emp_id)  
+); 
+
+
+
+
+
+CREATE TABLE emp3  
+( last_name VARCHAR(50) NOT NULL,  
+  first_name VARCHAR(50) NOT NULL,  
+  salary MONEY,  
+  CONSTRAINT emp3_pk PRIMARY KEY (last_name, first_name)  
+); 
+
+
+
+
+CREATE TABLE emp4 ( 
+emp_id INT,    
+last_name VARCHAR(50) NOT NULL,    
+first_name VARCHAR(50) NOT NULL,    
+salary MONEY
+); 
+
+
+ALTER TABLE emp4 ADD CONSTRAINT emp4_pk PRIMARY KEY (emp_id); 
+
+drop table emp4;
+
+CREATE TABLE emp4 ( 
+emp_id INT not null,    
+last_name VARCHAR(50) NOT NULL,    
+first_name VARCHAR(50) NOT NULL,    
+salary MONEY
+); 
+
+ALTER TABLE emp4 ADD CONSTRAINT emp4_pk PRIMARY KEY (emp_id); 
+
+
+
+ALTER TABLE emp2  
+DROP CONSTRAINT emp2_pk ; 
+
+CREATE TABLE Project (
+  ProjectCode int CONSTRAINT pkProjectCode PRIMARY KEY,
+  Description varchar(50) not null CONSTRAINT unDesc UNIQUE
+);
+
+
+drop table Project;
+
+
+
+CREATE TABLE products  
+( product_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+); 
+ 
+CREATE TABLE inventory  
+( inventory_id INT PRIMARY KEY,  
+  product_id INT NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product_id  
+    FOREIGN KEY (product_id)  
+    REFERENCES products (product_id)  
+); 
+
+
+
+
+
+CREATE TABLE products2  
+( product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  category VARCHAR(25)  
+  CONSTRAINT products_pk PRIMARY KEY (product_name, location)  
+);  
+
+CREATE TABLE inventory2  
+( inventory_id INT PRIMARY KEY,  
+  product_name VARCHAR(50) NOT NULL,  
+  location VARCHAR(50) NOT NULL,  
+  quantity INT,  
+  min_level INT,  
+  max_level INT,  
+  CONSTRAINT fk_inv_product  
+    FOREIGN KEY (product_name, location)  
+    REFERENCES products2 (product_name, location)  
+); 
+
+
+
+
+ALTER TABLE inventory
+DROP CONSTRAINT fk_inv_product_id;   
+
+
+
+CREATE TABLE EmployeeLeave2
+(
+EmployeeID int,
+LeaveStartDate datetime CONSTRAINT cpkLeaveStartDate PRIMARY KEY(EmployeeID, LeaveStartDate),
+LeaveEndDate datetime NOT NULL,
+LeaveReason varchar(100),
+LeaveType char(2) CONSTRAINT chkLeave CHECK(LeaveType IN('CL','SL','PL'))
+);
+
+
+CREATE TABLE Emp5
+	(
+	DeptCode char(4) CHECK (DeptCode LIKE '[0-9][0-9][0-9][0-9]')
+	);
+
+
+
+
+CREATE TABLE emp6
+(
+sal money CHECK (sal BETWEEN 20000 AND 80000)
+);
+
+
+
+
+
+
+CREATE TABLE EmployeeLeave3
+		(
+		LeaveType char(2) CONSTRAINT chkLeave3 	CHECK(LeaveType IN('CL','SL','PL')) 	CONSTRAINT chkDefLeave DEFAULT 'PL'
+		);
+
+
+		
+CREATE TABLE EmployeeLeave4
+		(
+		LeaveType char(2) 	CONSTRAINT chkDefLeave2 DEFAULT 'PL'
+		);
+
+
+
+
+
+
+
+CREATE TABLE CUSTOMERS( 
+   ID   INT              NOT NULL, 
+   NAME VARCHAR (20)     NOT NULL, 
+   AGE  INT              NOT NULL, 
+   ADDRESS  CHAR (25) , 
+   SALARY   DECIMAL (18, 2),        
+   PRIMARY KEY (ID)
+);
+
+
+DROP TABLE CUSTOMERS; 
+
+
+execute sp_columns CUSTOMERS;
+
+execute sp_help CUSTOMERS;
+
+
+
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+INSERT INTO CUSTOMERS VALUES (7, 'Muffy', 24, 'Indore', 10000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) 
+VALUES (8, 'Khilan', 22, 'Delhi', null );  
+INSERT INTO CUSTOMERS (ID,NAME,AGE, SALARY) 
+VALUES (9, 'Mililan', 28, null );  
+
+
+
+
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY) VALUES 
+(3, 'kaushik', 23, 'Kota', 2000.00 ),
+(4, 'Chaitali', 25, 'Mumbai', 6500.00 ),
+(5, 'Hard', 27, 'Bhopal', 8500.00 ),
+(6, 'Komal', 22, 'MP', 4500.00 );
+
+
+SELECT * FROM CUSTOMERS;
+
+
+
+SELECT * INTO CUSTOMERS_BKP FROM CUSTOMERS;
+SELECT * FROM CUSTOMERS_BKP;
+
+
+CREATE TABLE CUSTOMERS_Bkp1( 
+   ID   INT              NOT NULL, 
+   NAME VARCHAR (20)     NOT NULL, 
+   AGE  INT              NOT NULL, 
+   ADDRESS  CHAR (25) , 
+   SALARY   DECIMAL (18, 2),        
+   PRIMARY KEY (ID));
+
+INSERT INTO CUSTOMERS_BKP1 
+SELECT * FROM CUSTOMERS;
+
+SELECT * FROM CUSTOMERS_Bkp1;
+
+
+
+SELECT * FROM CUSTOMERS;
+
+UPDATE CUSTOMERS 
+SET ADDRESS = 'Pune' 
+WHERE ID = 6; 
+
+SELECT * FROM CUSTOMERS;
+
+
+UPDATE CUSTOMERS_bkp1 
+SET ADDRESS = 'Pune', SALARY = 1000.00;
+
+
+DELETE FROM CUSTOMERS_BKP1 WHERE ID >7;
+
+
+SELECT * FROM CUSTOMERS_bkp1;
+
+DELETE FROM CUSTOMERS_BKP1;
+
+SELECT * FROM CUSTOMERS_bkp1;
+
+
+
+INSERT INTO CUSTOMERS_BKP1 
+SELECT * FROM CUSTOMERS;
+
+
+
+SELECT ID, NAME, SALARY  
+FROM CUSTOMERS 
+WHERE SALARY > 2000;
+
+
+select top 3 with ties Age, salary from Customers order by age,salary;
+
+SELECT * FROM CUSTOMERS_bkp1;
+
+Insert into CUSTOMERS_BKP1 values(10,'Ab_xy',28,'Dli%wow',89.00);
+Insert into CUSTOMERS_BKP1 values(11,'A_xy',28,'Dl%wow',89.00);
+Insert into CUSTOMERS_BKP1 values(12,'12Ab_xy',28,'34Dli%wow',89.00);
+
+select name from CUSTOMERS_BKP1 where name like '%[_]%';
+select address from CUSTOMERS_BKP1 where address like '%[%]%';
+
+select name from CUSTOMERS_BKP1 where name like '[0-9]%';
+select name from CUSTOMERS_BKP1 where name like '[a-z]%';
+select name from CUSTOMERS_BKP1 where name like '[a-z0-9]%';
+
+select min(salary),max(salary), avg(salary),sum(salary), count(name)  from customers;
+
+
+
+select * from Customers;
+
+update Customers set address= 'Kolkata' where id between 3 and 5;
+
+update Customers set address= 'Gurgaon' where id >6;
+
+update Customers set address= 'Mumbai' where address not in ('Kolkata','Gurgaon');
+
+SELECT Address, SUM(SALARY) as [sum of salary] FROM CUSTOMERS  GROUP BY Address;
+
+select * from customers where age < 26;
+
+SELECT Address, SUM(SALARY) as [sum of salary] FROM CUSTOMERS where age < 26 GROUP BY Address;
+
+SELECT Address, SUM(SALARY) as SumSal FROM CUSTOMERS  GROUP BY Address having SUM(SALARY) > 9000;
+
+select distinct address from customers;
+
+select * from customers;
+
+CREATE TABLE ORDERS (
+   ID          INT        NOT NULL,
+   DATE        DATETIME, 
+   CUSTOMER_ID INT references CUSTOMERS(ID),
+   AMOUNT    DECIMAL (18, 2),  
+   PRIMARY KEY (ID)
+);
+
+select * from Orders;
+select * from customers;
+
+SELECT CUSTOMERS.ID, NAME, AGE, AMOUNT 
+   FROM CUSTOMERS, ORDERS 
+   WHERE  CUSTOMERS.ID = ORDERS.CUSTOMER_ID ;
+SELECT CUSTOMERS.ID, NAME, AGE, AMOUNT 
+   FROM CUSTOMERS Join ORDERS 
+   on  CUSTOMERS.ID = ORDERS.CUSTOMER_ID ;
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   LEFT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   RIGHT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+
+   SELECT  CUSTOMERS.ID, NAME, AMOUNT, DATE
+   FROM CUSTOMERS
+   FULL JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+   SELECT  CUSTOMERS.ID, NAME, Age, Address, Salary, Orders.Id, Customer_id, AMOUNT, DATE
+   FROM CUSTOMERS, ORDERS;
+
+
+
+
+
+
+
+INSERT INTO ORDERS VALUES (100, '2020-10-08',  3, 1500.00  );
+INSERT INTO ORDERS VALUES (104, '2020-10-08',  7, 1500.00  );
+
+INSERT INTO ORDERS VALUES 
+ 	(101, '2020-10-20',  3, 1560.00 ),
+ 	(102, '2020-10-08',  3, 3000.00  ),
+ 	(103, '2020-05-20', 4, 2060.00);
+
+	select * from Orders;
+
+
+select count(Address) from Customers;
+select count(distinct Address) from Customers;
+
+
+
+
+
+create table tbl1(A varchar(3),B varchar(3));
+create table tbl2(B varchar(3),C varchar(3));
+
+insert into tbl1 values('A1','B1'),('A2','B2'),('A3','B3');
+
+insert into tbl2 values('B1','C1'),('B3','C3'),('B5','C5');
+select * from tbl1;
+select * from tbl2;
+
+--cross join
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1, tbl2;
+
+--Inner Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 join tbl2 on tbl1.B = tbl2.B;
+--Left Outer Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 left outer join tbl2 on tbl1.B = tbl2.B;
+--right Outer Join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 right outer join tbl2 on tbl1.B = tbl2.B;
+--full outer join:
+select tbl1.A, tbl1.B, tbl2.B, tbl2.C from tbl1 full outer join tbl2 on tbl1.B = tbl2.B;
+
+
+CREATE TABLE EMPTBL (NAME VARCHAR(20), SAL VARCHAR(20), MANAGER VARCHAR(20));
+Insert into Emptbl values('A',2000,'B'),('B',5000,'C'),('C',1000,null),('D',4000,'C');
+select * from Emptbl;
+
+select e2.SAL     
+from Emptbl e1 join Emptbl e2
+on e1.MANAGER = e2.NAME and e1.name = 'B';
+
+
+
+
+
+SELECT *  FROM CUSTOMERS
+   WHERE ID IN (SELECT ID FROM CUSTOMERS WHERE SALARY > 4500);
+
+
+CREATE TABLE CUSTOMERS_Bkp2( 
+   ID   INT              NOT NULL, 
+   NAME VARCHAR (20)     NOT NULL, 
+   AGE  INT              NOT NULL, 
+   ADDRESS  CHAR (25) , 
+   SALARY   DECIMAL (18, 2),        
+   PRIMARY KEY (ID));
+
+
+INSERT INTO CUSTOMERS_BKP2 
+SELECT * FROM CUSTOMERS WHERE ID IN (SELECT ID FROM CUSTOMERS WHERE SALARY > 4500);
+
+Select * from CUSTOMERS_BKP2;
+
+
+UPDATE CUSTOMERS_BKP2 
+   SET SALARY = SALARY * 1.25 
+   WHERE AGE IN (SELECT AGE FROM CUSTOMERS WHERE AGE >= 27 )
+
+DELETE FROM CUSTOMERS_BKP2 WHERE AGE IN (SELECT AGE FROM CUSTOMERS WHERE AGE >=27)
+
+
+
