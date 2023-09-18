@@ -1,5 +1,25 @@
 @@CONNECTIONS 
 This variable returns the number of login attempts since SQL Server was last started. It returns an integer value.
+@@IDLE
+This variable returns the number of milliseconds SQL Server has been idle since it was last started.
+@@CPU_BUSY
+This system function returns the number of milliseconds the CPU has spent working since SQL Server was last started. It returns an integer value.
+@@LANGUAGE
+This system function returns the name of the language that is currently used by the SQL Server.
+@@SERVERNAME 
+This variable returns the name of the service under which SQL Server is running.
+@@VERSION  
+This variable returns the current version of the SQL Server Software.
+@@SERVERNAME
+This function retrieves the name of the database server the application is linked to.
+
+
+
+
+
+
+@@CONNECTIONS 
+This variable returns the number of login attempts since SQL Server was last started. It returns an integer value.
 @@ERROR 
 The error number for the last T-SQL statement executed. If this value is zero than there were no errors otherwise it returns the error.  
 @@IDENTITY
