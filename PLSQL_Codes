@@ -1,3 +1,19 @@
+In testdb database, customers table: print what will be the salary of Kaushik if he gets a 15% hike in his current salary.
+Use batch programming and a numerical variable for calculations:
+Output:
+With salary hike, Kaushik now gets : (new salary)
+
+Declare a var. 
+Set it to current salary of kaushik
+Set it to 15 % hike
+Print it with proper message
+
+
+
+
+
+
+
 
 Begin
 DECLARE 
