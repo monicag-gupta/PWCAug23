@@ -13,7 +13,7 @@
 
 
 
-
+exec sp_helptext '[dbo].[trg_products_dup]';
 
 
 
