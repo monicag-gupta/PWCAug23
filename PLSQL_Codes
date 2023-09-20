@@ -1,3 +1,11 @@
+
+DROP FUNCTION dbo.fn2;
+
+
+
+
+
+
 create or Alter FUNCTION fn2(
     @number INT
 )
