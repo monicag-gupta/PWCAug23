@@ -1,4 +1,33 @@
 CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin Int, @agemax Int, @rownum int output)
+AS 
+Begin
+    SELECT * FROM Customers where age between @agemin and @agemax;
+     select @rownum= @@ROWCOUNT;
+End
+
+--Executing the procedure
+Begin
+DECLARE @count INT;
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 25, @agemin = 22,
+    @rownum = @count OUTPUT;
+--EXECUTE SelectCustomerstabledata 
+--    22, 25, @count OUTPUT;
+
+--SELECT @count AS 'Number of Customers found';
+print 'Number of Customers found : ' + cast(@count as varchar);
+End
+
+
+
+
+
+
+
+
+CREATE or alter PROCEDURE SelectCustomerstabledata 
 (@agemin AS Int = 18, @agemax AS Int)
 AS 
 Begin
