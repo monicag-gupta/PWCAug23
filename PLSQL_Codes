@@ -1,3 +1,35 @@
+Stored Procedures:
+SQL Server stored procedures are used to group one or more Transact-SQL statements into logical units. 
+The stored procedure are stored as named objects in the SQL Server Database Server.
+When you call a stored procedure for the first time, SQL Server creates an execution plan and stores it in the cache. 
+In the subsequent executions of the stored procedure, SQL Server reuses the plan so that the stored procedure can execute very fast with reliable performance.
+The MS SQL Server Stored procedure is used to save time to write code again and again by storing the same in database and also get the required output by passing parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 drop function dbo.fn2;
 drop function if exists dbo.fn2;
 
