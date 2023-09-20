@@ -1,3 +1,13 @@
+drop function dbo.fn2;
+drop function if exists dbo.fn2;
+
+
+
+
+
+
+
+
 CREATE FUNCTION udfProductInYear (
     @model_year INT
 )
@@ -15,6 +25,16 @@ RETURN
 
 
 select * from dbo.udfProductInYear(2016);
+
+
+
+
+
+
+
+
+
+
 
 
 
