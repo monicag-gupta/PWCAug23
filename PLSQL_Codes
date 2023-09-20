@@ -1,3 +1,86 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE products_duplicate (
+product_name VARCHAR (255) NOT NULL,
+pstatus varchar(255)
+);
+
+
+
+
+CREATE or Alter TRIGGER trg_products_dup 
+ON products
+INSTEAD OF INSERT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	if exists (select inserted.product_name from inserted 
+		where inserted.product_name in(SELECT product_name
+		FROM  products))
+	Begin
+		INSERT INTO products_duplicate ( 
+			product_name, pstatus
+		)
+		SELECT
+			i.product_name, 'Duplicate Entry'
+		FROM
+			inserted i
+	End
+	else
+	Begin
+		Insert into products(product_name, brand_id, category_id,
+			model_year, list_price)
+		select product_name, brand_id, category_id,
+			model_year, list_price from Inserted;
+	End
+END
+
+
+Select * from products
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+--Duplicate Entry:
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+Select * from products_duplicate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 select * into myCustTbl from customers;
 select * from myCustTbl;
 
