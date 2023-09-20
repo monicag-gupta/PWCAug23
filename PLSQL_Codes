@@ -1,3 +1,71 @@
+
+
+
+
+
+
+
+
+drop table if exists products;
+
+CREATE TABLE products (
+	product_id INT IDENTITY (1, 1) PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	brand_id INT NOT NULL,
+	category_id INT NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL (10, 2) NOT NULL);
+
+INSERT INTO products
+VALUES 
+ 	('Test product1', 1, 1, 2018, 599),
+ 	('Test product2', 2, 2, 2016, 699),
+ 	('Test product3', 3, 3, 2018, 799),
+ 	('Test product4', 4, 4, 2015, 899);
+
+
+select * from products;
+
+
+
+
+
+Begin
+DECLARE 
+    @product_name VARCHAR(MAX), 
+    @list_price   DECIMAL;
+
+DECLARE cursor_product CURSOR
+FOR SELECT 
+        product_name,   list_price
+    FROM   products;
+
+OPEN cursor_product;
+
+FETCH NEXT FROM cursor_product INTO 
+    @product_name,   @list_price;
+
+WHILE @@FETCH_STATUS = 0
+    BEGIN
+        PRINT @product_name + ' has price ' +  CAST(@list_price AS varchar);
+        FETCH NEXT FROM cursor_product INTO 
+            @product_name,  @list_price;
+    END;
+
+CLOSE cursor_product;
+
+DEALLOCATE cursor_product;
+End
+
+
+
+
+
+
+
+
+
+
 Cursors:
 We use the SQL Server cursor to process a result set, one row at a time.
 SQL works based on set e.g., SELECT statement returns a set of rows which is called a result set. However, sometimes, you may want to process a data set on a row by row basis. This is where cursors come into play.
@@ -26,6 +94,11 @@ After that, close the cursor:
 CLOSE cursor_name;
 Finally, deallocate the cursor:
 DEALLOCATE cursor_name;
+
+
+
+
+
 
 
 
