@@ -32,6 +32,7 @@ END
 
 select * from dbo.udfSplit('The function ufnSplit() returns a table variable', ' ');
 
+select * from dbo.udfSplit('The function ufnSplit() returns a table variable', default);
 
 select * from dbo.udfSplit('The,function,ufnSplit(),returns,a,table,variable', ',');
 
