@@ -1,3 +1,25 @@
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin AS Int = 18, @agemax AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age between @agemin and @agemax
+End
+
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 25;
+
+Exec SelectCustomerstabledata 25, 27 
+
+Exec SelectCustomerstabledata default, 27 
+
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 27, 
+    @agemin = 25;
+
+
+
 
 
 
