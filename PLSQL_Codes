@@ -1,3 +1,82 @@
+create or Alter FUNCTION fn2(
+    @number INT
+)
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @x INT = @number;
+	DECLARE @sm INT = 1;
+	WHILE @x > 0
+	BEGIN
+	       set @sm = @x * @sm;
+	       set @x = @x - 1;
+	END
+    RETURN @sm;
+END;
+
+Select dbo.fn2(5);
+
+
+
+
+
+
+
+
+
+
+
+Alter FUNCTION fn(
+    @number INT
+)
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @x INT = @number;
+	DECLARE @sm INT = 1;
+	WHILE @x > 0
+	BEGIN
+	       set @sm = @x * @sm;
+	       set @x = @x - 1;
+	END
+    RETURN @sm;
+END;
+
+Select dbo.fn(5);
+
+
+
+
+
+
+
+
+
+
+CREATE FUNCTION fn(
+    @number INT
+)
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @x INT = @number;
+	DECLARE @sm INT = 0;
+	WHILE @x > 0
+	BEGIN
+	       set @sm = @x + @sm;
+	       set @x = @x - 1;
+	END
+    RETURN @sm;
+END;
+
+Select dbo.fn(5);
+
+
+
+
+
+
+
 CREATE FUNCTION udfNetSale(
     @quantity INT,
     @list_price DEC(10,2),
