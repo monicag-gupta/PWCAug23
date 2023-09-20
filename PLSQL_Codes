@@ -1,3 +1,62 @@
+select * into myCustTbl from customers;
+select * from myCustTbl;
+
+
+CREATE or alter TRIGGER trg_myCustTbl_Ins
+ON myCustTbl
+AFTER INSERT
+AS
+BEGIN
+print 'Insert Operation happened successfully';
+select * from inserted;
+End
+
+
+
+
+
+Insert into myCustTbl values(9,'abcd',22,'Delhi',6800);
+
+CREATE or alter TRIGGER trg_myCustTbl_del
+ON myCustTbl
+AFTER DELETE
+AS
+BEGIN
+print 'Deletion Operation happened successfully';
+select * from deleted;
+End
+
+delete from myCustTbl where id=9;
+
+
+CREATE or alter TRIGGER trg_myCustTbl_upd
+ON myCustTbl
+AFTER UPDATE
+AS
+BEGIN
+print 'update Operation happened successfully';
+select * from inserted;
+select * from deleted;
+End
+
+update myCustTbl set name='abcdef' where id=8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 drop table if exists products;
@@ -59,6 +118,10 @@ WHERE
 
 
 SELECT      *  FROM   product_audits;
+
+
+Drop trigger trg_product_audit;
+
 
 
 
