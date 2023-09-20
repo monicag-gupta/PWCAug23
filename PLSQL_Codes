@@ -15,6 +15,10 @@ End
 --Executing the procedure
 Exec SelectCustomerstabledata 25, 27 
 
+EXECUTE SelectCustomerstabledata 
+    @agemax = 27, 
+    @agemin = 25;
+
 
 
 
