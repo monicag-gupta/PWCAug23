@@ -1,3 +1,61 @@
+
+
+BEGIN
+DECLARE @product_table TABLE (
+    product_name VARCHAR(MAX) NOT NULL,
+    brand_id INT NOT NULL,
+    list_price DEC(11,2) NOT NULL
+);
+INSERT INTO @product_table
+     SELECT product_name, brand_id, list_price
+         FROM BikeStores.production.products WHERE category_id = 1;
+
+SELECT  p.product_name, p.brand_id, p.list_price FROM @product_table p join BikeStores.production.products
+on p.list_price=BikeStores.production.products.list_price;
+END
+
+
+
+
+Restrictions on table variables:
+First, you have to define the structure of the table variable during the declaration. Unlike a regular or temporary table, you cannot alter the structure of the table variables after they are declared.
+Second, statistics help the query optimizer to come up with a good query’s execution plan. Unfortunately, table variables do not contain statistics. Therefore, you should use table variables to hold a small number of rows.
+Third, you cannot use the table variable as an input or output parameter like other data types. However, you can return a table variable from a user-defined function
+Fourth, you cannot create non-clustered indexes for table variables. However, starting with SQL Server 2014, memory-optimized table variables are available with the introduction of the new In-Memory OLTP that allows you to add non-clustered indexes as part of table variable’s declaration.
+Fifth, if you are using a table variable with a join, you need to alias the table in order to execute the query.
+
+
+
+
+
+
+
+
+
+
+
+BEGIN
+DECLARE @product_table TABLE (
+    product_name VARCHAR(MAX) NOT NULL,
+    brand_id INT NOT NULL,
+    list_price DEC(11,2) NOT NULL
+);
+INSERT INTO @product_table
+     SELECT product_name, brand_id, list_price
+         FROM BikeStores.production.products WHERE category_id = 1;
+
+SELECT  * FROM @product_table;
+END
+
+
+
+
+
+
+
+
+
+
 The following are some key takeaway of the scalar functions:
 	Scalar functions can be used almost anywhere in T-SQL statements.
 	Scalar functions accept one or more parameters but return only one value, therefore, they must include a RETURN statement.
