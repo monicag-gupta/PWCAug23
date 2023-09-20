@@ -1,3 +1,24 @@
+CREATE FUNCTION udfProductInYear (
+    @model_year INT
+)
+RETURNS TABLE
+AS
+RETURN
+    SELECT 
+        product_name,
+        model_year,
+        list_price
+    FROM
+         BikeStores.production.products
+    WHERE
+        model_year = @model_year;
+
+
+select * from dbo.udfProductInYear(2016);
+
+
+
+
 CREATE OR ALTER FUNCTION udfSplit(
     @string VARCHAR(MAX), 
     @delimiter VARCHAR(50) = ' ')
