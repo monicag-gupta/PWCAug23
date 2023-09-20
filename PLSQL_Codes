@@ -1,3 +1,60 @@
+CREATE OR ALTER FUNCTION udfSplit(
+    @string VARCHAR(MAX), 
+    @delimiter VARCHAR(50) = ' ')
+RETURNS @parts TABLE
+(    
+idx INT IDENTITY PRIMARY KEY,
+val VARCHAR(MAX)   
+)	AS
+BEGIN
+DECLARE @index INT = -1;
+WHILE (LEN(@string) > 0) 
+BEGIN 
+    SET @index = CHARINDEX(@delimiter , @string)  ;
+    IF (@index = 0) AND (LEN(@string) > 0)  
+    BEGIN  
+        INSERT INTO @parts  VALUES (@string);
+        BREAK  
+    END 
+    IF (@index > 1)  
+    BEGIN  
+        INSERT INTO @parts VALUES (LEFT(@string, @index - 1));
+		SET @string = RIGHT(@string, (LEN(@string) - @index));  
+    END 
+    ELSE
+		SET @string = RIGHT(@string, (LEN(@string) - @index)); 
+    END
+RETURN
+END
+
+
+
+
+select * from dbo.udfSplit('The function ufnSplit() returns a table variable', ' ');
+
+
+select * from dbo.udfSplit('The,function,ufnSplit(),returns,a,table,variable', ',');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE OR ALTER FUNCTION udfSplit(
     @string VARCHAR(MAX))
