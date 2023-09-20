@@ -1,4 +1,32 @@
 
+CREATE OR ALTER FUNCTION udfSplit(
+    @string VARCHAR(MAX))
+RETURNS @parts TABLE (    
+idx INT IDENTITY PRIMARY KEY,
+val VARCHAR(MAX)   
+)  AS
+BEGIN
+   INSERT INTO @parts  VALUES (@string);
+   RETURN
+END
+
+
+select * from dbo.udfSplit('str1');
+
+
+
+
+Performance of table variables:
+Using table variables in a stored procedure results in fewer recompilations than using a temporary table.
+In addition, a table variable use fewer resources than a temporary table with less locking and logging overhead.
+Similar to the temporary table, the table variables do live in the tempdb database, not in the memory.
+
+
+
+
+
+
+
 
 BEGIN
 DECLARE @product_table TABLE (
