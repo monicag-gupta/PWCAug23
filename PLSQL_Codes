@@ -4,6 +4,71 @@
 
 
 
+
+
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin AS Int, @agemax AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age between @agemin and @agemax
+End
+--Executing the procedure
+Exec SelectCustomerstabledata 25, 27 
+
+
+
+
+
+
+
+
+--Example to pass the table name as procedure parameter: 
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@tblName as varchar(26))
+AS 
+Begin
+    declare @sqlStmt nvarchar(MAX) --varchar(MAX)
+    set @sqlStmt = 'SELECT * FROM ' + @tblName 
+    exec sp_executesql @sqlStmt
+    --exec @sqlStmt
+End
+--Executing:
+Exec SelectCustomerstabledata 'Customers'
+
+
+Begin
+declare @var nvarchar(max);
+set @var = 'select * from customers';
+exec sp_executesql @var;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+--Example: 
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@age AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age>@age
+End
+--Executing:
+Exec SelectCustomerstabledata 25
+
+
+
+
+
+
+
 drop table orders;
 drop table customers;
 
