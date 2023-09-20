@@ -13,6 +13,8 @@ END;
 
 SELECT dbo.udfNetSale(10,100,0.1) as net_sale;  --900
 
+SELECT testdb.dbo.udfNetSale(10,list_price,0.1) as net_sale from bikestores.production.products;
+
 
 
 
