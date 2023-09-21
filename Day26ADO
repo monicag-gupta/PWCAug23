@@ -97,11 +97,14 @@ namespace PrjADODC
 
 
 
-                ////////Delete: D of CRUD
-                //SqlCommand cmd = new SqlCommand("Delete from t where i=2 and j=5", con);
+               ////////Delete: D of CRUD
+                //SqlCommand cmd = new SqlCommand("Delete from t where i=2 and j=4", con);
                 //cmd.CommandType = CommandType.Text;
-                //cmd.ExecuteNonQuery();
-                //Console.WriteLine("Data deleted");
+                //int recDel = cmd.ExecuteNonQuery();
+                //Console.WriteLine("Number of Records Deleted: "+ recDel);
+
+
+
             }
             catch (Exception e) { Console.WriteLine(e.ToString()); }
             Console.ReadLine();
