@@ -58,12 +58,12 @@ namespace PrjADODC
             try
             {
                 //Console.WriteLine("hello");
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O7LF2JA;Initial Catalog=training;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
                 con.Open();
 
 
 
-                ////////1. Insert: Create records C of CRUD
+                ////////Insert: Create records C of CRUD
                 //SqlCommand cmd = new SqlCommand("Insert into t values(2,5),(7,9)", con);
                 //cmd.CommandType = CommandType.Text;
                 //int recIns = cmd.ExecuteNonQuery();
@@ -73,14 +73,14 @@ namespace PrjADODC
 
 
 
-                /////2. Select : Read R of CRUD
+                /////Select : Read R of CRUD
                 //SqlCommand cmd = new SqlCommand("Select * from t", con);
                 //cmd.CommandType = CommandType.Text;
                 //SqlDataReader rdr = cmd.ExecuteReader();
+                //Console.WriteLine("i\tj");
                 //while (rdr.Read())
                 //{
-                //    Console.Write(rdr.GetInt32(0) + "   ");
-                //    Console.WriteLine(rdr.GetInt32(1));
+                //    Console.WriteLine(rdr.GetInt32(0) + "\t" + rdr.GetInt32(1));
                 //}
 
 
@@ -89,7 +89,7 @@ namespace PrjADODC
 
 
 
-                //////3. Update: U : CRUD
+                //////Update: U : CRUD
                 //SqlCommand cmd = new SqlCommand("Update t set j=5 where i=2 and j=4", con);
                 //cmd.CommandType = CommandType.Text;
                 //cmd.ExecuteNonQuery();
@@ -97,18 +97,20 @@ namespace PrjADODC
 
 
 
-                ////////4. Delete: D of CRUD
+                ////////Delete: D of CRUD
                 //SqlCommand cmd = new SqlCommand("Delete from t where i=2 and j=5", con);
                 //cmd.CommandType = CommandType.Text;
                 //cmd.ExecuteNonQuery();
                 //Console.WriteLine("Data deleted");
             }
             catch (Exception e) { Console.WriteLine(e.ToString()); }
-
             Console.ReadLine();
+
         }
     }
 }
+
+
 
 
 
