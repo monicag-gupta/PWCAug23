@@ -1,0 +1,16 @@
+ADO.NET Data Access :
+1. Set up a Data Connection
+– Establishes a link to the data source
+2. Set up a DataAdapter
+– Handles retrieving and updating the data
+– Data adapter uses “Command” objects to retrieve/store records from/to the database and can be used to:
+3. Create a DataSet:
+A temporary set of data tables stored in the computer’s memory
+ADO.NET datasets are disconnected
+– So data in memory does not keep an active connection to data source
+– Much better: Many more clients can connect and use the data server
+DataAdapters’s Fill(-,-) method gets a data table into the DataSet
+– Uses SQL in a “Command” object to specify data to retrieve/update
+4.. Add controls on the Windows Form or Web Form
+– Display the data from the DataSet and allow user interaction
+5. Write C# code to put the data into the controls
