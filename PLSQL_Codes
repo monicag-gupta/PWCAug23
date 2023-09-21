@@ -469,8 +469,8 @@ Exec SelectCustomerstabledata 25
 
 
 
-drop table orders;
-drop table customers;
+drop table if exists orders;
+drop table if exists customers;
 
 CREATE TABLE CUSTOMERS(
    ID   INT              NOT NULL,
