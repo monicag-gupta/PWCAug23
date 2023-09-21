@@ -436,9 +436,11 @@ CREATE TABLE EMPTBL (NAME VARCHAR(20), SAL VARCHAR(20), MANAGER VARCHAR(20));
 Insert into Emptbl values('A',2000,'B'),('B',5000,'C'),('C',1000,null),('D',4000,'C');
 select * from Emptbl;
 
-select e2.SAL     
+select e1.name, e1.MANAGER, e2.name mngrName, e2.SAL MngrSal     
 from Emptbl e1 join Emptbl e2
 on e1.MANAGER = e2.NAME and e1.name = 'B';
+
+select name mngrName, sal MngrSal from Emptbl where name = (select manager from Emptbl where name='B');
 
 
 
@@ -469,5 +471,844 @@ UPDATE CUSTOMERS_BKP2
 
 DELETE FROM CUSTOMERS_BKP2 WHERE AGE IN (SELECT AGE FROM CUSTOMERS WHERE AGE >=27)
 
+update customers set salary=5000 where id = 8;
 
+
+SELECT *  FROM CUSTOMERS
+   WHERE ID IN (SELECT ID FROM CUSTOMERS WHERE SALARY > 4500);
+SELECT *  FROM CUSTOMERS
+   WHERE ID IN (4,5,7);
+
+
+delete from CUSTOMERS_BKP2;
+INSERT INTO CUSTOMERS_BKP2 
+	SELECT * FROM CUSTOMERS 
+	WHERE ID IN 
+		(SELECT ID FROM CUSTOMERS WHERE SALARY >= 4500);
+Select * from CUSTOMERS_BKP2;
+
+--BikeStoreEmp
+Select * into testdb.dbo.BikeStoreEmp from BikeStores.sales.staffs;
+Select * into BikeStoreCust from BikeStores.sales.customers;
+
+
+Select * from CUSTOMERS_BKP2;
+UPDATE CUSTOMERS_BKP2 
+   SET SALARY = SALARY * 1.25 
+   WHERE AGE IN (SELECT AGE FROM CUSTOMERS_BKP WHERE AGE >= 25);
+Select * from CUSTOMERS_BKP2;
+
+DELETE FROM CUSTOMERS_BKP2 WHERE AGE IN (SELECT AGE FROM CUSTOMERS WHERE AGE >=27 );
+Select * from CUSTOMERS_BKP2;
+
+
+SELECT *  FROM CUSTOMERS as Cust1
+   WHERE ID IN (SELECT ID FROM CUSTOMERS_bkp1 WHERE SALARY >= Cust1.Salary);
+
+
+
+
+
+
+CREATE TABLE t(
+    val dec(10,2)
+);
+
+SELECT
+    val
+FROM
+    t;
+
+
+--For Avg():
+INSERT INTO t(val) 
+VALUES(1),(2),(3),(4),(null),(4),(5),(5),(6),(null); 
+
+Select avg(val) from t; --3.75
+
+SELECT AVG(ALL val) FROM t; --3.75
+
+SELECT  AVG(DISTINCT val) FROM  t; --3.5
+
+
+delete from t;
+
+--For Count():
+INSERT INTO t(val) VALUES(1),(2),(2),(3),(null),(null),(4),(5);
+
+SELECT COUNT(*) rows_count, COUNT(val) cnt_val, 
+COUNT(all val) all_val , count(distinct val) distint_val FROM t;
+
+--rows_count : 8 	cnt_val : 6	 all_val : 6	distint_val : 5
+
+
+
+delete from t;
+
+
+--For sum():
+INSERT INTO t(val) VALUES(1),(2),(3),(3),(4),(NULL),(5);
+
+SELECT  SUM(val) total FROM t;
+--total: 18
+
+SELECT SUM(DISTINCT val) total FROM t;
+--total: 15
+
+
+
+CREATE INDEX idx_age ON CUSTOMERS ( AGE );
+
+
+DROP INDEX idx_age ON customers;
+
+exec sp_help CUSTOMERS;
+
+
+CREATE TABLE productsNew (
+	product_id INT IDENTITY (1, 1) PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	brand_id INT NOT NULL,
+	category_id INT NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL (10, 2) NOT NULL);
+
+	INSERT INTO productsNew
+VALUES 
+ 	('Test product1', 1, 1, 2018, 599),
+ 	('Test product2', 2, 2, 2016, 699),
+ 	('Test product3', 3, 3, 2018, 799),
+ 	('Test product4', 4, 4, 2015, 899);
+
+
+
+Begin
+	DECLARE @model_year SMALLINT;
+	SET @model_year = 2018;
+	SELECT
+		product_name, model_year, list_price 
+	FROM productsNew
+	WHERE 
+		model_year = @model_year
+	ORDER BY product_name;
+End
+
+
+Begin
+ 	SET NOCOUNT ON; 
+	DECLARE @product_count INT;
+	SET @product_count = (
+           SELECT COUNT(*) FROM productsNew);
+	Print @product_count;
+ 	PRINT 'The number of products is ' + CAST(@product_count AS VARCHAR(MAX));
+ 	SELECT @product_count;
+End
+
+
+
+
+
+Begin
+DECLARE 
+    @product_name VARCHAR(MAX),
+    @list_price DECIMAL(10,2);
+
+SELECT 
+    @product_name = product_name,
+    @list_price = list_price
+FROM
+    bikestores.production.products
+WHERE
+    product_id = 1;
+
+SELECT 
+    @product_name AS product_name, 
+    @list_price AS list_price;
+End
+
+
+
+
+
+
+
+Select * from CUSTOMERS;
+
+
+
+
+print @@SERVERNAME;
+
+select @@SERVERNAME;
+
+
+select name, age from customers where age > any(select age from CUSTOMERS_Bkp2);
+select name, age from customers where age > all(select age from CUSTOMERS_Bkp2);
+select name, age from customers where exists (select age from CUSTOMERS_Bkp2 where age > 2);
+select name, age from customers where exists (select age from CUSTOMERS_Bkp2 where age > 27);
+select name, age from customers where not exists (select age from CUSTOMERS_Bkp2 where age > 27);
+
+select ceiling(5.3);
+
+select * from T;
+delete from T;
+
+insert into T values (null),(null),(2),(6),(null),(100);
+
+
+select COALESCE((null),(null),(2),(6),(null),(100));
+
+select isnull(null,'Null value'); -- Null value
+select isnull(6,'Null value'); --6
+
+SELECT TRUNCATE(7.536432,2);
+
+SELECT FORMAT(423423234.65434453,2.2);
+
+
+if (5>3)
+  print '5 is greater'
+
+if (5>3)
+Begin
+   print '5 is greater'
+   print 'End of if'
+end
+
+
+
+
+if (5>6)
+	Begin
+		print '5 is greater'
+		print 'End of if'
+	end
+Else
+	Begin
+		print '5 is smaller'
+		print 'End of else'
+	end
+
+
+
+
+Begin
+	DECLARE @counter INT = 1;
+	WHILE @counter <= 5
+	BEGIN
+		PRINT @counter;
+		SET @counter = @counter + 1;
+	END
+End
+--1 2 3 4 5 
+
+
+Begin
+	DECLARE @counter INT = 0;
+	WHILE @counter <= 5
+	BEGIN
+		SET @counter = @counter + 1;
+		IF @counter = 4
+			BREAK;
+		PRINT @counter;
+	END
+End
+
+select concat(cast(78 as char(30)),' Rs.');
+select concat(78,' Rs.');
+
+Begin
+	DECLARE @counter INT = 0;
+
+	WHILE @counter < 5
+	BEGIN
+		SET @counter = @counter + 1;
+		IF @counter = 3
+			CONTINUE;
+		PRINT @counter;
+	END
+End
+
+--1 2 4 5 
+
+--1 2 3
+
+
+
+
+BEGIN
+    SELECT product_id, product_name
+    FROM bikestores.production.products  WHERE list_price > 1000000;
+
+    IF @@ROWCOUNT = 0
+            PRINT 'No product with price greater than 100000 found';
+    Else
+	  Print 'Product with the given price range found';
+END
+
+--Output : No product..
+
+
+
+
+
+BEGIN
+    DECLARE @name VARCHAR(MAX);
+
+    SELECT TOP 1  @name = product_name
+    FROM   bikeStores.production.products
+    ORDER BY list_price DESC;
+	
+    IF @@ROWCOUNT <> 0
+    BEGIN
+        PRINT 'The most expensive product is ' + @name
+    END
+    ELSE
+    BEGIN
+        PRINT 'No product found';
+    END;
+END
+--The most expensive product is Trek Domane SLR 9 Disc - 2018
+
+
+select upper(name) from customers;
+
+CREATE FUNCTION udfNetSale(
+    @quantity INT,
+    @list_price DEC(10,2),
+    @discount DEC(4,2)
+)
+RETURNS DEC(10,2)
+AS 
+BEGIN
+    RETURN @quantity * @list_price * (1 - @discount);
+END;
+
+select * from products2;
+
+SELECT dbo.udfNetSale(10,100,0.1) as net_sale;  --900
+
+SELECT testdb.dbo.udfNetSale(10,list_price,0.1) as net_sale from bikestores.production.products;
+
+
+
+CREATE FUNCTION fn(
+    @number INT
+)
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @x INT = @number;
+	DECLARE @sm INT = 0;
+	WHILE @x > 0
+	BEGIN
+	       set @sm = @x + @sm;
+	       set @x = @x - 1;
+	END
+    RETURN @sm;
+END;
+
+Select dbo.fn(5);
+
+
+create or Alter FUNCTION fn2(
+    @number INT
+)
+RETURNS INT
+AS 
+BEGIN
+	DECLARE @x INT = @number;
+	DECLARE @sm INT = 1;
+	WHILE @x > 0
+	BEGIN
+	       set @sm = @x * @sm;
+	       set @x = @x - 1;
+	END
+    RETURN @sm;
+END;
+
+Select dbo.fn2(5);
+
+
+
+
+DROP FUNCTION dbo.fn2;
+
+
+
+
+BEGIN
+DECLARE @product_table TABLE (
+    product_name VARCHAR(MAX) NOT NULL,
+    brand_id INT NOT NULL,
+    list_price DEC(11,2) NOT NULL
+);
+INSERT INTO @product_table
+     SELECT product_name, brand_id, list_price
+         FROM BikeStores.production.products WHERE category_id = 1;
+
+SELECT  p.product_name, p.brand_id, p.list_price FROM @product_table p join BikeStores.production.products
+on p.list_price=BikeStores.production.products.list_price;
+END
+
+
+
+
+CREATE OR ALTER FUNCTION udfSplit(
+    @string VARCHAR(MAX))
+RETURNS @parts TABLE (    
+idx INT IDENTITY PRIMARY KEY,
+val VARCHAR(MAX)   
+)  AS
+BEGIN
+   INSERT INTO @parts  VALUES (@string);
+   RETURN
+END
+
+
+select * from dbo.udfSplit('str1');
+
+
+CREATE OR ALTER FUNCTION udfSplit(
+    @string VARCHAR(MAX), 
+    @delimiter VARCHAR(50) = ' ')
+RETURNS @parts TABLE
+(    
+idx INT IDENTITY PRIMARY KEY,
+val VARCHAR(MAX)   
+)	AS
+BEGIN
+DECLARE @index INT = -1;
+WHILE (LEN(@string) > 0) 
+BEGIN 
+    SET @index = CHARINDEX(@delimiter , @string)  ;
+    IF (@index = 0) AND (LEN(@string) > 0)  
+    BEGIN  
+        INSERT INTO @parts  VALUES (@string);
+        BREAK  
+    END 
+    IF (@index > 1)  
+    BEGIN  
+        INSERT INTO @parts VALUES (LEFT(@string, @index - 1));
+		SET @string = RIGHT(@string, (LEN(@string) - @index));  
+    END 
+    ELSE
+		SET @string = RIGHT(@string, (LEN(@string) - @index)); 
+    END
+RETURN
+END
+
+
+select * from dbo.udfSplit('The function ufnSplit() returns a table variable', default);
+
+
+select * from dbo.udfSplit('The,function,ufnSplit(),returns,a,table,variable', ',');
+
+
+
+CREATE FUNCTION udfProductInYear (
+    @model_year INT
+)
+RETURNS TABLE
+AS
+RETURN
+    SELECT 
+        product_name,
+        model_year,
+        list_price
+    FROM
+         BikeStores.production.products
+    WHERE
+        model_year = @model_year;
+
+
+select * from dbo.udfProductInYear(2016);
+
+drop function dbo.fn2;
+drop function if exists dbo.fn2;
+
+
+
+drop table orders;
+drop table customers;
+
+CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (2, 'Khilan', 25, 'Delhi', 1500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (3, 'kaushik', 23, 'Kota', 2000.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (4, 'Chaitali', 25, 'Mumbai', 6500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (5, 'Hardik', 27, 'Bhopal', 8500.00 );
+
+INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (6, 'Komal', 22, 'MP', 4500.00 );
+
+INSERT INTO CUSTOMERS VALUES (7, 'Muffy', 24, 'Indore', 10000.00 );
+
+
+select * from customers;
+
+
+CREATE or ALTER PROCEDURE SelectCustomerstabledata 
+AS 
+SELECT * FROM Customers
+
+
+Exec SelectCustomerstabledata;
+
+DROP PROC SelectCustomerstabledata;
+
+
+--Example: 
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@age AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age>@age
+End
+--Executing:
+Exec SelectCustomerstabledata 25
+
+
+
+--Example to pass the table name as procedure parameter: 
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@tblName as varchar(26))
+AS 
+Begin
+    declare @sqlStmt nvarchar(MAX) --varchar(MAX)
+    set @sqlStmt = 'SELECT * FROM ' + @tblName 
+    exec sp_executesql @sqlStmt
+    --exec @sqlStmt
+End
+--Executing:
+Exec SelectCustomerstabledata 'Customers'
+
+
+
+
+
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin AS Int, @agemax AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age between @agemin and @agemax
+End
+--Executing the procedure
+Exec SelectCustomerstabledata 25, 27 
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 27, 
+    @agemin = 25;
+
+
+
+
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin AS Int = 18, @agemax AS Int)
+AS 
+Begin
+SELECT * FROM Customers where age between @agemin and @agemax
+End
+
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 25;
+
+Exec SelectCustomerstabledata 25, 27 
+
+Exec SelectCustomerstabledata default, 27 
+
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 27, 
+    @agemin = 25;
+
+
+
+
+
+
+Begin
+declare @var nvarchar(max);
+set @var = 'select * from customers';
+exec sp_executesql @var;
+end;
+
+
+
+
+
+
+
+
+CREATE or alter PROCEDURE SelectCustomerstabledata 
+(@agemin Int, @agemax Int, @rownum int output)
+AS 
+Begin
+    SELECT * FROM Customers where age between @agemin and @agemax;
+     select @rownum= @@ROWCOUNT;
+End
+
+--Executing the procedure
+Begin
+DECLARE @count INT;
+
+EXECUTE SelectCustomerstabledata 
+    @agemax = 25, @agemin = 22,
+    @rownum = @count OUTPUT;
+--EXECUTE SelectCustomerstabledata 
+--    22, 25, @count OUTPUT;
+
+--SELECT @count AS 'Number of Customers found';
+print 'Number of Customers found : ' + cast(@count as varchar);
+End
+
+
+
+
+SELECT * FROM Customers;
+select * from products;
+
+drop table if exists products;
+
+CREATE TABLE products (
+	product_id INT IDENTITY (1, 1) PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	brand_id INT NOT NULL,
+	category_id INT NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL (10, 2) NOT NULL);
+
+INSERT INTO products
+VALUES 
+ 	('Test product1', 1, 1, 2018, 599),
+ 	('Test product2', 2, 2, 2016, 699),
+ 	('Test product3', 3, 3, 2018, 799),
+ 	('Test product4', 4, 4, 2015, 899);
+
+
+select * from products;
+
+
+
+
+
+Begin
+DECLARE 
+    @product_name VARCHAR(MAX), 
+    @list_price   DECIMAL;
+
+DECLARE cursor_product CURSOR
+FOR SELECT 
+        product_name,   list_price
+    FROM   products;
+
+OPEN cursor_product;
+
+FETCH NEXT FROM cursor_product INTO 
+    @product_name,   @list_price;
+
+WHILE @@FETCH_STATUS = 0
+    BEGIN
+        PRINT @product_name + ' has price ' +  CAST(@list_price AS varchar);
+        FETCH NEXT FROM cursor_product INTO 
+            @product_name,  @list_price;
+    END;
+
+CLOSE cursor_product;
+
+DEALLOCATE cursor_product;
+End
+
+
+
+
+
+
+
+
+
+
+
+
+drop table if exists products;
+select * into products from bikestores.production.products;
+
+select * from products;
+
+
+CREATE TABLE product_audits(
+    change_id INT IDENTITY PRIMARY KEY,
+    product_id INT NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    brand_id INT NOT NULL,
+    category_id INT NOT NULL,
+    model_year SMALLINT NOT NULL,
+    list_price DEC(10,2) NOT NULL,
+    updated_at DATETIME NOT NULL,
+    operation CHAR(3) NOT NULL,
+    CHECK(operation = 'INS' or operation='DEL')
+);
+
+
+
+
+CREATE TRIGGER trg_product_audit
+ON products
+AFTER INSERT, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO product_audits(
+        product_id,  product_name, brand_id,  category_id,  model_year, list_price, updated_at,  operation
+    )
+    SELECT
+        i.product_id, product_name, brand_id, category_id, model_year,  i.list_price,  GETDATE(),  'INS'
+    FROM  inserted i
+    UNION ALL
+    SELECT
+        d.product_id,  product_name, brand_id, category_id, model_year,  d.list_price, GETDATE(),  'DEL'
+    FROM  deleted d;
+END
+
+
+
+INSERT INTO products(
+    product_name, brand_id, category_id, model_year,  list_price
+)
+VALUES (
+    'Test product', 1, 1, 2018, 599
+);
+
+SELECT      *  FROM   product_audits;
+
+
+DELETE FROM 
+     products
+WHERE 
+    product_id = 5;
+
+
+SELECT      *  FROM   product_audits;
+
+Drop trigger trg_product_audit;
+
+
+
+select * into myCustTbl from customers;
+select * from myCustTbl;
+
+
+CREATE or alter TRIGGER trg_myCustTbl_Ins
+ON myCustTbl
+AFTER INSERT
+AS
+BEGIN
+print 'Insert Operation happened successfully';
+select * from inserted;
+End
+
+
+
+
+
+Insert into myCustTbl values(9,'abcd',22,'Delhi',6800);
+
+CREATE or alter TRIGGER trg_myCustTbl_del
+ON myCustTbl
+AFTER DELETE
+AS
+BEGIN
+print 'Deletion Operation happened successfully';
+select * from deleted;
+End
+
+delete from myCustTbl where id=9;
+
+
+CREATE or alter TRIGGER trg_myCustTbl_upd
+ON myCustTbl
+AFTER UPDATE
+AS
+BEGIN
+print 'update Operation happened successfully';
+select * from inserted;
+select * from deleted;
+End
+
+update myCustTbl set name='abcdef' where id=8;
+
+
+
+CREATE TABLE products_duplicate (
+product_name VARCHAR (255) NOT NULL,
+pstatus varchar(255)
+);
+
+
+
+
+CREATE or Alter TRIGGER trg_products_dup 
+ON products
+INSTEAD OF INSERT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	if exists (select inserted.product_name from inserted 
+		where inserted.product_name in(SELECT product_name
+		FROM  products))
+	Begin
+		INSERT INTO products_duplicate ( 
+			product_name, pstatus
+		)
+		SELECT
+			i.product_name, 'Duplicate Entry'
+		FROM
+			inserted i
+	End
+	else
+	Begin
+		Insert into products(product_name, brand_id, category_id,
+			model_year, list_price)
+		select product_name, brand_id, category_id,
+			model_year, list_price from Inserted;
+	End
+END
+
+
+Select * from products
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+--Duplicate Entry:
+insert into products values('Test product6', 5, 5, 2019, 799)
+Select * from products
+Select * from products_duplicate
+
+exec sp_helptext '[dbo].[trg_products_dup]';
+
+DISABLE TRIGGER trg_products_dup ON products;
+ENABLE TRIGGER trg_products_dup ON products;
+
+DISABLE TRIGGER ALL ON products;
+ENABLE TRIGGER ALL ON products;
+
+
+DISABLE TRIGGER ALL ON testdb;
+ENABLE TRIGGER ALL ON testdb;
 
