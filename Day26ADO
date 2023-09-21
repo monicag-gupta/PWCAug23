@@ -14,3 +14,23 @@ DataAdapters’s Fill(-,-) method gets a data table into the DataSet
 4.. Add controls on the Windows Form or Web Form
 – Display the data from the DataSet and allow user interaction
 5. Write C# code to put the data into the controls
+
+
+
+
+
+
+
+
+
+
+Create database training;
+use training;
+create table t(i int,j int);
+insert into t values(2,5),(3,6),(5,5),(1,2),(8,9);
+select * from t;
+
+
+
+
+
