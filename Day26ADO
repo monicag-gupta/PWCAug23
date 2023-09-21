@@ -90,10 +90,10 @@ namespace PrjADODC
 
 
                 //////Update: U : CRUD
-                //SqlCommand cmd = new SqlCommand("Update t set j=5 where i=2 and j=4", con);
+                //SqlCommand cmd = new SqlCommand("Update t set j=4 where i=2 and j=5", con);
                 //cmd.CommandType = CommandType.Text;
-                //cmd.ExecuteNonQuery();
-                //Console.WriteLine("Data updated");
+                //int recUp = cmd.ExecuteNonQuery();
+                //Console.WriteLine("Number of Records Updated : " + recUp);
 
 
 
