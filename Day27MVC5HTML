@@ -1,3 +1,47 @@
 chrome://flags/#allow-insecure-localhost
 
 Hello World
+
+Controllers: 
+The Controllers folder contains class files for the controllers. 
+A Controller handles users' request and returns a response. 
+MVC requires the name of all controller files to end with "Controller". 
+
+
+
+Scripts
+The Scripts folder contains JavaScript or VBScript files for the application. 
+MVC 5 includes javascript files for bootstrap, jquery, and modernizer by default.
+
+
+
+Models
+The Models folder contains model class files. Typically model class includes public 
+properties, which will be used by the application to hold and manipulate application data.
+
+
+
+Configuration files:
+AppSettings.json
+The appsettings. json file is an application configuration file used to store 
+configuration settings such as database connections strings, any application scope global variables, etc. 
+If you open the ASP.NET Core appsettings. json file, then you see the following code by default which is 
+created by visual studio.
+
+Views
+The Views folder contains HTML files for the application. 
+Typically view file is a .cshtml file where you write HTML and C# or VB.NET code.
+The Views folder includes a separate folder for each controller. 
+For example, all the .cshtml files, which will be rendered by HomeController will be in View > Home folder.
+The Shared folder under the View folder contains all the views shared among different controllers e.g., layout files.
+
+
+
+In Controller:
+
+public string Index()
+        {
+            return "Hello World";
+        }
+
+
