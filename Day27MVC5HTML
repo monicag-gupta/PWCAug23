@@ -40,8 +40,8 @@ The Shared folder under the View folder contains all the views shared among diff
 In Controller:
 
 public string Index()
-        {
-            return "Hello World";
-        }
+{
+    return "Hello World";
+}
 
 
