@@ -85,3 +85,28 @@ Add in Views->Home->Index.cshtml , the hyperlink to reach to the hello page:
 
 
 
+
+Exercise:
+Say you all are a group of owners of a very reputed company : ABC IT Solutions
+Create a Web site with three pages:
+1. Main page
+Information like 5 Directors name
+About the services your company provides
+Links to Contact us page
+Links to About us page
+2. About page
+1-3 liners about the directors
+Link to Main page, Contact Us page
+3. Contact Page
+Design a form with form action taking to Home page.
+Form should include at least name and email address, and whatever else is required
+Links to Main, About us page
+Please don’t forget to update your Index page to go to Main Page
+
+
+
+
+
+
+
+
