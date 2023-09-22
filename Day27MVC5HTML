@@ -45,3 +45,27 @@ public string Index()
 }
 
 
+In HomeController add post Index function:
+
+public IActionResult hello()
+{
+    return View();
+}
+
+For adding view, rt click onn the controller function hello() -> Add View -> Razor View (Empty) -> give the name of the view as :
+hello.cshtml 
+note that this name should match the name of the function
+A new View will be created, edit it:
+
+Views->Home->hello.cshtml:
+
+<h1>This is a view rendered by hello() of Home Controller</h1>
+
+
+
+
+
+
+
+
+
