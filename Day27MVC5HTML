@@ -36,6 +36,7 @@ For example, all the .cshtml files, which will be rendered by HomeController wil
 The Shared folder under the View folder contains all the views shared among different controllers e.g., layout files.
 
 
+Example1:
 
 In Controller:
 
@@ -45,12 +46,23 @@ public string Index()
 }
 
 
+
+Example 2:
+
 In HomeController add post Index function:
+Note if Index page was changed in previous example, change it back to render the View().
+
+public IActionResult Index()
+{
+    return View();
+}
 
 public IActionResult hello()
 {
     return View();
 }
+
+
 
 For adding view, rt click onn the controller function hello() -> Add View -> Razor View (Empty) -> give the name of the view as :
 hello.cshtml 
@@ -61,8 +73,12 @@ Views->Home->hello.cshtml:
 
 <h1>This is a view rendered by hello() of Home Controller</h1>
 
+Add in Views->Home->Index.cshtml , the hyperlink to reach to the hello page:
 
-
+<hr />
+<h3>
+    <a href="/Home/hello">Hello Page</a>
+</h3>
 
 
 
