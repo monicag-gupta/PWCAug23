@@ -4,6 +4,10 @@ String LastName;
 }
 Emp employee =new Emp(“John”,”Doe”);
 Gets the form in XML as:
+
+
+emp.xml
+
 <emp>
 	<employee>
 		<firstname>John</firstname>
@@ -14,3 +18,5 @@ Gets the form in XML as:
 		<lastname>Con</lastname>
 	</employee>
 </emp>
+
+open in browser..
