@@ -237,3 +237,42 @@ https://localhost:44338/Employee/Index
 
 
 
+
+
+  	public IActionResult WelcomeEmp()
+        {
+            //ViewData["EmpName"] = "Monica";
+            ViewBag.EmpName = "Monica";
+
+            return View();
+        }
+        public IActionResult WelcomeEmp2(string name)
+        {
+            //ViewData["EmpName"] = name;
+            ViewBag.EmpName = name;
+            return View();
+        }
+
+
+
+
+Views/Employees/WelcomeEmp2.cshtml:
+
+<h1>
+   Welcome @ViewBag.EmpName !!
+</h1>
+
+
+
+
+
+Views/Employees/WelcomeEmp.cshtml:
+
+<h1>
+    Welcome @ViewBag.EmpName !!
+</h1>
+
+
+
+
+
