@@ -79,3 +79,71 @@ abcdef.html / abcdef.txt
 
 
 
+using Day28MVCCtrlr2View.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Day28MVCCtrlr2View.Controllers
+{
+    class A
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public override string ToString()
+        {
+            return "The Emp details : id : "+ id + " name : "+ name;
+        }
+    }
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public JsonResult helloA()
+        {
+            A a = new A { id = 101, name = "Guest" };
+            return Json(a);
+        }
+        public string helloB()
+        {
+            A a = new A { id = 102, name = "Visitor" };
+            return a.ToString();
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
