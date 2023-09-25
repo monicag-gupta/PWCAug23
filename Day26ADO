@@ -124,3 +124,11 @@ To Check whether Insertion happened or not :
 select * from t;
 
 
+
+
+Exercise:
+Design a table in SQL server as:
+Login(uname, passwd)
+Entries: (‘PWD’,’pwd’),(‘admin’,‘Csharp’),(‘Monica’,’Gupta’),(‘guest’,’visitor’)
+WA Console program in C# to enter username and password from the user. Then check if the pair is present in the database. If present, say “Login successful” else say “Login NOT successful”.
+
