@@ -198,4 +198,40 @@ namespace Day28MVCCtrlr2View.Controllers
 
 
 
+Views/Employees/Index.cshtml:
+
+<h1>
+	<a href="Employee/WelcomeEmp">Welcome Emp Page</a>
+	<Br />
+
+	<form action="Employee/WelcomeEmp2">
+		Name: <input type="text" name="name" />
+		<input type="submit" value="WelcomeEmp2" />
+	</form>
+</h1>
+
+
+
+
+Views/Employees/WelcomeEmp2.cshtml:
+
+<h1>
+    Welcome @ViewData["EmpName"] !!
+</h1>
+
+
+
+
+
+Views/Employees/WelcomeEmp.cshtml:
+
+<h1>
+    Welcome @ViewData["EmpName"] !!
+</h1>
+
+
+
+
+
+
 
