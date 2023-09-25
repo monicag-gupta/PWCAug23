@@ -337,3 +337,43 @@ Step 4: Deploy:
 
 
 
+
+
+Redirection Example:
+
+
+	public IActionResult Welcome1(string name)
+        {
+            if (name == "PWC")
+                return RedirectToAction("Welcome2");
+            else
+                return RedirectToAction("Welcome3"); 
+        }
+        public IActionResult Welcome2()
+        {
+            return View();
+        }
+        public IActionResult Welcome3()
+        {
+            return View();
+        }
+
+
+
+Views/Employees/Welcome1.cshtml:
+
+<h1>Its not required</h1>
+
+
+
+Views/Employees/Welcome2.cshtml:
+
+<h1>Login successful!!</h1>
+
+
+
+Views/Employees/Welcome3.cshtml:
+
+<h1>Login NOT successful!!</h1>
+
+
