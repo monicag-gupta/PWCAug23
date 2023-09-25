@@ -394,4 +394,11 @@ Views/Employees/Index.cshtml:
 
 
 
+Exercise:
+Prepare an Index form for taking in the username and password, submitted to a controller. 
+The controller uses an Ado.Net function to authenticate the credentials.
+If authenticated, goto success page, else goto not successful page.
+
+
+
 
