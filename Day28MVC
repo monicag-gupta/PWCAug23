@@ -201,10 +201,10 @@ namespace Day28MVCCtrlr2View.Controllers
 Views/Employees/Index.cshtml:
 
 <h1>
-	<a href="Employee/WelcomeEmp">Welcome Emp Page</a>
+	<a href="/Employee/WelcomeEmp">Welcome Emp Page</a>
 	<Br />
 
-	<form action="Employee/WelcomeEmp2">
+	<form action="/Employee/WelcomeEmp2">
 		Name: <input type="text" name="name" />
 		<input type="submit" value="WelcomeEmp2" />
 	</form>
