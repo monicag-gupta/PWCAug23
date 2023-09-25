@@ -1,0 +1,16 @@
+Class Emp{
+String firstName;
+String LastName;
+}
+Emp employee =new Emp(“John”,”Doe”);
+Gets the form in XML as:
+<emp>
+	<employee>
+		<firstname>John</firstname>
+		<lastname>John</lastname>
+	</employee>
+	<employee>
+		<firstname>Lee</firstname>
+		<lastname>Con</lastname>
+	</employee>
+</emp>
