@@ -279,3 +279,45 @@ Views/Employees/WelcomeEmp.cshtml:
 
 
 
+TEMPDATA:
+ public IActionResult WelcomeEmp()
+        {
+            //ViewData["EmpName"] = "Monica";
+            //ViewBag.EmpName = "Monica";
+            TempData["EmpName"] = "Monica";
+
+
+            return View();
+        }
+        public IActionResult WelcomeEmp2(string name)
+        {
+            //ViewData["EmpName"] = name;
+            //ViewBag.EmpName = name;
+            TempData["EmpName"] = name;
+
+            return View();
+        }
+
+
+
+
+
+Views/Employees/WelcomeEmp2.cshtml:
+
+<h1>
+    Welcome @TempData["EmpName"] !!
+</h1>
+
+
+
+
+
+Views/Employees/WelcomeEmp.cshtml:
+
+<h1>
+    Welcome @TempData["EmpName"] !!
+</h1>
+
+
+
+
