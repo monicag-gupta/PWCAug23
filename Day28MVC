@@ -183,3 +183,19 @@ namespace Day28MVCCtrlr2View.Controllers
 
 
 
+	public IActionResult WelcomeEmp()
+        {
+            ViewData["EmpName"] = "Monica";
+            return View();
+        }
+        public IActionResult WelcomeEmp2(string name)
+        {
+            ViewData["EmpName"] = name;
+            return View();
+        }
+
+
+
+
+
+
