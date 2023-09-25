@@ -321,3 +321,19 @@ Views/Employees/WelcomeEmp.cshtml:
 
 
 
+Exercise:
+Design a new Asp.Net MVC Project displaying a form which contains first name and last name entered in a view as an html, get it submitted to another view (controlled by the controller)
+Step1:Create an MVC web app
+ExerciseMVC
+Step2: Add a controller
+StudentController
+Add actions(): Form, Welcome
+Step3: Add views :
+Form (form)
+Welcome (submitted view): “Welcome to my Site, lastname, Firstname”
+Step 4: Deploy:
+….\Student\Form
+
+
+
+
