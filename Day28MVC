@@ -20,3 +20,62 @@ emp.xml
 </emp>
 
 open in browser..
+
+
+JSON:
+
+JavaScript Simple Object Notation: Key value pairs for each object, keys are the attributes and their value is the Object value.
+Class Emp{
+String firstName;
+String LastName;
+}
+Emp employee =new Emp(“John”,”Doe”);
+
+The JSON format :
+
+var emp = {Employee1 : 
+ 				{firstName : “John”, lastName : “Doe”},
+                 Employee2 : 
+ 				{firstName : “Lee”, lastName : “Con”}
+  		};
+
+
+
+var Emp={
+  	Eid:101,
+ 		Ename:”Abc”,
+ 		Esal:10001
+}
+var Emps=[
+{ 	Eid:101,
+ 		Ename:”Abc”,
+ 		Esal:10001
+},
+{		Eid:101,
+ 		Ename:”Abc”,
+ 		Esal:10001
+}]
+
+
+
+
+
+abcdef.html / abcdef.txt
+
+{
+ Employee1 : {firstName : "John", lastName : "Doe"},
+ Employee2 : {firstName : "Lee", lastName : "Con"}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
