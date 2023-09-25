@@ -377,3 +377,21 @@ Views/Employees/Welcome3.cshtml:
 <h1>Login NOT successful!!</h1>
 
 
+
+
+Views/Employees/Index.cshtml:
+
+<h1>
+	@*<a href="/Employee/WelcomeEmp">Welcome Emp Page</a>
+	<Br />*@
+
+	<form action="/Employee/Welcome1">
+		Name: <input type="text" name="name" />
+		<input type="submit" value="Login" />
+	</form>
+</h1>
+
+
+
+
+
