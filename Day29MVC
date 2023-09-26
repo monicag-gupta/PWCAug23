@@ -1,0 +1,5 @@
+use training;
+
+create table loginTbl(name varchar(26), uname varchar(10), passwd varchar(10));
+
+
