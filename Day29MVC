@@ -47,3 +47,32 @@ namespace CRUD_ADO
     }
 }
 
+
+
+
+
+Views->Login->Index.cshtml:
+
+<h1>Login to enter the Site:
+    <br />
+    
+        <form action="/Login/mySite">
+            <table>
+                <tr>
+                    <td>Enter Login Id: </td>
+                    <td><input type="text" name="uname" /></td>
+                </tr>
+                <tr>
+                    <td>Enter Password: </td>
+                    <td><input type="text" name="pass" /></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><input type="submit" value="login" /></td>
+                </tr>
+            </table>
+
+           </form>
+  
+</h1>
+
+
