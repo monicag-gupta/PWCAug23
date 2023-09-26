@@ -114,3 +114,26 @@ namespace Day29MVC.Controllers
 }
 
 
+
+
+
+
+
+Success.cshtml:
+<h1>
+    Welcome to our Site !! You are Authenticated by our Server!
+</h1>
+<h3><a href="/Login/Index">Login page Again</a></h3>
+
+
+Failure.cshtml:
+<h1>
+    You are NOT Authenticated by our Server! Please Login with correct Credentials.
+</h1>
+<h3><a href="/Login/Index">Login page Again</a></h3>
+
+
+
+
+
+
