@@ -91,10 +91,15 @@ namespace Day29MVC.Controllers
         {
             return View();
         }
-        public IActionResult mySite(string uname, string pass)
+       public IActionResult mySite(string uname, string pass)
         {
+            if (CRUD_ADO.CRUD.chkValidity(uname, pass))
+            {
+                return RedirectToAction("Success");
+            }
+            return RedirectToAction("Failure");
 
-            return View();
+            
         }
         public IActionResult Success()
         {
