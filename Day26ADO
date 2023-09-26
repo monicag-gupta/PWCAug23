@@ -12,7 +12,9 @@ namespace PrjADODC
             try
             {
                 //Console.WriteLine("hello");
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O7LF2JA;Initial Catalog=training;Integrated Security=True");
+
                 con.Open();
 
 
