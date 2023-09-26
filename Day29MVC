@@ -3,3 +3,10 @@ use training;
 create table loginTbl(name varchar(26), uname varchar(10), passwd varchar(10));
 
 
+insert into loginTbl values
+('Administrator','admin','cSharp'),('Manager','monica','gupta'),('guest','guest','visitor');
+
+select * from loginTbl;
+
+
+
