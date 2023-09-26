@@ -1,3 +1,95 @@
+using System;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+
+namespace PrjADODC
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                //Console.WriteLine("hello");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                con.Open();
+
+
+
+                ////////Insert: Create records C of CRUD
+                //SqlCommand cmd = new SqlCommand("Insert into t values(2,5),(7,9)", con);
+                //cmd.CommandType = CommandType.Text;
+                //int recIns = cmd.ExecuteNonQuery();
+                //Console.WriteLine("Number of rows inserted: " + recIns);
+
+
+
+
+
+                /////Select : Read R of CRUD
+                //SqlCommand cmd = new SqlCommand("Select * from t", con);
+                //cmd.CommandType = CommandType.Text;
+                //SqlDataReader rdr = cmd.ExecuteReader();
+                //Console.WriteLine("i\tj");
+                //while (rdr.Read())
+                //{
+                //    Console.WriteLine(rdr.GetInt32(0) + "\t" + rdr.GetInt32(1));
+                //}
+
+
+
+
+
+
+
+                //////Update: U : CRUD
+                //SqlCommand cmd = new SqlCommand("Update t set j=4 where i=2 and j=5", con);
+                //cmd.CommandType = CommandType.Text;
+                //int recUp = cmd.ExecuteNonQuery();
+                //Console.WriteLine("Number of Records Updated : " + recUp);
+
+
+
+                ////////Delete: D of CRUD
+                //SqlCommand cmd = new SqlCommand("Delete from t where i=2 and j=4", con);
+                //cmd.CommandType = CommandType.Text;
+                //int recDel = cmd.ExecuteNonQuery();
+                //Console.WriteLine("Number of Records Deleted: "+ recDel);
+
+
+
+
+            }
+            catch (Exception e) { Console.WriteLine(e.ToString()); }
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ADO.NET Data Access :
 1. Set up a Data Connection
 – Establishes a link to the data source
