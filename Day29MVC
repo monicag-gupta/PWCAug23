@@ -209,10 +209,19 @@ Enter Name :
 Enter UserName :
 Enter Password : 
  
-
-
-
 On click of Register, The page should take in the Credentials and Insert the data in the LoginTbl of the Database. The Insertion Operation should be written in the CRUD_ADO project.
+
+
+
+Have “Update Password” link added in the Success Page.
+The link takes us to a page where we need to enter :
+Name: 
+Old Password:
+New Password:
+Confirm new Password:
+
+If the  “New Password” ==  “Confirm new Password” the update in the database the new password according to the name and old password.
+Code of Update should be written in CRUD_ADO Project, called here.
 
 
 
