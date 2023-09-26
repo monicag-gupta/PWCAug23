@@ -28,7 +28,8 @@ namespace CRUD_ADO
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O7LF2JA;Initial Catalog=training;Integrated Security=True");
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select * from loginTbl", con);
                 cmd.CommandType = CommandType.Text;
