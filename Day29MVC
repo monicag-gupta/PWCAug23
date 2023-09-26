@@ -201,3 +201,18 @@ namespace Day29MVC
 
 
 
+Exercise:
+Consider the Example Code for LoginController
+Add a “Register Now” link in the Index.cshtml page of LoginController.
+In the action of Register page, add the view for Registration:
+Enter Name : 
+Enter UserName :
+Enter Password : 
+ 
+
+
+
+On click of Register, The page should take in the Credentials and Insert the data in the LoginTbl of the Database. The Insertion Operation should be written in the CRUD_ADO project.
+
+
+
