@@ -10,3 +10,39 @@ select * from loginTbl;
 
 
 
+
+
+
+In the CRUD_ADO->Class1.cs :
+
+
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace CRUD_ADO
+{
+    public class CRUD
+    {
+        public static Boolean chkValidity(string uname, string pass)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ORPSK1N;Initial Catalog=training;Integrated Security=True");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from loginTbl", con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader rdr = cmd.ExecuteReader();         
+                while (rdr.Read())
+                {
+                    if (rdr.GetString("uname").Equals(uname) && rdr.GetString("passwd").Equals(pass))
+                        return true;
+                }
+
+            }
+            catch (Exception e) { return false; }
+            return false;
+        }
+    }
+}
+
