@@ -225,3 +225,19 @@ Code of Update should be written in CRUD_ADO Project, called here.
 
 
 
+If the Login id is authenticated as an admin user, then we should get a different view, admin view (managed by controller) : In the admin view have an option of deleting a user: 
+Link stating “Delete an user”
+Clicking on the link should take us to a page:
+Name: 
+UserName: 
+Password: 
+
+If all parameters match as a record from the table, the data should be deleted in the table.
+Use CRUD_ADO project for deleting from the table.
+
+
+
+
+
+
+
