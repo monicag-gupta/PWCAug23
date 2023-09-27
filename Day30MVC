@@ -183,3 +183,321 @@ Provide search according to ID, course, name, duration, year, fees range.
 
 
 
+
+
+
+
+
+I Solution:
+
+Solution: Model: Employee.cs:
+namespace Day30MVC.Models
+{
+    public class Employee
+    {
+        public string name { get; set; }
+        public int id { get; set; }
+
+        public Employee(string name, int id)
+        {
+            this.name = name;
+            this.id = id;
+        }
+
+        public Employee() { }
+
+        public override string ToString()
+        {
+            return "\nEmp: " + name + " with id: " + id;
+        }
+    }
+}
+
+
+
+
+..Solution: Model : EmployeeList.cs:
+
+using System.Collections.Generic;
+using System;
+using System.Xml.Linq;
+
+namespace Day30MVC.Models
+{
+    public class EmployeeList
+    {
+        public List<Employee> emps = new List<Employee>();
+        public EmployeeList(List<Employee> emps) { this.emps = emps; }
+        public EmployeeList(Employee emp) { this.emps.Add(emp); }
+        public EmployeeList()
+        {
+            this.AddEmp(new Employee("abc", 101));
+            this.AddEmp(new Employee("xyz", 102));
+            this.AddEmp(new Employee("abcxyz", 103));
+        }
+        public void AddEmp(Employee emp) { this.emps.Add(emp); }
+        public void AddEmp(string name, int id) { this.emps.Add(new Employee(name,id)); }
+        public void DispEmp()
+        {
+            foreach (Employee e in emps)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public Employee getEmp(string name)
+        {
+            Employee e = new Employee("default", 100);
+            foreach (Employee ee in emps)
+            {
+                if (ee.name.Equals(name))
+                {
+                    e = ee;
+                }
+            }
+            
+            //Employee e2 = emps.Find(ee => ee.name.Equals(name));
+            return e;
+        }
+        public string updateEmps(int id, string updatedName)
+        {
+           
+            foreach (Employee ee in emps)
+            {
+                if (ee.id==id)
+                {
+                    ee.name=updatedName;
+                    return "The Employee has been updated successfully";
+                }
+            }
+            return "The Employee with id: " + id + " not found";
+        }
+        public string delEmp(int id)
+        {
+            foreach (Employee ee in emps)
+            {
+                if (ee.id == id)
+                {
+                    emps.Remove(ee);
+                    return "The Employee has been removed successfully";
+                }
+            }
+            return "The Employee with id: " + id + " not found";
+
+        }
+    }
+}
+
+
+
+
+
+
+EmployeeController :
+
+using Day30MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
+
+namespace Day30MVC.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        static EmployeeList emps = new EmployeeList();
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult WelcomeEmp(string name)
+        {
+            TempData["Emp"] = emps.getEmp(name);
+            return View();
+        }
+        public IActionResult WelcomeEmp2(string name)
+        {
+            TempData["EmpName"] = name;
+            return View();
+        }
+        public IActionResult UpdateEmps(int id, string name)
+        {
+            TempData["msg"] = emps.updateEmps(id,name);
+            return View();
+        }
+        
+        public IActionResult DelEmps(int id)
+        {
+            TempData["msg"] = emps.delEmp(id);
+            return View();
+        }
+        public IActionResult AddEmps(int id, string name)
+        {
+            emps.AddEmp(name, id);
+            return View();
+        }
+        public IActionResult ListEmp()
+        {
+            return View(emps.emps);
+        }
+
+        public JsonResult ListEmp2()
+        {
+            return Json(emps.emps);
+        }
+
+    }
+}
+
+
+
+
+Views: Index 
+
+<h1>
+<a href="/Employee/ListEmp">List of Emp line wise</a>
+<br />
+<a href="/Employee/ListEmp2">List of Emp as JSON</a>
+<Br /><hr />
+********For just a welcome to name screen*********
+<form action="/Employee/WelcomeEmp2">
+Name: <input type="text" name="name" />
+<input type="submit" value="WelcomeEmp2" />
+</form>
+<br />
+<hr />
+********For Search according to Name**********
+<form action="/Employee/WelcomeEmp">
+<!-- Name: Monica is a hidden field here.
+<input type="hidden" name="name1" value="Monica"/> -->
+Name: <input type="text" name="name" />
+<input type="submit" value="WelcomeEmp" />
+</form>
+
+<br />
+<hr />
+****For Update***
+<form action="/Employee/UpdateEmps">
+Id: <input type="text" name="id" /><br />
+Name: <input type="text" name="name" /><br />
+<input type="submit" value="UpdateEmp" />
+</form>
+
+
+<br />
+<hr />
+****For Adding a new Employee***
+<form action="/Employee/AddEmps">
+Id: <input type="text" name="id" /><br />
+Name: <input type="text" name="name" /><br />
+<input type="submit" value="AddEmp" />
+</form>
+<hr/>
+
+<br />
+<hr />
+****For Deleting an Employee***
+<form action="/Employee/DelEmps">
+Id: <input type="text" name="id" /><br />
+<input type="submit" value="DeleteEmp" />
+</form>
+<hr />
+***************End*************
+</h1>
+
+
+
+
+
+Views:AddEmps
+
+<h1>
+    Employee Added Successfully!
+    <br />
+    <hr />
+    <a href="/Employee/ListEmp">List of Emp line wise</a>
+    <br />
+    <a href="/Employee/Index">Back to Index</a>
+</h1>
+
+
+
+
+
+
+Views: DelEmps
+
+<h1>
+@TempData["msg"] !!
+<br />
+<hr />
+<a href="/Employee/ListEmp">List of Emp line wise</a>
+<br />
+<a href="/Employee/Index">Back to Index</a>
+<br />
+</h1>
+
+
+
+
+Views: ListEmp
+
+@model IEnumerable<Day30MVC.Models.Employee>
+<h3>
+@foreach (var emp in Model)
+{
+    <div>
+        @emp
+        <hr />
+    </div>
+}
+
+<hr />
+<br />
+<hr />
+<a href="/Employee/ListEmp">List of Emp line wise</a>
+<br />
+<a href="/Employee/Index">Back to Index</a>
+<br />
+</h3>
+
+
+
+
+
+Views: UpdateEmps
+
+<h1>
+ @TempData["msg"] !!
+<br />
+<hr />
+<a href="/Employee/ListEmp">List of Emp line wise</a>
+<br />
+<a href="/Employee/Index">Back to Index</a>
+<br />
+</h1>
+
+
+
+
+
+Views: WelcomeEmp
+
+<h1>
+Welcome @TempData["Emp"] !!
+</h1>
+
+
+
+
+Views: WelcomeEmp2
+
+<h1>
+Welcome @TempData["EmpName"] !!
+</h1>
+
+
+
+
+
+
+
+
