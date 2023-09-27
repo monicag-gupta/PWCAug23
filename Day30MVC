@@ -111,6 +111,8 @@ namespace Day30MVC.Controllers
 Index.cshtml:
 <h1>
 	<a href="/Employee/ListEmp">Welcome to list of Emp Page</a>
+	<br />
+	<a href="/Employee/ListEmp2">List of Emp as JSON</a>
 	<Br /><hr />
 
 	<form action="/Employee/WelcomeEmp2">
