@@ -160,3 +160,13 @@ ListEmp.cshtml:
 
 
 
+Exercise:
+
+Update the project for adding Employee to the list and displaying the list with updated Employee, 
+and do the other operations with added employee
+
+Update the project for updating any existing Employee (search by ID, update the name). 
+
+The project should have proper links and form for adding and updating.
+
+
