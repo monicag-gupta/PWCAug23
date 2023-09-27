@@ -106,3 +106,27 @@ namespace Day30MVC.Controllers
     }
 }
 
+
+
+Index.cshtml:
+<h1>
+	<a href="/Employee/ListEmp">Welcome to list of Emp Page</a>
+	<Br /><hr />
+
+	<form action="/Employee/WelcomeEmp2">
+		Name: <input type="text" name="name" />
+		<input type="submit" value="WelcomeEmp2" />
+	</form>
+	<br />
+	<hr />
+
+	<form action="/Employee/WelcomeEmp">
+		<!-- Name: Monica is a hidden field here.
+		<input type="hidden" name="name1" value="Monica"/> -->
+		Name: <input type="text" name="name" />
+		<input type="submit" value="WelcomeEmp" />
+	</form>
+</h1>
+
+
+
