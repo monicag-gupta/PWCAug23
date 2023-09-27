@@ -1,0 +1,21 @@
+namespace Day30MVC.Models
+{
+    public class Employee
+    {
+        public string name { get; set; }
+        public int id { get; set; }
+
+        public Employee(string name, int id)
+        {
+            this.name = name;
+            this.id = id;
+        }
+
+        public Employee() { }
+
+        public override string ToString()
+        {
+            return "\nEmp: " + name + " with id: " + id;
+        }
+    }
+}
