@@ -130,3 +130,31 @@ Index.cshtml:
 
 
 
+
+WelcomeEmp.cshtml:
+<h1>
+	Welcome @TempData["Emp"] !!
+</h1>
+
+
+WelcomeEmp2.cshtml:
+<h1>
+	Welcome @TempData["EmpName"] !!
+</h1>
+
+
+
+ListEmp.cshtml:
+
+@model IEnumerable<Day30MVC.Models.Employee>
+
+@foreach (var emp in Model)
+{
+    <div>
+        @emp
+        <hr />
+    </div>
+}
+
+
+
