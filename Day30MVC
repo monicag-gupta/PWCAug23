@@ -66,3 +66,43 @@ namespace Day30MVC.Models
     }
 }
 
+
+
+
+
+
+using Day30MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day30MVC.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        EmployeeList emps = new EmployeeList();
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult WelcomeEmp(string name)
+        {
+            TempData["Emp"] = emps.getEmp(name);
+            return View();
+        }
+        public IActionResult WelcomeEmp2(string name)
+        {
+            TempData["EmpName"] = name;
+            return View();
+        }
+        public IActionResult ListEmp()
+        {
+            return View(emps.emps);
+        }
+
+        public JsonResult ListEmp2()
+        {
+            return Json(emps.emps);
+        }
+
+    }
+}
+
