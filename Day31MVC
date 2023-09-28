@@ -294,3 +294,38 @@ Index2 Page:
 
 
 
+
+
+
+
+
+Exercise:
+
+Login Id and password : pair of data (login form)
+Being maintained for all the logged in pages.
+Page 1: Login Page  : Next button take us to Inbox
+Hidden step/action: Saves the cookies: either the data given by client or empty string(none of the cookies are null), redirects to Inbox page
+Page 2: Inbox Page: 
+If the cookies are present :
+Just a table full of scratch messages
+A link to Inbox page, Draft page, Sent page, Compose page
+A link to logout
+Else Inbox page should be empty with link to login page
+Page 3-5: Compose Page / Draft page / Sent page:
+If the cookies are present :
+Just a table full of scratch data
+A link to Inbox page, Draft page, Sent page, Compose page
+A link to logout 
+Else the pages should be empty with link to login page
+Page 6 : Logout page:
+Refresh the cookie for login credentials and delete the username and password
+Provide a link to login page
+
+
+
+
+
+
+
+
+
