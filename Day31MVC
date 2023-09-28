@@ -1,0 +1,130 @@
+using Day31MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Day31MVC.Controllers
+{
+	public class HomeController : Controller
+	{
+		private readonly ILogger<HomeController> _logger;
+
+		public HomeController(ILogger<HomeController> logger)
+		{
+			_logger = logger;
+		}
+
+		public IActionResult Index()
+		{
+			return View();
+		}
+		public IActionResult Index1()
+		{
+			return View();
+		}
+		public IActionResult Index2()
+		{
+			return View();
+		}
+		public IActionResult Privacy()
+		{
+			return View();
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+	}
+}
+
+
+
+
+
+
+public IActionResult Index()
+		{
+			return View();
+		}
+		public IActionResult Index1()
+		{
+			return View();
+		}
+		public IActionResult Index2()
+		{
+			return View();
+		}
+
+
+
+
+
+Index.cshtml
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<form action="/Home/Index1">
+    Enter the Correct Answer:
+    <br/>
+    Is Asp.Net library supported by MVC 5?
+    <br/>
+    <input type="radio" name="ans"/>Yes
+    <br />
+    <input type="radio" name="ans" />No
+    <br/>
+    <input type="submit" value="Next" />    
+</form>
+
+
+
+
+
+Index1.cshtml
+
+<h1>This is my Index1 Page</h1>
+<form>
+    Enter the Correct Answer:
+    <br />
+    MVC is Modern Views for Components?
+    <br />
+    <input type="radio" name="ans" />Yes
+    <br />
+    <input type="radio" name="ans" />No
+    <br />
+    <input type="submit" value="Next" formaction="/Home/Index2" />
+    <input type="submit" value="Previous" formaction="/Home/Index" />
+</form>
+
+
+
+
+Index2.cshtml:
+
+<h1>This is my Index2 Page</h1>
+<form>
+    Enter the Correct Answer:
+    <br />
+    ASp.Net is planned on the IIS server?
+    <br />
+    <input type="radio" name="ans" />Yes
+    <br />
+    <input type="radio" name="ans" />No
+    <br />
+    <input type="submit" value="Next" formaction="/Home/Index" />
+    <input type="submit" value="Previous" formaction="/Home/Index1" />
+</form>
+
