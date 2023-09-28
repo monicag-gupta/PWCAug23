@@ -128,3 +128,165 @@ Index2.cshtml:
     <input type="submit" value="Previous" formaction="/Home/Index1" />
 </form>
 
+
+
+
+
+
+
+
+
+STATE MANAGEMENT:
+COOKIES:
+
+using Day31MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Day31MVC.Controllers
+{
+	public class HomeController : Controller
+	{
+		private readonly ILogger<HomeController> _logger;
+
+		public HomeController(ILogger<HomeController> logger)
+		{
+			_logger = logger;
+		}
+
+		//public IActionResult Index()
+		//{
+  //          if (HttpContext.Request.Cookies.ContainsKey("Q1"))
+  //          {
+  //              var ans1 = HttpContext.Request.Cookies["Q1"];
+  //              TempData["Q1"] = ans1;
+  //          }
+  //          else
+  //              TempData["Q1"] = "";
+
+  //          return View();
+		//}
+        public IActionResult Index(string ans)
+        {
+            if(ans!=null)
+                 HttpContext.Response.Cookies.Append("Q2", ans);
+            if (HttpContext.Request.Cookies.ContainsKey("Q1"))
+            {
+                var ans1 = HttpContext.Request.Cookies["Q1"];
+                TempData["Q1"] = ans1;
+            }
+            else
+                TempData["Q1"] = "";
+
+            return View();
+        }
+
+        public IActionResult Index1(string ans)
+		{
+            HttpContext.Response.Cookies.Append("Q1", ans);
+            HttpContext.Response.Cookies.Append("Q3", ans);
+            if (HttpContext.Request.Cookies.ContainsKey("Q2"))
+            {
+                var ans2 = HttpContext.Request.Cookies["Q2"];
+                TempData["Q2"] = ans2;
+            }
+            else
+                TempData["Q2"] = "";
+            return View();
+		}
+		public IActionResult Index2(string ans)
+		{
+            HttpContext.Response.Cookies.Append("Q2", ans);
+          
+            if (HttpContext.Request.Cookies.ContainsKey("Q3"))
+            {
+                var ans3 = HttpContext.Request.Cookies["Q3"];
+                TempData["Q3"] = ans3;
+            }
+            else
+                TempData["Q3"] = "";
+            return View();
+        }
+		public IActionResult Privacy()
+		{
+			return View();
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+	}
+}
+
+
+
+
+
+
+Index Page:
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<form action="/Home/Index1">
+    Enter the Correct Answer:
+    <br/>
+    Is Asp.Net library supported by MVC 5?
+    <br/>
+    Ans: <input type="text" name="ans" value=@TempData["Q1"] >
+    <br/>
+    <input type="submit" value="Next" />    
+</form>
+
+
+
+
+
+Index1 page:
+<h1>This is my Index1 Page</h1>
+<form>
+    Enter the Correct Answer:
+    <br />
+    MVC is Modern Views for Components?
+    <br />
+    Ans: <input type="text" name="ans" value=@TempData["Q2"] >
+    <br />
+    <input type="submit" value="Next" formaction="/Home/Index2" />
+    <input type="submit" value="Previous" formaction="/Home/Index" />
+</form>
+
+
+
+
+
+
+Index2 Page:
+
+<h1>This is my Index2 Page</h1>
+<form>
+    Enter the Correct Answer:
+    <br />
+    ASp.Net is planned on the IIS server?
+    <br />
+    Ans: <input type="text" name="ans" value=@TempData["Q3"] >
+    <br />
+    <input type="submit" value="Next" formaction="/Home/Index" />
+    <input type="submit" value="Previous" formaction="/Home/Index1" />
+</form>
+
+
+
+
