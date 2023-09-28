@@ -1,3 +1,56 @@
+Employee Form:
+Enter Name :
+
+Enter Age : 
+
+
+
+
+The  Page submits to hr() action: Hr() calls this model and gets a string value and prints it in the view.
+From Model, HelloWorld.validate(int age)
+If age is negative or more than 150, returns “Ghost Employee”
+If age is more than 60, returns “Senior Citizen Employees”
+If age is less than 20, returns “Child Employee”
+Else returns “Good Working Employees
+
+
+
+
+Index() 
+View() -> have the form : Employee Form
+
+The Employee Form submits to Hr()
+Hr(string name, int age)
+HelloWorld obj=..
+String msg = obj.validate(age);
+ViewData[“ageMsg”]=msg;
+Return View();
+
+
+In the View of Hr, print the ViewData[“ageMsg”]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 using Day31MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
