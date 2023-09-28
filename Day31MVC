@@ -35,6 +35,61 @@ In the View of Hr, print the ViewData[“ageMsg”]
 
 
 
+using Microsoft.AspNetCore.Mvc;
+using MVCBasics.Models;
+
+namespace MVCBasics.Controllers
+{
+    public class HelloController : Controller
+    {
+        public IActionResult Welcome()
+        {
+            HelloWorld hw = new HelloWorld();
+            ViewData["msg"] = hw.hello();
+            return View();
+        }
+        public IActionResult SayHi(string myName)
+        {
+            ViewBag.Name = myName;
+
+            return View();
+        }
+    }
+}
+
+
+
+Welcome.cshtml:
+<h1>Hello World! from View</h1>
+<h1>@ViewData["msg"]</h1>
+<hr />
+<form action="/Hello/SayHi">
+Name : <input type="text" name="myName" /> 
+<input type="Submit" />
+</form>
+
+
+
+SayHi.csHTML:
+<h1>Hi @ViewBag.Name !!</h1>
+
+
+
+Model: HelloWorld.cs
+
+namespace MVCBasics.Models
+{
+    public class HelloWorld
+    {
+        public string hello()
+        {
+            return "Hello World!";
+        }
+    }
+}
+
+
+
 
 
 
