@@ -188,8 +188,11 @@ namespace Day31MVC.Controllers
 
         public IActionResult Index1(string ans)
 		{
-            HttpContext.Response.Cookies.Append("Q1", ans);
-            HttpContext.Response.Cookies.Append("Q3", ans);
+            if (ans != null)
+            {
+                HttpContext.Response.Cookies.Append("Q1", ans);
+                HttpContext.Response.Cookies.Append("Q3", ans);
+            }
             if (HttpContext.Request.Cookies.ContainsKey("Q2"))
             {
                 var ans2 = HttpContext.Request.Cookies["Q2"];
@@ -201,7 +204,8 @@ namespace Day31MVC.Controllers
 		}
 		public IActionResult Index2(string ans)
 		{
-            HttpContext.Response.Cookies.Append("Q2", ans);
+            if (ans != null) 
+                HttpContext.Response.Cookies.Append("Q2", ans);
           
             if (HttpContext.Request.Cookies.ContainsKey("Q3"))
             {
