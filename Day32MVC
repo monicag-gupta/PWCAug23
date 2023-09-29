@@ -63,6 +63,59 @@ namespace Day32MVC.Controllers
 
 
 
+
+
+New CookController:
+
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+
+namespace Day32MVC.Controllers
+{
+    public class CookController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        static int i = 0;
+        public IActionResult AddCooky(string cooky)
+        {
+            if (cooky != null)
+            {
+                HttpContext.Response.Cookies.Append("clientCookie", cooky);
+                i = 0;
+            }
+            if (i == 0)
+            {
+                i = 1;
+                return RedirectToAction("AddCooky");
+            }
+            string myCookie = "";
+            if (HttpContext.Request.Cookies.ContainsKey("clientCookie"))
+            {
+                myCookie = HttpContext.Request.Cookies["clientCookie"];
+            }
+            ViewData["coky"] = myCookie;
+            return View();
+        }
+        public IActionResult ViewCooky(string cooky)
+        {
+            string myCookie = "";
+            if (HttpContext.Request.Cookies.ContainsKey("clientCookie"))
+            {
+                myCookie = HttpContext.Request.Cookies["clientCookie"];
+            }
+            ViewData["cooky"] = myCookie;
+            return View();
+        }
+    }
+}
+
+
+
+
+
 Index.cshtml:
 
 <H1>This is going to add a cookie in the site:</H1>
@@ -83,6 +136,19 @@ AddCooky.cshtml:
 
 <h1> The Cookie was added</h1>
 
+<h3><a href="/Cook/ViewCooky">View Cookie</a></h3>
+
+
+
+
+New AddCooky.cshtml
+
+<h1> The Cookie was added</h1>
+
+<h1> Now the Cookie is: @ViewData["coky"]</h1>
+
+
+@*<h3><a href="/Cook/AddCooky">Add Cookie Page</a></h3>*@
 <h3><a href="/Cook/ViewCooky">View Cookie</a></h3>
 
 
