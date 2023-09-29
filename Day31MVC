@@ -112,6 +112,44 @@ Search by Name -> submit button for formaction=“/Emp/SearchName”
 
 
 
+Add more features : 
+Adding Age to Model:
+Model : All is changed
+Employee (id, name, age) : POCO :Default Constructor, Field Constructor, id, name, age as Properties (get;set;) , ToString()
+Employees : POCO 
+List<Employee> empList  
+default Constructor, add 3 Employee to the empList
+returnList() -> return empList
+AddEmp(id, name) -> empList.add(new Employee(id, name)
+
+
+
+
+
+Change in Views -> Emp -> Index.cshtml
+H1- > Hello to the Employees!
+
+Add Employee Form:
+ID : 
+Name : 
+Age :
+Add button -> action = “/Emp/AddEmp”
+<hr>
+Link to See the List of Employees in JSON format: href= “/Emp/Show”
+<hr>
+Search an Employee with Details:
+Form-> :
+ID : 
+Name : 
+Search by ID -> submit button for formaction=“/Emp/SearchID”
+Search by Name -> submit button for formaction=“/Emp/SearchName”
+
+
+
+
+
+
+
 
 
 
