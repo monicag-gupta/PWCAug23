@@ -1,0 +1,71 @@
+ CookController:
+
+
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+
+namespace Day32MVC.Controllers
+{
+    public class CookController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult AddCooky(string cooky)
+        {
+            HttpContext.Response.Cookies.Append("clientCookie", cooky);
+            return View();
+        }
+        public IActionResult ViewCooky(string cooky)
+        {
+            string myCookie = "";
+            if (HttpContext.Request.Cookies.ContainsKey("clientCookie"))
+            {
+                myCookie = HttpContext.Request.Cookies["clientCookie"];
+            }
+            ViewData["cooky"] = myCookie;
+            return View();
+        }
+    }
+}
+
+
+
+
+
+
+
+Index.cshtml:
+
+<H1>This is going to add a cookie in the site:</H1>
+
+<h2>
+    <form action="/Cook/AddCooky">
+        Enter Cookie Value : <input type="text" name="cooky" /> <br />
+        <input type="submit" value="Add Cookie" />
+    </form>
+
+</h2>
+
+
+
+
+
+AddCooky.cshtml:
+
+<h1> The Cookie was added</h1>
+
+<h3><a href="/Cook/ViewCooky">View Cookie</a></h3>
+
+
+
+
+ViewCooky.cshtml:
+
+<h1>
+    The Cookie is read:
+    <br>
+    Cookie : <b><i><u>@ViewData["cooky"]</u></i> </b>
+</h1>
+
