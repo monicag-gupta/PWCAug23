@@ -69,3 +69,26 @@ ViewCooky.cshtml:
     Cookie : <b><i><u>@ViewData["cooky"]</u></i> </b>
 </h1>
 
+
+
+
+
+
+Exercise:
+
+Controller: LoginController
+Index -> View()
+Login -> View()
+Loggin(string uname, string pass) -> Add 2 cookies :(”username”, uname); (“password”,pass) -> View()
+
+Index.cshtml:
+Link to login page
+Login.cshtml:
+Username: 
+Password:
+Login button: action = “/Login/Loggin”
+Loggin.cshtml:
+H1-> This is my Inbox page
+
+
+
