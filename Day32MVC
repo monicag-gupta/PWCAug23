@@ -10,9 +10,9 @@
 <H1>Hello World</h1>
 	<form>
 		Enter your Branch:<select name="brn">
-			<option>Gurgaon</option>
-			<option>Kolkatta</option>
-			<option>Mumbai</option>
+			<option value="Q1gur">Gurgaon</option>
+			<option value="q1Kolkata">Kolkatta</option>
+			<option value="q1Mum">Mumbai</option>
 		</select>
 		<input type="submit">
 	</form>
