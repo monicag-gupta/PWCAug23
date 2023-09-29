@@ -92,3 +92,34 @@ H1-> This is my Inbox page
 
 
 
+
+
+Loggin.cshtml:
+link to Inbox page : Login/Inbox
+Link to Draft page : Login/Draft
+Link to Sent page : Login/Sent
+
+Controller: LoginController
+Add Action:
+Inbox() /Draft() / Sent()-> 
+string u = get the username cookie; 
+string p = get the password cookie; 
+View();
+LogErr()-> 
+View();
+
+
+
+
+Inbox.cshtml
+H1->Inbox authenticated page
+Draft.cshtml
+H1->Draft authenticated page
+Sent.cshtml
+H1->Sent authenticated page
+LogErr.cshtml
+H1->Login Error ; link to login page
+
+
+
+
