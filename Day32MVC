@@ -183,4 +183,73 @@ H1->Successfully logged out ; link to login page
 
 
 
+Exercise 2:
+
+
+MCQController
+Index () ->
+Set cookies as “Q1”->”0”,”Q2”->”0”,…”Q5”->”0”
+View
+MCQ1(string ans)->
+if Q2 cookie is “0”, then check ans being “No”, if ans==“No” then set the cookie Q2 as 10. 
+View()
+MCQ2(string ans)->
+if Q1 cookie is “0”, then check ans being “Cool”, if ans==“Cool” then set the cookie Q1 as 10. 
+if Q3 cookie is “0”, then check ans being “Yes”, if ans==“Yes” then set the cookie Q3 as 10. 
+View()
+MCQ3(string ans)->
+if Q2 cookie is “0”, then check ans being “No”, if ans==“No” then set the cookie Q2 as 10. 
+View()
+Result():
+Convert all cookies “Q1”, “Q2”, “Q3” values to int, and add them 
+ViewData[“res”]=result
+
+
+Index.cshtml
+Enter name:
+Start Test is a button to start the test. -> /MCQ/MCQ1
+Result.cshtml
+H1-> Hi Guest, You have got @ViewData[“res”] marks
+
+
+MCQ1.cshtml
+Q: How is MVC as a framework
+Answer: Select Box with options: 4 options
+Good
+Bad
+Cool : right answer
+Difficult
+Next button takes to MCQ2
+See Result
+
+
+MCQ2.cshtml
+Q: Collection Framework is strongly typed
+Answer: Select Box with options: 4 options
+Yes
+No –Right Ans
+May Be
+Next button takes to MCQ3
+Previous button takes to MCQ1
+
+See Result
+
+
+
+
+MCQ3.cshtml
+Q: HTML5 has embedded JS code in the page
+Answer: Select Box with options: 4 options
+Yes : right ans
+No
+May be
+Previous button takes to MCQ2
+See Result
+
+
+
+
+
+
+
 
