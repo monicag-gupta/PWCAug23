@@ -123,3 +123,37 @@ H1->Login Error ; link to login page
 
 
 
+
+Controller: LoginController
+Inbox() /Draft() / Sent()-> 
+string u = get the username cookie; 
+string p = get the password cookie; 
+If((u!=“” && p!=“”)||(u!=null && p!=null))
+View();
+Else
+Redirect to (“logErr”)
+Logout()->
+Make the cookies empty: cookies.append(“username”,””), cookies.append(“password”,””)
+View();
+
+
+
+
+Inbox.cshtml
+H1->Inbox authenticated page
+H1-> logout link
+Draft.cshtml
+H1->Draft authenticated page
+H1-> logout link
+Sent.cshtml
+H1->Sent authenticated page
+H1-> logout link
+LogErr.cshtml
+H1->Login Error ; link to login page
+Logout.cshtml
+H1->Successfully logged out ; link to login page
+
+
+
+
+
