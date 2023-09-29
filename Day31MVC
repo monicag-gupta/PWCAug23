@@ -146,6 +146,95 @@ Search by Name -> submit button for formaction=“/Emp/SearchName”
 
 
 
+Add in Model 
+Employees : POCO 
+List<Employee> empList  
+default Constructor, add 3 Employee to the empList
+returnList() -> return empList
+AddEmp(id, name) -> empList.add(new Employee(id, name)
+searchId(int id) -> foreach e in empList -> if e.id=id -> return e
+searchName(string name) -> foreach e in empList -> if name.id=name -> return e
+searchAgeRange(int minage, int maxage)-> 
+List<Employee> el ; 
+foreach e in empList ->
+   if e.age<= maxage && e.age >= minage -> 
+   el.add(e); 
+return el;
+
+
+
+
+
+Add in Controller
+EmpController
+static Employees emps=new Employees();
+IActionResult Index() -> Return View()
+JsonResult Show() -> Return Json(emps.returnList());
+IActionResult AddEmp(int id, string name)
+emps.AddEmp(id,name); Return View();
+IActionResult SearchId(int id)
+Employee e = Emps.searchId(id)
+ViewData[“emp”] = e.ToString();
+Return View();
+IActionResult SearchName(string name)
+Employee e = Emps.searchName(name)
+ViewData[“emp”] = e.ToString();
+Return View();
+
+IActionResult SearchAge(int min, int max)
+	List<Employees> el = empList.serachAgeRange(min,max);
+	String emps = “”;
+	Foreach(Employee e in el) -> emps += e + “\n”;
+	ViewData[“es”]=emps;
+	Return View();
+
+
+
+SearchAge.cshtml
+<h1> -> The list of Employees in age range: 
+@ViewData[“es”]
+
+<hr>
+Link to the Index
+
+
+
+
+Add in Views -> Emp -> Index.cshtml
+H1- > Hello to the Employees!
+
+Add Employee Form:
+ID : 
+Name : 
+Add button -> action = “/Emp/AddEmp”
+<hr>
+Link to See the List of Employees in JSON format: href= “/Emp/Show”
+<hr>
+Search an Employee with Details:
+Form-> :
+ID : 
+Name : 
+MinAge: 
+MaxAge:
+Search by ID -> submit button for formaction=“/Emp/SearchID”
+Search by Name -> submit button for formaction=“/Emp/SearchName”
+Search by Age Range -> submit button for formaction=“/Emp/SearchAge”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
