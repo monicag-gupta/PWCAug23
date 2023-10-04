@@ -1,3 +1,101 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day33MVC3.Controllers
+{
+    public class ActController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [ActionName("Index1")]
+        public IActionResult Page1()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult WelcomePage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult WelcomePage(string emp)
+        {
+            @ViewData["ans"] = emp;
+            return View();
+        }
+
+    }
+}
+
+
+
+
+
+Index:
+<a href="/Act/Index1"> Page 1</a>
+<a href="/Act/WelcomePage"> Page 1</a>
+
+
+
+
+
+
+
+WelcomePage:
+<h2>This is the response of the URL (get request) called WelcomePage place to 
+    submit another request: form Request to self with method as post
+</h2>
+<form action="" method="post">
+    Are you an Employee?
+    <input type="radio" name="emp" value="y"/> Yes
+    <input type="radio" name="emp" value="n"/> No
+    <br />
+    <input type="submit" />
+</form>
+
+<hr>
+<h2>This is the place where we pick the values from request object from the same page</h2>
+<h2>
+    The Answer of the above form is:
+    @ViewData["ans"]
+</h2>
+
+
+
+
+
+Index1:
+<h1>This is Our Page1 </h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************************************************************************************************************************************
+
+
+
 Exercise: 
 Model:
 Question class (QID, Ques, Option1, Option2, Option3, Option4, Ans )
