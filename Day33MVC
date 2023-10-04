@@ -84,6 +84,93 @@ namespace Day33MVC.Models
 
 
 
+using Day33MVC.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day33MVC.Controllers
+{
+    public class BookController : Controller
+    {
+        static BookList books= new BookList();
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult BooksList()
+        {
+            return View(books.ViewAllBooks());
+        }
+        public IActionResult Cart()
+        {
+            int sum=0;
+            foreach(var book in books.viewCart())
+            {
+                sum += book.Price;
+            }
+            ViewData["sum"] = sum;
+            return View(books.viewCart());
+        }
+        public IActionResult AddToCart(int iSBN_No)
+        {
+            books.AddToCart(books.getBook(iSBN_No));
+            return RedirectToAction("Index");
+        }
+    }
+}
+
+
+
+
+Index:
+<h1>Welcome to the Online Books Store</h1>
+<h3><a href="/Book/BooksList">All BooksList</a></h3>
+<h3><a href="/Book/Cart">All BooksList</a></h3>
+
+
+
+BooksList:
+
+@model IEnumerable<Day33MVC.Models.Book>
+
+    <form action="/Book/AddToCart">
+        <select name="iSBN_No">
+            @foreach(var book in Model)
+            {
+                <option value="@book.ISBN_No">@book</option>
+            }
+        </select>
+        <input type="Submit" value="Add to Cart" />
+    </form>
+
+
+<h3><a href="/Book/Index">Back to HomePage</a></h3>
+<h3><a href="/Book/Cart">View Cart</a></h3>
+
+
+
+
+
+Cart:
+@model IEnumerable<Day33MVC.Models.Book>
+
+    <h1>The books in the Cart Are: </h1>
+    <h2>
+        <ul>
+            @foreach(var book in Model)
+            {
+                 <li>@book</li>
+            }
+
+        </ul>
+    </h2>
+    <h2> The Total amount is: @ViewData["sum"] Rs. </h2>
+
+<h3><a href="/Book/Index">Back to HomePage</a></h3>
+
+
+
+
+
 
 
 
