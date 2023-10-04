@@ -85,7 +85,9 @@ namespace Day33MVC.Models
 
 
 using Day33MVC.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Day33MVC.Controllers
 {
@@ -108,15 +110,22 @@ namespace Day33MVC.Controllers
                 sum += book.Price;
             }
             ViewData["sum"] = sum;
+            ViewData["InCookie"] = "";
+            if (HttpContext.Request.Cookies.ContainsKey("CartBooks"))
+                ViewData["InCookie"] += HttpContext.Request.Cookies["CartBooks"]; 
             return View(books.viewCart());
         }
         public IActionResult AddToCart(int iSBN_No)
         {
             books.AddToCart(books.getBook(iSBN_No));
+            
+            HttpContext.Response.Cookies.Append("CartBooks", books.booksCart(), new CookieOptions { MaxAge = TimeSpan.FromDays(1) });
+            
             return RedirectToAction("Index");
         }
     }
 }
+
 
 
 
@@ -164,6 +173,7 @@ Cart:
         </ul>
     </h2>
     <h2> The Total amount is: @ViewData["sum"] Rs. </h2>
+    <h2>From the Cookie: @ViewData["InCookie"]</h2>
 
 <h3><a href="/Book/Index">Back to HomePage</a></h3>
 
