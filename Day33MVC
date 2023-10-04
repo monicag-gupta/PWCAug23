@@ -43,6 +43,16 @@ namespace Day33MVC.Models
         List<Book> booksInStock = new List<Book>();
         List<Book> booksInCart = new List<Book>();
 
+        public string booksCart()
+        {
+            string s = "";
+            foreach(Book book in booksInCart)
+            {
+                s += book;
+            }
+            return s;
+        }
+
         public BookList() {
             booksInStock.Add(new Book(111, "C#", "MS", 1000));
             booksInStock.Add(new Book(112, "Advance C#", "Anonymous", 1200));
