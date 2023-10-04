@@ -1,0 +1,32 @@
+BOOK APPLICATION:
+
+Book.cs
+namespace Day33MVC.Models
+{
+    public class Book
+    {
+        //ISBN_No, Author, Name, Price
+        public int ISBN_No { get; set; }
+        public string Author { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public Book() { }
+
+        public Book(int iSBN_No, string author, string name, int price)
+        {
+            ISBN_No = iSBN_No;
+            Author = author;
+            Name = name;
+            Price = price;
+        }
+        public override string ToString()
+        {
+            return "\nISBN Number : " + ISBN_No + 
+                " Author : " + Author + " Book Name :" + Name + 
+                " Price : " + Price + "Rs.";
+        }
+    }
+}
+
+
+
