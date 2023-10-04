@@ -1,3 +1,67 @@
+Hidden Form Field:
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day33MVC.Controllers
+{
+    public class HiddenFFController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Next(string fullName)
+        {
+            ViewData["fullName"] = fullName;
+            return View();
+        }
+        public IActionResult Next2(string fullName)
+        {
+            ViewData["fullName"] = fullName;
+            return View();
+        }
+    }
+}
+
+
+
+
+Index:
+<form action="/HiddenFF/Next">
+    Enter Your Name: <input type="text" name="fullName" />
+    <br />
+    <input type="submit" value="Next Page"/>
+</form>
+
+
+Next:
+<h1>
+    Welcome @ViewData["fullName"] !!
+    <hr />
+    Page1-Authenticated
+    <hr />
+    <form action="/HiddenFF/Next2">
+        <br />
+        <input type="hidden" value="@ViewData["fullName"]" name="fullName"/>
+        <input type="submit" value="Next to Next Page"/>
+    </form>
+</h1>
+
+
+
+Next2:
+<h1>
+    Welcome @ViewData["fullName"] !!
+    <hr />
+    Page2-Authenticated
+    <hr />
+    <form action="/HiddenFF/Index">
+        <br />
+        <input type="submit" value="Index" />
+    </form>
+</h1>
+
+
 
 
 
