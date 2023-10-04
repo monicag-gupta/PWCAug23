@@ -30,3 +30,60 @@ namespace Day33MVC.Models
 
 
 
+
+
+using System.Collections.Generic;
+
+namespace Day33MVC.Models
+{
+    public class BookList
+    {
+        //BookList (booksInStock, booksInCart, getBook(ISBN_No), AddToCart(book), viewCart(), ViewAllBooks())
+        List<Book> booksInStock = new List<Book>();
+        List<Book> booksInCart = new List<Book>();
+
+        public BookList() {
+            booksInStock.Add(new Book(111, "C#", "MS", 1000));
+            booksInStock.Add(new Book(112, "Advance C#", "Anonymous", 1200));
+            booksInStock.Add(new Book(113, "SQL Server", "C#Corner", 1500));
+            booksInStock.Add(new Book(114, "MVC", "MS", 2000));
+            booksInStock.Add(new Book(115, "WebAPI", "Tee", 1000));
+            booksInStock.Add(new Book(116, "JavaScript", "ECMA", 300));
+            booksInStock.Add(new Book(117, "TypeScript", "MS and Google", 300));
+            booksInStock.Add(new Book(118, "NodeJS", "Google", 500));
+            booksInStock.Add(new Book(119, "Angular", "Google", 3000));
+        }
+
+        public Book getBook(int ISBN_No)
+        {
+            foreach(Book b in booksInStock)
+            {
+                if (b.ISBN_No == ISBN_No)
+                    return b;
+            }
+            return null;
+        }
+
+        public void AddToCart(Book book)
+        {
+            booksInCart.Add(book);
+        }
+        public List<Book> viewCart()
+        {
+            return booksInCart;
+        }
+
+        public List<Book> ViewAllBooks()
+        {
+            return booksInStock;
+        }
+    }
+}
+
+
+
+
+
+
+
+
