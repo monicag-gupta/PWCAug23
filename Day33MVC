@@ -31,6 +31,7 @@ namespace Day33MVC.Models
 
 
 
+BookList.cs:
 
 using System.Collections.Generic;
 
@@ -82,7 +83,7 @@ namespace Day33MVC.Models
 
 
 
-
+BookController.cs:
 
 using Day33MVC.Models;
 using Microsoft.AspNetCore.Http;
@@ -130,14 +131,14 @@ namespace Day33MVC.Controllers
 
 
 
-Index:
+Index.cshtml:
 <h1>Welcome to the Online Books Store</h1>
 <h3><a href="/Book/BooksList">All BooksList</a></h3>
 <h3><a href="/Book/Cart">View Cart</a></h3>
 
 
 
-BooksList:
+BooksList.cshtml:
 
 @model IEnumerable<Day33MVC.Models.Book>
 
@@ -159,7 +160,7 @@ BooksList:
 
 
 
-Cart:
+Cart.cshtml:
 @model IEnumerable<Day33MVC.Models.Book>
 
     <h1>The books in the Cart Are: </h1>
