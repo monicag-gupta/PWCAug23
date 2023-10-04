@@ -7,6 +7,28 @@ List<Question> Get3Questions(){ returns random 3 questions from Questions}
 String getAns(Qid) -> returns the ans from Questions
 
 
+QuizController:
+Static marks[3]={0,0,0};
+Index : 
+Welcome Note; Enter Name; link to begin test : Q1Page 
+Q1Page :
+First Question out of the 3 random ques; name should travel to next Question via hidden form field
+Submit the ans to Q2Page
+Q2Page :
+Marks[0] = ans submitted by Q1Page; if ans submitted match the ans from the Model, then give 10 marks else 0.
+Second Question out of the 3 random ques; name as hiddenFF
+Submit the ans to Q3Page
+Q3Page :
+Marks[1] = ans submitted by Q2Page
+Third Question out of the 3 random ques; name as hiddenff
+Submit the ans to ResultPage
+ResultPage
+Marks[2] =ans submitted by Q3Page
+Calculate the sum of all elements of marks
+Display the result with the name entered in the Index Page
+
+
+
 
 
 
