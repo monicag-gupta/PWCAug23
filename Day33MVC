@@ -124,7 +124,7 @@ namespace Day33MVC.Controllers
 Index:
 <h1>Welcome to the Online Books Store</h1>
 <h3><a href="/Book/BooksList">All BooksList</a></h3>
-<h3><a href="/Book/Cart">All BooksList</a></h3>
+<h3><a href="/Book/Cart">View Cart</a></h3>
 
 
 
