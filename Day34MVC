@@ -164,7 +164,27 @@ PM>
 
 The table gets created in the Db,  SQL Server:
 The table is created
+
 select * from employeeEfs;
+exec sp_help employeeEfs; 
+
+
+
+In the VB MVC Project:
+Add Controller+views : 
+
+Right-click project
+->Add
+-> New Scaffolded items..
+->MVC controller with views using Entity Framework
+->Add
+Provide Model class: EmployeeEF
+Data context class: EmployeeEFContext
+->Add
+
+All the views etc. are automatically added along
+With the Controller
+
 
 
 
