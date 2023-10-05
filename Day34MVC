@@ -1,3 +1,50 @@
+
+
+
+
+***************************************************************************************************************************
+
+
+ActFilterController:
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day34MVC.Controllers
+{
+    public class ActFilterController : Controller
+    {
+        [ResponseCache(Duration = 10)]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+    }
+}
+
+
+
+
+
+Index:
+
+<h4>
+    @DateTime.Now.ToString();
+</h4>
+<h5><a href="/ActFilter/Index">IndexPage: Self</a></h5>
+
+
+
+
+
+
+
+
+
+
+************************************************************************************************************************************
+
+
 HiddenFFController:
 
 using Microsoft.AspNetCore.Mvc;
