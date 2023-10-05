@@ -1,0 +1,70 @@
+HiddenFFController:
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day34MVC.Controllers
+{
+    public class HiddenFFController : Controller
+    {
+        public IActionResult Index()
+        {
+            ViewData["Guest"] = "Guest";
+            return View();
+        }
+        public IActionResult Welcome1(string uname)
+        {
+            ViewData["uname"] = uname;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Welcome2(string uname)
+        {
+            ViewData["uname"] = uname;
+            return View();
+        }
+    }
+}
+
+
+
+
+
+Index:
+<h3>
+    <form action="/HiddenFF/Welcome1">
+        Enter UserName: <input type="text" value="@ViewData["Guest"]"  name="uname" />
+        <br />
+        <input type="submit" value="Welcome1"/>
+    </form>
+    <hr />
+    <form action="/HiddenFF/Welcome2" method="post">
+        <input type="hidden" value="@ViewData["Guest"]" name="uname" />
+        <br />
+        <input type="submit" value="Welcome2"/>
+    </form>
+
+
+
+
+
+Welcome1: 
+
+<h1>
+    The Welcome1 Page with text box:
+    <br />
+    Welcome @ViewData["uname"] !!
+</h1>
+
+
+
+
+Welcome2:
+
+<h1>
+    The Welcome2 Page with hidden form field:
+    <br />
+    Welcome @ViewData["uname"] !!
+</h1>
+
+
+
