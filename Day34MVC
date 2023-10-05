@@ -1,4 +1,22 @@
 
+
+Entity Framework:
+
+Add NuGet Pkgs:
+Microsoft.EntityFrameworkCore.SqlServer : version 5.0.17
+Microsoft.EntityFrameworkCore.Tools : version 5.0.17
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************************************************************************
 Exercise:
 Student List can be viewed as any user but new students can be added (controlled) by authenticated users only.
 Searches are also allowed for any user.
