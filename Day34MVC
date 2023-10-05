@@ -1,4 +1,86 @@
+HTML Helpers:
 
+ASP.NET provides a wide range of built-in HTML helpers that can be used as per the user’s choice as there are multiple overrides available for them. 
+There are three types of built-in HTML helpers offered by ASP.NET.
+1. Standard HTML Helper 
+The HTML helpers that are mainly used to render HTML elements like text boxes, checkboxes, Radio Buttons, and Dropdown lists, etc. are called Standard HTML helpers. 
+2. Strongly-Typed HTML Helper 
+The Strongly-Typed HTML helper takes a lambda as a parameter that tells the helper, which element of the model to be utilized in the typed view. The Strongly typed views are used for rendering specific sorts of model objects, rather than using the overall View-Data structure. The functionality of all of these are the same as above but they are used with modal classes. Now, as we know we need a model class to use strongly typed HTML
+3. Templated HTML Helper 
+The templated HTML Helper is used for data display and input. It generates HTML automatically as per model property and it can generate HTML for a complete model with a single tag. These are divided into two categories 
+Display Template
+Editor Template
+
+
+
+
+List of Standard HTML Helpers :
+
+@Html.ActionLink() - Used to create link on html page
+@Html.TextBox() - Used to create text box
+@Html.CheckBox() - Used to create check box
+@Html.RadioButton() - Used to create Radio Button
+@Html.BeginFrom() - Used to start a form
+@Html.EndFrom() - Used to end a form
+@Html.DropDownList() - Used to create drop down list
+@Html.Hidden() - Used to create hidden fields
+@Html.label() - Used for creating HTML label is on the browser
+@Html.TextArea() - The TextArea Method renders textarea element on browser
+@Html.Password() - This method is responsible for creating password input field on browser
+@Html.ListBox() - The ListBox helper method creates html ListBox with scrollbar on browser
+
+
+
+
+
+List of strongly-Typed HTML Helper :
+
+@Html.HiddenFor()
+@Html.LabelFor()
+@Html.TextBoxFor()
+@Html.RadioButtonFor()
+@Html.DropDownListFor()
+@Html.CheckBoxFor()
+@Html.TextAreaFor()
+@Html.PasswordFor()
+@Html.ListBoxFor()
+
+
+
+
+List of Templated HTML Helpers :
+
+Display
+@Html.Display()
+@Html.DisplayFor()
+@Html.DisplayName()
+@Html.DisplayNameFor()
+@Html.DisplayText()
+@Html.DisplayTextFor()
+@Html.DisplayModelFor()
+
+Edit / Input
+@Html.Editor()
+@Html.EditorFor()
+@Html.EditorForModel()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************************************************************
 
 Entity Framework:
 
@@ -184,6 +266,76 @@ Data context class: EmployeeEFContext
 
 All the views etc. are automatically added along
 With the Controller
+
+
+
+
+
+startup.cs
+
+using Day34MVC_EF.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Day34MVC_EF
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            string conStr = Configuration.GetConnectionString("EmpCon");
+            services.AddDbContext<EmployeeEFContext>(options => options.UseSqlServer(conStr));
+            services.AddControllersWithViews();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=EmployeeEFs}/{action=Index}/{id?}");
+            });
+        }
+    }
+}
+
+
 
 
 
