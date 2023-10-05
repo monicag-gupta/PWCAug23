@@ -1,3 +1,18 @@
+
+Exercise:
+Student List can be viewed as any user but new students can be added (controlled) by authenticated users only.
+Searches are also allowed for any user.
+Write the code for the same.
+
+
+
+
+
+
+
+****************************************************************************************************************************************
+
+
 ChkAuthController:
 
 using System;
