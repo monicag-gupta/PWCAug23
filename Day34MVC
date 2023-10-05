@@ -7,6 +7,71 @@ Microsoft.EntityFrameworkCore.SqlServer : version 5.0.17
 Microsoft.EntityFrameworkCore.Tools : version 5.0.17
 
 
+Models: 
+EmployeeEF:
+
+using System.ComponentModel.DataAnnotations;
+
+namespace Day34MVC_EF.Models
+{
+    public class EmployeeEF
+    {
+        [Key]
+        public int id { get; set; }
+
+        [Required(ErrorMessage = "Required Name")]
+        public string name { get; set; }
+        public int salary { get; set; }
+
+    }
+}
+
+
+
+EmployeeEFContext:
+
+using Microsoft.EntityFrameworkCore;
+
+
+namespace Day34MVC_EF.Models
+{
+    public class EmployeeEFContext : DbContext
+    {
+        public EmployeeEFContext() 
+        {
+        }
+        public EmployeeEFContext(DbContextOptions<EmployeeEFContext> options) : base(options)
+        {
+        }
+        public DbSet<EmployeeEF> EmployeeEFs { get; set; }
+    }
+}
+
+
+
+
+appSettings.json :
+
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "EmpCon": "Data Source=DESKTOP-O7LF2JA;Initial Catalog=training;Integrated Security=True"
+  }
+}
+
+
+
+
+
+
 
 
 
