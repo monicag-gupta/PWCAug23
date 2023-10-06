@@ -1,3 +1,70 @@
+
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+
+namespace Day35MVC.Models
+{
+    public class MyExceptFilter
+    : IExceptionFilter
+    {
+        private readonly IHostEnvironment _hostEnvironment;
+        public MyExceptFilter(IHostEnvironment hostEnvironment) =>
+            _hostEnvironment = hostEnvironment;
+        public void OnException(ExceptionContext context)
+        {
+            if (!_hostEnvironment.IsDevelopment())
+            {
+                // Don't display exception details unless running in Development.
+                return;
+            }
+            context.Result = new ContentResult
+            {
+                Content = context.Exception.ToString()
+            };
+        }
+    }
+}
+
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+using Day35MVC.Models;
+
+namespace Day35MVC.Controllers
+{
+    [TypeFilter(typeof(MyExceptFilter))]
+
+    public class ExceptHandleController : Controller
+    {
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Index() =>
+        Content($"- {nameof(ExceptHandleController)}.{nameof(Index)}");
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************************
+
+
+
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Day35MVC.Controllers
