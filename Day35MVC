@@ -1,0 +1,197 @@
+namespace Day35MVC.Models
+{
+    public class EmployeeClass
+    {
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public city city { get; set; }
+        public skills skills { get; set; }
+        public string Address { get; set; }
+        public string Password { get; set; }
+        public bool AgreeTerm { get; set; }
+    }
+}
+public enum city
+{
+    Dehli, Mumbai, Kolkata, Chennai, Bangalore
+}
+public enum skills
+{
+    HTML5, CSS3, Bootstrap, JavaScript, JQuery, Angular, MVC, WebAPI
+}
+
+
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+using Day35MVC.Models;
+
+namespace Day35MVC.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult HTMLHelper1()
+        {
+            return View();
+        }
+        public IActionResult HTMLHelper2()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult HTMLHelper2(EmployeeClass emp)
+        {
+            return View();
+        }
+
+        public IActionResult HTMLHelper3()
+        {
+            //Here we have hardcoded the Employee Details. In Realtime you will get the data from any data source
+            EmployeeClass employee = new EmployeeClass()
+            {
+                EmpId = 1,
+                Name = "Jayanta Roy",
+                Gender = "Male",
+                city = city.Dehli,
+                skills = skills.WebAPI,
+                Address = "Vaishali",
+                AgreeTerm = true
+            };
+            ViewData["EmployeeData"] = employee;
+            return View();
+        }
+
+    }
+}
+
+
+
+
+
+
+Index:
+<h1>
+    <a href="/Employee/HTMLHelper1">Html Helper 1 Example of Standard HTML Helpers </a>
+    <a href="/Employee/HTMLHelper2">Html Helper 2 Example of strongly-Typed HTML Helper  </a>
+    <a href="/Employee/HTMLHelper3">Html Helper 3 Example of Templated HTML Helpers  </a>
+</h1>
+
+
+
+
+HTMLHelpers1:
+@{  Layout = null;  }
+<!DOCTYPE html>
+<Html> 
+    <head>
+        <meta name="viewport" content="width=device-width" />   
+        <title>Built-in HTML Helper</title>
+    </head> 
+    <body>    
+        <div>
+            <h2><a href="/Employee/Index">Back to Index </a></h2>
+
+            <h3>Label example</h3>    
+                @Html.Label("firstName", "First Name")
+            <h3>Text Box Example</h3>  
+                @Html.TextBox("txtFirstName", "", 
+                    new { @class = "form-control", placeholder = "First Name" })
+            <h3>Text Area Example</h3> 
+                @Html.TextArea("address", 
+                    new { @class = "form-control", rows = "5" })
+            <h3>password Example</h3>  
+                @Html.Password("password", "", new { @class = "form-control" })
+            <h3>Radio Button Example</h3> 
+                @Html.RadioButton("MaritalStatus", 
+                    "Married", new { id = "IsMarried" }) Married
+                @Html.RadioButton("MaritalStatus", 
+                    "UnMarried", new { id = "IsNotMarried" }) UnMarried
+            <h3>Check Box Example</h3> 
+                @Html.CheckBox("htmlSkill") HTML 5
+                @Html.CheckBox("htmlSkill") CSS 3
+                @Html.CheckBox("htmlSkill") Asp .Net
+            <h3>List Box Example</h3>
+                @Html.ListBox("Skills", new List<SelectListItem> {
+                    new SelectListItem { Text="ASP.NET",Value="1"},
+                    new SelectListItem { Text="MVC",Value="2"},
+                    new SelectListItem { Text="SQL Server",Value="3"},
+                    new SelectListItem { Text="Angular",Value="4"},
+                    new SelectListItem { Text="Web API",Value="5"}
+                    }, new { @class = "form-control" })
+            <h3>drop down List Example</h3>
+                @Html.DropDownList("Gender", new List<SelectListItem> {
+                    new SelectListItem {Text="Select Gender",Value="-1" },
+                    new SelectListItem {Text="Male",Value="1" },
+                    new SelectListItem {Text="Female", Value="2" }
+                    }, new { @class = "custom-select" })
+        </div>  
+    </body> 
+</html>
+
+
+
+
+
+HTMLHelpers2:
+
+@using Day35MVC.Models
+@model EmployeeClass
+@{
+    ViewBag.Title = "IndexHTMLHelper2";
+}
+<h2><a href="/Employee/Index">Back to Index </a></h2>
+
+<div>
+    <h3>Label Example</h3>
+        @Html.LabelFor(model => model.Name, new { @class = "label-control" })
+    <h3>Text box Example</h3>  
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    <h3>Text Area Example 2</h3> 
+        @Html.TextAreaFor(model => model.Address, 
+            new { @class = "form-control", rows = "5" })
+    <h3>Password for example</h3>  
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+    <h3>Radio Button Example</h3>
+        @Html.RadioButtonFor(model => model.Gender, true, new { id = "male-true" })
+            @Html.Label("male-true", "Male")
+        @Html.RadioButtonFor(model => model.Gender, false, new { id = "female-true" })
+            @Html.Label("female-true", "Female")
+    <h3>Check Box Example</h3>   
+        @Html.CheckBoxFor(model => model.AgreeTerm)
+    <h3>List Box Example</h3>
+        @Html.ListBoxFor(model => model.skills, 
+            new SelectList(Enum.GetValues(typeof(skills))), 
+            new { @class = "form-control" })
+    <h3>Drop Down List Example</h3>
+        @Html.DropDownListFor(model => model.city, 
+            new SelectList(Enum.GetValues(typeof(city))), 
+            "Select City", new { @class = "form-control" })
+</div>
+
+
+
+
+
+HTMLHelpers3:
+
+@{
+    ViewBag.Title = "Details";
+}
+<fieldset>
+    <legend>Employee Details</legend>
+    @Html.Display("EmployeeData")
+</fieldset>
+
+<h2><a href="/Employee/Index">Back to Index </a></h2>
+
+
+
+
+
