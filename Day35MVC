@@ -1,3 +1,57 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace Day35MVC.Controllers
+{
+    [Route("[controller]")]
+    public class PathController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("[action]/{id:int}")]
+        public string GetHello(int id)
+        {
+            return "Hello " + id;
+        }
+
+        [Route("[action]/{name}")]
+        public string GetHello(string name)
+        {
+            if (name.Equals("Abc")) 
+                name = "User";
+            else 
+                name = "guest";
+            return 
+                "Hello " + name;
+        }
+
+
+        [Route("[action]/emp/MG")]
+        public string GetHello()
+        {
+            return "Hello World of Monica";
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+****************************************************************************************
+
+
+
 namespace Day35MVC.Models
 {
     public class EmployeeClass
