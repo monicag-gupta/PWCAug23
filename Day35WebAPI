@@ -1,0 +1,56 @@
+Step 1:
+MemberAPI:
+
+Create a new Project with 
+Language: C#, 
+Project Template Type: Web
+Project Template : ASP.NET Core Web API
+Click Next 
+Configure a new Project with 
+Project Name : MemberAPI, 
+Project Location : Default
+Click Next
+Give defaults in Additional Information
+Click Create
+
+New Web API gets created
+
+It gets the default API as the Weather Forecast API.
+
+Start the Project in IIS Express (Internet Explorer or Microsoft Edge or Chrome or any of your favorite browser).
+
+Install the Certificate for SSL 
+
+
+
+
+Step 2:
+
+Member.Data class library:
+
+Create a new Project with 
+Language: C#, 
+Project Template Type: All Project types
+Project Template : Class Library
+Click Next 
+Configure a new Project with 
+Project Name : Member.Data, 
+Project Location : Default
+Click Next
+Select .Net 5.0 as Version
+Click Create
+New Class Library gets created
+
+Now Add three Folders: Model, Interface, and Repository in Member.Data Class library.
+
+In the model folder, create a Model Class called Members.
+
+In the interface, Create Member Interface called IMember.
+
+In the repository folder, Create Class Called “MembersRepository” and implement IMembers interface in it. 
+
+In the real world, this class will interact with DB but in this demo, I will use hardcoded members data.
+
+
+
+
