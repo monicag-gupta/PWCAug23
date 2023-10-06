@@ -79,3 +79,27 @@ namespace Member.Data.Model
 
 
 
+
+IMember.cs:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Member.Data.Model;
+
+namespace Member.Data.Interface
+{
+    public interface IMember
+    {
+        List<Members> GetAllMember();
+        Members GetMember(int id);
+    }
+
+}
+
+
+
+
+
