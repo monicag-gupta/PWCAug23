@@ -54,7 +54,7 @@ In the real world, this class will interact with DB but in this demo, I will use
 
 
 
-Step3: Code:
+Step3: Code the Library:
 
 
 Members.cs:
@@ -135,6 +135,28 @@ namespace Member.Data.Repository
         }
     }
 }
+
+
+
+
+
+
+
+
+Step4: Code the Web API:
+
+
+Open MemberAPI Project
+Add the project Member.Data project in the current Solution.
+Add the MemberAPI project dependencies as “Member.Data” 
+Right Click on MemberApi- Dependencies and add Project Reference.
+Now we will create in MemberAPI a Controller in the Controller folder. 
+Right-click on the Controller folder and Click on Add-Controller  
+Add API-Controller-Empty
+Name it MemberController.cs
+Code It.
+
+
 
 
 
