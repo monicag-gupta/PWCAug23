@@ -54,3 +54,28 @@ In the real world, this class will interact with DB but in this demo, I will use
 
 
 
+Step3: Code:
+
+
+Members.cs:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Member.Data.Model
+{
+    public class Members
+    {
+        public int MemberId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+    }
+
+}
+
+
+
