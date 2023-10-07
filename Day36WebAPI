@@ -121,6 +121,180 @@ Run the application.
 
 
 
+Student:
+namespace Day36MVCAPI.Models
+{
+    public class Student
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
+
+    }
+}
+
+
+
+StudentContext:
+
+
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Day36MVCAPI.Models
+{
+    public class StudentContext
+    {
+        public List<Student> student = new List<Student>        {
+            new Student { StudentId=101,Name="Abc",SurName="xyz"},
+            new Student { StudentId = 102, Name = "Abc2", SurName = "xyz2" },
+            new Student { StudentId = 103, Name = "Abc3", SurName = "xyz3" },
+            new Student { StudentId = 104, Name = "Abc4", SurName = "xyz4" }
+        };
+        public List<Student> GetAllStudent()
+        {
+            return student;
+        }
+        public Student GetStudent(int id)
+        {
+            return student.FirstOrDefault(x => x.StudentId == id);
+        }
+        public StudentContext()
+        {
+            student.Add(new Student { StudentId = 105, Name = "Abc5", SurName = "xyz5" });
+            student.Add(new Student { StudentId = 106, Name = "Abc6", SurName = "xyz6" });
+            student.Add(new Student { StudentId = 107, Name = "Abc7", SurName = "xyz7" });
+            student.Add(new Student { StudentId = 108, Name = "Abc8", SurName = "xyz8" });
+        }
+    }
+}
+
+
+
+using Day36MVCAPI.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
+namespace Day36MVCAPI.Controllers
+{
+   
+    [ApiController]
+    [Produces("application/json")]
+    [Route("api/Students")]
+    public class StudentsController : ControllerBase
+    {
+        private StudentContext students = new StudentContext();
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public ActionResult<IEnumerable<Student>> GetAllStudents()
+        {
+            return students.GetAllStudent();
+        }
+        [HttpGet("{id:int}")]
+        //[Route("api/Students/{id}")]
+        public ActionResult<Student> GetStudentById(int id)
+        {
+            return students.GetStudent(id);
+        }
+    }
+
+}
+
+
+
+
+
+
+using Day36MVCAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
+using System;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+
+namespace Day36MVCAPI.Controllers
+{
+    public class ConsumerStdAPIController : Controller
+    {
+
+        string Baseurl = "https://localhost:44303/";
+        public async Task<IActionResult> Index()
+        {
+            List<Student> StdInfo = new List<Student>();
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllStudents using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Students");
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Student list
+                    StdInfo = JsonConvert.DeserializeObject<List<Student>>(StdResponse);
+                }
+                return View(StdInfo);
+            }
+        }
+    }
+}
+
+
+
+
+
+using Day36MVCAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
+using System;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+
+namespace Day36MVCAPI.Controllers
+{
+    public class ConsumerStdAPIController : Controller
+    {
+
+        string Baseurl = "https://localhost:44303/";
+        public async Task<IActionResult> Index()
+        {
+            List<Student> StdInfo = new List<Student>();
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllStudents using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Students");
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Student list
+                    StdInfo = JsonConvert.DeserializeObject<List<Student>>(StdResponse);
+                }
+                return View(StdInfo);
+            }
+        }
+    }
+}
+
+
+
+
 
 
 
