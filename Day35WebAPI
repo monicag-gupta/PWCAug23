@@ -194,4 +194,22 @@ namespace Day35WebAPI.Controllers
 
 
 
+Exercise:
+
+Prepare a WEB API project: Day36WebAPI
+Add Model folder:
+    Employee.cs (eid, ename, esal, eaddress, ephone)
+    EmpList.cs
+        Add 5 emps
+        GetEmps
+        GetEmp(eid)
+        AddEmp(eid, ename, esal, eaddress, ephone)
+        DelEmp(eid)
+
+Add EmployeeController as a WEB API controller
+    Add proper ActionResults
+Run API in Swagger
+
+
+
 
