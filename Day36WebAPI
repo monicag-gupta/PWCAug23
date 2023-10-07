@@ -1,1 +1,33 @@
-hello
+We can implement JSON Serialization/Deserialization in the following three ways:
+
+Using JavaScriptSerializer class
+Using DataContractJsonSerializer class
+Using JSON.NET library 
+
+
+
+
+Emp.cs under Models folder:
+
+
+using System.Runtime.Serialization;
+
+namespace Day36WebAPI.Models
+{
+    [DataContract]
+    public class Emp
+    {
+        [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
+        public string Description { get; set; }
+    }
+
+}
+
+
+
+
+
+
