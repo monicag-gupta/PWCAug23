@@ -95,6 +95,38 @@ namespace Day36WebAPI.Controllers
 
 
 
+*******************************************************************************
+
+
+
+Start an ASP .Net Core (MVC) project
+Add models:
+Student
+StudentContext
+Add APIController
+StudentsController
+Code
+
+
+Add the consumer Controller:
+ConsumerStdAPIController.cs
+Add it’s view as Razor view with Template: List, Model: Student:
+Index.cshtml
+Add NuGet Package :
+Newtonsoft.Json from Microsoft
+
+Run the application.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
