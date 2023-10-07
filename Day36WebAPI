@@ -31,3 +31,45 @@ namespace Day36WebAPI.Models
 
 
 
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using Day36WebAPI.Models;
+using System.Runtime.Serialization.Json;
+
+namespace Day36WebAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EmpController : ControllerBase
+    {
+
+        [HttpGet]
+        public ActionResult<string> Get()
+        {
+            Emp empObj = new Emp()
+            {
+                Name = "Jay",
+                Description = "IT"
+            };
+
+            DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(Emp));
+            MemoryStream msObj = new MemoryStream();
+            js.WriteObject(msObj, empObj);
+            msObj.Position = 0;
+            StreamReader sr = new StreamReader(msObj);
+
+            // "{\"Description\":\"IT\",\"Name\":\"Jay\"}"
+            string json = sr.ReadToEnd();
+
+            sr.Close();
+            msObj.Close();
+            return json;
+        }
+    }
+}
+
+
+
+
+
