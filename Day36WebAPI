@@ -36,6 +36,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using Day36WebAPI.Models;
 using System.Runtime.Serialization.Json;
+using System.Text;
+using System;
 
 namespace Day36WebAPI.Controllers
 {
@@ -66,8 +68,32 @@ namespace Day36WebAPI.Controllers
             msObj.Close();
             return json;
         }
+        [HttpGet("id")]
+        public ActionResult<Emp> Geting(int id)
+        {
+            string json = "{\"Description\":\"IT\",\"Name\":\"Jay\"}";
+
+            using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            {
+                // Deserialization from JSON
+                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(Emp));
+                Emp emp = (Emp)deserializer.ReadObject(ms);
+                //Console.Write("Name: " + emp.Name); // Name: Jay
+                //Console.Write("Description: " + emp.Description); // Description: IT
+                return emp;
+            }
+            //return null;
+
+        }
     }
 }
+
+
+
+
+
+
+
 
 
 
