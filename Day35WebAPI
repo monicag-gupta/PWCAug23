@@ -123,7 +123,7 @@ namespace Member.Data.Repository
             new Members{MemberId=3, FirstName="Dilip", LastName="Shah", Address="Vadodara" },
             new Members{MemberId=4, FirstName="Atul", LastName="Shah", Address="Vadodara" },
             new Members{MemberId=5, FirstName="Swati", LastName="Shah", Address="Vadodara" },
-            new Members{MemberId=6, FirstName="Rashmi", LastName="Shah", Address="Vadodara" },
+            new Members{MemberId=6, FirstName="Rashmi", LastName="Shah", Address="Vadodara" }
         };
         public List<Members> GetAllMember()
         {
@@ -155,6 +155,41 @@ Right-click on the Controller folder and Click on Add-Controller 
 Add API-Controller-Empty
 Name it MemberController.cs
 Code It.
+
+
+
+
+
+
+using Member.Data.Model;
+using Member.Data.Interface;
+using Member.Data.Repository;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+namespace Day35WebAPI.Controllers
+{
+    [Route("api/[controller]")]
+    //[Produces("application/json")]
+    [ApiController]
+    public class MemberController : ControllerBase
+    {
+        private IMember members = new MembersRepository();
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public ActionResult<IEnumerable<Members>> GetAllMembers()
+        {
+            return members.GetAllMember();
+        }
+        [Microsoft.AspNetCore.Mvc.HttpGet("id")]
+        public ActionResult<Members> GetMemberById(int id)
+        {
+            return members.GetMember(id);
+        }
+    }
+}
+
+
 
 
 
