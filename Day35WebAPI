@@ -123,7 +123,7 @@ namespace Member.Data.Repository
             new Members{MemberId=3, FirstName="Dilip", LastName="Shah", Address="Vadodara" },
             new Members{MemberId=4, FirstName="Atul", LastName="Shah", Address="Vadodara" },
             new Members{MemberId=5, FirstName="Swati", LastName="Shah", Address="Vadodara" },
-            new Members{MemberId=6, FirstName="Rashmi", LastName="Shah", Address="Vadodara" }
+            new Members{MemberId=6, FirstName="Rashmi", LastName="Shah", Address="Vadodara" },
         };
         public List<Members> GetAllMember()
         {
