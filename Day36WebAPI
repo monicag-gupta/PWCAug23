@@ -157,6 +157,14 @@ namespace Day37MVCAPI.Models
         }
         public Student GetStudent(int id)
         {
+            //Student s = new Student();
+            //foreach (Student ss in student)
+            //    if (id == ss.StudentId)
+            //    {
+            //        s = ss;
+            //        break;
+            //    }
+            //return s;
             return student.FirstOrDefault(x => x.StudentId == id);
         }
         public StudentContext()
