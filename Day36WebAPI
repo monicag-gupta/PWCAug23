@@ -227,6 +227,7 @@ namespace Day37MVCAPI.Controllers
 {
     public class ConsumerStdAPIController : Controller
     {
+        //string Baseurl = $"{Request.Scheme}://{Request.Host.Value}/";
 
         string Baseurl = "https://localhost:44303/";
         public async Task<IActionResult> Index()
@@ -254,7 +255,8 @@ namespace Day37MVCAPI.Controllers
         }
     }
 }
-
+(later)Add it’s view as Razor view with Template: List, Model: Student:
+(later)Index.cshtml
 
 
 
