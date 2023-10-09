@@ -368,6 +368,158 @@ namespace Day37MVCAPI
 
 
 
+Add the HttpGet API
+Add the Consumer
+Add the Details Razor View
+Run
+
+
+
+change:
+ConsumerStdAPIController.cs:
+
+using Day37MVCAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
+using System;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+
+namespace Day37MVCAPI.Controllers
+{
+    public class ConsumerStdAPIController : Controller
+    {
+        //string Baseurl = $"{Request.Scheme}://{Request.Host.Value}/";
+
+        string Baseurl = "https://localhost:44329/";
+        public async Task<IActionResult> Index()
+        {
+            List<Student> StdInfo = new List<Student>();
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllStudents using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Students");
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Student list
+                    StdInfo = JsonConvert.DeserializeObject<List<Student>>(StdResponse);
+                }
+                return View(StdInfo);
+            }
+        }
+
+        public async Task<IActionResult> GetStd(int id)
+        {
+            Student StdInfo = new Student();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl); //Passing service base url
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetStudentById using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Students/" + id);
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    StdInfo = JsonConvert.DeserializeObject<Student>(StdResponse);
+                }
+                return View(StdInfo);
+            }
+        }
+    }
+}
+
+
+
+change: 
+Index.cshtml
+
+@model IEnumerable<Day37MVCAPI.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+<hr/>
+<hr />
+<form action="/ConsumerStdAPI/GetStd">
+    <br />
+    Enter Id of Student to see details: 
+    <input type="text" name="id" />
+    <br />
+    <input type="submit" value="View Details" />
+</form>
+
+
+
+
+
+Add the Razor view : Details called GetStd with Model: Student
+
+Run the application.
+
+
+
+
+
+
 
 
 
