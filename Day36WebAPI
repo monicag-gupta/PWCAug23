@@ -122,7 +122,7 @@ Run the application.
 
 
 Student:
-namespace Day36MVCAPI.Models
+namespace Day37MVCAPI.Models
 {
     public class Student
     {
@@ -141,7 +141,7 @@ StudentContext:
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Day36MVCAPI.Models
+namespace Day37MVCAPI.Models
 {
     public class StudentContext
     {
@@ -171,13 +171,13 @@ namespace Day36MVCAPI.Models
 
 
 
-using Day36MVCAPI.Models;
+using Day37MVCAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace Day36MVCAPI.Controllers
+namespace Day37MVCAPI.Controllers
 {
    
     [ApiController]
@@ -206,7 +206,7 @@ namespace Day36MVCAPI.Controllers
 
 
 
-using Day36MVCAPI.Models;
+using Day37MVCAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -215,7 +215,7 @@ using System;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace Day36MVCAPI.Controllers
+namespace Day37MVCAPI.Controllers
 {
     public class ConsumerStdAPIController : Controller
     {
@@ -251,7 +251,7 @@ namespace Day36MVCAPI.Controllers
 
 
 
-using Day36MVCAPI.Models;
+using Day37MVCAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -260,7 +260,7 @@ using System;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace Day36MVCAPI.Controllers
+namespace Day37MVCAPI.Controllers
 {
     public class ConsumerStdAPIController : Controller
     {
