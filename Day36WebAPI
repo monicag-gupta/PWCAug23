@@ -533,5 +533,193 @@ Also update the MVC Controller to work with the CRUD functionality
 
 
 
+Separation Of WebAPI and MVC:
+Project: ASP.Net Web API:
+Day37WebAPI:
+
+Add a Models Folder
+In the Folder Add:
+Std.cs:
+namespace Day37WebAPI.Models
+{
+    public class Std
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+}
+
+
+and add 
+StdList.cs:
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Day37WebAPI.Models
+{
+    public class StdList
+    {
+        List<Std> stds = new List<Std>()
+        {
+            new Std{id=101,name="aaa"},
+            new Std{id=102,name="bbb"},
+            new Std{id=103,name="ccc"}
+        };
+        public List<Std> getAllStds()
+        {
+            return stds;
+        }
+        public Std getStd(int id)
+        {
+            return stds.FirstOrDefault(st => st.id == id);
+        }
+    }
+}
+
+
+
+
+Now Add an API Controller in the Controller folder:
+StdController.cs:
+
+using Day37WebAPI.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Day37WebAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class StdController : ControllerBase
+    {
+        static StdList stds = new StdList();
+        [HttpGet]
+        public ActionResult<IEnumerable<Std>> getAll()
+        {
+            return stds.getAllStds();
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Std> getStd(int id)
+        {
+            return stds.getStd(id);
+        }
+
+    }
+}
+
+
+
+
+
+Run the Project and see the URL in Swagger.
+KEEP THE PROJECT UP and RUNNING..
+
+
+Now Create a new Asp.Net MVC Project:
+Day37MVC:
+
+In the Models Folder create 
+Std.cs (It should match the Std.cs of WEB API)
+
+namespace Day37MVC.Models
+{
+    public class Std
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+}
+
+
+
+
+Now Add the Controller:
+StdClientController.cs:
+
+
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Runtime.Serialization.Json;
+using Day37MVC.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System;
+
+namespace Day37MVC.Controllers
+{
+    public class StdClientController : Controller
+    {
+        string Baseurl = "https://localhost:44338/"; //this is the URL from Swagger for running the APIs
+        public async Task<IActionResult> Index()
+        {
+            List<Std> stds = new List<Std>();
+            using (var client = new HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllStudents using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Std"); //this is the URI of the API itself
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Student list
+                    stds = JsonConvert.DeserializeObject<List<Std>>(StdResponse);
+                }
+                return View(stds);
+            }
+        }
+
+        public async Task<IActionResult> GetStd(int id)
+        {
+            Std std = new Std();
+            using (var client = new HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllStudents using HttpClient
+                HttpResponseMessage Res = await client.GetAsync("api/Std/" + id);// this is the URI of API itself
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var StdResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Student list
+                    std = JsonConvert.DeserializeObject<Std>(StdResponse);
+                }
+                return View(std);
+            }
+
+
+        }
+    }
+}
+
+
+
+
+Now create the Views for 
+Index:
+Index Razor View for LIST with Model : Std
+GetStd:
+GetStd Razor View for DETAILS with Model : Std
+
+
+Run the MVC Project to see the results.
+
+
+
 
 
