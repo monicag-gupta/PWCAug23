@@ -522,6 +522,14 @@ Run the application.
 
 
 
+Exercise:
+Complete the above API (StudentsController) for having 
+AddaStudent(…), UpdateStudent(..), deleteStudent(..) 
+functionality.
+Also update the MVC Controller to work with the CRUD functionality 
+(create razor view for the controller).
+
+
 
 
 
