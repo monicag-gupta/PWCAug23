@@ -1,0 +1,50 @@
+HTTP methods:
+
+Whenever a client submits a request to a server, part of that request is an HTTP method, which is what the client would like the server to do with the specified resource. 
+HTTP methods represent those requested actions. 
+For example, some commonly-used HTTP methods will: 
+  retrieve data from a server
+  submit data to a server for processing
+  delete an item from the server's data store
+A large portion of application functionality can be summed up in the acronym CRUD, which stands for Create, Read, Update, Delete. 
+There are four HTTP methods that correspond to these actions, one for each, like so:
+  C - Create - POST
+  R - Read - GET
+  U - Update - PUT
+  D - Delete - DELETE
+
+
+
+
+
+
+HTTP Methods to CRUD:
+
+The four main HTTP methods (GET, PUT, POST, and DELETE) can be mapped to CRUD operations as follows:
+
+GET retrieves the representation of the resource at a specified URI. GET should have no side effects on the server.
+
+PUT updates a resource at a specified URI. PUT can also be used to create a new resource at a specified URI, 
+if the server allows clients to specify new URIs. For this tutorial, the API will not support creation through PUT.
+
+POST creates a new resource. The server assigns the URI for the new object and returns 
+this URI as part of the response message.
+
+DELETE deletes a resource at a specified URI.
+
+
+
+
+Action : HTTP method : Relative URI:
+
+Get a list of all products : GET : /api/apiname
+Get a product by ID : GET : /api/apiname/id
+Get a product by category : GET : /api/apiname?category=category
+Create a new product : POST : /api/apiname
+Update a product : PUT : /api/apiname/id
+Delete a product : DELETE : /api/apiname/id
+
+
+
+
+
