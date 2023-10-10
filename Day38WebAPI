@@ -88,6 +88,10 @@ namespace Day38WebAPI.Models
 
 StudentContext.cs:
 
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
 namespace Day38WebAPI.Models
 {
     public class StudentContext
@@ -137,6 +141,7 @@ namespace Day38WebAPI.Models
         }
     }
 }
+
 
 
 
