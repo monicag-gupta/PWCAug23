@@ -162,7 +162,7 @@ namespace Day38WebAPI.Controllers
     //[Route("api/[controller]")]
     public class StudentsController : ControllerBase
     {
-        private StudentContext students = new StudentContext();
+        private static StudentContext students = new StudentContext();
         [HttpGet]
         //[Route("api/Students")]
         public ActionResult<IEnumerable<Student>> GetAllStudents()
