@@ -192,7 +192,7 @@ namespace Day38WebAPI.Controllers
                     "Error updating data");
             }
         }
-        [HttpDelete("DeleteStd{id:int}")]
+        [HttpDelete("DeleteStd/{id:int}")]
         public ActionResult<String> DeleteStudentById(int id)
         {
             return students.DeleteStudent(id).ToString() + " Deleted successfully!";
@@ -211,6 +211,7 @@ namespace Day38WebAPI.Controllers
 Run the Application.
 
 ********************************************************************************************************
+
 
 
 
