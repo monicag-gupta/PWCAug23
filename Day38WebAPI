@@ -48,3 +48,25 @@ Delete a product : DELETE : /api/apiname/id
 
 
 
+******************************************************************************************************************
+
+Create a Web API project: Day38WebAPI
+Add to the Project -> Add Folder -> Models
+In the Models folder -> Add classes:
+  Student
+  StudentContext
+Add Controller:
+  StudentsController
+Run the API via Swagger
+
+
+
+
+
+
+
+
+
+
+
+
