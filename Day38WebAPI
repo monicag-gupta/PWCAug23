@@ -214,6 +214,30 @@ Run the Application.
 
 
 
+MVC Project:
+add in Index action before return statement:
+
+    _logger.LogInformation("This is logging site");
+
+
+In appSettings.json:
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Day38MVC.Controller": "Information"
+
+    }
+  },
+  "AllowedHosts": "*"
+}
+
+
+
+
 
 
 
