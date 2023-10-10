@@ -61,11 +61,149 @@ Run the API via Swagger
 
 
 
+Student.cs:
+
+namespace Day38WebAPI.Models
+{
+    public class Student
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + StudentId.ToString() + " Name: " + Name + " " + SurName;
+        }
+    }
+
+}
 
 
 
 
 
+
+
+
+StudentContext.cs:
+
+namespace Day38WebAPI.Models
+{
+    public class StudentContext
+    {
+        public static List<Student> student = new List<Student>      {
+            new Student { StudentId=101,Name="Abc",SurName="xyz"},
+            new Student { StudentId = 102, Name = "Abc2", SurName = "xyz2" },
+            new Student { StudentId = 103, Name = "Abc3", SurName = "xyz3" },
+            new Student { StudentId = 104, Name = "Abc4", SurName = "xyz4" }
+        };
+        public List<Student> GetAllStudent()
+        {
+            return student;
+        }
+        public Student GetStudent(int id)
+        {
+            return student.FirstOrDefault(x => x.StudentId == id);
+        }
+        public Student DeleteStudent(int id)
+        {
+            Student s = student.FirstOrDefault(x => x.StudentId == id);
+            student.Remove(s);
+            return s;
+        }
+        public String InsertStudent(Student std)
+        {
+            student.Add(std);
+            return std.ToString() + " Added Successfully!!";
+        }
+        public Student UpdateStudent(int id, Student s)
+        {
+            var std = student.FirstOrDefault(x => x.StudentId == id);
+            if (std != null)
+            {
+                std.StudentId = s.StudentId;
+                std.Name = s.Name;
+                std.SurName = s.SurName;
+            }
+            return std;
+        }
+        public StudentContext()
+        {
+            student.Add(new Student { StudentId = 105, Name = "Abc5", SurName = "xyz5" });
+            student.Add(new Student { StudentId = 106, Name = "Abc6", SurName = "xyz6" });
+            student.Add(new Student { StudentId = 107, Name = "Abc7", SurName = "xyz7" });
+            student.Add(new Student { StudentId = 108, Name = "Abc8", SurName = "xyz8" });
+        }
+    }
+}
+
+
+
+
+StudentsController.cs:
+
+using Day38WebAPI.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System;
+
+namespace Day38WebAPI.Controllers
+{
+    [ApiController]
+    [Produces("application/json")]
+    [Route("api/Students")] 
+    //[Route("api/[controller]")]
+    public class StudentsController : ControllerBase
+    {
+        private StudentContext students = new StudentContext();
+        [HttpGet]
+        //[Route("api/Students")]
+        public ActionResult<IEnumerable<Student>> GetAllStudents()
+        {
+            return students.GetAllStudent();
+        }
+        [HttpGet("{id:int}")]
+        public ActionResult<Student> GetStudentById(int id)
+        {
+            return students.GetStudent(id);
+        }
+        [HttpPut("updateStd/{id:int}")]
+        public ActionResult<Student> UpdateStudent([FromRoute] int id, [FromBody] Student student)
+        {
+            try
+            {
+                if (id != student.StudentId)
+                    return BadRequest("Student ID mismatch");
+                var stdToUpdate = students.GetStudent(id);
+                if (stdToUpdate == null)
+                    return NotFound($"Student with Id = {id} not found");
+                return students.UpdateStudent(id, student);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error updating data");
+            }
+        }
+        [HttpDelete("DeleteStd{id:int}")]
+        public ActionResult<String> DeleteStudentById(int id)
+        {
+            return students.DeleteStudent(id).ToString() + " Deleted successfully!";
+        }
+        [HttpPost]
+        public string InsertStudent(Student std)
+        {
+            return students.InsertStudent(std);
+        }
+    }
+}
+
+
+
+
+Run the Application.
 
 
 
