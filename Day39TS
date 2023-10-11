@@ -1,3 +1,5 @@
+
+//Rest Parameters / called Param Array in C++, params in c#, varArray in Java
 function addNumbers(...nums:number[]) {  
     var i;   
     var sum:number = 0; 
