@@ -242,3 +242,6 @@ Bit-wise operators : &, |, ^, >> , <<
 Assignment operators : =, +=, -=, /=, %=
 Conditional operators: ? :
 
+
+
+User-defined types include Enumerations (enums), classes, interfaces, arrays, and tuple.
