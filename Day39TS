@@ -1,3 +1,17 @@
+
+
+
+
+
+
+let isDone: boolean = false;  
+console.log(isDone);
+
+
+
+
+
+
 var i : any = null;
 console.log(i);  //null
 var j : any;
