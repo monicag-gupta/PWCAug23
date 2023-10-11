@@ -1,5 +1,24 @@
-var message:string = "Hello World" 
-console.log(message)
+Hello.ts:
+
+var message:string = "Hello World"; 
+console.log(message);
+
+
+To compile the code and convert it to JS file:
+
+PS C:\Users\monica\Desktop\TSEgs> tsc Hello.ts
+
+
+we can see that a new file is generated as Hello.js
+Execute this Hello.js in nodejs terminal:
+
+PS C:\Users\monica\Desktop\TSEgs> node Hello.js
+Hello World
+
+
+
+
+
 
 
 
