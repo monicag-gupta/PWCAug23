@@ -1,3 +1,10 @@
+var message:string = "Hello World" 
+console.log(message)
+
+
+
+
+
 If tsc is not working, and giving an error as:
 because running scripts is disabled on this system. For more information,   
 see about_Execution_Policies at 
