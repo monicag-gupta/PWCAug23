@@ -1,4 +1,20 @@
 
+function disp(s1:string):void; 
+function disp(n1:number,s1:string):void; 
+function disp(n1:number,n2:number):void; 
+function disp(n1:number,s1:string, s2:string):void; 
+
+function disp(x:any,y?:any, z?:string):void { 
+   console.log(x); 
+   console.log(y); 
+   console.log(z); 
+} 
+disp("abc") 
+disp(1,"xyz");
+disp(1,7);
+// disp(2);
+
+
 
 
 
@@ -53,6 +69,7 @@ function addNumbers(...nums:number[]) {
  var intArr: number[] = [4,5,2,8];
  addNumbers(1,2,3) 
  addNumbers(10,10,10,10,10)
+ addNumbers(...intArr);
  addNumbersArr(intArr);
  addNumbersArr([1,2,3]) 
  addNumbersArr([10,10,10,10,10])
