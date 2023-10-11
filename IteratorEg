@@ -1,0 +1,43 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+interface Iterator{
+    object next();
+    bool hasNext();
+}
+class myList{
+    static int[] arr=new int[1000];
+    static int tos;
+    public myList(){
+        tos=0;
+    }
+    public myList(int[] ar){
+        tos=0;
+        arr=ar;
+    }
+    class myIterator : Iterator{
+        public object next(){
+            return arr[tos++];
+        }
+        public bool hasNext(){
+            return tos < arr.Length;
+        }
+    }
+    public Iterator myIt(){
+        return new myIterator();
+    }
+    
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        myList l=new myList(new int[]{1,4,6,2,8,3,9});
+        Iterator it=l.myIt();
+        while(it.hasNext()){
+            Console.WriteLine(it.next());
+        }
+        
+    }
+}
