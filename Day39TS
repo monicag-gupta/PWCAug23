@@ -4,6 +4,9 @@
 
 
 
+****************************************************************************************
+
+
 var foo1 = (x:number)=>10 + x; 
 console.log(foo1(100));  
     //outputs 110
@@ -16,6 +19,8 @@ foo2(100);
 // outputs 120
 
 
+let Print = () => console.log("Hello Coders!");  
+Print();  //Hello Coders!
 
 
 
