@@ -64,3 +64,13 @@ Disallows the compiler from inferring the any type
 --watch
 Watch for file changes and recompile them on the fly
 
+
+
+
+TS Data Types:
+Any 
+    Primitive Types:
+        Number, Boolean, String  , null, void, undefined
+    Object Types 
+        Classes, Modules, Interfaces, enum, Arrays
+
