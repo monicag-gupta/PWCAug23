@@ -1,3 +1,12 @@
+var i : any = null;
+console.log(i);  //null
+var j : any;
+console.log(j); //undefined
+
+
+
+
+
 Hello.ts:
 
 var message:string = "Hello World"; 
