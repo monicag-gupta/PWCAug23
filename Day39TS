@@ -1,0 +1,16 @@
+If tsc is not working, and giving an error as:
+because running scripts is disabled on this system. For more information,   
+see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ tsc abc.ts
++ ~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException    
+    + FullyQualifiedErrorId : UnauthorizedAccess
+Then solve it by:
+Open windows + R
+Type : Powershell
+Open as Administrator. Then type any one of the following command :
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+set-executionpolicy remotesigned
+And select option : A
