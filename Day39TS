@@ -1,3 +1,118 @@
+let fruits: Array<string> = ['Apple', 'Orange', 'Banana']; 
+let fruit: string[] = ['Apple', 'Orange', 'Banana'];  
+console.log("fruits : " + fruits);
+console.log("fruit : " + fruit);
+
+let arr123:number[];   
+arr123 = [1, 2, 3, 4]   
+console.log("Array[0]: " +arr123[0]);   //Array[0]: 1
+console.log("Array[1]: " +arr123[1]);  //Array[1]: 2
+
+var mArray:number[][] = [[1,2,3],[5,6,7]] ;  
+console.log(mArray[0][0] + " " + mArray[0][1] + " " + mArray[0][2]); // 1 2 3
+console.log(mArray[1][0]+ " " + mArray[1][1]+ " " + mArray[1][2]);  //5 6 7
+
+
+let arr:string[] = new Array("TypeScript","version","5","is cool");  
+for(var i = 0;i<arr.length;i++) {   
+   console.log(arr[i]);  
+} 
+// TypeScript
+// version
+// 5
+// is cool 
+
+
+
+
+let index:any;     
+for(index in arr) {   
+   console.log(arr[index])   
+}  
+// TypeScript
+// version
+// 5
+// is cool 
+
+
+
+
+let ele:any;
+for(ele of arr) {   
+   console.log(ele)   
+}  
+// TypeScript
+// version
+// 5
+// is cool 
+
+
+
+
+function display(arr_values:string[]) {  
+    for(let i = 0;i<arr_values.length;i++) {   
+       console.log(arr_values[i]);  
+    }    
+ }  
+ //Calling arrays in function  
+ display(arr);  
+// TypeScript
+// version
+// 5
+// is cool 
+
+
+
+
+
+let arr1 = [ 1, 2, 3];  
+let arr2 = [ 4, 5, 6];  
+//Create new array from existing array  
+let copyArray = [...arr1];    //spread operator ...array_name gives the elements of array 
+console.log("CopiedArray: " +copyArray);   //CopiedArray: 1,2,3
+//Create new array from existing array with more elements  
+let newArray = [...arr1, 7, 8];  
+console.log("NewArray: " +newArray);   //NewArray: 1,2,3,7,8
+//Create array by merging two arrays  
+let mergedArray = [...arr1, ...arr2];  
+console.log("MergedArray: " +mergedArray);   //MergedArray: 1,2,3,4,5,6
+
+
+
+
+arr = new Array("TypeScript","JavaScript","Java","C++","C#");
+console.log("arr: " + arr);
+let arr22:string[] = new Array("MVC", "HTML5", "ECMAScript");
+let arr3=arr.concat(arr22);
+console.log("arr3 : " + arr3);
+console.log("arr before splice is: " + arr);
+let arr4=arr.splice(2,5);
+console.log("arr4 : " + arr4);
+console.log("arr now is: " + arr);
+arr = new Array("TypeScript","JavaScript","Java","C++","C#");
+console.log("arr before slice is: " + arr);
+arr4=arr.slice(2,5);
+console.log("sliced arr4 : " + arr4);
+console.log("arr now is: " + arr);
+arr = new Array("HTML5", "TypeScript","JavaScript","Java","C++","C#");
+arr.push("CSS");
+console.log("arr after push of 'CSS' at end : " + arr);
+console.log("type of arr: " + (typeof arr));
+console.log("Is arr instance of array? " + (arr instanceof Array));
+console.log("Length of arr: " + arr.length);
+console.log("Sorted arr: " + arr.sort());
+console.log("Joining arr by space: " + arr.join(" "));
+console.log("Reversed arr: " + arr.reverse());
+console.log("Pop last element in arr: " + arr.pop());
+console.log("shift first element in arr: " + arr.shift());
+arr.unshift("Angular","ASP");
+console.log("arr now is: " + arr);
+
+
+*****************************************************************************************************
+
+
+
 var x : any ="5";
 var y : any = 5;
 console.log(x==y); //true
