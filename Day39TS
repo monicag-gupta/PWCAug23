@@ -1,3 +1,77 @@
+console.log(x); //hoisting //undefined
+var x=10; // declaration and assignment
+var x=20; // redeclaration
+x=30; //reassignment
+
+//console.log(y); //hoisting not in let
+let y=10; // declaration and assignment
+//let y=20; // redeclaration not in let
+y=30; //reassignment
+
+//console.log(z); //hoisting not in const
+const z=10; // declaration and assignment
+// const z=20; // redeclaration not in const
+// z=30; //reassignment not in const
+
+
+//global declaration and assignment
+var gx=10;
+let gy=20;
+const gz=30;
+
+function fn():void{
+    console.log("Inside function using global vars: ")
+    console.log(gx);
+    console.log(gy);
+    console.log(gz);
+
+    //local declaration and assignment
+    var lx=10;
+    let ly=20;
+    const lz=30;
+
+    console.log("Inside function using local vars: ")
+    console.log(lx);
+    console.log(ly);
+    console.log(lz);
+
+
+    if(5>3){
+        //block declaration and assignment
+        var bx=10;
+        let by=20;
+        const bz=30;
+
+        console.log("Inside block using block vars: ")
+        console.log(bx);
+        console.log(by);
+        console.log(bz);
+
+    }
+    console.log("Outside block using block var bx: ")
+    console.log(bx);
+    // console.log(by);
+    // console.log(bz);
+}
+
+fn();
+
+// local variables are not allowed outside the function scope
+console.log("Outside function using local vars: Not possible : ")
+// console.log(lx);
+// console.log(ly);
+// console.log(lz);
+
+
+
+**********************************************************************************************
+
+
+
+
+
+
+
 let empName: string = "John's brother";   
 let empDept: string = 'IT';   
   
