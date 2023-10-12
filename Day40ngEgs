@@ -57,6 +57,43 @@ operable program or batch file.
 
 
 
+Angular App important files and folders:
+src folder: This folder contains the main code files.
+app folder: The app folder contains app components.
+app.component.css: This file contains the cascading style sheets.
+app.component.html: This file contains the html file related to app component. This is the template file which is used by angular to do the data binding.
+app.component.spec.ts: This file is a unit testing file related to app component. This file is used along with other unit tests. It is run from Angular CLI by the command ng test.
+app.component.ts: This is the most important typescript file which includes the view logic behind the component.
+app.module.ts: This is also a typescript file which includes all the dependencies for the website. This file is used to define the needed modules to be imported, the components to be declared and the main component to be bootstrapped.
+
+
+
+
+Angular: Core files:
+src/app/app.component.ts, src/app/app.module.ts, and src/main.ts are the Core ts files.
+All examples have at least these core files. 
+Each file has a distinct purpose and evolves independently as the application grows.
+Files outside src/ concern building, deploying, and testing your app. They include configuration files and external dependencies.
+Files inside src/ "belong" to your app. Add new Typescript, HTML and CSS files inside the src/ directory, most of them inside src/app, unless told to do otherwise.
+
+
+
+Purpose of core files:
+app/app.component.ts
+Defines AppComponent as the root component of what will become a tree of nested components as the application evolves.
+app/app.module.ts
+Defines AppModule, the root module that tells Angular how to assemble the application. Right now it declares only the AppComponent. 
+main.ts
+Compiles the application with the JIT compiler and bootstraps the application's main module (AppModule) to run in the browser. 
+
+
+
+
+
+
+
+
+
 
 
 
