@@ -1,0 +1,30 @@
+Exercise:
+WA function in typescript to provide the overloads of  the following functions of C#:
+int sum(int x, int y)
+double sum(double x, double y)
+string sum(string x, string y)
+int sum(int x, int y, int z, int p)
+
+Use typeof(variable) if required.
+
+
+
+Example:
+
+function disp(s1:string):void; 
+function disp(n1:number,s1:string):void; 
+
+function disp(x:any,y?:any):void { 
+   console.log(typeof(x)); 
+   console.log(y); 
+} 
+
+
+disp("abc") 
+disp(1,"xyz");
+/*
+string
+undefined
+number
+xyz
+*/
