@@ -1,3 +1,13 @@
+To attach the Module Second.ts to the main project file Hello.ts:
+tsc --module amd Second.ts Hello.ts
+
+Once attached, compile Hello.ts normally:
+tsc Hello.ts
+node Hello.js
+
+Output:
+Hello World!
+Emp details : id=101 Name = John
 
 
 
