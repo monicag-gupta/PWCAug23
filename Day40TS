@@ -1,4 +1,41 @@
 
+
+
+// A Protected access modifier can be accessed only within the class and its subclass. 
+// We cannot access it from the outside of a class in which it is containing.
+
+class Student {  
+   public studCode: number;  
+   protected studName: string;  
+   constructor(code: number, name: string){  
+       this.studCode = code;  
+       this.studName = name;  
+       }  
+}  
+class Person extends Student {  
+   private department: string;  
+   constructor(code: number, name: string, department: string) {  
+       super(code, name);  
+       this.department = department;  
+   }  
+   public display() {  
+       return (`My unique code: ${this.studCode}, my name: ${this.studName} and I am in ${this.department} Branch.`);  
+   }  
+}  
+let john: Person = new Person(1, "John", "CS");  
+console.log(john.display());  //My unique code: 1, my name: John and I am in CS Branch.
+console.log("The stud code " + john.studCode+" is public, so can be accessed outside the class.. ");
+
+
+
+
+
+
+
+
+*********************************************************************************************************
+
+
 // defining interface for class  
 interface Person1 {  
    firstName: string;  
