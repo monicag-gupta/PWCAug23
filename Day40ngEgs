@@ -9,6 +9,22 @@ cd C:\Users\monica\Desktop\NGEgs
 
 ng new ng1app
 
+Would you like to add Angular routing? Y
+Which stylesheet format would you like to use? (Use arrow keys)
+> CSS 
+
+
+press enter here
+
+C:\Users\monica\Desktop\NGEgs>ng new ng1app
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+
+
+wait ..wait..wait..wait..
+
+
+
 
 
 
