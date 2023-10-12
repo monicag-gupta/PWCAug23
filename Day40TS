@@ -1,4 +1,24 @@
+class Animal{
+   print():void{
+      console.log("An Animal's print function")
+   }
+}
 
+class Dog extends Animal{
+   print():void{
+      console.log("An Dog's print function")
+   }
+   printSuper():void{
+      super.print();
+   }
+}
+
+var dog1=new Dog();
+dog1.print();
+var dog2=new Animal();
+dog2.print();
+var dog3=new Dog();
+dog3.printSuper();
 
 
 
