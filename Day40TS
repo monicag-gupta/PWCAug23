@@ -1,3 +1,70 @@
+
+
+
+
+
+Hello.ts
+
+import * as sec from "./Second";
+console.log(sec.greeting); //Prints Hello World!
+//greeting is a read-only property here, non-editable.
+//sec.greeting = "blah blah";
+class myEmp extends sec.Emp{
+   constructor();
+    constructor(n:string,i:number);
+    constructor(n?:string,i?:number){
+      if(n!=undefined && i!=undefined)
+         super(n,i);
+    }
+    print():void{
+      console.log("myEmp inheriting parent Emp details : id=" + this.id + " Name = " + this.name );
+  }
+}
+
+var empObj = new sec.Emp("John",101);
+empObj.print();
+
+var myEmpObj = new myEmp("Doe",102);
+myEmpObj.print();
+
+
+
+
+
+
+
+
+
+Second.ts
+
+export var greeting : string = "Hello World!";
+export class  Emp{
+    name:string;
+    id:number;
+    constructor();
+    constructor(n:string,i:number);
+    constructor(n?:string,i?:number){
+        if(n!=undefined && i!=undefined)
+        {
+            this.name=n;
+            this.id=i;
+        }
+    }
+    print():void{
+        console.log("Emp details : id=" + this.id + " Name = " + this.name );
+    }
+}
+
+
+
+
+
+
+*************************************************************************************************
+
+
+
+
 The file generated will be :
 FirstHello.js:
 
