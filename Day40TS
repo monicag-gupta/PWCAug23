@@ -1,3 +1,27 @@
+var x : number | string;
+x = 10;
+x = "abc";
+
+
+function disp(name:string|string[]) { 
+   if(typeof name == "string") { 
+      console.log(name) 
+   } else { 
+      var i;  
+      for(i = 0;i<name.length;i++) { 
+         console.log(name[i])
+      } 
+   } 
+} 
+disp("mark") 
+console.log("Printing names array....") 
+disp(["Mark","Tom","Mary","John"])
+
+
+
+
+
+
 Exercise:
 WA function in typescript to provide the overloads of  the following functions of C#:
 int sum(int x, int y)
