@@ -6,6 +6,11 @@
 npm uninstall express
 
 
+//For searching npm for a particular module
+npm search express
+
+
+
 //For updating the module to latest release
 npm update express
 
