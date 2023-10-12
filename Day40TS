@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+***********************************************************************************************
+
+
+
+
 class Car { 
    //field 
    engine:string; 
@@ -11,11 +23,12 @@ class Car {
    } 
 } 
 //create an object 
-var obj = new Car("XXSY1")
+var obj:Car = new Car("XXSY1")
 //access the field 
 console.log("Reading attribute value Engine as :  "+obj.engine)  
 //access the function
 obj.disp()
+
 
 
 
