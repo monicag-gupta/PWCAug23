@@ -1,4 +1,18 @@
 
+
+
+
+
+npm ls
+//to see the current modules
+
+
+npm install express
+
+express.js installed with package.json
+
+
+
 npm --version
 9.6.7
 
