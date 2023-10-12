@@ -1,4 +1,25 @@
 
+var path = require("path");
+
+// Normalization
+console.log('normalization : ' + path.normalize('/Users/monica/Desktop/TSEgs/..'));
+
+// Join
+console.log('joint path : ' + path.join('/Users', 'monica', 'Desktop', 'TSEgs', '..'));
+
+// Resolve
+console.log('resolve : ' + path.resolve('main.js'));
+
+// extName
+console.log('ext name : ' + path.extname('main.js'));
+
+
+
+
+
+****************************************************************************************
+
+
 var os = require("os");
 
 // Endianness
