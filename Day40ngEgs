@@ -4,6 +4,9 @@ npm install -g @angular/cli
 ng version
 
 navigate to the folder where the new application is to be created:
+
+cd C:\Users\monica\Desktop\NGEgs
+
 ng new ng1app
 
 
