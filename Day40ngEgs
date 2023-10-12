@@ -24,6 +24,39 @@ C:\Users\monica\Desktop\NGEgs>ng new ng1app
 wait ..wait..wait..wait..
 
 
+C:\Users\monica\Desktop\NGEgs>ng new ng1app
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE ng1app/angular.json (2700 bytes)
+CREATE ng1app/package.json (1037 bytes)
+CREATE ng1app/README.md (1060 bytes)
+CREATE ng1app/tsconfig.json (901 bytes)
+CREATE ng1app/.editorconfig (274 bytes)
+CREATE ng1app/.gitignore (548 bytes)
+CREATE ng1app/tsconfig.app.json (263 bytes)
+CREATE ng1app/tsconfig.spec.json (273 bytes)
+CREATE ng1app/.vscode/extensions.json (130 bytes)
+CREATE ng1app/.vscode/launch.json (470 bytes)
+CREATE ng1app/.vscode/tasks.json (938 bytes)
+CREATE ng1app/src/main.ts (214 bytes)
+CREATE ng1app/src/favicon.ico (948 bytes)
+CREATE ng1app/src/index.html (292 bytes)
+CREATE ng1app/src/styles.css (80 bytes)
+CREATE ng1app/src/app/app-routing.module.ts (245 bytes)
+CREATE ng1app/src/app/app.module.ts (393 bytes)
+CREATE ng1app/src/app/app.component.html (23115 bytes)
+CREATE ng1app/src/app/app.component.spec.ts (991 bytes)
+CREATE ng1app/src/app/app.component.ts (210 bytes)
+CREATE ng1app/src/app/app.component.css (0 bytes)
+CREATE ng1app/src/assets/.gitkeep (0 bytes)
+√ Packages installed successfully.
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+
+
+
 
 
 
