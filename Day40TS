@@ -1,3 +1,63 @@
+class Car {   
+   Color:string    
+   constructor();
+   constructor(color:string); 
+   constructor(color?:string) {   
+      if(color!=undefined){
+       this.Color = color;
+      } 
+      else
+      this.Color="White"; 
+   }   
+}   
+class Audi extends Car {   
+   Price: number;  
+   constructor();
+   constructor(color:string);  
+   constructor(price:number);
+   constructor(color: string, price: number);
+   constructor(colorOrPrice?: any, price?: number) {
+       if(colorOrPrice!=undefined ){
+         //   typeof(colorOrPrice) == "string"?super(colorOrPrice): super();     
+         //   this.Price = typeof(colorOrPrice) == "number" ? colorOrPrice:price!=undefined ?  price :10000;
+          if(typeof(colorOrPrice) == "string") {
+            super(colorOrPrice);
+          }
+          else
+             super();
+         if(typeof(colorOrPrice) == "number")
+            this.Price = colorOrPrice;
+         else{
+            if(price != undefined){
+               this.Price = price;
+            }
+            else
+               this.Price =100000;
+         }
+     }
+     else {
+           super();
+           this.Price=100000;
+       }
+        
+    }  
+    display():void {  
+        console.log("Color of Audi car: " + this.Color); //Color of Audi car:  Black 
+        console.log("Price of Audi car: $" + this.Price); //Price of Audi car: 8500000
+    }  
+}  
+let obj1 = new Audi(" Black", 8500000 );  
+obj1.display(); 
+let obj2 = new Audi(" Red");   //Price default
+obj2.display(); 
+let obj3 = new Audi();  //both default
+obj3.display(); 
+let obj4 = new Audi(6700000); //color default 
+obj4.display();
+
+
+
+
 
 
 
