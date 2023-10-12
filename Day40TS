@@ -1,3 +1,42 @@
+
+// defining interface for class  
+interface Person1 {  
+   firstName: string;  
+   FullName();  
+}  
+interface Person2 {  
+   lastName: string;   
+   FullName();  
+}
+interface Person extends Person1,Person2{}
+
+// implementing the interface  
+class Employee implements Person1, Person2 {  
+   firstName: string;  
+   lastName: string;  
+   FullName() {  
+       return this.firstName + ' ' + this.lastName;  
+   }  
+   constructor(firstN: string, lastN: string) {  
+       this.firstName = firstN;  
+       this.lastName = lastN;   
+   }  
+}  
+// using the class that implements interface  
+let myEmployee = new Employee('John', 'Doe');  
+let fullName = myEmployee.FullName();    
+console.log("Name of Person: " + fullName);  //Name of Person: John Doe
+
+
+
+
+
+
+
+*************************************************************************************************
+
+
+
 class Animal{
    print():void{
       console.log("An Animal's print function")
