@@ -2,11 +2,19 @@
 
 
 
+//For uninstalling a module:
+npm uninstall express
 
-npm ls
+
+//For updating the module to latest release
+npm update express
+
+
 //to see the current modules
+npm ls
 
 
+//install a module:
 npm install express
 
 express.js installed with package.json
