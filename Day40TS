@@ -1,4 +1,43 @@
+The file generated will be :
+FirstHello.js:
 
+var greeting = "Hello World!";
+console.log(greeting); //Prints Hello World!
+greeting = "Hello TypeScript"; // allowed
+console.log(greeting); //Prints Hello TypeScript
+
+
+
+
+
+
+
+tsc --outfile FirstHello.js First.ts Hello.ts
+node FirstHello.js
+
+
+
+Hello.ts:
+
+console.log(greeting); //Prints Hello World!
+greeting = "Hello TypeScript"; // allowed
+console.log(greeting); //Prints Hello TypeScript
+
+
+
+
+
+
+
+
+First.ts
+
+var greeting : string = "Hello World!";
+
+
+
+
+********************************************************************************
 
 
 // A Protected access modifier can be accessed only within the class and its subclass. 
