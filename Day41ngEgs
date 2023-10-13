@@ -1,5 +1,23 @@
 
+Installing Bootstrap and Jquery:
 
+Navigate to your project folder and run:
+>cd .... ng1App
+>npm install bootstrap jquery -save
+Or
+>npm install bootstrap –save
+And
+>npm install jquery –save
+The folders get added to node_modules folder of your project.
+
+
+
+
+
+
+
+
+*****************************************************************************************************
 
 app.component.ts:
 
