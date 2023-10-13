@@ -1,0 +1,32 @@
+Imp point:
+src/Main.ts : Main file 
+http://localhost:4200/
+ng serve
+Src
+App
+Src->index.html
+App/app.module.ts
+App/app.component.ts
+
+
+
+Loaded the Project Dir: ng1app
+ng serve
+-> ng1app/Angular.json
+-> ->ng1app/src/Main.ts
+-> -> -> ng1app/src/app/app.module.ts
+-> -> -> -> ng1app/src/app/app.component.ts
+-> -> -> -> -> ng1app/src/app/app.component.html
+-> -> ng1app/src/index.html (executed by default) ; searches for <app-root></app-root>; this is the selector tag of the app.component.ts file for AppComponent class
+
+
+
+
+To execute:
+1. Open nodejs command prompt
+2. navigate to the project folder:
+> cd C:\Users\monica\Desktop\NGEgs\ng1app
+>ng serve
+
+
+
