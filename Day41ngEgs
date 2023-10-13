@@ -28,6 +28,23 @@ file1.html:
 <h1>Component is the main Building Block in Angular</h1>
 <h2>Angular 16 Samples</h2>
 
+app.component.ts:
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './file1.html',
+  styleUrls: ['./custom.css']
+})
+export class AppComponent {
+  x = 'MySite';
+  constructor(){
+    console.log("This is the app.component file loaded");
+  }
+}
+
+
 
 
 
