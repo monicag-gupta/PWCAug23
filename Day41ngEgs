@@ -36,3 +36,32 @@ remove all the content and type:
 
 
 
+
+Understanding your Project Anatomy:
+/e2e/: This folder contains end-to-end (simulating user behavior) tests of the website.
+/node_modules/: All 3rd party libraries are installed to this folder using npm install.
+/src/: It contains the source code of the application. Most work will be done here.
+/app/: It contains modules and components.
+/assets/: It contains static assets like images, icons and styles etc.
+/environments/: It contains environment (production and development) specific configuration files.
+browserslist: Needed by autoprefixer for CSS support.
+favicon.ico: The favicon.
+index.html: The main HTML file.
+karma.conf.js: The configuration file for Karma (a testing tool)
+main.ts: The main starting file from where the AppModule is bootstrapped.
+polyfills.ts: Polyfills needed by Angular.
+styles.css: The global stylesheet file for the project.
+test.ts: This is a configuration file for Karma
+tsconfig.*.json: The configuration files for TypeScript.
+angular.json: It contains the configurations for CLI
+package.json: It contains basic information of the project (name, description and dependencies etc.)
+README.md: A Markdown file that contains a description of the project.
+tsconfig.json: The configuration file for TypeScript.
+tslint.json: The configuration file for TSlint (a static analysis tool)
+
+
+
+
+
+
+
