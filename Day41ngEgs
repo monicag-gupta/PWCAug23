@@ -1,3 +1,30 @@
+app.component.ts
+
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  x:string = "Welcome page!!";
+  data1:string=" init data 101"; 
+  data3:string=" On change data 103";
+  data2:string=" Constructor data: 102";      
+    constructor() {    
+        console.log(`new - data is ${this.data2}`);    
+    }          
+    ngOnChanges() {    
+        console.log(`ngOnChanges - data is ${this.data3}`);    
+    }      
+    ngOnInit() {    
+        console.log(`ngOnInit  - data is ${this.data1}`);    
+    }   
+} 
+
+
+
+
 
 
 
