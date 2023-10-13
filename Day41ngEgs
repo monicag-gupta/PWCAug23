@@ -30,3 +30,9 @@ To execute:
 
 
 
+open app.component.html
+remove all the content and type:
+<h1>Hello World!</h1>
+
+
+
