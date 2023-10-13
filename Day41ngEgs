@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrls : ['./custom.css']  
 })  
 export class AppComponent {  
+  x:string = "Welcome page!!";
   data1:string=" init data 101"; 
   data3:string=" On change data 103";
   data2:string=" Constructor data: 102";      
