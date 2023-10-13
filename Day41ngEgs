@@ -1,3 +1,19 @@
+Exercise:
+
+In the same application change html component to say "HELLO WORLD OF ANGULAR" to the world in H1.
+It should be displayed at the top center of the screen.
+Title of the page (application) should be HelloWorld.
+Hint: change
+Index.html
+App.component.html
+
+
+
+
+
+
+
+
 Imp point:
 src/Main.ts : Main file 
 http://localhost:4200/
