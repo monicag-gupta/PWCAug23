@@ -1,5 +1,68 @@
 ng generate component outmsg
 
+outmsg.component.ts:
+
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-outmsg',
+  templateUrl: './outmsg.component.html',
+  styleUrls: ['./outmsg.component.css']
+})
+export class OutmsgComponent {
+    @Output() Omsg : EventEmitter<string> = new EventEmitter();
+    fn():void{
+      this.Omsg.emit("This is an Output from the OutMsg");
+    }
+}
+
+
+
+outmsg.component.html:
+
+<p>outmsg works!</p>
+<input type="button" (click)="fn()" value="Emit string">
+
+
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {
+  outmessage:string=""
+  getData(d:string){
+    this.outmessage=d;
+    alert(d);
+  }
+}  
+
+
+
+app.component.html:
+
+<h1>
+  This child Component is linked with the function getData
+  Where emitted data is taken as a parameter of type string
+  Note: emitted data from OutMsg is a string value
+  $event is a variable which captures the value from 
+  OutMsg and sends in the getData function
+  <br>
+  <app-outmsg (Omsg)="getData($event)"></app-outmsg>
+</h1>
+<h1>
+  The message from the OutMsg Component is:<br>
+  {{outmessage}}
+</h1>
+
+
+
+
+
 
 
 
