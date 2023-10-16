@@ -1,3 +1,21 @@
+ng generate component outmsg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************************************************
+
+
 @Input: data transfer from parent to child:
 
 1. Parent Component: Define a var in the class:
