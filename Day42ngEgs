@@ -1,0 +1,24 @@
+Exercise:
+Create a login form as a child login component: Login 
+Place the component on the left side of the page.
+On the right side give Instructions (another child component) + Advertisement space (Add them as another child component)
+Create 3 child components:
+Login
+Instructions
+Advertisement
+Added to app.component2.html such that they are displayed side by side. Do not disturb the original files.
+Link the new app.component2.html to the app.component.ts file as the templateURL
+
+
+Step1:
+generate child components: Login, Instructions, Advertisements
+code the HTML files of the components:
+Login Component should have a login form submitting to nowhere
+Instructions component should have OL with the Instructions for the site
+Advertisements component should have some good ads for H1-> Cricket tickets or H1->HTML tutorials
+
+Step2:
+Code the app.component2.html file with the selectors of child components at proper placements.
+Put the app.component2.html as a templateUrl of app.component.ts
+run the app.
+
