@@ -64,6 +64,36 @@ app.component.html:
 </div>
 
 
+Events:
+
+app.component.ts:
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  public showAlert() : void {  
+    console.log('You clicked on the button...');  
+    alert("Click Event Fired..."); 
+  } 
+  public showAlert2() : void {  
+    console.log('You moved to the button...');  
+    alert("MouseEnter Event Fired...");  
+  }  
+}
+
+
+
+app.component.html:
+<div>  
+  <h2>Demo of Event Binding in Angular 8+</h2>  
+  <input type="button" value="Click" (click)="showAlert()" />  
+  <br /><br />  
+  <input type="button" value="Mouse Enter" (mouseenter)="showAlert2()" />  
+</div>
+
 
 
 
