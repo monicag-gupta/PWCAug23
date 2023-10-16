@@ -41,6 +41,33 @@ app.component.html:
 
 
 
+<div>  
+  <br /><br />
+  Display Value in Input Controls : <input [value]="value1" />  
+  <br /><br />    
+  <span>Current Number is {{value1}}</span>      
+  <br /><br />    
+  <span>Current Number as currency is {{value1 }} Rs.</span>  
+  <br /><br />  
+  <span>Current Date is {{dt1}}</span>  
+  <br /><br />  
+  <span>Current Date as date is {{dt1 | date}}</span>  
+  <br /><br />  
+  <span>Status is {{status}}</span>  
+  <br /><br />  
+  <span>Array is {{array1}}</span>  
+  <br /><br /> 
+  <span>Using Ternary Operator: <br/>
+  {{status ? "This is correct status" :"This is false status"}}</span>  
+  <br /><br />  
+  <span>{{returnString()}}</span>  
+</div>
+
+
+
+
+
+
 
 
 ***************************************************************************************************
