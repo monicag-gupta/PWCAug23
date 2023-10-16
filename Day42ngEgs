@@ -35,9 +35,11 @@ import { Component } from '@angular/core';
 })  
 export class AppComponent {
   outmessage:string=""
+  inMessage:string=""
   getData(d:string){
     this.outmessage=d;
-    alert(d);
+    this.inMessage=this.outmessage
+    // alert(d);
   }
 }  
 
@@ -57,6 +59,11 @@ app.component.html:
 <h1>
   The message from the OutMsg Component is:<br>
   {{outmessage}}
+</h1>
+<hr>
+<h1>This child component is taking Input from the parent component</h1>
+<h1>
+  <message-info [message]="inMessage" [alert-pop] ="inMessage"></message-info>
 </h1>
 
 
