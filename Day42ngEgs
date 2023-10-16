@@ -1,3 +1,52 @@
+app.component.ts:
+
+import { Component } from '@angular/core';  
+@Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  public value1: number = 10;  
+  public array1: Array<number> = [10, 22, 14];  
+  public dt1: Date = new Date();  
+  public status: boolean = true;  
+  public returnString(): string {  
+      return "String return from function";  
+  }  
+} 
+
+
+
+app.component.html:
+<div>   
+  <span>Current Number is {{value1}}</span>      
+  <br /><br />    
+  <span>Current Number as currency is {{value1 }} Rs.</span>  
+  <br /><br />  
+  <span>Current Date is {{dt1}}</span>  
+  <br /><br />  
+  <span>Current Date as date is {{dt1 | date}}</span>  
+  <br /><br />  
+  <span>Status is {{status}}</span>  
+  <br /><br />  
+  <span>Array is {{array1}}</span>  
+  <br /><br /> 
+  <span>Using Ternary Operator: <br/>
+  {{status ? "This is correct status" :"This is false status"}}</span>  
+  <br /><br />  
+  <span>{{returnString()}}</span>  
+</div>
+
+
+
+
+
+
+***************************************************************************************************
+
+
+
 Exercise:
 Create a login form as a child login component: Login 
 Place the component on the left side of the page.
