@@ -1,3 +1,24 @@
+@Input: data transfer from parent to child:
+
+1. Parent Component: Define a var in the class:
+Name: string = “Abc”
+2. Design the child Component (selector: “app-child”): Define an @Input() var in the class file:
+@Input() public ParentName: string
+3. In the Parent Template : HTML: link the attribute ParentName of the child Component to the Name variable of the Parent Component.
+<app-child [ParentName]=“Name” ></app-child>
+OR 2. Design the child Component (selector: “app-child”): Define an @Input() var in the class file:
+@Input(“PName”) public ParentName: string
+OR 3. In the Parent Template : HTML: link the attribute ParentName of the child Component to the Name variable of the Parent Component.
+<app-child [PName]=“Name” ></app-child>
+
+
+
+
+
+
+
+
+
 @input : input from parent to child and @output from child to parent
 
 ng generate component message
