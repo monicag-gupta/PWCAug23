@@ -168,6 +168,95 @@ app.component.html:
 
 
 
+All bindings together:
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+@Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  public value1: number = 10;  
+  public curlBrac: string = "{{var from ts file}}";
+  public array1: Array<number> = [10, 22, 14];  
+  public dt1: Date = new Date();  
+  public status: boolean = true;  
+  public returnString(): string {  
+      return "String return from function";  
+  }  
+  public showAlert() : void {  
+    console.log('You clicked on the button...');  
+    alert("Click Event Fired..."); 
+  } 
+  public showAlert2() : void {  
+    console.log('You moved to the button...');  
+    alert("MouseEnter Event Fired...");  
+  } 
+  fullName: string = "Hello Programmers";   
+
+} 
+
+
+
+
+app.component.html:
+
+<div>  
+	<h1>Interpolation Binding by {{curlBrac}} </h1>
+    <span>Current Number is {{value1}}</span>      
+    <br /><br />    
+    <span>Current Number as currency is {{value1 | currency}}</span>  
+    <br /><br />  
+    <span>Current Date is {{dt1}}</span>  
+    <br /><br />  
+    <span>Current Date as date is {{dt1 | date}}</span>  
+    <br /><br />  
+    <span>Status is {{status}}</span>  
+    <br /><br />  
+    <span>Using Ternary Operator: <br/>
+    {{status ? "This is correct status" :"This is false status"}}</span>  
+    <br /><br />  
+    <span>{{returnString()}}</span> 
+    <br /><br />  
+    Array now is: 
+    <span>{{array1}}</span>  
+</div>
+<hr>
+<div> 
+	<h1>Property Binding: attribute of any tag is put inside [] and bound to the variable in the ts file.</h1>      
+    <input type="text" [value]="value1" />
+
+    <br /><br />  
+</div> 
+
+<div>  
+    <h2>Demo of Event Binding in Angular 8+</h2>  
+    <input type="button" value="Click" (click)="showAlert()" />  
+    <br /><br />  
+    <input type="button" value="Mouse Enter" (mouseenter)="showAlert2()" />  
+</div>
+<div>
+    <h2>Two-way Binding Example</h2>    
+   <input [(ngModel)]="fullName" /> <br/><br/>    
+    <p> {{fullName}} </p> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ***************************************************************************************************
 
