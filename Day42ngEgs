@@ -386,3 +386,76 @@ Code the app.component2.html file with the selectors of child components at prop
 Put the app.component2.html as a templateUrl of app.component.ts
 run the app.
 
+
+
+
+
+
+***************************************************************************************************
+Recap of Data Binding:
+
+Data Bindings:
+1: Interpolation 
+	Write var in app.component.ts : 
+	Name:string=“abc”;
+	Use in {{}} in the HTML template
+	{{Name}}
+2. Property
+	Write var in app.component.ts
+	Use [] for property/attribute of the tag with the var name in “” as a value of the property in HTML template
+	<input [value]=“Name”>
+3. Event Binding 
+	Write function in app.component.ts : 
+	msgOp():void{alert(“Hi”);
+	Use in () for DOM events of the tag with the function name in “” to run the event accordingly in in the HTML template
+	<button (click)=“msgOp()”>
+4. Two Way Binding
+	App.module.ts: add FormsModule as an import
+	Write var in app.component.ts
+	Use [(ngModel)] for default property/attribute and default event of the tag with the var name in “” as a value of the property in HTML template
+	<input [(ngModel)]=“Name”>
+
+
+Example:
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+ @Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent { 
+  cur:string="{{}}"
+  name : string = "Risita and Nisha" ;   
+  msgOp():void {
+    alert("hi "+this.name);
+  }
+}  
+
+
+
+
+app.component.html:
+
+<h1>
+  Interpolation binding with {{cur}} written twice
+  {{name}}
+</h1>
+<hr>
+<h1>
+   Property binding with [] having the prop binding
+  <input [value]="name">
+</h1>
+<hr>
+<h1>
+  Event binding with () having the DOM Event binding 
+  <input type="button" value="sayHi" (click)="msgOp()"></h1>
+<hr>
+<h1>
+  Two way binding with [()] having ngModel with default prop and evnt binding
+  <input [(ngModel)]="name">
+</h1>
+
+
