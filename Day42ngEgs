@@ -1,3 +1,25 @@
+Exercise:
+
+Create 4 child components:
+Login
+Instructions
+Advertisement
+Success
+Added to app.component2.html such that they are displayed side by side. Do not disturb the original files.
+Link the new app.component2.html to the app.component.ts file as the templateURL
+
+
+Output the LoginId and password to the parent component whenever we press the login button in the Login component
+In the app.component.ts, crosscheck the emitted values to be userName as “Coders” and password as “DotNet”
+If the credentials are correct, send Input messages to success component as “Success Message” else send proper “failure messages with details”
+
+
+
+
+
+
+************************************************************************************************************
+
 ng generate component outmsg
 
 outmsg.component.ts:
