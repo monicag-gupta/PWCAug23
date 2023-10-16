@@ -233,16 +233,19 @@ app.component.html:
 </div> 
 
 <div>  
-    <h2>Demo of Event Binding in Angular 8+</h2>  
+    <h1>Demo of Event Binding in Angular 8+</h1>  
     <input type="button" value="Click" (click)="showAlert()" />  
     <br /><br />  
     <input type="button" value="Mouse Enter" (mouseenter)="showAlert2()" />  
 </div>
 <div>
-    <h2>Two-way Binding Example</h2>    
+    <h1>Two-way Binding Example</h1>    
    <input [(ngModel)]="fullName" /> <br/><br/>    
     <p> {{fullName}} </p> 
 </div>
+
+
+
 
 
 
