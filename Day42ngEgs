@@ -1,3 +1,12 @@
+@input : input from parent to child and @output from child to parent
+
+ng generate component message
+
+
+
+**********************************************************************************************************************
+
+
 Exercise:
 
 Design an Input form to enter Employee details such as:
