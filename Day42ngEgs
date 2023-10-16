@@ -1,3 +1,13 @@
+Design an Input form to enter Employee details such as:
+Name: 								        Name: Monica
+EmpID : 								EmpID: 1010
+Sal : 									Earnings: $10.00
+When we enter the salary, it should be displayed as a currency in the side of the textbox.
+Use Interpolation + two-way binding of Angular technology
+
+
+
+
 app.component.ts:
 
 import { Component } from '@angular/core';  
