@@ -132,26 +132,36 @@ import { EmployeeService } from './employee.service';
 app.component.html:
 
 <div>   
-  <h2>Employee Form</h2>   <table border="1">  
-   <tr>   <td>Employee Name</td>   
-      <td><input type="text" [(ngModel)]="model.name" /></td>  </tr>  
-   <tr> <td>City</td>   
-       <td><input type="text" [(ngModel)]="model.city" /></td>  </tr>  
-   <tr> <td></td> <td><input type="button" value="Submit" (click)="submit()" />     
-    <input type="button" value="Reset" (click)="reset()" /></td></tr> </table>  
-  <h3>Employee Details</h3>  
-  <div><div>
+      <h2>Employee Form</h2>   
+      <table border="1">  
+      <tr>   
+        <td>Employee Name</td>   
+        <td><input type="text" [(ngModel)]="model.name" /></td> 
+      </tr>  
+      <tr> 
+        <td>City</td>   
+        <td><input type="text" [(ngModel)]="model.city" /></td> 
+      </tr>  
+      <tr> 
+        <td></td> 
+        <td><input type="button" value="Submit" (click)="submit()" />     
+        <input type="button" value="Reset" (click)="reset()" /></td>
+      </tr> 
+    </table>  
+    <hr>
+    <hr>
+    <h3>Employee Details</h3>  
       <div>  
        <table border="1">  
           <thead><tr><th> <span>Employee's Name</span> </th>
                  <th> <span>City</span></th></tr></thead>
-          <tbody> <tr *ngFor="let item of source; let i=index">  
+          <tbody> <tr *ngFor="let item of source;">  
                   <td><span>{{item.name}}</span></td>   
-                  <td><span>{{item.city}}</span></td>  </tr>  
-         </tbody>  </table>  </div>  
-     </div>
-  </div> 
-</div> 
+                  <td><span>{{item.city}}</span></td>  
+          </tr> </tbody> 
+        </table>  
+      </div>  
+</div>
 
 
 
