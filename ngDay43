@@ -88,6 +88,118 @@ npm install -g C:\Users\monica\Desktop\NGEgs\ng2App4Lib\dist\my-lib
 
 
 
+navigate to ng1App:
+
+
+npm install C:\Users\monica\Desktop\NGEgs\ng2App4Lib\dist\my-lib
+
+app.module.ts:
+
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ChildComponent } from './child/child.component';
+import { LoginComponent } from './login/login.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { AdvertisementsComponent } from './advertisements/advertisements.component';
+
+import { EmployeeService } from './employee.service';  
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+
+import { MessageComponent } from './message/message.component';
+import { OutmsgComponent } from './outmsg/outmsg.component';    
+
+import { ProperCasePipe } from './propercase.pipe'; 
+
+import { MyLibModule } from 'my-lib';
+
+
+
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ChildComponent,
+    LoginComponent,
+    InstructionsComponent,
+    AdvertisementsComponent,
+    MessageComponent,
+    OutmsgComponent,
+    ProperCasePipe
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    MyLibModule
+  ],
+  providers: [EmployeeService],
+  schemas: [NO_ERRORS_SCHEMA],  
+
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+app.component.html:
+
+
+
+<div>
+  <lib-my-lib></lib-my-lib>
+</div>
+
+
+<hr><hr>
+
+
+
+
+<div>   
+
+
+
+      <h2>Employee Form</h2>   
+      <table border="1">  
+      <tr>   
+        <td>Employee Name</td>   
+        <td><input type="text" [(ngModel)]="model.name" /></td> 
+      </tr>  
+      <tr> 
+        <td>City</td>   
+        <td><input type="text" [(ngModel)]="model.city" /></td> 
+      </tr>  
+      <tr> 
+        <td></td> 
+        <td><input type="button" value="Submit" (click)="submit()" />     
+        <input type="button" value="Reset" (click)="reset()" /></td>
+      </tr> 
+    </table>  
+    <hr>
+    <hr>
+    <h3>Employee Details</h3>  
+      <div>  
+       <table border="1">  
+          <thead><tr><th> <span>Employee's Name</span> </th>
+                 <th> <span>City</span></th></tr></thead>
+          <tbody> <tr *ngFor="let item of source;">  
+                  <td><span>{{item.name}}</span></td>   
+                  <td><span>{{item.city}}</span></td>  
+          </tr> </tbody> 
+        </table>  
+      </div>  
+</div>
+
+
 
 
 
