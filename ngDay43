@@ -1,3 +1,57 @@
+app.component.ts:
+
+import { Component, OnInit } from '@angular/core';  
+@Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent  
+{  
+    showTasksOf = "Developer"; 
+    tasks : string[] = ['Developer','Tester', 'Architect', 'Designer','Others'];
+}
+
+
+app.component.html:
+
+<select [(ngModel)]="showTasksOf">  
+  <option *ngFor="let task of tasks;">{{task}}</option>  
+</select>  
+<ul [ngSwitch]="showTasksOf">
+  <li *ngSwitchCase="'Tester'">   
+    <ul>
+      <li>Report Bugs</li> <li>Reopen Bugs</li> <li>Chill!!</li>
+    </ul>  
+  </li>
+  <li *ngSwitchCase="'Developer'">    
+    <ul>
+      <li>Code Code Code</li> <li>Bingo</li> <li>Find Coffee!</li>
+    </ul>  
+  </li>
+  <li *ngSwitchCase="'Architect'">    
+    <ul>
+      <li>Do crazy stuff</li>  <li>Cloud mess</li>  <li>Stroll!</li>
+    </ul>  
+  </li>
+  <li *ngSwitchCase="'Designer'">    
+    <ul>
+      <li>Out of world</li>     <li>Really??</li>  <li>Draw anything</li>
+    </ul> 
+  </li>
+  <li *ngSwitchDefault>   
+    <ul>
+      <li>Why you are here???</li>    
+      </ul> 
+  </li>
+</ul>
+
+
+
+
+
+
+******************************************************************************************************
 
 app.component.ts:
 
