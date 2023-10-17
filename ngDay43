@@ -76,6 +76,12 @@ app.component.html:
 
 ng serve
 
+Check the output
+
+Close ng serve
+cd ..
+go to the parent folder.
+
 
 
 
