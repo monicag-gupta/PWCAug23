@@ -82,6 +82,13 @@ Close ng serve
 cd ..
 go to the parent folder.
 
+Install globally the library
+
+npm install -g C:\Users\monica\Desktop\NGEgs\ng2App4Lib\dist\my-lib
+
+
+
+
 
 
 
