@@ -41,9 +41,6 @@ import { OutmsgComponent } from './outmsg/outmsg.component';
 import { ProperCasePipe } from './propercase.pipe';  
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +63,47 @@ import { ProperCasePipe } from './propercase.pipe';
 export class AppModule { }
 
 
+
+
+
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+  
+@Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  public message: string;  
+  
+  constructor() { this.message = "ThIs is A Custom Pipe";  }  
+ 
+} 
+
+
+
+app.component.html:
+
+<div>  
+  <div>  
+      <h2 >Custom Pipes - Proper Case</h2><br />  
+      <div class="row">  
+          <div>  
+              <span>Enter Text</span>  
+          </div>         <div>  
+              <input type="text" id="txtFName" 
+              placeholder="Enter Text" [(ngModel)]="message" />  
+          </div>      </div>  
+      <h2>  
+          <div>  <span>Result in Proper Case (lower first char then UpperCase rest chars)</span>  </div>  
+          <div>  <span>{{message | propercase:false}}</span>  </div>  
+          <div>  <span>Result in Reverse Proper Case(upper first char then LowerCase rest chars)</span>  </div>  
+          <div>  <span>{{message | propercase:true}}</span>  </div>          
+      </h2>      
+  </div>  </div> 
 
 
 
