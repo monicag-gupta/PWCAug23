@@ -200,8 +200,10 @@ app.component.html:
 </div>
 
 
-
-
+Open nodejs cmd prompt, navigate to ng2App4lib folder
+ng serve ng2App4lib
+and in other terminal in ng1app folder
+ng serve --port 5200
 
 
 
