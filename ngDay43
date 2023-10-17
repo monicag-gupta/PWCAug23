@@ -50,6 +50,29 @@ app.component.html:
 
 
 
+custom.css:
+
+/* You can add global styles to this file, and also import other style files */  
+select,h1{  
+    color:red;  
+    font-weight:bold;  
+    font-size: 30px;   
+}  
+li,h2{  
+    color:blue;  
+    font-size: 20px;  
+}  
+p{  
+    color:brown;  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+} 
+b{  
+    color:purple;  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+} 
+
+
+
 
 ******************************************************************************************************
 
