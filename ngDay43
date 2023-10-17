@@ -1,3 +1,82 @@
+Custom Pipe:
+
+app-> propercase.pipe.ts:
+
+import { Pipe, PipeTransform } from "@angular/core"  
+@Pipe({  
+    name: 'propercase'  
+})  
+export class ProperCasePipe implements PipeTransform {  
+    transform(value: string, reverse: boolean): string {  
+        if (typeof (value) == 'string') {  
+            let intermediate = reverse == false ? value.toUpperCase() : value.toLowerCase();  
+            return (reverse == false ? intermediate[0].toLowerCase() :  
+                intermediate[0].toUpperCase()) + intermediate.substr(1);  
+        }          
+        else {  
+            return value;  
+        }  
+    } 
+} 
+
+
+
+
+app/module.ts:
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ChildComponent } from './child/child.component';
+import { LoginComponent } from './login/login.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { AdvertisementsComponent } from './advertisements/advertisements.component';
+
+import {FormsModule} from '@angular/forms';
+import { MessageComponent } from './message/message.component';
+import { OutmsgComponent } from './outmsg/outmsg.component';    
+
+import { ProperCasePipe } from './propercase.pipe';  
+
+
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ChildComponent,
+    LoginComponent,
+    InstructionsComponent,
+    AdvertisementsComponent,
+    MessageComponent,
+    OutmsgComponent,
+    ProperCasePipe
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+
+
+
+
+
+
+***************************************************************************************************
+
+
 app.component.ts:
 
 import { Component} from '@angular/core';  
