@@ -26,6 +26,62 @@ export class EmployeeService {
 
 
 
+app.module.ts:
+
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ChildComponent } from './child/child.component';
+import { LoginComponent } from './login/login.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { AdvertisementsComponent } from './advertisements/advertisements.component';
+
+import { EmployeeService } from './employee.service';  
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+
+import { MessageComponent } from './message/message.component';
+import { OutmsgComponent } from './outmsg/outmsg.component';    
+
+import { ProperCasePipe } from './propercase.pipe';  
+
+
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ChildComponent,
+    LoginComponent,
+    InstructionsComponent,
+    AdvertisementsComponent,
+    MessageComponent,
+    OutmsgComponent,
+    ProperCasePipe
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule  
+  ],
+  providers: [EmployeeService],
+  schemas: [NO_ERRORS_SCHEMA],  
+
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+
+
+
 ******************************************************************************************************
 
 Custom Pipe:
