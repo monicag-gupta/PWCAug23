@@ -1,5 +1,9 @@
 ng new ng2App4Lib
-ng generate library my-lib
+go to ng2App4Lib folder:
+	ng generate library my-lib
+
+
+
 
 
 
