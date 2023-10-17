@@ -34,6 +34,9 @@ export class MyLibComponent {
 
 
 
+ng build my-lib
+
+
 
 
 
