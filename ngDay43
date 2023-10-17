@@ -63,7 +63,18 @@ export class AppModule { }
 
 
 
+app.component.html:
 
+<h1>Hello from ng2App4Lib</h1>
+<h2>The below tag is using the lib: </h2>
+<div>
+  <lib-my-lib></lib-my-lib>
+</div>
+
+
+
+
+ng serve
 
 
 
