@@ -2,6 +2,28 @@ ng generate service Employee
 
 
 
+employee.service.ts:
+
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeeService {
+
+  public _empList: Array<any> = [];  
+    constructor() {  
+        this._empList = [{name:'John Doe', city:'Gurgaon'}];  
+    }  
+     returnEmpData(): Array<any> {  
+        return this._empList;  
+    }  
+     addEmpData(item: any): void {  
+        this._empList.push(item);  
+    }  
+  }
+
+
 
 
 ******************************************************************************************************
