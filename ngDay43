@@ -1,0 +1,47 @@
+app.component.ts:
+
+import { Component } from '@angular/core';  
+@Component({  
+  selector: 'app-root',  
+  templateUrl: './app.component.html',  
+  styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  showColor: boolean = false;  
+  constructor() { }  
+  public changeColor(): void {  
+      this.showColor = !this.showColor;  
+  }  
+} 
+
+
+
+app.component.html:
+
+<div>  
+  <h3>This is normal class allocation</h3>  
+  <span class="red">Attribute Change</span><br /> 
+  <span style="font-size:14px;color:pink;">Attribute Change by normal css style</span> <br/>  
+  <h3>This is a Attribute Directives without dynamic showcolor</h3>  
+  <span [class.red]="true">Attribute Change</span><br />  
+  <span [ngClass]="{'blue':true}">Attribute Change by Using NgClass</span><br />  
+  <span [ngStyle]="{'font-size':'14px','color':'green'}">Attribute Change by Using NgStyle</span>  
+  <br /><br />  
+  <h3>This is a Attribute Directives with dynamic showcolor</h3>  
+  <span [class.cyan]="showColor">Attribute Change</span><br />  
+  <span [ngClass]="{'brown':showColor}">Attribute Change by Using NgClass</span><br />  
+  <input type="button" value="Change Color" (click)="changeColor()" />  
+  <br /><br />  
+  <span [class.cyan]="showColor">Attribute Change</span><br />  
+  <span [ngClass]="{'cyan':showColor, 'red' : !showColor}">Attribute Change by Using NgClass</span><br />  
+  <br />  
+</div> 
+
+
+
+custom.css:
+
+.red {color:red;}  
+.blue {color:blue}  
+.cyan {color : cyan}  
+.brown {color : brown} 
