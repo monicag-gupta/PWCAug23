@@ -1,5 +1,29 @@
 
+app.component.ts:
 
+import { Component } from '@angular/core';  
+ @Component({  
+   selector: 'app-root',  
+   templateUrl: './app.component.html',  
+   styleUrls : ['./custom.css']  
+})  
+export class AppComponent {  
+  productList: Array<string> = ['IPhone','Galaxy 9.0','Blackberry 10Z'];  
+     constructor() { }  
+ }
+
+
+
+app.component.html
+
+<div>  
+  <h2>Demonstrate ngFor</h2>  
+  <ul>  
+      <li *ngFor="let item of productList">  
+          {{item}}  
+      </li>  
+  </ul>  
+</div> 
 
 
 
