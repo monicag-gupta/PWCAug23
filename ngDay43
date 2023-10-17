@@ -82,6 +82,83 @@ export class AppModule { }
 
 
 
+
+
+app.component.ts:
+
+import { Component } from '@angular/core';  
+import { EmployeeService } from './employee.service';  
+@Component({   
+	  selector: 'app-root',  
+      templateUrl: './app.component.html',  
+      styleUrls : ['./app.component.css']        
+    })  
+  export class AppComponent {  
+      public model: any = {};  
+      public source: Array<any>;  
+      constructor(public service: EmployeeService) {  
+            this.source = this.service.returnEmpData();         
+      }
+       public submit(): void {  
+            if (this.validate()) {  
+                this.service.addEmpData(this.model);  
+                this.reset();         
+              }        
+       }  
+       public reset(): void { 	
+        this.model = {}; 	
+      }  
+       public validate(): boolean {  
+               let status: boolean = true;  
+               if (typeof (this.model.name) === "undefined") {  
+                      alert('Name is Blank');  
+                      status = false;     
+                      return status;        
+                 }  
+               else if (typeof (this.model.city) === "undefined") {  
+                      alert('City is Blank');  
+                      status = false;       
+                      return status;         
+                 }  
+               return status;           
+          } 
+     } 
+
+
+
+
+
+
+app.component.html:
+
+<div>   
+  <h2>Employee Form</h2>   <table border="1">  
+   <tr>   <td>Employee Name</td>   
+      <td><input type="text" [(ngModel)]="model.name" /></td>  </tr>  
+   <tr> <td>City</td>   
+       <td><input type="text" [(ngModel)]="model.city" /></td>  </tr>  
+   <tr> <td></td> <td><input type="button" value="Submit" (click)="submit()" />     
+    <input type="button" value="Reset" (click)="reset()" /></td></tr> </table>  
+  <h3>Employee Details</h3>  
+  <div><div>
+      <div>  
+       <table border="1">  
+          <thead><tr><th> <span>Employee's Name</span> </th>
+                 <th> <span>City</span></th></tr></thead>
+          <tbody> <tr *ngFor="let item of source; let i=index">  
+                  <td><span>{{item.name}}</span></td>   
+                  <td><span>{{item.city}}</span></td>  </tr>  
+         </tbody>  </table>  </div>  
+     </div>
+  </div> 
+</div> 
+
+
+
+
+
+
+
 ******************************************************************************************************
 
 Custom Pipe:
