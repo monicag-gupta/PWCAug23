@@ -1,0 +1,112 @@
+WebAPI:
+Create a folder : Models
+
+Inside the Models folder:
+
+Models:
+
+using System.Collections.Generic;
+using System.Linq;
+
+namespace StdAPI.Models
+{
+    public class Student
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
+
+        public override string ToString()
+        {
+            return "ID: " + StudentId.ToString() + " Name: " + Name + " " + SurName;
+        }
+    }
+    public class StudentContext
+    {
+        public static List<Student> student = new List<Student>      {
+            new Student { StudentId=101,Name="Abc",SurName="xyz"},
+            new Student { StudentId = 102, Name = "Abc2", SurName = "xyz2" },
+            new Student { StudentId = 103, Name = "Abc3", SurName = "xyz3" },
+            new Student { StudentId = 104, Name = "Abc4", SurName = "xyz4" }
+        };
+        public List<Student> GetAllStudent()
+        {
+            return student;
+        }
+        public Student GetStudent(int id)
+        {
+            return student.FirstOrDefault(x => x.StudentId == id);
+        }
+        public Student DeleteStudent(int id)
+        {
+            Student s = student.FirstOrDefault(x => x.StudentId == id);
+            student.Remove(s);
+            return s;
+        }
+        public string InsertStudent(Student std)
+        {
+            student.Add(std);
+            return std.ToString() + " Added Successfully!!";
+        }
+        public Student UpdateStudent(int id, Student s)
+        {
+            var std = student.FirstOrDefault(x => x.StudentId == id);
+            if (std != null)
+            {
+                std.StudentId = s.StudentId;
+                std.Name = s.Name;
+                std.SurName = s.SurName;
+            }
+            return std;
+        }
+        public StudentContext()
+        {
+            student.Add(new Student { StudentId = 105, Name = "Abc5", SurName = "xyz5" });
+            student.Add(new Student { StudentId = 106, Name = "Abc6", SurName = "xyz6" });
+            student.Add(new Student { StudentId = 107, Name = "Abc7", SurName = "xyz7" });
+            student.Add(new Student { StudentId = 108, Name = "Abc8", SurName = "xyz8" });
+        }
+    }
+}
+
+
+
+
+
+Add the API Controller:
+
+StdController:
+
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using StdAPI.Models;
+using System.Collections.Generic;
+
+namespace StdAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class StdController : ControllerBase
+    {
+        private static StudentContext students = new StudentContext();
+        [HttpGet]
+        [Route("Stds")]
+        [EnableCors("AllowOrigin")]
+        public ActionResult<IEnumerable<Student>> GetAllStudents()
+        {
+            return students.GetAllStudent();
+        }
+        [HttpGet("{id:int}")]
+        public ActionResult<Student> GetStudentById(int id)
+        {
+            return students.GetStudent(id);
+        }
+
+    }
+}
+
+
+
+Run and check if all is working ..
+
