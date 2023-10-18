@@ -285,6 +285,36 @@ export class AppModule { }
 
 
 
+app.component.ts:
+
+import { Component, OnInit } from '@angular/core';  
+import { StudService } from './stud.service'; 
+import { HttpClient } from '@angular/common/http'; 
+
+@Component({   
+      selector: 'app-root',  
+      templateUrl: './app.component.html',  
+      styleUrls : ['./app.component.css']  
+})  
+export class AppComponent implements OnInit {  
+      public studs:any[]=[{}];
+      constructor(private stud: StudService){  
+            this.stud.getPosts().subscribe((data: any[]) => {
+                 this.studs = data;
+	         console.log(data);  
+	    }); 
+      }  
+      ngOnInit() { }
+ 
+}
+
+
+
+
+
+
+
+
 
 
 
