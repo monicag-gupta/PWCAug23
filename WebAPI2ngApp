@@ -220,6 +220,9 @@ And create a new Angular APP:
 >ng new ng2App
 
 
+>cd ng2App
+>ng generate service stud
+
 
 
 
