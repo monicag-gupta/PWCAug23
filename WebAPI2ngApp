@@ -92,7 +92,7 @@ namespace StdAPI.Controllers
         private static StudentContext students = new StudentContext();
         [HttpGet]
         [Route("Stds")]
-        [EnableCors("AllowOrigin")]
+       // [EnableCors("AllowOrigin")]
         public ActionResult<IEnumerable<Student>> GetAllStudents()
         {
             return students.GetAllStudent();
