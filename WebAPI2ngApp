@@ -313,6 +313,33 @@ export class AppComponent implements OnInit {
 
 
 
+app.component.html:
+
+
+<h4>{{studs|json}}</h4>
+
+<table border="1">
+<tr><th>students List</th></tr>
+<tr *ngFor="let s of studs">
+<td>{{s|json}}</td>
+</tr>
+</table>
+<hr>
+
+
+<table border="1">
+<tr><th>StudentID</th><th>Name</th><th>SurName</th></tr>
+<tr *ngFor="let s of studs">
+<td>{{s.studentId}}</td>
+<td>{{s.name}}</td>
+<td>{{s.surName}}</td>
+</tr>
+</table>
+
+
+
+
+
 
 
 
