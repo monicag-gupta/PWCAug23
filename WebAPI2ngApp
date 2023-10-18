@@ -208,4 +208,11 @@ namespace StdAPI
 
 Save App and re run..
 
+Note the URL address for getting the stds list:
+https://localhost:44353/api/Std/Stds
+
+
+
+
+
 
