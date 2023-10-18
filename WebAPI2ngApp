@@ -211,6 +211,17 @@ Save App and re run..
 Note the URL address for getting the stds list:
 https://localhost:44353/api/Std/Stds
 
+DO NOT CLOSE the API
+
+Open nodeJs command prompt
+Navigate to the fav folder
+And create a new Angular APP:
+
+>ng new ng2App
+
+
+
+
 
 
 
